@@ -5,7 +5,7 @@ on:
         type: boolean
         description: |
           Commit and push the zulip JSON back to the repo.
-          (Note: doing this too often will overload GitHub, doing it to infrequently will overload Zulip)
+          (Note!: doing this too often will overload GitHub, doing it to infrequently will overload Zulip)
         required: true
         default: false
 
