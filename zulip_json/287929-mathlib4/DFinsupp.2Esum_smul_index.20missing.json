@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<p><code>DFinsupp</code> has some <code>sum_X_index</code> lemmas, like <code>Finsupp</code>, for example <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=DFinsupp.sum_add_index#doc\">docs#DFinsupp.sum_add_index</a> (compare to <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finsupp.sum_add_index#doc\">docs#Finsupp.sum_add_index</a>), but the counterpart for <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finsupp.sum_smul_index#doc\">docs#Finsupp.sum_smul_index</a> seems to be missing.<br>\nIs there some reason for that, or should it be added?</p>",
+        "id": 440603331,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1716607323
+    },
+    {
+        "content": "<p>My guess: the only reason is that no one needed it up until now.</p>",
+        "id": 440667395,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1716674817
+    },
+    {
+        "content": "<p>So, please PR it!</p>",
+        "id": 440669084,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1716676862
+    }
+]

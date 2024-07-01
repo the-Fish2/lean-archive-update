@@ -1,0 +1,50 @@
+[
+    {
+        "content": "<p>I just wrote some lean code which can turn a (finite, decidable) simple graph into a format that dot can handle. Is there a way that can render this in the infoview? Alternatively, is there a way we can render graphs in some other way, maybe using d3.js?</p>",
+        "id": 446350993,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1719104894
+    },
+    {
+        "content": "<p>The <a href=\"https://github.com/leanprover-community/ProofWidgets4/blob/main/widget/src/rbTree.tsx\">RB tree demo</a> in <code>ProofWidgets</code> uses <code>d3-tree</code> to render a red-black tree in the infoview (the corresponding Lean file is <a href=\"https://github.com/leanprover-community/ProofWidgets4/blob/main/ProofWidgets/Demos/RbTree.lean\">here</a>).</p>\n<p>Widgets can take in JSON-encodable data on the Lean side and then process and render them on the TypeScript/JavaScript side.</p>",
+        "id": 446397002,
+        "sender_full_name": "Anand Rao Tadipatri",
+        "timestamp": 1719135376
+    },
+    {
+        "content": "<p>Oh that's embarrassing, I'd already seen that one. Thanks for the reminder!!</p>",
+        "id": 446397025,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1719135421
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"427067\">@Katja Berčič</span> was rendering graphs in the infoview in her talk in Bonn last week</p>",
+        "id": 446413233,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1719144858
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"246273\">@Bhavik Mehta</span> there is a draft PR open in the proofwidgets repo that renders graphs with d3-graphviz</p>",
+        "id": 446413897,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1719145367
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/ProofWidgets4/pull/60\">https://github.com/leanprover-community/ProofWidgets4/pull/60</a> to save other people from searching</p>",
+        "id": 446414005,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1719145448
+    },
+    {
+        "content": "<p>I wrote it with the intention of showing dependencies between lean decls, but the graph widget itself takes a dot file as a string as input</p>",
+        "id": 446414116,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1719145532
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/270676-lean4/topic/A.20widget.20to.20display.20output.20from.20.60dot.60/near/446413233\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"427067\">Katja Berčič</span> was rendering graphs in the infoview in her talk in Bonn last week</p>\n</blockquote>\n<p><span class=\"user-mention\" data-user-id=\"439334\">@Jure Taslak</span> implemented the graph rendering in the infoview, in case that helps.</p>",
+        "id": 446568189,
+        "sender_full_name": "Katja Berčič",
+        "timestamp": 1719222809
+    }
+]

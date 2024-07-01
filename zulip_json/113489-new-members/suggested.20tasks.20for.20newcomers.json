@@ -226,5 +226,29 @@
         "id": 267579233,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1641907175
+    },
+    {
+        "content": "<p>Idea for beginners: <a href=\"https://github.com/leanprover-community/mathlib4/blob/e76a76c36a1c2792438b62656bb94234bc4e5317/Mathlib/Data/Matrix/Block.lean#L227-L230\">https://github.com/leanprover-community/mathlib4/blob/e76a76c36a1c2792438b62656bb94234bc4e5317/Mathlib/Data/Matrix/Block.lean#L227-L230</a><br>\nCreate <code>Matrix.fromRows</code> and <code>Matrix.fromColumns</code> versions of it.</p>",
+        "id": 440662585,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1716669652
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"721959\">@Chance Nahuway</span>, since you expressed interest in matrices in mathlib and making a first contribution, this should be a very easy thing to start with (in that most of the difficulty will be in learning the contribution process)</p>",
+        "id": 440665018,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1716672328
+    },
+    {
+        "content": "<p>It would be nice if there were a few more <a href=\"https://github.com/leanprover-community/mathlib4/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc+label%3A%22good+first+issue%22\">PRs</a>/<a href=\"https://github.com/leanprover-community/mathlib4/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3A%22good+first+issue%22\">issues</a> with the good-first-issue tag for better newcomer visibility.</p>",
+        "id": 440673777,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1716683199
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"310045\">Eric Wieser</span> <a href=\"#narrow/stream/113489-new-members/topic/suggested.20tasks.20for.20newcomers/near/440665018\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"721959\">Chance Nahuway</span>, since you expressed interest in matrices in mathlib and making a first contribution, this should be a very easy thing to start with (in that most of the difficulty will be in learning the contribution process)</p>\n</blockquote>\n<p>Thanks Martin for suggesting this, and Eric for tagging me! I’m going to be spending the next week or two going through one of the intro textbooks. Then these two items look like a great place to start really working. I know you guys could probably code these up in a matter of minutes, but thank you for saving something for us newbies :)</p>",
+        "id": 440674279,
+        "sender_full_name": "Chance Nahuway",
+        "timestamp": 1716683912
     }
 ]

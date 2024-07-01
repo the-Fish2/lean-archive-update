@@ -172,5 +172,35 @@
         "id": 394796781,
         "sender_full_name": "Filippo A. E. Nuccio",
         "timestamp": 1696411412
+    },
+    {
+        "content": "<p>Bonjour, I am a first year postdoc at Paris-Saclay! I wonder, does this informal seminar still exist?</p>",
+        "id": 421764356,
+        "sender_full_name": "Paul Schwahn",
+        "timestamp": 1708042545
+    },
+    {
+        "content": "<p>Not in Orsay. Three people left this year. I will come back next year and maybe we will resume.</p>",
+        "id": 421786129,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708057573
+    },
+    {
+        "content": "<p>Ah that's unfortunate, since I am only there until the summer.</p>",
+        "id": 421861792,
+        "sender_full_name": "Paul Schwahn",
+        "timestamp": 1708091394
+    },
+    {
+        "content": "<p>I am in office 3P17 (not right now though).</p>",
+        "id": 421882701,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1708097822
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"130384\">@Riccardo Brasca</span> and I had envisioned to pursue it in Paris this year but we didn't manage to make it. In a few weeks, after LFTCM2024, we may find time for a few meetings.</p>",
+        "id": 422070159,
+        "sender_full_name": "Antoine Chambert-Loir",
+        "timestamp": 1708235689
     }
 ]

@@ -1,0 +1,92 @@
+[
+    {
+        "content": "<p>I wanted to quickly look up a reference for tactics in lean/mathlib, and the two links I found were great for mathlib3/lean3 - <a href=\"https://leanprover-community.github.io/mathlib_docs/tactics.html\">https://leanprover-community.github.io/mathlib_docs/tactics.html</a> and <a href=\"https://lean-lang.org/reference/tactics.html\">https://lean-lang.org/reference/tactics.html</a> , but the corresponding lean4 versions of these resources <a href=\"https://leanprover-community.github.io/mathlib4_docs/\">https://leanprover-community.github.io/mathlib4_docs/</a> and <a href=\"https://lean-lang.org/lean4/doc/\">https://lean-lang.org/lean4/doc/</a> don't seem to have similar information (unless I couldn't find it). As an aside, improving these docs would be super helpful! </p>\n<p>Anyone have a handy link for lean4 tactics? Googling \"lean4 tactics reference\" didn't result in any fruitful hits.</p>",
+        "id": 409878252,
+        "sender_full_name": "Alex Kassil",
+        "timestamp": 1703484250
+    },
+    {
+        "content": "<p>Known Todo item</p>",
+        "id": 409888743,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1703493004
+    },
+    {
+        "content": "<p>I think that</p>\n<p><a href=\"https://github.com/haruhisa-enomoto/mathlib4-all-tactics/blob/main/all-tactics.md\">https://github.com/haruhisa-enomoto/mathlib4-all-tactics/blob/main/all-tactics.md</a></p>\n<p>is what is available now.  You can also type <code>#help tactic</code> to see the same output, I think.</p>",
+        "id": 409888768,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1703493033
+    },
+    {
+        "content": "<p>Thanks!</p>",
+        "id": 409891654,
+        "sender_full_name": "Alex Kassil",
+        "timestamp": 1703495157
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"244020\">Alex Kassil</span> has marked this topic as resolved.</p>",
+        "id": 409891679,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1703495163
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"321459\">@Damiano Testa</span> That is not maintained. I created a latest version of Mathlib tactic list</p>\n<p><a href=\"https://github.com/Seasawher/mathlib4-tactics\">https://github.com/Seasawher/mathlib4-tactics</a></p>\n<p>My tactic list is automatically updated every day! (thanks to <span class=\"user-mention\" data-user-id=\"613177\">@Oliver Butterley</span>)</p>",
+        "id": 444831477,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1718429788
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"626349\">Asei Inoue</span> <a href=\"#narrow/stream/113488-general/topic/.E2.9C.94.20Lean4.20Documentation.20for.20tactics/near/444831477\">said</a>:</p>\n<blockquote>\n<p>atest version of Mathlib tactic list</p>\n<p><a href=\"https://github.com/Seasawher/mathlib4-tactics\">https://github.com/Seasawher/mathlib4-tactics</a></p>\n</blockquote>\n<p>The actual list is viewable at: <a href=\"https://seasawher.github.io/mathlib4-tactics/\">https://seasawher.github.io/mathlib4-tactics/</a></p>\n<p>There are plans to improve the formatting, grouping, etc.</p>",
+        "id": 444833935,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1718432049
+    },
+    {
+        "content": "<p>I think that some tactics may not be defined in <code>Mathlib.Tactic</code>, so maybe you could simply <code>import Mathlib</code>.</p>",
+        "id": 444836393,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718434603
+    },
+    {
+        "content": "<p>What's an example? I thought that <code>Mathlib.Tactic</code> was kept in sync somehow?</p>",
+        "id": 444837040,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1718435256
+    },
+    {
+        "content": "<p>I'm pretty sure that I've seen \"local\" tactics, maybe in the WittVectors part?</p>",
+        "id": 444840773,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718438907
+    },
+    {
+        "content": "<p>I'll look at the diff between <code>#help tactic</code> with the two imports once I'm back at a computer.</p>",
+        "id": 444841069,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718439127
+    },
+    {
+        "content": "<p><a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=WittVector.Tactic.ghostCalc#doc\">docs#WittVector.Tactic.ghostCalc</a>, maybe?</p>",
+        "id": 444841117,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718439201
+    },
+    {
+        "content": "<p>As a curiosity, I would love to know what tactics exist but aren't in <code>Mathlib.Tactic</code>!</p>\n<p>However, an easy to read list of tactics isn't useful for advanced Mathlib users, the primary audience are beginners and less experienced users. Consequently the tactics which have been hidden from  <code>Mathlib.Tactic</code>are probably the ones best excluded from this list.</p>\n<p>When I got some spare time I was hoping to do something to make the list more useful, for example scraping Mathlib to get data on which tactics are used more than others so the list can display the most used tactics and the ones which are barely ever used are still listed but not so prominently. Also newly introduced tactics could be automatically highlighted.</p>",
+        "id": 444842386,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1718440387
+    },
+    {
+        "content": "<p>You might also want to check out Tao's <a href=\"https://docs.google.com/spreadsheets/d/1Gsn5al4hlpNc_xKoXdU6XGmMyLiX4q-LFesFVsMlANo/\">https://docs.google.com/spreadsheets/d/1Gsn5al4hlpNc_xKoXdU6XGmMyLiX4q-LFesFVsMlANo/</a></p>",
+        "id": 444842547,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1718440544
+    },
+    {
+        "content": "<p>It should be easy to write a linter what would flag \"tactics\", or at least most of them.</p>\n<p>There is something weird in the page with tactics: <code>Defined in</code> makes me think that this will be a path (or module name), but it seems to be the name of the declaration.</p>\n<p>Maybe, <code>#help tactic</code> could be enriched to output also the <em>module</em> where the tactic is defined and then the output of <code>import Mathlib #help tactic</code> could be used to find tactics not in <code>Mathlib.Tactic</code>.</p>",
+        "id": 444843948,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718441805
+    }
+]

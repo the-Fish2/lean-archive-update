@@ -2638,5 +2638,107 @@
         "id": 402790022,
         "sender_full_name": "David Ang",
         "timestamp": 1700260297
+    },
+    {
+        "content": "<p>I have some random remarks on the design of the elliptic curve API, which may be nonsense.</p>\n<p>Contrary to current design of <code>EllipticCurve</code> which extends <code>WeierstrassCurve</code> with a discriminant unit assumption, I think maybe it's better to only have <code>WeierstrassCurve</code> structure, and we can make discriminant unit assumption as a typeclass <code>WeierstrassCurve.NonDegenerate</code>. In this way the results requiring elliptic curve can be redesigned as requiring <code>E : WeierstrassCurve</code> with <code>[E.NonDegenerate]</code>.</p>",
+        "id": 432354438,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1712702691
+    },
+    {
+        "content": "<p>My initial reaction to this is \"how do we explain to mathematicians this weird way of saying \"\"let E be an elliptic curve\"\"?\" . But I don't want to dismiss your idea, especially if we can somehow do it with notation or other trickery.</p>",
+        "id": 432355627,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1712703329
+    },
+    {
+        "content": "<p>This might be a good idea. I noticed that it's somewhat awkward to work with elliptic curves <code>E</code>, since most of the API are developed around Weierstrass curves, so we keep having to do <code>E.toWeierstrassCurve</code> e.g. for points and base changes. Even worse, now that I added affine coordinates, etc, so we might have to do <code>E.toWeierstrassCurve.toAffine</code> etc...</p>",
+        "id": 432355821,
+        "sender_full_name": "David Ang",
+        "timestamp": 1712703431
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/116395-maths/topic/thoughts.20on.20elliptic.20curves/near/432355627\">said</a>:</p>\n<blockquote>\n<p>how do we explain to mathematicians this weird way of saying \"\"let E be an elliptic curve\"\"?</p>\n</blockquote>\n<p>Informally we would say \"let <code>y ^ 2 = x ^ 3 + a * x + b</code> be an elliptic curve\", which just means a Weierstrass curve, implicitly with invertible discriminant assumption.</p>",
+        "id": 432357036,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1712704088
+    },
+    {
+        "content": "<p>A disadvantage is that it makes the definition of the inverse of discriminant and the j-invariant non-computable, if <code>WeierstrassCurve.NonDegenerate</code> is a <code>Prop</code>. Perhaps we can make it a <code>Type</code> which contains the inverse of the discriminant, but in this way it is not a subsingleton.</p>",
+        "id": 433602252,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1713300328
+    },
+    {
+        "content": "<p>It will still be a subsingleton, right?</p>",
+        "id": 433639631,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1713322816
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/116395-maths/topic/thoughts.20on.20elliptic.20curves/near/433639631\">said</a>:</p>\n<blockquote>\n<p>It will still be a subsingleton, right?</p>\n</blockquote>\n<p>Yes, but it needs a proof I think. I'm not sure the impact if two <code>WeierstrassCurve.NonDegenerate</code> are provided.</p>",
+        "id": 433723064,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1713349912
+    },
+    {
+        "content": "<p>The <code>Type</code> proposal sounds good to me, and it just amounts to extracting the two fields <code>Δ' : Rˣ</code> and <code>coe_Δ' : ↑self.Δ'</code> into a structure <code>Nondegenerate</code> out of EllipticCurve, right?</p>",
+        "id": 433840062,
+        "sender_full_name": "Junyan Xu",
+        "timestamp": 1713375006
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"224323\">Junyan Xu</span> <a href=\"#narrow/stream/116395-maths/topic/thoughts.20on.20elliptic.20curves/near/433840062\">said</a>:</p>\n<blockquote>\n<p>The <code>Type</code> proposal sounds good to me, and it just amounts to extracting the two fields <code>Δ' : Rˣ</code> and <code>coe_Δ' : ↑self.Δ'</code> into a structure <code>Nondegenerate</code> out of EllipticCurve, right?</p>\n</blockquote>\n<p>I think yes. And we can define <code>WeierstrassCurve.Δ'</code> to be the <code>Δ'</code> in corresponding <code>Nondegenerate</code>, etc., and the current API shouldn't need to be changed (besides the input arguments).</p>",
+        "id": 433860876,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1713382356
+    },
+    {
+        "content": "<p>I think there is a problem when using typeclasses. For example, if we have <code>h : E = E'</code> and <code>E.NonDegenerate</code> and <code>E'.NonDegenerate</code>, how can we get <code>E.j = E'.j</code>? I think in this case <code>rw [h]</code> does not work, since it cannot transfer instances.</p>",
+        "id": 435647099,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1714159906
+    },
+    {
+        "content": "<p><code>subst h</code> should work.</p>",
+        "id": 435653275,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1714162661
+    },
+    {
+        "content": "<p>Thank you. The following code works:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Mathlib.Tactic</span>\n\n<span class=\"kd\">variable</span> <span class=\"o\">(</span><span class=\"n\">R</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">CommRing</span> <span class=\"n\">R</span><span class=\"o\">]</span>\n\n<span class=\"kd\">structure</span> <span class=\"n\">Test</span> <span class=\"n\">where</span>\n  <span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">R</span>\n  <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">R</span>\n\n<span class=\"kd\">variable</span> <span class=\"o\">{</span><span class=\"n\">R</span><span class=\"o\">}</span>\n\n<span class=\"kd\">class</span> <span class=\"n\">Test.NonDegenerate</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"n\">where</span>\n  <span class=\"n\">b'</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"bp\">ˣ</span>\n  <span class=\"n\">coe_b'</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"n\">b'</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"n\">E.b</span>\n\n<span class=\"kd\">instance</span> <span class=\"n\">Test.NonDegenerate.subsingleton</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">Subsingleton</span> <span class=\"n\">E.NonDegenerate</span> <span class=\"n\">where</span>\n  <span class=\"n\">allEq</span> <span class=\"n\">x</span> <span class=\"n\">y</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n    <span class=\"n\">obtain</span> <span class=\"o\">⟨</span><span class=\"n\">x</span><span class=\"o\">,</span> <span class=\"n\">hx</span><span class=\"o\">⟩</span> <span class=\"o\">:=</span> <span class=\"n\">x</span>\n    <span class=\"n\">obtain</span> <span class=\"o\">⟨</span><span class=\"n\">y</span><span class=\"o\">,</span> <span class=\"n\">hy</span><span class=\"o\">⟩</span> <span class=\"o\">:=</span> <span class=\"n\">y</span>\n    <span class=\"k\">have</span> <span class=\"o\">:</span> <span class=\"n\">x</span> <span class=\"bp\">=</span> <span class=\"n\">y</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span> <span class=\"n\">ext</span><span class=\"bp\">;</span> <span class=\"n\">rw</span> <span class=\"o\">[</span><span class=\"n\">hx</span><span class=\"o\">,</span> <span class=\"bp\">←</span> <span class=\"n\">hy</span><span class=\"o\">]</span>\n    <span class=\"n\">simp_rw</span> <span class=\"o\">[</span><span class=\"n\">this</span><span class=\"o\">]</span>\n\n<span class=\"kd\">def</span> <span class=\"n\">Test.b'</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"bp\">ˣ</span> <span class=\"o\">:=</span>\n  <span class=\"n\">Test.NonDegenerate.b'</span> <span class=\"n\">E</span>\n\n<span class=\"kd\">theorem</span> <span class=\"n\">Test.coe_b'</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"n\">E.b'</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"n\">E.b</span> <span class=\"o\">:=</span>\n  <span class=\"n\">Test.NonDegenerate.coe_b'</span>\n\n<span class=\"kd\">def</span> <span class=\"n\">Test.j</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">R</span> <span class=\"o\">:=</span>\n  <span class=\"n\">E.a</span> <span class=\"bp\">*</span> <span class=\"n\">E.b'</span><span class=\"bp\">⁻¹</span>\n\n<span class=\"kd\">example</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"n\">E'</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">E'.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">=</span> <span class=\"n\">E'</span><span class=\"o\">)</span> <span class=\"o\">:</span>\n    <span class=\"n\">E.j</span> <span class=\"bp\">=</span> <span class=\"n\">E'.j</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n  <span class=\"n\">subst</span> <span class=\"n\">h</span>\n  <span class=\"n\">congr</span><span class=\"bp\">!</span>\n</code></pre></div>",
+        "id": 435658087,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1714165038
+    },
+    {
+        "content": "<p>The <code>simp_rw [this]</code> could be replaced by <code>subst this; rfl</code>.</p>",
+        "id": 435658240,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1714165110
+    },
+    {
+        "content": "<p>The <code>Prop</code> version seems simpler, but at the expense that the <code>j</code> becomes noncomputable:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Mathlib.Tactic</span>\n\n<span class=\"kd\">variable</span> <span class=\"o\">(</span><span class=\"n\">R</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"bp\">*</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">CommRing</span> <span class=\"n\">R</span><span class=\"o\">]</span>\n\n<span class=\"kd\">structure</span> <span class=\"n\">Test</span> <span class=\"n\">where</span>\n  <span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">R</span>\n  <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">R</span>\n\n<span class=\"kd\">variable</span> <span class=\"o\">{</span><span class=\"n\">R</span><span class=\"o\">}</span>\n\n<span class=\"kd\">class</span> <span class=\"n\">Test.NonDegenerate</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"kt\">Prop</span> <span class=\"n\">where</span>\n  <span class=\"n\">isUnit</span> <span class=\"o\">:</span> <span class=\"n\">IsUnit</span> <span class=\"n\">E.b</span>\n\n<span class=\"kd\">noncomputable</span> <span class=\"kd\">def</span> <span class=\"n\">Test.b'</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"bp\">ˣ</span> <span class=\"o\">:=</span>\n  <span class=\"o\">(</span><span class=\"n\">Test.NonDegenerate.isUnit</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:=</span> <span class=\"n\">E</span><span class=\"o\">))</span><span class=\"bp\">.</span><span class=\"n\">unit</span>\n\n<span class=\"kd\">theorem</span> <span class=\"n\">Test.coe_b'</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"o\">(</span><span class=\"n\">E.b'</span> <span class=\"o\">:</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"bp\">=</span> <span class=\"n\">E.b</span> <span class=\"o\">:=</span> <span class=\"n\">rfl</span>\n\n<span class=\"kd\">noncomputable</span> <span class=\"kd\">def</span> <span class=\"n\">Test.j</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">:</span> <span class=\"n\">R</span> <span class=\"o\">:=</span>\n  <span class=\"n\">E.a</span> <span class=\"bp\">*</span> <span class=\"n\">E.b'</span><span class=\"bp\">⁻¹</span>\n\n<span class=\"kd\">example</span> <span class=\"o\">(</span><span class=\"n\">E</span> <span class=\"n\">E'</span> <span class=\"o\">:</span> <span class=\"n\">Test</span> <span class=\"n\">R</span><span class=\"o\">)</span> <span class=\"o\">[</span><span class=\"n\">E.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">[</span><span class=\"n\">E'.NonDegenerate</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">E</span> <span class=\"bp\">=</span> <span class=\"n\">E'</span><span class=\"o\">)</span> <span class=\"o\">:</span>\n    <span class=\"n\">E.j</span> <span class=\"bp\">=</span> <span class=\"n\">E'.j</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n  <span class=\"n\">simp_rw</span> <span class=\"o\">[</span><span class=\"n\">h</span><span class=\"o\">]</span>\n</code></pre></div>",
+        "id": 435659226,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1714165626
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"224323\">Junyan Xu</span> <a href=\"#narrow/stream/116395-maths/topic/thoughts.20on.20elliptic.20curves/near/384388729\">said</a>:</p>\n<blockquote>\n<p>Just noticed Bezout domains are a common generalization.</p>\n</blockquote>\n<p>Can also prove <code>W(K) -&gt; W(Frac(K))</code> is bijective  for <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/GCDMonoid/Basic.html#GCDMonoid\">GCDMonoid</a>s since all we need is division by the GCD of the coordinates? However the argument to prove reduction is a group homomorphism seems to still need the restriction to valuation rings...</p>",
+        "id": 436872797,
+        "sender_full_name": "David Ang",
+        "timestamp": 1714739015
+    },
+    {
+        "content": "<p>Maybe <a href=\"https://ncatlab.org/nlab/show/GCD+ring\">https://ncatlab.org/nlab/show/GCD+ring</a> ? (perhaps a stupid suggestion, I haven't actually thought about this for one moment)</p>",
+        "id": 436874442,
+        "sender_full_name": "David Michael Roberts",
+        "timestamp": 1714739676
+    },
+    {
+        "content": "<blockquote>\n<p>an integral gcd ring with [Krull] dimension ≤ 1 is a Bézout ring</p>\n</blockquote>\n<p>From <a href=\"http://hlombardi.free.fr/CACM.pdf\">http://hlombardi.free.fr/CACM.pdf</a></p>",
+        "id": 436874787,
+        "sender_full_name": "David Michael Roberts",
+        "timestamp": 1714739834
     }
 ]

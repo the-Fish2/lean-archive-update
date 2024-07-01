@@ -1,0 +1,98 @@
+[
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110038\">@Kevin Buzzard</span>  suggested elsewhere that it would be worthwhile to have a roadmap for sheaf cohomology, and I agree, so I’ll get it started here. Others should feel free to weigh in!</p>\n<p>As I see it, there are two main steps, each being fairly large:</p>\n<ol>\n<li>Show that categories of sheaves we are interested in have enough injectives in a suitable level of generality to cover not just sheaf cohomology in the usual sense, but also (pro)étale cohomology, flat cohomology, etc. This could be done, for example, with Grothendieck abelian categories using the proof in his Tohoku paper.</li>\n<li>Prove the equivalence with (hypercover) Cech cohomology as in <a href=\"https://stacks.math.columbia.edu/tag/01H0\">https://stacks.math.columbia.edu/tag/01H0</a><br>\nIn general there is a map from the <em>usual</em> Cech cohomology to hypercover-Cech-cohomology to sheaf cohomology. The proof should at some point construct these maps. Even better: there is the so-called “Cech-to-derived” spectral sequence (I think this is also done in Tohoku?).</li>\n</ol>",
+        "id": 448324953,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1719839080
+    },
+    {
+        "content": "<p>Is anyone thinking about spectral sequences? I remember <span class=\"user-mention\" data-user-id=\"118107\">@Amelia Livingston</span> was interested in that</p>",
+        "id": 448328523,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1719839995
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"130384\">Riccardo Brasca</span> <a href=\"#narrow/stream/335062-homology/topic/Roadmap.20for.20sheaf.20cohomology/near/448328523\">said</a>:</p>\n<blockquote>\n<p>Is anyone thinking about spectral sequences? I remember <span class=\"user-mention silent\" data-user-id=\"118107\">Amelia Livingston</span> was interested in that</p>\n</blockquote>\n<p>I have completely formalised the mechanism of spectral sequences! But these are thousands of lines of code. It is going to be very long to make this enter mathlib, and it is not my top priority. For many applications, we just do not really need spectral sequences...</p>",
+        "id": 448328922,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719840079
+    },
+    {
+        "content": "<p>Concerning this, another (better?) approach is to show that the colimit of the hypercover complexes computes <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>R</mi><mi mathvariant=\"normal\">Γ</mi></mrow><annotation encoding=\"application/x-tex\">R\\Gamma</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.00773em;\">R</span><span class=\"mord\">Γ</span></span></span></span> in the derived category. I didn’t mention it because I couldn’t find a good reference right now (but check out the comments on the stacks project link I mentioned above).</p>",
+        "id": 448329451,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1719840180
+    },
+    {
+        "content": "<p>However I do hope we will be able to do concrete calculations using spectral sequences at some point. (For example the 5-term exact sequence for cohomology groups in low degree has been quite useful in my research)</p>",
+        "id": 448330074,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1719840319
+    },
+    {
+        "content": "<p><a href=\"#narrow/stream/335062-homology/topic/Roadmap.20for.20sheaf.20cohomology/near/448330074\">A message</a> was moved here from <a class=\"stream-topic\" data-stream-id=\"335062\" href=\"/#narrow/stream/335062-homology/topic/Derived.20categories.20in.20mathlib\">#homology &gt; Derived categories in mathlib</a> by <span class=\"user-mention silent\" data-user-id=\"243562\">Adam Topaz</span>.</p>",
+        "id": 448330114,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1719840333
+    },
+    {
+        "content": "<p>As I have already expressed this view, the simplicial homotopy theory in mathlib is not mature enough yet to consider general hypercovers seriously. Hypercovers are like morphisms of presheaves of simplicial sets (or simplicial presheaves) which are locally trivial fibrations for a Grothendieck topology, but we barely understand what is a trivial fibration of simplicial sets (for example, can we show that it induces a quasi-isomorphism in singular cohomology?).</p>",
+        "id": 448339311,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719842126
+    },
+    {
+        "content": "<ol>\n<li>My suggestion is to first use <code>Ext</code> groups (see draft PRs <a href=\"https://github.com/leanprover-community/mathlib4/pull/13883\">#13883</a>, <a href=\"https://github.com/leanprover-community/mathlib4/pull/13879\">#13879</a>, <a href=\"https://github.com/leanprover-community/mathlib4/pull/13963\">#13963</a>, this shall soon be in mathlib). From this, we may get Mayer-Vietoris exact sequences, etc.</li>\n</ol>",
+        "id": 448339352,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719842131
+    },
+    {
+        "content": "<ol start=\"2\">\n<li>When we know that at least some categories of sheaves have enough injectives (this is Adam's 1.), we may introduce the derived functor approach <code>D^+(abelian sheaves) ⥤ D^+(CommGrp)</code>. The notion of abstract derived functor is already in mathlib <a href=\"https://github.com/leanprover-community/mathlib4/pull/12788\">#12788</a>. With the formalism of derivability structures from Bruno Kahn/Georges Maltsiniotis that I am implementing, the main remaining step is to show that bounded above complexes have resolutions by complexes of injective objects. I have introduced definitions in <a href=\"https://github.com/leanprover-community/mathlib4/pull/12624\">#12624</a>, and will have to PR the rest of it. (I have already shown that these <code>Functor.mapDerivedCategoryPlus</code> compose well, and obtained the associated Grothendieck spectral sequence.)</li>\n</ol>",
+        "id": 448339404,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719842137
+    },
+    {
+        "content": "<ol start=\"3\">\n<li>(Mostly independant of 2). Develop Cech cohomology on a given covering. Show that it maps to the actual cohomology (either from 1. or 2.). This is based on a simplicial object (the \"Cech nerve\"), which would fit in the general setting of hypercovers, but there is a special trick which allows to circumvent the strong technical issues with general hypercovers, which is the notion of extra-degeneracy that I introduced in mathlib. This can be used to show that the after \"abelianization\" the Cech nerve gives a resolution of the constant sheaf (this method was already used successfully by <span class=\"user-mention\" data-user-id=\"118107\">@Amelia Livingston</span> in the context of group cohomology). A student of Patrick <span class=\"user-mention\" data-user-id=\"432800\">@yannis monbru</span> in Orsay is currently making some progress on this part.</li>\n</ol>",
+        "id": 448339442,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719842143
+    },
+    {
+        "content": "<ol start=\"4\">\n<li>In the context of topological spaces, pass though the colimit over open coverings to get a map from the Cech cohomology to the actual cohomology. Then get the technical lemma by Henri Cartan (Théorème II.5.9.2 in Godement's book, in French) which says that the morphisms from the Cech cohomology to the actual cohomology is an isomorphism under certain circumstances. Then, deduce the vanishing of the cohomology of quasi-coherent sheaves on affine schemes. The proof in Godement's book uses a spectral sequence (probably the one Adam is referring to), but a careful analysis of filtrations on the single complex of a double complex may be enough.</li>\n</ol>",
+        "id": 448339478,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719842149
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 448339899,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719842206
+    },
+    {
+        "content": "<p>I agree that the hypercover approach would require that we further develop the homotopy theory of simplicial sets. But the nice thing about mathlib is that work can be distributed, and there are already a few people in the community interested in simplicial methods. My opinion is that the hypercover approach is the “right” abstraction, which is why I suggested it (of course, this is just an opinion). Further developing simplicial homotopy theory and the theory of hypercovers would be useful elsewhere as well (e.g. I’m interested in étale homotopy).</p>",
+        "id": 448343427,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1719842773
+    },
+    {
+        "content": "<p>Maybe <span class=\"user-mention\" data-user-id=\"488744\">@Jack McKoen</span> would be interested in working on the statement that a trivial fibration induces a quasi-iso?</p>",
+        "id": 448344446,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1719842983
+    },
+    {
+        "content": "<p>I agree that eventually we would like to have the hypercovering theorem for the computation of cohomology, but strong foundations in simplicial homotopy theory are a prerequisite (see for example the proofs of SGA 4 V 7.2.1/7.3.2 which use a fair share of simplicial homotopy/homology theory).</p>",
+        "id": 448347075,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1719843661
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"459699\">Joël Riou</span> <a href=\"#narrow/stream/335062-homology/topic/Roadmap.20for.20sheaf.20cohomology/near/448339311\">said</a>:</p>\n<blockquote>\n<p>As I have already expressed this view, the simplicial homotopy theory in mathlib is not mature enough yet to consider general hypercovers seriously. Hypercovers are like morphisms of presheaves of simplicial sets (or simplicial presheaves) which are locally trivial fibrations for a Grothendieck topology, but we barely understand what is a trivial fibration of simplicial sets (for example, can we show that it induces a quasi-isomorphism in singular cohomology?).</p>\n</blockquote>\n<p>This sounds good to me.  And this programme that Joel proposes is not one that needs to be followed in linear order, as he notes (and indeed he is moving forward on several of these fronts at once).</p>",
+        "id": 448348501,
+        "sender_full_name": "Ravi Vakil",
+        "timestamp": 1719844014
+    }
+]

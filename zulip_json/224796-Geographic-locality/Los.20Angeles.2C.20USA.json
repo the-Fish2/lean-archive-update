@@ -64,5 +64,17 @@
         "id": 232700076,
         "sender_full_name": "Brandon Bocanegra",
         "timestamp": 1617249171
+    },
+    {
+        "content": "<p>Hello from Irvine, not that far from LA. I'm starting on working through <em>Functional Programming in Lean</em>. I'm neither a mathematician nor a computer scientist, but learning a bit of type theory via Lean has been a pleasure so far.</p>",
+        "id": 430913554,
+        "sender_full_name": "Sean Wu",
+        "timestamp": 1712116129
+    },
+    {
+        "content": "<p>Hi from Irvine as well! I'm also learning Lean, it's been really fun</p>",
+        "id": 431159682,
+        "sender_full_name": "Tomas Ortega",
+        "timestamp": 1712172196
     }
 ]

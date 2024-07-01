@@ -28,5 +28,29 @@
         "id": 354725718,
         "sender_full_name": "Yaël Dillies",
         "timestamp": 1682875392
+    },
+    {
+        "content": "<p>A little update. Since LFTCM2024 and a bit before, <span class=\"user-mention\" data-user-id=\"300245\">@Filippo A. E. Nuccio</span>, <span class=\"user-mention\" data-user-id=\"519559\">@Dagur Asgeirsson</span>, <span class=\"user-mention\" data-user-id=\"573474\">@Tomáš Jakl</span> and I have been working on <a href=\"https://github.com/samvang/StoneDualityInLean/\">a formalization of Stone duality for Boolean algebras</a>. Just now, I pushed a <a href=\"https://github.com/samvang/StoneDualityInLean/blob/8c5cb0e2cc187ae0f95ee025e305696de4cea93b/StoneDuality/Boolean.lean#L828\">commit</a> to that repository that makes</p>\n<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"kn\">def</span><span class=\"w\"> </span><span class=\"n\">Equiv</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">Profinite</span><span class=\"w\"> </span><span class=\"bp\">≌</span><span class=\"w\"> </span><span class=\"n\">BoolAlg</span><span class=\"bp\">ᵒᵖ</span>\n</code></pre></div>\n<p>sorry-free. The file is way too long and I have not yet made an effort to clean it up and get it ready for Mathlib.<br>\nOne crucial bit for this theorem, namely the prime ideal theorem for distributive lattices, recently made it into Mathlib, see <a href=\"https://github.com/leanprover-community/mathlib4/pull/12705\">#12705</a> .<br>\nIt should now be possible to also formalize Stone's and Priestley's dualities for distributive lattices.</p>",
+        "id": 440177188,
+        "sender_full_name": "Sam van G",
+        "timestamp": 1716409758
+    },
+    {
+        "content": "<p>It should also be easy now to deduce the equivalence between <code>LightProfinite</code> and the opposite category of countable boolean algebras. Although this <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Topology/Category/LightProfinite/IsLight.html#Project\">project</a> will not need to use that equivalence (it's easier to use the characterisation of light profinite sets as second countable profinite sets which follows from <a href=\"https://github.com/leanprover-community/mathlib4/pull/12986\">#12986</a>)</p>",
+        "id": 440185219,
+        "sender_full_name": "Dagur Asgeirsson",
+        "timestamp": 1716412626
+    },
+    {
+        "content": "<p>And the prime ideal theorem was used already to prove Joyal's representation theorem, see <a href=\"https://github.com/awodey/joyal\">https://github.com/awodey/joyal</a> (<span class=\"user-mention\" data-user-id=\"411579\">@Sam van G</span> already knows about it). Joyal's theorem generalizes the Stone representation theorem.</p>",
+        "id": 440192518,
+        "sender_full_name": "Andrej Bauer",
+        "timestamp": 1716415609
+    },
+    {
+        "content": "<p>It seems like a good idea to group Stone Duality with Gelfand Duality because of the similarities.</p>",
+        "id": 440436494,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1716524598
     }
 ]

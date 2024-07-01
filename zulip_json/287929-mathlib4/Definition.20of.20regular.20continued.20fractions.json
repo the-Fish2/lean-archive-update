@@ -1,0 +1,14 @@
+[
+    {
+        "content": "<p>In mathlib, a regular continued fraction is defined as a simple continued fraction whose partial denominators are all positive, but no matter which literature I searched, a regular continued fraction is defined as a simple continued fraction whose head term is integer and whose partial denominators are all positive naturals. Indeed, if we redefine a regular continued fraction as this way, we can get correspondence between reals and regular continued fractions which does't finish with 1. I want to redefine regular continued fractions.</p>",
+        "id": 440645690,
+        "sender_full_name": "Pol'tta / Miyahara Kō",
+        "timestamp": 1716652125
+    },
+    {
+        "content": "<p>I'm constructing the homeomorphism between irrationals and Baire space using continued fractions.<br>\nPartial result can be seen in <a href=\"https://github.com/leanprover-community/mathlib4/pull/7512\"><code>Komyyy/PFunctor.M</code></a> branch.</p>",
+        "id": 440646137,
+        "sender_full_name": "Pol'tta / Miyahara Kō",
+        "timestamp": 1716652514
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "content": "<p>What are the consequences of <code>Nonempty α → Squash α</code> as an axiom, compared to choice (<code>Nonempty α → α</code>)? I can see it's equivalent to choice for subsingletons (<code>Nonempty α → Subsingleton α → α</code>). Is it a well known axiom?</p>",
+        "id": 448110294,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1719749808
+    },
+    {
+        "content": "<p><a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Squash#doc\">docs#Squash</a></p>",
+        "id": 448111545,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1719750921
+    },
+    {
+        "content": "<p>Ooh, this was <code>trunc</code> in lean 3 IIRC</p>",
+        "id": 448111592,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1719750963
+    },
+    {
+        "content": "<p>Huh, there's still <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Trunc#doc\">docs#Trunc</a></p>",
+        "id": 448111642,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1719750998
+    },
+    {
+        "content": "<p>This is an axiom knows as \"unique choice\". It is a much safer version of choice. Mathematically, it is nicer, since you cannot use it to define \"unknowable objects,\" e.g. a natural number for which it is impossible (even in principle) to know whether it is 0 or not. From a type-theoretic view, there are variants of type theory where (a version of) unique choice is provable (e.g. HoTT) or even computable (e.g. cubical type theory).</p>",
+        "id": 448112851,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1719752073
+    },
+    {
+        "content": "<p>Interesting. Thanks</p>",
+        "id": 448113082,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1719752259
+    },
+    {
+        "content": "<p>I've also heard the claim that this function is available in ZF set theory with no extra axioms (and this sounds reasonable, because this is kind of the definition of a function in ZF set theory)</p>",
+        "id": 448116900,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1719755404
+    },
+    {
+        "content": "<p>The duplication Squash vs Truc is probably a porting accident that should be fixed by deleting the Mathlib version (probably keeping lemmas that are not in Core).</p>",
+        "id": 448195703,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1719795718
+    },
+    {
+        "content": "<p>Would someone be able to delete <code>Trunc</code>?</p>",
+        "id": 448198726,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719797582
+    }
+]

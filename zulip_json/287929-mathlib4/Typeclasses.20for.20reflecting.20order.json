@@ -52,5 +52,11 @@
         "id": 406034095,
         "sender_full_name": "Martin Dvořák",
         "timestamp": 1701774864
+    },
+    {
+        "content": "<p>[probably offtopic]</p>\n<p>If I have a vector space over a <code>LinearOrderedField</code>, does <code>PosSMulMono</code> imply everything else listed here?</p>\n<p>Actually it seems to be documented here:<br>\n<a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Module/Defs.html#Implications\">https://leanprover-community.github.io/mathlib4_docs/Mathlib/Algebra/Order/Module/Defs.html#Implications</a></p>",
+        "id": 438963533,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1715846846
     }
 ]

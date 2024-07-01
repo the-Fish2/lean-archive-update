@@ -10,5 +10,41 @@
         "id": 285340689,
         "sender_full_name": "furea2",
         "timestamp": 1654658876
+    },
+    {
+        "content": "<p>Hello <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span> </p>\n<p>I am going to be at the National Institute of Informatics for the next months. Hmu if you are interested in Lean and are in the area.</p>",
+        "id": 425615850,
+        "sender_full_name": "Samuel Levi Schmidt",
+        "timestamp": 1709936077
+    },
+    {
+        "content": "<p>Hello <span aria-label=\"hello\" class=\"emoji emoji-1f44b\" role=\"img\" title=\"hello\">:hello:</span> <br>\nI joined this community in 2023/02/02. Sorry for the late greeting.</p>",
+        "id": 435225442,
+        "sender_full_name": "Pol'tta / Miyahara Kō",
+        "timestamp": 1713974563
+    },
+    {
+        "content": "<p>こんにちは <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span> <br>\n私は東京で働いています．Lean に関する日本語の情報を集積する活動をしていて，<br>\nこういうものを作っています．よろしくお願いします．</p>\n<p>Hello <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span> <br>\nI'm working in Tokyo. I'm working on making a collection of information on Lean in Japanese, and I've created this. </p>\n<p><a href=\"https://lean-ja.github.io/tactic-cheatsheet/\">https://lean-ja.github.io/tactic-cheatsheet/</a></p>",
+        "id": 436826803,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1714718898
+    },
+    {
+        "content": "<p>全般的には、 <a href=\"https://github.com/lean-ja\">https://github.com/lean-ja</a>  のは日本語のリーン ユーザーにとって役立つ情報がたくさんあります。もっと広く広めるべきと思います。</p>\n<p>More generally, <a href=\"https://github.com/lean-ja\">https://github.com/lean-ja</a> has a bunch of useful information for lean users in japanese, I think we should re-share it more widely.</p>",
+        "id": 436832136,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1714721416
+    },
+    {
+        "content": "<p>Maybe there should be a link on the website <a href=\"https://leanprover-community.github.io/\">https://leanprover-community.github.io/</a> to language-specific communities?</p>",
+        "id": 436832552,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1714721617
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"626349\">Asei Inoue</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/Tokyo.2C.20JP/near/436826803\">said</a>:</p>\n<blockquote>\n<p><a href=\"https://lean-ja.github.io/tactic-cheatsheet/\">https://lean-ja.github.io/tactic-cheatsheet/</a></p>\n</blockquote>\n<p>すごいですね！今度東京に行ったら、会えるかも知れないね <span aria-label=\"blush\" class=\"emoji emoji-1f60a\" role=\"img\" title=\"blush\">:blush:</span></p>",
+        "id": 436838351,
+        "sender_full_name": "Flo (Florent Schaffhauser)",
+        "timestamp": 1714724292
     }
 ]

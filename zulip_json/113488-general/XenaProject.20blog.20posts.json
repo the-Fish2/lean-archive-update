@@ -1090,5 +1090,11 @@
         "id": 293813742,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1660690512
+    },
+    {
+        "content": "<p><a href=\"https://xenaproject.wordpress.com/2024/01/20/lean-in-2024/\">Lean in 2024</a></p>\n<blockquote>\n<p>A huge amount happened in the Lean theorem prover community in 2023; this blog post looks back at some of these events, plus some of what we have to look forward to in 2024.</p>\n</blockquote>",
+        "id": 418087831,
+        "sender_full_name": "Marc Huisinga",
+        "timestamp": 1706191974
     }
 ]

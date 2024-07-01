@@ -1,0 +1,14 @@
+[
+    {
+        "content": "<p>Could someone please review <a href=\"https://github.com/leanprover-community/mathlib4/pull/13724\">#13724</a> ? It shows that a <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=LinearOrderedAddCommGroupWithTop#doc\">docs#LinearOrderedAddCommGroupWithTop</a> is a <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=SubtractionMonoid#doc\">docs#SubtractionMonoid</a></p>",
+        "id": 445047204,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1718594983
+    },
+    {
+        "content": "<p>Looking</p>",
+        "id": 445075662,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1718611486
+    }
+]

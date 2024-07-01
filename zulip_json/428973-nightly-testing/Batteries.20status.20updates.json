@@ -1,0 +1,440 @@
+[
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 437376523,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715055746
+    },
+    {
+        "content": "<p>Wow, I even remembered to rename the bot. :-)</p>",
+        "id": 437378645,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715057480
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 437544397,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715121893
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9042575427\">failed</a>.</p>",
+        "id": 438093667,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715418360
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/batteries/tree/lean-pr-testing-4061\">https://github.com/leanprover-community/batteries/tree/lean-pr-testing-4061</a> could help with that</p>",
+        "id": 438094530,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1715418823
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9054795546\">failed</a>.</p>",
+        "id": 438218178,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715554767
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 438218460,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715555047
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/batteries/pull/794\">batteries#794</a></p>",
+        "id": 438218660,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715555324
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 438224656,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715561766
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9055622482\">failed</a>.</p>",
+        "id": 438225061,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715562173
+    },
+    {
+        "content": "<p>The auto merge dropped one of Yury's lemmas from <a href=\"https://github.com/leanprover-community/batteries/pull/792\">batteries#792</a>. Restored.</p>",
+        "id": 438225316,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715562425
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 438225392,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1715562507
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9146492128\">failed</a>.</p>",
+        "id": 439423130,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1716109589
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 439474290,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1716160742
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9171964193\">failed</a>.</p>",
+        "id": 439766195,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1716282405
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9172829670\">failed</a>.</p>",
+        "id": 439778881,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1716286051
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 439786241,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1716288584
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9205269378\">failed</a>.</p>",
+        "id": 440279397,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1716455208
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 440282603,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1716456372
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9299939253\">failed</a>.</p>",
+        "id": 441414243,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717060021
+    },
+    {
+        "content": "<p>Easy fixes from <a href=\"https://github.com/leanprover/lean4/pull/4304\">lean4#4304</a>.</p>",
+        "id": 441424406,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1717063556
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 441424491,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717063583
+    },
+    {
+        "content": "<p>The adaptation PR for batteries is at <a href=\"https://github.com/leanprover-community/batteries/pull/816\">batteries#816</a>.</p>",
+        "id": 441427692,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1717064851
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 441655960,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717146457
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9381317586\">failed</a>.</p>",
+        "id": 442732492,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717578477
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 442734880,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717579197
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9391232252\">failed</a>.</p>",
+        "id": 442894555,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717621653
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9391242273\">failed</a>.</p>",
+        "id": 442894759,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717621707
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9391255212\">failed</a>.</p>",
+        "id": 442894894,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717621756
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9391270490\">failed</a>.</p>",
+        "id": 442895202,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717621850
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 442895814,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717622041
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9398137263\">failed</a>.</p>",
+        "id": 443009256,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717664845
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 443033458,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717673218
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9409824477\">failed</a>.</p>",
+        "id": 443186584,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717721105
+    },
+    {
+        "content": "<p>Bad merge? Fixed now.</p>",
+        "id": 443187345,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1717721752
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 443187441,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717721805
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9462733661\">failed</a>.</p>",
+        "id": 443952417,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718096838
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 443962684,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718100210
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9513555301\">failed</a>.</p>",
+        "id": 444654401,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718355992
+    },
+    {
+        "content": "<p>Just <code>Lean.Name.isInternalDetail</code> upstreamed.</p>",
+        "id": 444835625,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718433730
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 444835665,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718433813
+    },
+    {
+        "content": "<p>Adaptation PR at <a href=\"https://github.com/leanprover-community/batteries/pull/845\">batteries#845</a></p>",
+        "id": 444835780,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718433937
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 444844623,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718442399
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9534818979\">failed</a>.</p>",
+        "id": 444958042,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718528854
+    },
+    {
+        "content": "<p>Will require merging lean-pr-testing-4400</p>",
+        "id": 445030256,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718579030
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 445030428,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718579208
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/batteries/pull/848\">batteries#848</a> chore: adaptations for nightly-2024-06-16</p>",
+        "id": 445030544,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718579341
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 445075307,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718611372
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9562186873\">failed</a>.</p>",
+        "id": 445307910,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718701574
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9562286145\">failed</a>.</p>",
+        "id": 445309148,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718701962
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 445309716,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718702153
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9579250146\">failed</a>.</p>",
+        "id": 445542896,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718788025
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 445736203,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718847639
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9606627294\">failed</a>.</p>",
+        "id": 445980427,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718932038
+    },
+    {
+        "content": "<p>The definition of subtraction in <code>Fin</code> has been changed.</p>",
+        "id": 445981130,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718932576
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 445981145,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718932597
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/batteries/pull/855\">batteries#855</a> adaptations for nightly-2024-06-19</p>",
+        "id": 445981429,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718932811
+    },
+    {
+        "content": "<p>The <code>UInt</code> specific changes are at <a href=\"https://github.com/leanprover-community/batteries/pull/855/files#diff-6d0247df0ffdddc765c869eb55db0d157a1bffa9e57b2822547ec424d9ee6249\">https://github.com/leanprover-community/batteries/pull/855/files#diff-6d0247df0ffdddc765c869eb55db0d157a1bffa9e57b2822547ec424d9ee6249</a>. <span class=\"user-mention\" data-user-id=\"119741\">@François G. Dorais</span>.</p>",
+        "id": 445981456,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718932842
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9611122608\">failed</a>.</p>",
+        "id": 446040136,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718960766
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9612251062\">failed</a>.</p>",
+        "id": 446054752,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718966062
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9612941459\">failed</a>.</p>",
+        "id": 446063919,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718969615
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9624354692\">failed</a>.</p>",
+        "id": 446248500,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719047214
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9624904396\">failed</a>.</p>",
+        "id": 446260066,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719053234
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 446260967,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719053612
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/batteries/pull/856\">batteries#856</a> adaptations for nightly-2024-06-22</p>",
+        "id": 446263178,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719055152
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 446394285,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719133684
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9642639276\">failed</a>.</p>",
+        "id": 446556889,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719220110
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 446563637,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719221665
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9736476119\">failed</a>.</p>",
+        "id": 448197008,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719796121
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 448197297,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719796371
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9741388618\">failed</a>.</p>",
+        "id": 448269922,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719824866
+    },
+    {
+        "content": "<p><span aria-label=\"cross mark\" class=\"emoji emoji-274c\" role=\"img\" title=\"cross mark\">:cross_mark:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9743127102\">failed</a>.</p>",
+        "id": 448298682,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719832245
+    },
+    {
+        "content": "<p><span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> The latest CI for Batteries' <a href=\"https://github.com/leanprover-community/batteries/tree/nightly-testing\"><code>nightly-testing</code></a> branch has succeeded!</p>",
+        "id": 448299366,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719832490
+    }
+]

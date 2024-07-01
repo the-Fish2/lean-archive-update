@@ -370,5 +370,95 @@
         "id": 402091623,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1700005609
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"497088\">Tariq Erwa</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/Edinburgh.2C.20UK/near/401906658\">said</a>:</p>\n<blockquote>\n<p>Hi everyone, I recently relocated to Glasgow, I am trying to rebuild my social network and meet people with my same interests, when is the next lunch?</p>\n</blockquote>\n<p>Ayo! I'm in Glasgow too!</p>",
+        "id": 411397954,
+        "sender_full_name": "Monica Omar",
+        "timestamp": 1704472660
+    },
+    {
+        "content": "<p>So, we're running a Lean course for PhDs in Glasgow/Edinburgh this year again, and I was thinking of holding sporadic seminars in formalising mathematics (ssfm), to encourage the students to formalise and all.</p>\n<p>Then I thought of maybe making the sporadic seminars in formalising mathematics (ssfm) a separate thing to the course. But, also, mostly encourage the students from the course to give talks.</p>\n<p><span class=\"user-mention\" data-user-id=\"574412\">@Patrick Kinnear</span> then pointed out to me some \"Lean lunch\" y'all got up in Edinburgh, and thought you guys might be a good target audience for the ssfm.</p>\n<p>Let me know what you all think of this.</p>",
+        "id": 417304694,
+        "sender_full_name": "Monica Omar",
+        "timestamp": 1705953324
+    },
+    {
+        "content": "<p>I'm in Edinburgh this week; anything Lean related going on?</p>",
+        "id": 440708879,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716725100
+    },
+    {
+        "content": "<p><del>Actually yes! <a href=\"https://www.icms.org.uk/Formalisation\">https://www.icms.org.uk/Formalisation</a> </del> Oh I was surprised you didn't know about it. Turns out you're talking there <span aria-label=\"grinning\" class=\"emoji emoji-1f600\" role=\"img\" title=\"grinning\">:grinning:</span></p>",
+        "id": 440709397,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1716725647
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/Edinburgh.2C.20UK/near/440708879\">said</a>:</p>\n<blockquote>\n<p>I'm in Edinburgh this week; anything Lean related going on?</p>\n</blockquote>\n<p>Well, there's a lot of rain here, and I hear from Joachim that makes Lean things happen!</p>",
+        "id": 440718282,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1716734959
+    },
+    {
+        "content": "<p>(I'm here for the weekend but gone tomorrow morning)</p>",
+        "id": 440718302,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1716734982
+    },
+    {
+        "content": "<p>Oh! Interested in dinner or a drink this evening? There are a number of Lean people presumably arriving this evening.</p>",
+        "id": 440718882,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716735494
+    },
+    {
+        "content": "<p>I'm entangled with a group of marathon-runners for a very late lunch so am not sure about dinner, but could certainly join for a drink</p>",
+        "id": 440719648,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1716736200
+    },
+    {
+        "content": "<p>(I did not run)</p>",
+        "id": 440719649,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1716736200
+    },
+    {
+        "content": "<p>Is there a <del>stream</del> channel for <a href=\"https://www.icms.org.uk/Formalisation\">https://www.icms.org.uk/Formalisation</a> attendees?</p>",
+        "id": 440727332,
+        "sender_full_name": "Rebecca Bellovin",
+        "timestamp": 1716743918
+    },
+    {
+        "content": "<p>If there isn't, there definitely should be!</p>",
+        "id": 440727458,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1716744074
+    },
+    {
+        "content": "<p>It's just been created, I think, and <span class=\"user-mention\" data-user-id=\"406490\">@María Inés de Frutos Fernández</span> will add people!</p>",
+        "id": 440733333,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716750629
+    },
+    {
+        "content": "<p>I am adding participants now, but we will also advertise it tomorrow on the workshop for those without a Zulip account.</p>",
+        "id": 440733437,
+        "sender_full_name": "María Inés de Frutos Fernández",
+        "timestamp": 1716750759
+    },
+    {
+        "content": "<p>I am based in Edinburgh and would love to meet up! I am a PhD student in programming languages research here, working on improving the reference counting scheme underlying Lean</p>",
+        "id": 440827887,
+        "sender_full_name": "Anton Lorenzen",
+        "timestamp": 1716806855
+    },
+    {
+        "content": "<p>(I've sent a DM, suggesting joining some dinner plans this week!)</p>",
+        "id": 440991207,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716885602
     }
 ]

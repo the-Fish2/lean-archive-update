@@ -1,0 +1,80 @@
+[
+    {
+        "content": "<p>If I run:</p>\n<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"n\">Lean</span><span class=\"bp\">.</span><span class=\"n\">Util</span><span class=\"bp\">.</span><span class=\"n\">Paths</span>\n\n<span class=\"kn\">open</span><span class=\"w\"> </span><span class=\"n\">Lean</span>\n\n<span class=\"kn\">def</span><span class=\"w\"> </span><span class=\"n\">main</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">IO</span><span class=\"w\"> </span><span class=\"n\">Unit</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"k\">do</span>\n<span class=\"w\">  </span><span class=\"bp\">_</span><span class=\"w\"> </span><span class=\"bp\">←</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"bp\">←</span><span class=\"w\"> </span><span class=\"n\">initSrcSearchPath</span><span class=\"o\">)</span><span class=\"bp\">.</span><span class=\"n\">findM?</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span><span class=\"w\"> </span><span class=\"k\">do</span><span class=\"w\"> </span><span class=\"n\">IO</span><span class=\"bp\">.</span><span class=\"n\">println</span><span class=\"w\"> </span><span class=\"n\">p</span><span class=\"bp\">;</span><span class=\"w\"> </span><span class=\"n\">pure</span><span class=\"w\"> </span><span class=\"n\">false</span>\n\n<span class=\"bp\">#</span><span class=\"n\">eval</span><span class=\"w\"> </span><span class=\"n\">main</span>\n</code></pre></div>\n<p>in a project, it prints something like:</p>\n<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">batteries</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">Qq</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">aesop</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">aesop</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">proofwidgets</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">proofwidgets</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">Cli</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">importGraph</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">mathlib</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">mathlib</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">mathlib</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">mathlib</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">mathlib</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">././.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span><span class=\"bp\">/</span><span class=\"n\">mathlib</span><span class=\"bp\">/./.</span>\n<span class=\"bp\">./././.</span>\n<span class=\"bp\">/</span><span class=\"n\">Users</span><span class=\"bp\">/</span><span class=\"n\">scott</span><span class=\"bp\">/.</span><span class=\"n\">elan</span><span class=\"bp\">/</span><span class=\"n\">toolchains</span><span class=\"bp\">/</span><span class=\"n\">leanprover</span><span class=\"c1\">--lean4---v4.8.0-rc2/src/lean/lake</span>\n<span class=\"bp\">/</span><span class=\"n\">Users</span><span class=\"bp\">/</span><span class=\"n\">scott</span><span class=\"bp\">/.</span><span class=\"n\">elan</span><span class=\"bp\">/</span><span class=\"n\">toolchains</span><span class=\"bp\">/</span><span class=\"n\">leanprover</span><span class=\"c1\">--lean4---v4.8.0-rc2/bin/../src/lean/lake</span>\n<span class=\"bp\">/</span><span class=\"n\">Users</span><span class=\"bp\">/</span><span class=\"n\">scott</span><span class=\"bp\">/.</span><span class=\"n\">elan</span><span class=\"bp\">/</span><span class=\"n\">toolchains</span><span class=\"bp\">/</span><span class=\"n\">leanprover</span><span class=\"c1\">--lean4---v4.8.0-rc2/bin/../src/lean</span>\n</code></pre></div>\n<p>However when I <code>lake build</code>, it just prints</p>\n<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"bp\">/</span><span class=\"n\">Users</span><span class=\"bp\">/</span><span class=\"n\">scott</span><span class=\"bp\">/.</span><span class=\"n\">elan</span><span class=\"bp\">/</span><span class=\"n\">toolchains</span><span class=\"bp\">/</span><span class=\"n\">leanprover</span><span class=\"c1\">--lean4---v4.8.0-rc2/bin/../src/lean/lake</span>\n<span class=\"bp\">/</span><span class=\"n\">Users</span><span class=\"bp\">/</span><span class=\"n\">scott</span><span class=\"bp\">/.</span><span class=\"n\">elan</span><span class=\"bp\">/</span><span class=\"n\">toolchains</span><span class=\"bp\">/</span><span class=\"n\">leanprover</span><span class=\"c1\">--lean4---v4.8.0-rc2/bin/../src/lean</span>\n</code></pre></div>\n<p>This is causing <code>polyrith</code> (which relies on this mechanism) to fail under <code>lake build</code> in any projects downstream of Mathlib.</p>",
+        "id": 440833383,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716809025
+    },
+    {
+        "content": "<p>What is the correct way to locate the <code>Mathlib/scripts/</code> folder in the Mathlib sources, in a downstream project, in a way that works in both VSCode and under <code>lake build</code>?</p>",
+        "id": 440833493,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716809063
+    },
+    {
+        "content": "<p>(Pinging <span class=\"user-mention\" data-user-id=\"260507\">@Heather Macbeth</span>, who needs a fix for this for her polyrith tutorial.)</p>",
+        "id": 440833661,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716809136
+    },
+    {
+        "content": "<p>The underlying difference here is that the <code>LEAN_SRC_PATH</code> environment variable is set when we run in VS Code, but not set during <code>lake build</code>.</p>",
+        "id": 440834641,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716809459
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"315577\">@Mac Malone</span>?</p>",
+        "id": 440834672,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716809467
+    },
+    {
+        "content": "<p>Does using <code>lake env lake build</code> work?</p>",
+        "id": 440859251,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1716817690
+    },
+    {
+        "content": "<p>When Lean is run from <code>lake build</code>, Lake only sets the the minimum environment needed for Lean to build properly., while the server getts the full Lake environment. However, doing otherwise would be a relatively trivial fix.</p>",
+        "id": 440903346,
+        "sender_full_name": "Mac Malone",
+        "timestamp": 1716835316
+    },
+    {
+        "content": "<p>Eric's <code>lake env lake build</code> is also a stop-gap fix.</p>",
+        "id": 440903417,
+        "sender_full_name": "Mac Malone",
+        "timestamp": 1716835344
+    },
+    {
+        "content": "<p>I couldn't get <code>lake env lake build</code> to work.</p>",
+        "id": 440996322,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716887272
+    },
+    {
+        "content": "<p>Ah!! It did work, but only after <code>lake clean</code>, because it replayed the result from without <code>lake env</code>.</p>",
+        "id": 440996538,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716887353
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"315577\">@Mac Malone</span> can we have a proper fix for this? Currently <code>lake build</code> won't work on any project downstream of mathlib that uses <code>polyrith</code>.</p>\n<p>I've created <a href=\"https://github.com/leanprover/lean4/pull/4296\">lean#4296</a> to track this.</p>",
+        "id": 440997137,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716887599
+    },
+    {
+        "content": "<p>I've also created <a href=\"https://github.com/leanprover/lean4/pull/4297\">lean#4297</a> to discuss whether Lean-specific enviroment variables should be included in deciding whether to rebuild. I suspect the answer is no here, but I'm not sure.</p>",
+        "id": 440998085,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716887959
+    },
+    {
+        "content": "<p>In theory it's possible for code to depend on non-lean specific environment variables too, at build time</p>",
+        "id": 441002631,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1716889505
+    }
+]

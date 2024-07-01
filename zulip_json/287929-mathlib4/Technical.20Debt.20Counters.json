@@ -1,0 +1,608 @@
+[
+    {
+        "content": "<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">Number</th>\n<th style=\"text-align: left;\">Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">7371</td>\n<td style=\"text-align: left;\">porting notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">51</td>\n<td style=\"text-align: left;\">backwards compatibility flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">77</td>\n<td style=\"text-align: left;\">adaptation notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">359</td>\n<td style=\"text-align: left;\">disabled simpNF lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">201</td>\n<td style=\"text-align: left;\">disabled deprecation lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">1930</td>\n<td style=\"text-align: left;\">erw</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">961</td>\n<td style=\"text-align: left;\">documentation nolint entries</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">30</td>\n<td style=\"text-align: left;\">missing module docstrings</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">93</td>\n<td style=\"text-align: left;\">large files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">151</td>\n<td style=\"text-align: left;\">non-test files with autoImplicit true</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">41</td>\n<td style=\"text-align: left;\"><code>Init</code> files</td>\n</tr>\n</tbody>\n</table>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>5323 total LoC in 'Init' files</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">LoC</th>\n<th>File</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">489</td>\n<td>Mathlib/Init/Algebra/Classes.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">249</td>\n<td>Mathlib/Init/Align.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td>Mathlib/Init/Classes/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">37</td>\n<td>Mathlib/Init/Classical.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">85</td>\n<td>Mathlib/Init/Control/Combinators.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">264</td>\n<td>Mathlib/Init/Control/Lawful.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">172</td>\n<td>Mathlib/Init/Core.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">20</td>\n<td>Mathlib/Init/Data/Bool/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">155</td>\n<td>Mathlib/Init/Data/Bool/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td>Mathlib/Init/Data/Buffer/Parser.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">24</td>\n<td>Mathlib/Init/Data/Fin/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">123</td>\n<td>Mathlib/Init/Data/Int/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">16</td>\n<td>Mathlib/Init/Data/Int/DivMod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">20</td>\n<td>Mathlib/Init/Data/Int/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">100</td>\n<td>Mathlib/Init/Data/Int/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">67</td>\n<td>Mathlib/Init/Data/List/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td>Mathlib/Init/Data/List/Instances.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">183</td>\n<td>Mathlib/Init/Data/List/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">44</td>\n<td>Mathlib/Init/Data/Nat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td>Mathlib/Init/Data/Nat/Div.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">132</td>\n<td>Mathlib/Init/Data/Nat/GCD.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">721</td>\n<td>Mathlib/Init/Data/Nat/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td>Mathlib/Init/Data/Nat/Notation.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">24</td>\n<td>Mathlib/Init/Data/Option/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">16</td>\n<td>Mathlib/Init/Data/Option/Init/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">67</td>\n<td>Mathlib/Init/Data/Option/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">45</td>\n<td>Mathlib/Init/Data/Ordering/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">61</td>\n<td>Mathlib/Init/Data/Ordering/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td>Mathlib/Init/Data/Prod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td>Mathlib/Init/Data/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">17</td>\n<td>Mathlib/Init/Data/Rat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">22</td>\n<td>Mathlib/Init/Data/Sigma/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">74</td>\n<td>Mathlib/Init/Data/Sigma/Lex.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">252</td>\n<td>Mathlib/Init/Function.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">670</td>\n<td>Mathlib/Init/Logic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td>Mathlib/Init/Meta/WellFoundedTactics.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">469</td>\n<td>Mathlib/Init/Order/Defs.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">173</td>\n<td>Mathlib/Init/Order/LinearOrder.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">43</td>\n<td>Mathlib/Init/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">222</td>\n<td>Mathlib/Init/Set.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">47</td>\n<td>Mathlib/Init/ZeroOne.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5323</td>\n<td>total</td>\n</tr>\n</tbody>\n</table>\n</div></div>",
+        "id": 443678155,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1717992508
+    },
+    {
+        "content": "<p>For the statistic nerds (like me), let me note that the count of adaptation notes is too low --- as the <code>master</code> branch contains about 60 occurrences of the string \"Adaptation note\" (which should be the command #adaptation_note instead; only the latter is counted by this bot). A fix will merge soon.</p>",
+        "id": 443691319,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718000621
+    },
+    {
+        "content": "<p>How is <code>nolint simpNF</code> \"technical debt\"? This is just that simpNF doesn't know about dsimp lemmas</p>",
+        "id": 443697670,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1718003443
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"387244\">Yaël Dillies</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/443697670\">said</a>:</p>\n<blockquote>\n<p>How is <code>nolint simpNF</code> \"technical debt\"? This is just that simpNF doesn't know about dsimp lemmas</p>\n</blockquote>\n<p><code>simpNF</code> does know about dsimp lemmas, cf. <a href=\"#narrow/stream/287929-mathlib4/topic/attribute.20simp_NF_my_lemma.3F\">https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/attribute.20simp_NF_my_lemma.3F</a></p>",
+        "id": 443699892,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1718004322
+    },
+    {
+        "content": "<p>Perhaps <span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span> intends to say that the <code>simpNF</code> linter should not pay any attention to dsimp lemmas. I would want to hear a persuasive argument there.</p>",
+        "id": 443751039,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718019735
+    },
+    {
+        "content": "<p>I am saying that simping the LHS of dsimp lemmas is not fair game. One should be dsimping the LHS instead.</p>",
+        "id": 443804303,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1718034913
+    },
+    {
+        "content": "<p>The point of the linter (as I understand it) is to spot simp lemmas <code>foo</code> that never get to apply in <code>simp</code> because another simp lemma <code>bar</code> always applies (as in <code>simp [-foo]</code> simplifies the LHS of <code>foo</code> using <code>bar</code>). But if <code>foo</code> is a dsimp lemma and <code>bar</code> is not, then <code>foo</code> does get to apply in dsimp (as in <code>dsimp [-foo]</code> does not simplify the LHS of <code>foo</code> using <code>bar</code>)</p>",
+        "id": 443805010,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1718035105
+    },
+    {
+        "content": "<p>In practice, there is an order of magnitude less dsimp lemmas than there are simp lemmas, so one could simply disable <code>simpNF</code> on dsimp lemmas and everything would probably be fine. But the more principled approach would be to disable <code>simpNF</code> on dsimp lemmas AND run a new <code>dsimpNF</code> linter on them that tries to simplify the LHS of each dsimp lemma using <code>dsimp</code> (or make <code>simpNF</code> do that step too, doesn't really matter if it's one or two linters)</p>",
+        "id": 443805989,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1718035324
+    },
+    {
+        "content": "<p>Agreed, but these nolints are still an artifact of the issue that you point out. So it is still some form of technical debt.</p>",
+        "id": 443909280,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718078184
+    },
+    {
+        "content": "<p>So I think this is basically a bug in the simpNF linter. The linter checks if the LHS of a simp-lemma is in simp normal form, by trying to reduce it with all available simp-lemmas in the standard simp set. But if a lemma is proven by <code>rfl</code> (et. al) then it is actually a dsimp-lemma. And so the linter should really be checking if the LHS is in dsimp normal form.<br>\nLean determines whether a lemma is a dsimp-lemma using <code>Lean.Meta.isRflTheorem (declName : Name) : CoreM Bool</code> and so the simpNF linter should do the same thing.<br>\nThe simpNF linter is in <code>Batteries/Tactic/Lint/Simp.lean</code>.</p>\n<p>Does anyone feel like taking this on?</p>",
+        "id": 443932324,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718090485
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/443909280\">said</a>:</p>\n<blockquote>\n<p>Agreed, but these nolints are still an artifact of the issue that you point out. So it is still some form of technical debt.</p>\n</blockquote>\n<p>Yes but the counter here makes it feel like the solution is to unsimp those lemmas. The debt is in the linter, not the lemmas</p>",
+        "id": 443946030,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1718094791
+    },
+    {
+        "content": "<p>Fixed in</p>\n<blockquote>\n<p>chore(Tactic/Lint/Simp): make simpNF linter dsimp-aware <a href=\"https://github.com/leanprover-community/batteries/pull/839\">batteries#839</a></p>\n</blockquote>",
+        "id": 444155235,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718172593
+    },
+    {
+        "content": "<p>Note that without <a href=\"https://github.com/leanprover/lean4/pull/2679\">lean4#2679</a> (which restores some lean 3 community behavior), there are lemmas that should morally be <code>dsimp</code> (like <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Set.mem_setOf#doc\">docs#Set.mem_setOf</a>) but currently are not considered so; and as such, we may still want <code>@[nolint simpNF] -- will be dsimp after lean4#2679</code>.</p>",
+        "id": 444200545,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1718188509
+    },
+    {
+        "content": "<p>Sure, I'm not claiming that this linter-fix will allow us to remove all <code>nolint simpNF</code>s. But I hope we'll be able to remove a lot of them <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 444215250,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718193363
+    },
+    {
+        "content": "<p>Could these Technical Debts contain links to a guide to fix them? Assuming these are simple to medium level tasks.</p>",
+        "id": 444217233,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1718193949
+    },
+    {
+        "content": "<p>I think that varies a lot...</p>",
+        "id": 444237091,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718198903
+    },
+    {
+        "content": "<p>We're missing a counter for deprecated declarations without a date, since those seem to keep popping up</p>",
+        "id": 444271749,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1718207830
+    },
+    {
+        "content": "<p>How does this look for catching a bunch of <code>deprecated</code> but not <code>since</code>?</p>\n<div class=\"codehilite\" data-code-language=\"Bash\"><pre><span></span><code>git<span class=\"w\"> </span>grep<span class=\"w\"> </span><span class=\"s2\">\"@\\[.*deprecated\"</span><span class=\"w\"> </span><span class=\"p\">|</span><span class=\"w\"> </span>grep<span class=\"w\"> </span>-v<span class=\"w\"> </span><span class=\"s1\">'deprecated .*(since := \"'</span>\n</code></pre></div>",
+        "id": 444281417,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718210152
+    },
+    {
+        "content": "<p>(It reports that there are 225 such matches, though some are comments, others are actually legitimate uses.)</p>",
+        "id": 444281668,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718210214
+    },
+    {
+        "content": "<p>(note that <code>deprecated</code> can happen after more attributes in <code>@[...]</code> and it need not be contiguous to <code>since</code> -- nor in fact on the same line!)</p>",
+        "id": 444282114,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718210330
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/13778\">#13778</a></p>",
+        "id": 444285652,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718211349
+    },
+    {
+        "content": "<p>Maybe the PR summary could also add a line in case the count is increased by a PR.</p>",
+        "id": 444285784,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718211386
+    },
+    {
+        "content": "<p>Can't we just have a Lean linter that rejects <code>deprecated</code> without <code>since</code> in mathlib?</p>",
+        "id": 444320221,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718222240
+    },
+    {
+        "content": "<p>That seems easier than keeping track of them afterwards. That would be \"mopping while the tap is open\" (pardon my Dutch)</p>",
+        "id": 444320389,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718222292
+    },
+    {
+        "content": "<p>Sure, that would be probably very easy to write.  I will look into it!</p>",
+        "id": 444323009,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718223134
+    },
+    {
+        "content": "<p>However, the linter would not know which <code>deprecate</code> are new and which ones are old, unless it does quite a bit of git-digging.</p>",
+        "id": 444323276,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718223237
+    },
+    {
+        "content": "<p>So, together with the linter, there is also the need to remove the currently present \"since-less\" <code>deprecate</code>.</p>",
+        "id": 444323419,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718223274
+    },
+    {
+        "content": "<p>Would it be acceptable to put a blanket \"today's date\", where \"today\" refers to when they get updated?</p>",
+        "id": 444323553,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718223323
+    },
+    {
+        "content": "<p>There is also the solution of making <code>since</code> a mandatory part of the syntax.</p>",
+        "id": 444325279,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718223874
+    },
+    {
+        "content": "<p>Isn't <a href=\"https://github.com/leanprover-community/mathlib4/pull/13678\">#13678</a> such a linter/how does this differ from what you had in mind?</p>",
+        "id": 444327570,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718224568
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/13723\">#13723</a> is the latest PR adding more dates/formatting existing ones.</p>",
+        "id": 444327639,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718224589
+    },
+    {
+        "content": "<p>Oh, I simply had not seen that PR!  I had in mind a syntax linter, though, rather than an environment linter, so you would get a live warning.</p>",
+        "id": 444329180,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718225137
+    },
+    {
+        "content": "<p>The alternative, would be to elaborate the syntax for <code>deprecated</code> <em>without</em> the <code>since</code> to a <code>logWarning</code> (plus the actual deprecation).</p>",
+        "id": 444329401,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718225204
+    },
+    {
+        "content": "<p>But anyway this was before you mentioned Yury's linter.</p>",
+        "id": 444329530,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718225248
+    },
+    {
+        "content": "<p>7 messages were moved from this topic to <a class=\"stream-topic\" data-stream-id=\"287929\" href=\"/#narrow/stream/287929-mathlib4/topic/dsimpNF\">#mathlib4 &gt; dsimpNF</a> by <span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span>.</p>",
+        "id": 444396149,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1718261761
+    },
+    {
+        "content": "<p>Should this script also count occurrences of <code>set_option tactic.skipAssignedInstances</code> or <code>set_option simprocs false</code>, similarly to how it counts occurrences of any <code>backward.</code> option?</p>",
+        "id": 444404880,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718265095
+    },
+    {
+        "content": "<p>Btw, the syntax linter for \"deprecated-no-since\" reports 157 missing \"no-since\" in mathlib</p>",
+        "id": 444405673,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718265407
+    },
+    {
+        "content": "<p>In case someone wants to take a look, the command below takes you to the relevant position for each failure.</p>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>NoSinces</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<div class=\"codehilite\" data-code-language=\"Bash\"><pre><span></span><code>code<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Nat/Cast/Basic.lean:334:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Nat/Cast/Basic.lean:335:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Ring/Int.lean:143:19\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Cast/Lemmas.lean:462:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Cast/Lemmas.lean:463:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Module/Defs.lean:108:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:441:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:442:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:443:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:444:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:445:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:446:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:447:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:448:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:449:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:450:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:451:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:452:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:453:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:454:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:455:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:456:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:457:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:458:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:459:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Ring/Basic.lean:460:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Field/Basic.lean:297:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Field/Basic.lean:298:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Field/Basic.lean:299:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Field/Basic.lean:300:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:147:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:148:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:149:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:150:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:151:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:152:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:153:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Int/Lemmas.lean:154:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Defs.lean:256:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Ring/Rat.lean:104:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:235:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:298:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:299:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:300:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:301:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:302:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:303:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:304:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:305:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:306:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:307:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:308:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Lemmas.lean:309:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Cast/Defs.lean:125:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Rat/Cast/Defs.lean:126:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Floor.lean:1745:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Floor.lean:1746:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Floor.lean:1747:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Order/Floor.lean:1748:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/PNat/Basic.lean:238:19\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/PNat/Basic.lean:243:19\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/PNat/Basic.lean:248:19\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/PNat/Basic.lean:253:19\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Fin/Basic.lean:502:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Fin/Basic.lean:508:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Fin/Basic.lean:529:19\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Fin/Basic.lean:535:19\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Fin/Basic.lean:926:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/List/InsertNth.lean:171:38\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Finset/Basic.lean:1791:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Finset/Basic.lean:1792:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Finset/Basic.lean:1793:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Finset/Basic.lean:1794:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/List/Rotate.lean:292:31\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/BigOperators/Group/List.lean:862:39\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Ring/Subsemiring/Basic.lean:45:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Ring/Subring/Basic.lean:92:32\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Algebra/Subalgebra/Basic.lean:206:25\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Algebra/Algebra/Subalgebra/Basic.lean:207:25\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Order/Filter/Basic.lean:2392:21\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Order/Filter/Basic.lean:2395:21\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/Noetherian.lean:413:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/PrincipalIdealDomain.lean:329:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/PrincipalIdealDomain.lean:331:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Iso.lean:378:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Iso.lean:379:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:390:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:391:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:392:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:393:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:394:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:395:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:396:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:397:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:398:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:399:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:400:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:401:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:402:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:403:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:404:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:405:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:406:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:407:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Functor/FullyFaithful.lean:410:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/EssentialImage.lean:188:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/EssentialImage.lean:189:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Limits/Opposites.lean:43:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Limits/Opposites.lean:44:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Limits/Opposites.lean:45:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Limits/Opposites.lean:46:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Constructions.lean:537:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Constructions.lean:538:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Bases.lean:301:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/CompactOpen.lean:186:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/CompactOpen.lean:285:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/CompactOpen.lean:293:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/CompactOpen.lean:385:33\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/CompactOpen.lean:391:33\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Instances/Real.lean:80:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Instances/Real.lean:109:31\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Instances/Real.lean:118:29\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Instances/Real.lean:138:28\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Instances/Real.lean:201:53\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/IsConnected.lean:469:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Algebra/Module/Basic.lean:524:28\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/GDelta.lean:118:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/Derivation/Basic.lean:414:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/Derivation/Basic.lean:415:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/CategoryTheory/Adjunction/Over.lean:56:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/FiberBundle/Trivialization.lean:585:43\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/NumberTheory/Zsqrtd/GaussianInt.lean:186:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Order/LowerUpperTopology.lean:290:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/Order/LowerUpperTopology.lean:371:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/SimpleModule.lean:183:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/SimpleModule.lean:255:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/FieldTheory/IntermediateField.lean:277:32\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/FieldTheory/IntermediateField.lean:278:32\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/PowerBasis.lean:82:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Analysis/Normed/Group/Basic.lean:1876:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Analysis/Normed/Group/Basic.lean:1877:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Real/Sqrt.lean:77:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Real/Sqrt.lean:78:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Real/Sqrt.lean:79:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Real/Sqrt.lean:80:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Data/Real/Sqrt.lean:81:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Analysis/Asymptotics/Asymptotics.lean:2146:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Analysis/Asymptotics/Asymptotics.lean:2147:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Analysis/LocallyConvex/Basic.lean:261:43\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/ContinuousFunction/Bounded.lean:1599:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/ContinuousFunction/Bounded.lean:1600:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Topology/MetricSpace/Completion.lean:172:32\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Analysis/Calculus/ContDiff/Defs.lean:1038:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/Analysis/InnerProductSpace/Calculus.lean:398:60\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/NumberTheory/Padics/PadicIntegers.lean:197:13\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/NumberTheory/SumFourSquares.lean:98:45\ncode<span class=\"w\"> </span>-r<span class=\"w\"> </span>-g<span class=\"w\"> </span>Mathlib/RingTheory/Flat/Basic.lean:240:13\n</code></pre></div>\n</div></div>",
+        "id": 444407622,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718266071
+    },
+    {
+        "content": "<p><a href=\"https://lean4daydayup.zulipchat.com/#narrow/stream/435784-.E6.9C.89.E4.BB.B7.E5.80.BC.E7.9A.84.E5.AD.A6.E4.B9.A0.E8.B5.84.E6.BA.90.E5.90.88.E9.9B.86/topic/.E4.B8.80.E4.BA.9B.E6.B2.A1.E6.9C.89.E4.BB.B7.E5.80.BC.E7.9A.84.E5.B0.8F.E6.96.87.E7.AB.A0\">https://lean4daydayup.zulipchat.com/#narrow/stream/435784-.E6.9C.89.E4.BB.B7.E5.80.BC.E7.9A.84.E5.AD.A6.E4.B9.A0.E8.B5.84.E6.BA.90.E5.90.88.E9.9B.86/topic/.E4.B8.80.E4.BA.9B.E6.B2.A1.E6.9C.89.E4.BB.B7.E5.80.BC.E7.9A.84.E5.B0.8F.E6.96.87.E7.AB.A0</a></p>",
+        "id": 444413868,
+        "sender_full_name": "vvbb",
+        "timestamp": 1718268228
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/13793\">#13793</a> is now testing the automatic addition of <code>since</code>: ideally, it builds mathlib, collects the linter warnings, performs all the substitutions and runs <code>lake build</code> again.  The second time, <code>lake build</code> will fail on warnings.</p>",
+        "id": 444415454,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718268790
+    },
+    {
+        "content": "<p>Let's see where it gets stumped!  <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 444415514,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718268816
+    },
+    {
+        "content": "<p>The sequence <code>lake build</code>, auto-add <code>since</code>, <code>lake build</code> was successful!  After a first noisy build of mathlib, the second one was quiet.</p>\n<p>CI failed due to long lines and the fact that I forgot to silence the test for the linter using <code>#guard_msgs</code>.</p>",
+        "id": 444431351,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718274086
+    },
+    {
+        "content": "<p>The auto-fix step reported <code>157 modifications across 54 files, all successful</code>.</p>",
+        "id": 444431569,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718274171
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/444155235\">said</a>:</p>\n<blockquote>\n<p>Fixed in</p>\n<blockquote>\n<p>chore(Tactic/Lint/Simp): make simpNF linter dsimp-aware <a href=\"https://github.com/leanprover-community/batteries/pull/839\">batteries#839</a></p>\n</blockquote>\n</blockquote>\n<p><span class=\"user-mention\" data-user-id=\"112680\">@Johan Commelin</span> <span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> did I miss some explanation for <a href=\"https://github.com/leanprover-community/batteries/pull/841\">batteries#841</a> ? Why was this PR reverted?</p>",
+        "id": 444587640,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1718325878
+    },
+    {
+        "content": "<p>I suggested reverting in <a href=\"#narrow/stream/287929-mathlib4/topic/dsimpNF/near/444369482\">https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/dsimpNF/near/444369482</a>, so that we can get the Mathlib fixes lined up ahead of time.</p>",
+        "id": 444587772,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718325959
+    },
+    {
+        "content": "<p>(I really needed to get <code>nightly-testing</code> working again, and this was going to become a blocker.)</p>",
+        "id": 444587868,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718325998
+    },
+    {
+        "content": "<p>It is certainly planned to re-revert it in the next few days (-;</p>",
+        "id": 444614714,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718340966
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"634338\">Michael Rothgang</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/444404880\">said</a>:</p>\n<blockquote>\n<p><code>tactic.skipAssignedInstances</code></p>\n</blockquote>\n<p>Created <a href=\"https://github.com/leanprover-community/mathlib4/pull/13851\">#13851</a> to do this.</p>",
+        "id": 444851434,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718447355
+    },
+    {
+        "content": "<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">Number</th>\n<th style=\"text-align: left;\">Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">7327</td>\n<td style=\"text-align: left;\">porting notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">51</td>\n<td style=\"text-align: left;\">backwards compatibility flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">90</td>\n<td style=\"text-align: left;\">skipAssignedInstances flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">141</td>\n<td style=\"text-align: left;\">adaptation notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">365</td>\n<td style=\"text-align: left;\">disabled simpNF lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">164</td>\n<td style=\"text-align: left;\">disabled deprecation lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">1935</td>\n<td style=\"text-align: left;\">erw</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">961</td>\n<td style=\"text-align: left;\">documentation nolint entries</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">30</td>\n<td style=\"text-align: left;\">missing module docstrings</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">95</td>\n<td style=\"text-align: left;\">large files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">147</td>\n<td style=\"text-align: left;\">non-test files with autoImplicit true</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td style=\"text-align: left;\">deprecations without a date</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">41</td>\n<td style=\"text-align: left;\"><code>Init</code> files</td>\n</tr>\n</tbody>\n</table>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>5326 total LoC in 'Init' files</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">LoC</th>\n<th>File</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">489</td>\n<td>Mathlib/Init/Algebra/Classes.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">248</td>\n<td>Mathlib/Init/Align.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td>Mathlib/Init/Classes/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">37</td>\n<td>Mathlib/Init/Classical.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">85</td>\n<td>Mathlib/Init/Control/Combinators.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">264</td>\n<td>Mathlib/Init/Control/Lawful.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">172</td>\n<td>Mathlib/Init/Core.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">19</td>\n<td>Mathlib/Init/Data/Bool/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">154</td>\n<td>Mathlib/Init/Data/Bool/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td>Mathlib/Init/Data/Buffer/Parser.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td>Mathlib/Init/Data/Fin/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">122</td>\n<td>Mathlib/Init/Data/Int/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">15</td>\n<td>Mathlib/Init/Data/Int/DivMod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">18</td>\n<td>Mathlib/Init/Data/Int/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">100</td>\n<td>Mathlib/Init/Data/Int/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">70</td>\n<td>Mathlib/Init/Data/List/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td>Mathlib/Init/Data/List/Instances.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">182</td>\n<td>Mathlib/Init/Data/List/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">44</td>\n<td>Mathlib/Init/Data/Nat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td>Mathlib/Init/Data/Nat/Div.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">132</td>\n<td>Mathlib/Init/Data/Nat/GCD.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">721</td>\n<td>Mathlib/Init/Data/Nat/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td>Mathlib/Init/Data/Nat/Notation.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">24</td>\n<td>Mathlib/Init/Data/Option/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">16</td>\n<td>Mathlib/Init/Data/Option/Init/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">67</td>\n<td>Mathlib/Init/Data/Option/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">45</td>\n<td>Mathlib/Init/Data/Ordering/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">61</td>\n<td>Mathlib/Init/Data/Ordering/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td>Mathlib/Init/Data/Prod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td>Mathlib/Init/Data/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">17</td>\n<td>Mathlib/Init/Data/Rat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">22</td>\n<td>Mathlib/Init/Data/Sigma/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">74</td>\n<td>Mathlib/Init/Data/Sigma/Lex.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">252</td>\n<td>Mathlib/Init/Function.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">673</td>\n<td>Mathlib/Init/Logic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td>Mathlib/Init/Meta/WellFoundedTactics.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">469</td>\n<td>Mathlib/Init/Order/Defs.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">173</td>\n<td>Mathlib/Init/Order/LinearOrder.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">43</td>\n<td>Mathlib/Init/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">222</td>\n<td>Mathlib/Init/Set.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">49</td>\n<td>Mathlib/Init/ZeroOne.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5326</td>\n<td>total</td>\n</tr>\n</tbody>\n</table>\n</div></div>",
+        "id": 445050384,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1718597315
+    },
+    {
+        "content": "<p>Next upgrade: show the diffs since last post!</p>",
+        "id": 445055463,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718601195
+    },
+    {
+        "content": "<p><span aria-label=\"thumbs up\" class=\"emoji emoji-1f44d\" role=\"img\" title=\"thumbs up\">:thumbs_up:</span> but it requires maintaining some state <span aria-label=\"thinking\" class=\"emoji emoji-1f914\" role=\"img\" title=\"thinking\">:thinking:</span></p>",
+        "id": 445055641,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718601350
+    },
+    {
+        "content": "<p>Not necessarily: we can probably checkout the previous week's master and rerun the command.</p>",
+        "id": 445058370,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718603609
+    },
+    {
+        "content": "<p>With respect to last week, this is the only change:</p>\n<div class=\"codehilite\" data-code-language=\"Bash\"><pre><span></span><code><span class=\"p\">|</span><span class=\"w\"> </span><span class=\"m\">7327</span><span class=\"w\">  </span><span class=\"o\">(</span>-36<span class=\"o\">)</span><span class=\"p\">|</span><span class=\"w\"> </span>porting<span class=\"w\"> </span>notes<span class=\"w\"> </span><span class=\"p\">|</span>\n</code></pre></div>",
+        "id": 445065508,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718607512
+    },
+    {
+        "content": "<p>Alternatively, scrape the last message from zulip?</p>",
+        "id": 445068583,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718608840
+    },
+    {
+        "content": "<p>(i.e. let Zulip maintain state)</p>",
+        "id": 445068594,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718608847
+    },
+    {
+        "content": "<p>If we do it with the git-history, then we can also do comparisons between different commits, not necessarily the lastest diff...  Let me look into it!</p>",
+        "id": 445068974,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718609021
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321459\">Damiano Testa</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/445065508\">said</a>:</p>\n<blockquote>\n<p>With respect to last week, this is the only change:</p>\n<p><div class=\"codehilite\" data-code-language=\"Bash\"><pre><span></span><code><span class=\"p\">|</span><span class=\"w\"> </span><span class=\"m\">7327</span><span class=\"w\">  </span><span class=\"o\">(</span>-36<span class=\"o\">)</span><span class=\"p\">|</span><span class=\"w\"> </span>porting<span class=\"w\"> </span>notes<span class=\"w\"> </span><span class=\"p\">|</span>\n</code></pre></div><br>\n</p>\n</blockquote>\n<p>I also see differences in adaptation notes (some notes got labeled properly), disabled simpNF and deprecation lints, large files (no idea where that's coming from) and autoImplicit (four down)...</p>",
+        "id": 445076090,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718611616
+    },
+    {
+        "content": "<p>Michael, yes, I am not sure what happened there.  I think that, like for the PR summaries, these posts should include the commit hashes: this would make the diff's reproducible more easily.</p>",
+        "id": 445078900,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718612428
+    },
+    {
+        "content": "<p>Let's see if this looks better!</p>\n<hr>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">Number</th>\n<th style=\"text-align: center;\">Change</th>\n<th style=\"text-align: left;\">Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">7330</td>\n<td style=\"text-align: center;\">-29</td>\n<td style=\"text-align: left;\">porting notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">52</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">backwards compatibility flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">91</td>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: left;\">skipAssignedInstances flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">142</td>\n<td style=\"text-align: center;\">-1</td>\n<td style=\"text-align: left;\">adaptation notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">366</td>\n<td style=\"text-align: center;\">6</td>\n<td style=\"text-align: left;\">disabled simpNF lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">165</td>\n<td style=\"text-align: center;\">-16</td>\n<td style=\"text-align: left;\">disabled deprecation lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">1935</td>\n<td style=\"text-align: center;\">5</td>\n<td style=\"text-align: left;\">erw</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">961</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">documentation nolint entries</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">30</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">missing module docstrings</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">95</td>\n<td style=\"text-align: center;\">2</td>\n<td style=\"text-align: left;\">large files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">148</td>\n<td style=\"text-align: center;\">-4</td>\n<td style=\"text-align: left;\">non-test files with autoImplicit true</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td style=\"text-align: center;\">-318</td>\n<td style=\"text-align: left;\">deprecations without a date</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">41</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\"><code>Init</code> files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5326</td>\n<td style=\"text-align: center;\">-3</td>\n<td style=\"text-align: left;\">total LoC in 'Init' files</td>\n</tr>\n</tbody>\n</table>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>'Init' file by file</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">LoC</th>\n<th style=\"text-align: center;\">Change</th>\n<th>File</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">489</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Algebra/Classes.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">248</td>\n<td style=\"text-align: center;\">-1</td>\n<td>Mathlib/Init/Align.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classes/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">37</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classical.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">85</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Combinators.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">264</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Lawful.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">172</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Core.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">19</td>\n<td style=\"text-align: center;\">-1</td>\n<td>Mathlib/Init/Data/Bool/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">154</td>\n<td style=\"text-align: center;\">-3</td>\n<td>Mathlib/Init/Data/Bool/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Buffer/Parser.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Fin/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">122</td>\n<td style=\"text-align: center;\">-1</td>\n<td>Mathlib/Init/Data/Int/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">15</td>\n<td style=\"text-align: center;\">-1</td>\n<td>Mathlib/Init/Data/Int/DivMod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">18</td>\n<td style=\"text-align: center;\">-2</td>\n<td>Mathlib/Init/Data/Int/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">100</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">70</td>\n<td style=\"text-align: center;\">2</td>\n<td>Mathlib/Init/Data/List/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Instances.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">182</td>\n<td style=\"text-align: center;\">-1</td>\n<td>Mathlib/Init/Data/List/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">44</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Div.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">132</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/GCD.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">721</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Notation.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">24</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">16</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Init/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">67</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">45</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">61</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Prod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">17</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Rat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">22</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">74</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Lex.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">252</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Function.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">673</td>\n<td style=\"text-align: center;\">3</td>\n<td>Mathlib/Init/Logic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Meta/WellFoundedTactics.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">469</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/Defs.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">173</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/LinearOrder.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">43</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">222</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Set.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">49</td>\n<td style=\"text-align: center;\">2</td>\n<td>Mathlib/Init/ZeroOne.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5326</td>\n<td style=\"text-align: center;\">-3</td>\n<td>total</td>\n</tr>\n</tbody>\n</table>\n</div></div>\n<p>Commits:<br>\ncurrent 77e1ea0a339a4663eced9cacc3a46eb45f967b51<br>\nold f87721ad1ba9a6057d502b060a87778fb8186dbd</p>",
+        "id": 445086114,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718614894
+    },
+    {
+        "content": "<p>I like the format! How about \"current number\" as the header?</p>",
+        "id": 445094503,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718617903
+    },
+    {
+        "content": "<p>(In case others may wonder as well: the commits from this diff are not the ones the bot posted here - so the numbers don't match.)</p>",
+        "id": 445094617,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718617930
+    },
+    {
+        "content": "<p>One more thought: I guess \"deprecations without a date\" can be removed now, since we have a linter against it - all remaining matches are false positives. Hoorah! <span aria-label=\"tada\" class=\"emoji emoji-1f389\" role=\"img\" title=\"tada\">:tada:</span></p>",
+        "id": 445095399,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718618224
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/13892\">#13892</a>, where I also removed the <code>no since</code> line, as suggested.</p>",
+        "id": 445106134,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718621954
+    },
+    {
+        "content": "<p>By the way, the default behaviour is that you run it and it compares master with \"master from one week ago\".  However, if you provide two commits as reference, it will take the first as the commit where the numbers are computed and will report the difference with whatever numbers would come out of the second commit.</p>",
+        "id": 445115529,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1718625452
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321459\">Damiano Testa</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/445106134\">said</a>:</p>\n<blockquote>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/13892\">#13892</a>, where I also removed the <code>no since</code> line, as suggested.</p>\n</blockquote>\n<p>I'm not an awk expert; a look on this would be helpful!</p>",
+        "id": 445130880,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1718630311
+    },
+    {
+        "content": "<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">Current number</th>\n<th style=\"text-align: center;\">Change</th>\n<th style=\"text-align: left;\">Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">7007</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">porting notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">51</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">backwards compatibility flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">90</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">skipAssignedInstances flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">149</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">adaptation notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">278</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">disabled simpNF lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">162</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">disabled deprecation lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">1938</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">erw</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">961</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">documentation nolint entries</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">30</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">missing module docstrings</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">94</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">large files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">147</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">non-test files with autoImplicit true</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">41</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\"><code>Init</code> files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5326</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">total LoC in <code>Init</code> files</td>\n</tr>\n</tbody>\n</table>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>Changed 'Init' lines by file</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">LoC</th>\n<th style=\"text-align: center;\">Change</th>\n<th>File</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">489</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Algebra/Classes.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">248</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Align.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classes/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">37</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classical.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">85</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Combinators.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">264</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Lawful.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">172</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Core.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">19</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Bool/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">154</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Bool/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Buffer/Parser.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Fin/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">122</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">15</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/DivMod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">18</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">100</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">70</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Instances.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">182</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">44</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Div.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">132</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/GCD.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">721</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Notation.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">24</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">16</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Init/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">67</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">45</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">61</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Prod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">17</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Rat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">22</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">74</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Lex.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">252</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Function.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">673</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Logic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Meta/WellFoundedTactics.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">469</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/Defs.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">173</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/LinearOrder.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">43</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">222</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Set.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">49</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/ZeroOne.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5326</td>\n<td style=\"text-align: center;\">0</td>\n<td>total</td>\n</tr>\n</tbody>\n</table>\n</div></div>\n<p>Current commit <a href=\"https://github.com/leanprover-community/mathlib4/commit/62fdad82b2415a824c8be0b94d3816c468a17332\">62fdad82b2</a><br>\nReference commit <a href=\"https://github.com/leanprover-community/mathlib4/commit/62fdad82b2415a824c8be0b94d3816c468a17332\">62fdad82b2</a></p>",
+        "id": 446512797,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719201959
+    },
+    {
+        "content": "<p>Could we please have <code>maxHeartbeats</code> in this table?</p>",
+        "id": 446519223,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719205889
+    },
+    {
+        "content": "<ul>\n<li>Remove about 75% of backward compatibility flags in <a href=\"https://github.com/leanprover-community/mathlib4/pull/14064\">#14064</a></li>\n<li>Remove most <code>set_option.skipAssignedInstances</code> <a href=\"https://github.com/leanprover-community/mathlib4/pull/14073\">#14073</a></li>\n</ul>",
+        "id": 446520314,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719206673
+    },
+    {
+        "content": "<p>Also, the change column should be fixed...</p>",
+        "id": 446524715,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719209210
+    },
+    {
+        "content": "<p>I'm not sure that I can look into this quickly, though.</p>",
+        "id": 446524957,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719209279
+    },
+    {
+        "content": "<p>I just ran the code on my computer and the change column at least does not only have <code>0</code>:</p>\n<hr>\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">Current number</th>\n<th style=\"text-align: center;\">Change</th>\n<th style=\"text-align: left;\">Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">7007</td>\n<td style=\"text-align: center;\">-320</td>\n<td style=\"text-align: left;\">porting notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">51</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">backwards compatibility flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">90</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">skipAssignedInstances flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">149</td>\n<td style=\"text-align: center;\">8</td>\n<td style=\"text-align: left;\">adaptation notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">278</td>\n<td style=\"text-align: center;\">-87</td>\n<td style=\"text-align: left;\">disabled simpNF lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">162</td>\n<td style=\"text-align: center;\">-2</td>\n<td style=\"text-align: left;\">disabled deprecation lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">1938</td>\n<td style=\"text-align: center;\">7</td>\n<td style=\"text-align: left;\">erw</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">30</td>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: left;\">maxHeartBeats modifications</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">961</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">documentation nolint entries</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">30</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">missing module docstrings</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">94</td>\n<td style=\"text-align: center;\">-1</td>\n<td style=\"text-align: left;\">large files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">147</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">non-test files with autoImplicit true</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">41</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\"><code>Init</code> files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5326</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\">total LoC in <code>Init</code> files</td>\n</tr>\n</tbody>\n</table>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>Changed 'Init' lines by file</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">LoC</th>\n<th style=\"text-align: center;\">Change</th>\n<th>File</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">489</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Algebra/Classes.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">248</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Align.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classes/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">37</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classical.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">85</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Combinators.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">264</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Lawful.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">172</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Core.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">19</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Bool/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">154</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Bool/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Buffer/Parser.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Fin/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">122</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">15</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/DivMod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">18</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">100</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">70</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Instances.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">182</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">44</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Div.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">132</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/GCD.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">721</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Notation.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">24</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">16</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Init/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">67</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">45</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">61</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Prod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">17</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Rat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">22</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">74</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Lex.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">252</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Function.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">673</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Logic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Meta/WellFoundedTactics.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">469</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/Defs.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">173</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/LinearOrder.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">43</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">222</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Set.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">49</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/ZeroOne.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5326</td>\n<td style=\"text-align: center;\">0</td>\n<td>total</td>\n</tr>\n</tbody>\n</table>\n</div></div>\n<p>Current commit <a href=\"https://github.com/leanprover-community/mathlib4/commit/9d94f1d86c280fe2b71dfb80b8bab99275159bfb\">9d94f1d86c</a><br>\nReference commit <a href=\"https://github.com/leanprover-community/mathlib4/commit/9cbd6ff10159d1130ddbcc161c5e8d2b2b5006a2\">9cbd6ff101</a></p>",
+        "id": 446526572,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719209759
+    },
+    {
+        "content": "<p>I edited the above to include the heartbeats: <a href=\"https://github.com/leanprover-community/mathlib4/pull/14075\">#14075</a>.</p>",
+        "id": 446527981,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719210201
+    },
+    {
+        "content": "<p>I also think that the <code>Change</code> issue is that CI was using a shallow clone: <a href=\"https://github.com/leanprover-community/mathlib4/pull/14076\">#14076</a>.</p>",
+        "id": 446530567,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719211495
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/446520314\">said</a>:</p>\n<blockquote>\n<ul>\n<li>Remove about 75% of backward compatibility flags in <a href=\"https://github.com/leanprover-community/mathlib4/pull/14064\">#14064</a></li>\n<li>Remove most <code>set_option.skipAssignedInstances</code> <a href=\"https://github.com/leanprover-community/mathlib4/pull/14073\">#14073</a></li>\n</ul>\n</blockquote>\n<p>Did you see <a href=\"https://github.com/leanprover-community/mathlib4/pull/13704\">#13704</a>, which does very similar things to <a href=\"https://github.com/leanprover-community/mathlib4/pull/14073\">#14073</a>? I benchmarked that one and removed the changes which were actively slowing things down.</p>",
+        "id": 446549910,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719217846
+    },
+    {
+        "content": "<p>Sigh, I didn't see this, the <a href=\"https://bit.ly/3cKk3ld\">#queue</a> is impossibly long and I don't look at it anymore. :-(</p>",
+        "id": 446550252,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719217949
+    },
+    {
+        "content": "<p>I hit <img alt=\":merge:\" class=\"emoji\" src=\"https://zulip-avatars.s3.amazonaws.com/3121/emoji/images/18527.png\" title=\"merge\"> on <a href=\"https://github.com/leanprover-community/mathlib4/pull/13704\">#13704</a>. Shall I just close <a href=\"https://github.com/leanprover-community/mathlib4/pull/14073\">#14073</a>?</p>",
+        "id": 446550296,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719217966
+    },
+    {
+        "content": "<p>Yes</p>",
+        "id": 446550339,
+        "sender_full_name": "Jeremy Tan",
+        "timestamp": 1719217979
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"598052\">@Jeremy Tan</span>, your answer is not helpful to me.</p>",
+        "id": 446550697,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719218097
+    },
+    {
+        "content": "<p>Matthew has hit merge on <a href=\"https://github.com/leanprover-community/mathlib4/pull/14073\">#14073</a> in the meantime ...</p>",
+        "id": 446550743,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719218113
+    },
+    {
+        "content": "<p>I've called off bors and delegated</p>",
+        "id": 446550938,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1719218168
+    },
+    {
+        "content": "<p>For \"technical debt\" type PRs, I will very happily merge them quickly if notified about them (but I won't see them if they aren't mentioned on zulip, tbh). Two weeks is far too long for something like this is wait.</p>",
+        "id": 446550968,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719218177
+    },
+    {
+        "content": "<p>I was about to write: I can check if <a href=\"https://github.com/leanprover-community/mathlib4/pull/14073\">#14073</a> has any changes left after the other one is merged. (Certainly this week; no promises on a quicker response - I don't have much Lean time right now.)</p>",
+        "id": 446550983,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719218183
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/446550968\">said</a>:</p>\n<blockquote>\n<p>For \"technical debt\" type PRs, I will very happily merge them quickly if notified about them (but I won't see them if they aren't mentioned on zulip, tbh). Two weeks is far too long for something like this is wait.</p>\n</blockquote>\n<p>I was about to ask: is there something I can change about this - thanks for anticipating my question! So I will aggressively mention tech debt PRs in there, from now on; that works for me.</p>",
+        "id": 446551086,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719218227
+    },
+    {
+        "content": "<p>So... do the following PRs count as technical debt? If no, feel free to ignore these :-)</p>\n<ul>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/13869\">#13869</a> re-distributes <code>fun_prop</code> tags; <span class=\"user-mention\" data-user-id=\"346070\">@Tomas Skrivan</span> already approved</li>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/14059\">#14059</a> rewrites another Python style linter in Lean</li>\n</ul>",
+        "id": 446551673,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719218427
+    },
+    {
+        "content": "<p>I'll approve <a href=\"https://github.com/leanprover-community/mathlib4/pull/14059\">#14059</a></p>",
+        "id": 446551801,
+        "sender_full_name": "Jeremy Tan",
+        "timestamp": 1719218489
+    },
+    {
+        "content": "<p>Merged both now.</p>",
+        "id": 446552140,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719218611
+    },
+    {
+        "content": "<p>Thanks for the fast reviews! <span aria-label=\"heart\" class=\"emoji emoji-2764\" role=\"img\" title=\"heart\">:heart:</span></p>",
+        "id": 446552214,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719218636
+    },
+    {
+        "content": "<p>I wonder if there are further unnessary <code>set_option</code>s left (unless Kim looked at them all). <span class=\"user-mention\" data-user-id=\"321459\">@Damiano Testa</span> Would you like to run the most recent incarnation of <a href=\"https://github.com/leanprover-community/mathlib4/pull/13653\">#13653</a> to check? (Presumably, the number of hits will be small, so even just the linter would suffice.)</p>",
+        "id": 446606285,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719233726
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/446550252\">said</a>:</p>\n<blockquote>\n<p>Sigh, I didn't see this, the <a href=\"https://bit.ly/3cKk3ld\">#queue</a> is impossibly long and I don't look at it anymore. :-(</p>\n</blockquote>\n<p>Another thought (perhaps this should move to a different thread, such as \"avoiding duplicate work cleaning up technical debt\"..) There is a \"tech debt\" label: is checking all PRs labelled such an option, instead of the queue?</p>",
+        "id": 446606981,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719233841
+    },
+    {
+        "content": "<p>I'm happy to help ensure that PRs are labelled such as appropriate.</p>",
+        "id": 446607110,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719233866
+    },
+    {
+        "content": "<p>are unnamespaced defs and theorems \"technical debt\"?</p>",
+        "id": 446619939,
+        "sender_full_name": "Shreyas Srinivas",
+        "timestamp": 1719237049
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/14094\">#14094</a> regenerates the list of style exceptions: includes a reordering as a by-product of the rewrite in Lean. As we're measuring tech debt using this, we may as well keep it up to date.</p>",
+        "id": 446638308,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719241343
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"466334\">Shreyas Srinivas</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/446619939\">said</a>:</p>\n<blockquote>\n<p>are unnamespaced defs and theorems \"technical debt\"?</p>\n</blockquote>\n<p>We don't currently consider those as such (We = most maintainers, with some exceptions). This constitutes most of Mathlib.</p>",
+        "id": 446693076,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1719255892
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"634338\">Michael Rothgang</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Technical.20Debt.20Counters/near/446606285\">said</a>:</p>\n<blockquote>\n<p>I wonder if there are further unnessary <code>set_option</code>s left (unless Kim looked at them all). <span class=\"user-mention silent\" data-user-id=\"321459\">Damiano Testa</span> Would you like to run the most recent incarnation of <a href=\"https://github.com/leanprover-community/mathlib4/pull/13653\">#13653</a> to check? (Presumably, the number of hits will be small, so even just the linter would suffice.)</p>\n</blockquote>\n<p>Michael, I merged master and re-ran the linter: there are a couple of <code>set_option</code>s that are flagged as unnecessary, but some (especially the maxHeartbeats ones) may be false positives.</p>",
+        "id": 446713031,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719261364
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/14103\">#14103</a></p>\n<p>I think that the other flags are false positives.</p>",
+        "id": 446717022,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719262654
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/14298\">#14298</a>, <a href=\"https://github.com/leanprover-community/mathlib4/pull/14299\">#14299</a>, <a href=\"https://github.com/leanprover-community/mathlib4/pull/14300\">#14300</a> and <a href=\"https://github.com/leanprover-community/mathlib4/pull/14301\">#14301</a> each are short PRs removing autoImplicit from a few files. Each PR deals with a single directory.</p>",
+        "id": 448140500,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719766356
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/14304\">#14304</a> removes almost all occurences from <code>Order</code></p>",
+        "id": 448177924,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1719782841
+    },
+    {
+        "content": "<p>I merged most of those (before seeing this message)</p>",
+        "id": 448184815,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1719787211
+    },
+    {
+        "content": "<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">Current number</th>\n<th style=\"text-align: center;\">Change</th>\n<th style=\"text-align: left;\">Type</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">6928</td>\n<td style=\"text-align: center;\">-79</td>\n<td style=\"text-align: left;\">porting notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">10</td>\n<td style=\"text-align: center;\">-41</td>\n<td style=\"text-align: left;\">backwards compatibility flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">40</td>\n<td style=\"text-align: center;\">-50</td>\n<td style=\"text-align: left;\">skipAssignedInstances flags</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">153</td>\n<td style=\"text-align: center;\">4</td>\n<td style=\"text-align: left;\">adaptation notes</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">290</td>\n<td style=\"text-align: center;\">12</td>\n<td style=\"text-align: left;\">disabled simpNF lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">169</td>\n<td style=\"text-align: center;\">7</td>\n<td style=\"text-align: left;\">disabled deprecation lints</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">1947</td>\n<td style=\"text-align: center;\">9</td>\n<td style=\"text-align: left;\">erw</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">26</td>\n<td style=\"text-align: center;\">-4</td>\n<td style=\"text-align: left;\">maxHeartBeats modifications</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">958</td>\n<td style=\"text-align: center;\">-3</td>\n<td style=\"text-align: left;\">documentation nolint entries</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">29</td>\n<td style=\"text-align: center;\">-1</td>\n<td style=\"text-align: left;\">missing module docstrings</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">95</td>\n<td style=\"text-align: center;\">1</td>\n<td style=\"text-align: left;\">large files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">134</td>\n<td style=\"text-align: center;\">-13</td>\n<td style=\"text-align: left;\">non-test files with autoImplicit true</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">41</td>\n<td style=\"text-align: center;\">0</td>\n<td style=\"text-align: left;\"><code>Init</code> files</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5310</td>\n<td style=\"text-align: center;\">-16</td>\n<td style=\"text-align: left;\">total LoC in <code>Init</code> files</td>\n</tr>\n</tbody>\n</table>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>Changed 'Init' lines by file</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<table>\n<thead>\n<tr>\n<th style=\"text-align: right;\">LoC</th>\n<th style=\"text-align: center;\">Change</th>\n<th>File</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align: right;\">489</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Algebra/Classes.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">248</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Align.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classes/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">37</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Classical.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">85</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Combinators.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">264</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Control/Lawful.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">172</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Core.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">19</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Bool/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">154</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Bool/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Buffer/Parser.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Fin/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">122</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">15</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/DivMod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">18</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">100</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Int/Order.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">70</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">51</td>\n<td style=\"text-align: center;\">-14</td>\n<td>Mathlib/Init/Data/List/Instances.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">182</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/List/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">42</td>\n<td style=\"text-align: center;\">-2</td>\n<td>Mathlib/Init/Data/Nat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">14</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Div.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">132</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/GCD.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">721</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">11</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Nat/Notation.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">24</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">16</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Init/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">67</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Option/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">45</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">61</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Ordering/Lemmas.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">12</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Prod.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">65</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">17</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Rat/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">22</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Basic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">74</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Data/Sigma/Lex.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">252</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Function.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">673</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Logic.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">27</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Meta/WellFoundedTactics.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">469</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/Defs.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">173</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Order/LinearOrder.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">43</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Quot.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">222</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/Set.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">49</td>\n<td style=\"text-align: center;\">0</td>\n<td>Mathlib/Init/ZeroOne.lean</td>\n</tr>\n<tr>\n<td style=\"text-align: right;\">5310</td>\n<td style=\"text-align: center;\">-16</td>\n<td>total</td>\n</tr>\n</tbody>\n</table>\n</div></div>\n<p>Current commit <a href=\"https://github.com/leanprover-community/mathlib4/commit/f5c3f06aa7f6d6c221786d2890c345a00e6341f8\">f5c3f06aa7</a><br>\nReference commit <a href=\"https://github.com/leanprover-community/mathlib4/commit/b1a314186f6ddf7106ddd58ff75c0b9aff53f9df\">b1a314186f</a></p>",
+        "id": 448214205,
+        "sender_full_name": "github mathlib4 bot",
+        "timestamp": 1719806775
+    },
+    {
+        "content": "<p>The <code>Change</code> fix worked!</p>",
+        "id": 448236073,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719815331
+    },
+    {
+        "content": "<p>A small wrinkle is that the current <em>reference</em> commit does not match the past <em>current</em> commit.  If I remember the script, they should be commits from the day, though.</p>",
+        "id": 448238195,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719816139
+    }
+]

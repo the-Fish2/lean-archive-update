@@ -130,5 +130,101 @@
         "id": 399939049,
         "sender_full_name": "Emilie (Shad Amethyst)",
         "timestamp": 1698932626
+    },
+    {
+        "content": "<p>I'm also here in Saarbrücken, from the Universität des Saarlandes, following <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> 's proseminar course <span aria-label=\"+1\" class=\"emoji emoji-1f44d\" role=\"img\" title=\"+1\">:+1:</span></p>",
+        "id": 435192522,
+        "sender_full_name": "Klaus Wiegmann",
+        "timestamp": 1713966068
+    },
+    {
+        "content": "<p>Welcome to SB. We should have a lean meetup beyond the proseminar sometime.</p>",
+        "id": 435197084,
+        "sender_full_name": "Shreyas Srinivas",
+        "timestamp": 1713967315
+    },
+    {
+        "content": "<p>I'm here in Saarbrücken (Universität des Saarlandes), following <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> 's seminar this year.</p>",
+        "id": 435212268,
+        "sender_full_name": "Simon Kirchner",
+        "timestamp": 1713971173
+    },
+    {
+        "content": "<p>Hi, I am following <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span>  's Seminar as well at Saarland University</p>",
+        "id": 436057871,
+        "sender_full_name": "Philipp Radder",
+        "timestamp": 1714400072
+    },
+    {
+        "content": "<p>Hello everyone! I am also following @Laurent Bartholdi 's Seminar at Saarland University.</p>",
+        "id": 436210464,
+        "sender_full_name": "Sebastian Volz",
+        "timestamp": 1714461478
+    },
+    {
+        "content": "<p>im following <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> s lean course at saarland university</p>",
+        "id": 436499255,
+        "sender_full_name": "Oliver lang",
+        "timestamp": 1714570099
+    },
+    {
+        "content": "<p>Hello everyone,I'm taking <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span>'s seminar \"Computer-assisted proofs in Lean\" at Saarland University</p>",
+        "id": 436500283,
+        "sender_full_name": "Bashar Hamade",
+        "timestamp": 1714570534
+    },
+    {
+        "content": "<p>You guys should find a project to work on together :-)</p>",
+        "id": 436520601,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1714576760
+    },
+    {
+        "content": "<p>We should have some kind of a monthly lean meeting here with interesting talks, beyond the seminar.</p>",
+        "id": 436543238,
+        "sender_full_name": "Shreyas Srinivas",
+        "timestamp": 1714585006
+    },
+    {
+        "content": "<p>There's already a rust saar group. There could be a lean saar group too</p>",
+        "id": 436543273,
+        "sender_full_name": "Shreyas Srinivas",
+        "timestamp": 1714585021
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/Saarbr.C3.BCcken.2C.20DE/near/436520601\">said</a>:</p>\n<blockquote>\n<p>You guys should find a project to work on together :-)</p>\n</blockquote>\n<p>That sounds great!<br>\nmost of us in the seminar right now though are complete lean beginners,and mainly we are computer science bachelor students who haven't dived very deeply into the world of formal proofs , computational logic...<br>\nBut this seminar (and our Computational Logic course ) seems like a perfect launching pad for one to go deeper into these topics,so hopefully we could work on some good projects as the time progresses :).</p>",
+        "id": 436554640,
+        "sender_full_name": "Bashar Hamade",
+        "timestamp": 1714589473
+    },
+    {
+        "content": "<p>Hi, I am also following <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> 's prosemanir at Saarland University.</p>",
+        "id": 436832492,
+        "sender_full_name": "Yun-Jhu",
+        "timestamp": 1714721584
+    },
+    {
+        "content": "<p>Hey guys, I too am following <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> 's prosemanir at Saarland University.</p>",
+        "id": 436848908,
+        "sender_full_name": "Maximan",
+        "timestamp": 1714729034
+    },
+    {
+        "content": "<p>Hello, I am following <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> 's seminar at Saarland University.</p>",
+        "id": 437621946,
+        "sender_full_name": "Min Htut Win",
+        "timestamp": 1715164236
+    },
+    {
+        "content": "<p>Hi! I'm also in <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> 's seminar :-)</p>",
+        "id": 437658445,
+        "sender_full_name": "Julian Blaes",
+        "timestamp": 1715177069
+    },
+    {
+        "content": "<p>Hey, I too am attending <span class=\"user-mention\" data-user-id=\"263407\">@Laurent Bartholdi</span> 's seminar at Saarland Univerity.</p>",
+        "id": 438202035,
+        "sender_full_name": "Fabian Brenner",
+        "timestamp": 1715537598
     }
 ]

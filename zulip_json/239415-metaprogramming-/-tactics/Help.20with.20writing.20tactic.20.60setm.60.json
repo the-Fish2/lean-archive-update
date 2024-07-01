@@ -1,0 +1,92 @@
+[
+    {
+        "content": "<p>bump</p>",
+        "id": 428201984,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711049374
+    },
+    {
+        "content": "<p>Btw, I think I also included (some/all of) these utilities in a PR for <code>refine?</code>, but it was requested that the <code>refine?</code> PR be split into utils and <code>refine?</code> itself, and then that the meta utils PR be split further into individual API contributions: <a href=\"https://github.com/leanprover-community/mathlib4/pull/8503\">#8503</a></p>",
+        "id": 428202683,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1711049607
+    },
+    {
+        "content": "<p>(I haven’t had the motivation to do so since, but maybe this would prompt that.)</p>\n<p>And reflecting on it now, I think some of these would maybe be “better” as modifications to core than as mathlib4 contributions which just copy a core function and add more functionality which could be easily included in the core implementation but just isn’t. But I’m not sure how fast those PRs would move, or if they’d be welcome at all…</p>",
+        "id": 428203339,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1711049818
+    },
+    {
+        "content": "<p>But looking back at this thread, just using Kyle’s implementation might be quickest for getting something in. I forget if there was some advantage conferred by using this alternative strategy besides being less bespoke <em>after</em> introducing metaprogramming infrastructure.</p>",
+        "id": 428204547,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1711050240
+    },
+    {
+        "content": "<p>I imagine modifying core will be very very slow.</p>",
+        "id": 428204681,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711050270
+    },
+    {
+        "content": "<p>FYI I bumped this thread because of <a href=\"#narrow/stream/287929-mathlib4/topic/too.20many.20FunLikes/near/428202012\">https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/too.20many.20FunLikes/near/428202012</a></p>",
+        "id": 428204736,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711050284
+    },
+    {
+        "content": "<p>It’s not always very slow—plus, now(?) there’s code ownership for certain parts, giving those code owners the ability to review and merge things using their own judgment, which I imagine speeds things up a bit.</p>",
+        "id": 428205061,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1711050395
+    },
+    {
+        "content": "<p>My only experience was looking at <a href=\"https://github.com/leanprover/lean4/issues/2414\">https://github.com/leanprover/lean4/issues/2414</a></p>",
+        "id": 428205358,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711050501
+    },
+    {
+        "content": "<p>But the code ownership part sounds good</p>",
+        "id": 428205394,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711050510
+    },
+    {
+        "content": "<p>In any case I do think that in this specific case the Kyle way is definitely the most efficient way to get it landing, even considering recent speedups. :)</p>",
+        "id": 428205503,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1711050563
+    },
+    {
+        "content": "<p>I will reread it and see what I can do lol, it's been a while since I wrote any metaprogramming</p>",
+        "id": 428205711,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711050641
+    },
+    {
+        "content": "<p>Also, would it be possible to change the name of this topic to something <code>setm</code> related? <span aria-label=\"eyes\" class=\"emoji emoji-1f440\" role=\"img\" title=\"eyes\">:eyes:</span></p>",
+        "id": 428210063,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1711052308
+    },
+    {
+        "content": "<p><span aria-label=\"skull\" class=\"emoji emoji-1f480\" role=\"img\" title=\"skull\">:skull:</span> <span aria-label=\"skull\" class=\"emoji emoji-1f480\" role=\"img\" title=\"skull\">:skull:</span> Yes yes definitely</p>",
+        "id": 428211137,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711052711
+    },
+    {
+        "content": "<p><a href=\"/user_uploads/3121/HtrMlLwtPRKG8t10QC7yteyZ/Screenshot-2024-03-21-at-20.27.54.png\">Screenshot-2024-03-21-at-20.27.54.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/HtrMlLwtPRKG8t10QC7yteyZ/Screenshot-2024-03-21-at-20.27.54.png\" title=\"Screenshot-2024-03-21-at-20.27.54.png\"><img src=\"/user_uploads/3121/HtrMlLwtPRKG8t10QC7yteyZ/Screenshot-2024-03-21-at-20.27.54.png\"></a></div><p>I can't rename the thread because I can't move some messages. I think it's because the messages are more than 7 days old.</p>",
+        "id": 428211696,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711052913
+    },
+    {
+        "content": "<p>Can you or others with permission do it for me? The new thread can be called <code>setm development thread</code> or something</p>",
+        "id": 428211751,
+        "sender_full_name": "Gareth Ma",
+        "timestamp": 1711052941
+    }
+]

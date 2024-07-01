@@ -1,0 +1,182 @@
+[
+    {
+        "content": "<p>Is there anything related to Diffeology currently in MathLib? If not, would there be interest in a project to formalise aspects of it?</p>\n<p>My motivation for asking is that diffeology appears in some aspects of physics, and in general is more well-behaved than the theory of manifolds (e.g. diffeological spaces form a Cartesian closed category unlike manifolds).</p>",
+        "id": 437977471,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1715345661
+    },
+    {
+        "content": "<p>Pretty sure we don't have anything. I guess your \"e.g.\" is a reasonable first target. But where would it go in Mathlib after that?</p>",
+        "id": 437978257,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715346005
+    },
+    {
+        "content": "<p>Hi <span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> ,  if I have interpreted your question correctly (sorry if I haven't), then other targets would be:</p>\n<ol>\n<li>Showing the relations between manifolds and diffeological spaces. Summarised by saying that there is a fully-faithful functor from the category of manifolds to the category of diffeological spaces. </li>\n<li>Showing that the mapping space between manifolds has the structure of a diffeolocial space (follows from 1 and my \"e.g.\").</li>\n<li>Showing that diffeolocial spaces are precisely  the concrete objects of the topos of sheafs on the site of cartesian spaces (this is where one connection to physics comes in through topological field theories).  </li>\n<li>The definition of subductions and inductions between diffeoloical spaces, and their relation to surjective submersion and injective immersions of manifolds. </li>\n</ol>\n<p>That said, maybe I am over-estimating the usefulness of this for the Mathematicians.</p>",
+        "id": 437981336,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1715347318
+    },
+    {
+        "content": "<p>All sounds fun, and certainly it's \"in scope\" for mathlib. I think it's always good when considering a slightly-off-the-beaten-track topic whether there would be other people around (or that you could recruit!) who would also work on it, or at least be able to give useful reviews. (The existing Mathlib maintainer/reviewer team doesn't need to contain someone who knows about this stuff: but we need reviews from someone!)</p>",
+        "id": 437981924,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715347572
+    },
+    {
+        "content": "<p>Makes sense :). I'll wait and see if anyone pops up here expressing an interest.</p>",
+        "id": 437983186,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1715348063
+    },
+    {
+        "content": "<p>I’m not an expert but I certainly find this stuff interesting!</p>",
+        "id": 437984719,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1715348661
+    },
+    {
+        "content": "<p>I think it would be extremely difficult to find reviewer for this. Developing it in an independent project would probably be a lot less frustrating.</p>",
+        "id": 438016004,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1715360618
+    },
+    {
+        "content": "<p>There was someone interested in diffeology on Xena. Was it you?</p>",
+        "id": 438024513,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715364026
+    },
+    {
+        "content": "<p>FWIW I would be happy to review diffeology material but I am no easy reviewer to satisfy <span aria-label=\"smiling devil\" class=\"emoji emoji-1f608\" role=\"img\" title=\"smiling devil\">:smiling_devil:</span></p>",
+        "id": 438024663,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715364093
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span>  No that wasn't me. Seems like the best plan, is to follow <span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span>'s advice, and  start it in an independent project.  Then it could be slowly move it to MathLib, when and if the time is right.</p>",
+        "id": 438025383,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1715364356
+    },
+    {
+        "content": "<p>Was it <span class=\"user-mention\" data-user-id=\"646363\">@Ben Eltschig</span>? (Is a diffeology the same as a diffeological space? I never thought about this at all.)</p>",
+        "id": 438052665,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1715378730
+    },
+    {
+        "content": "<p>Yep, I'm currently working on some code related to diffeology too. So far it's sitting at <a href=\"https://github.com/peabrainiac/lean-orbifolds\">https://github.com/peabrainiac/lean-orbifolds</a></p>",
+        "id": 438086724,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715411865
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"346070\">@Tomas Skrivan</span> might also be interested</p>",
+        "id": 438086906,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1715412046
+    },
+    {
+        "content": "<p>My main goal with this is to be eventually able to state the definition of orbifolds as special diffeological spaces; after that I would probably shift to working on Lie groupoids to try and get that definition of orbifolds formalised too. If you want to further develop diffeology I wouldn't mind adding you to that repo, though if you want you can of course also start your own</p>",
+        "id": 438086944,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715412108
+    },
+    {
+        "content": "<p>(Also, it sounds from this conversation that if/when there's material you'd like to send to mathlib, there are enough reviewers around! It's super helpful when people review other PRs in their field, making it much easier for the official reviewers/maintainers to do a quick check and then merge.)</p>",
+        "id": 438087396,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715412597
+    },
+    {
+        "content": "<p>Yes, I would be very much interested in having a formalization of diffeology. I think it is the right abstraction for formalizing automatic differentiation. One thing I'm not sure about is which notion of tangent space should be used as there are few different definitions.</p>\n<p>Also I would like to have formalization of convenient vector spaces which are effectively a flat version of diffeology.</p>",
+        "id": 438087827,
+        "sender_full_name": "Tomas Skrivan",
+        "timestamp": 1715413056
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"646363\">@Ben Eltschig</span> Nice! What you've got so far looks like a great start :). I would like to develop aspects of it further.  If <span class=\"user-mention\" data-user-id=\"346070\">@Tomas Skrivan</span>  is interested we could create a repo dedicated to diffeology with the three of us, and then move it over to MathLib when ready.</p>",
+        "id": 438105981,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1715430249
+    },
+    {
+        "content": "<p>(or also just happy to add to your existing repo <span class=\"user-mention\" data-user-id=\"646363\">@Ben Eltschig</span>)</p>",
+        "id": 438107277,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1715431702
+    },
+    {
+        "content": "<p>I imagine splitting the code for diffeologies and orbifolds (which I don't have yet, but hope to get to soon) up into two different repos is going to make it quite inconvenient to work on the latter, so I'd be more in favor of keeping both in the same repo. I am open to renaming or moving the repository though if the amount of things on diffeology in it becomes large enough for that to make sense <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 438108593,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715433055
+    },
+    {
+        "content": "<p>Fyi, the current situation is that I have a definition of diffeologies and the D-topology in terms of maps <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi mathvariant=\"double-struck\">R</mi><mi>n</mi></msup><mo>→</mo><mi>X</mi></mrow><annotation encoding=\"application/x-tex\">\\R^n\\to X</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6889em;\"></span><span class=\"mord\"><span class=\"mord mathbb\">R</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6644em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\">n</span></span></span></span></span></span></span></span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">→</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.07847em;\">X</span></span></span></span>, but haven't yet shown that those agree with the usual definitions in terms of maps <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>U</mi><mo>→</mo><mi>X</mi></mrow><annotation encoding=\"application/x-tex\">U\\to X</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.10903em;\">U</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">→</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6833em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.07847em;\">X</span></span></span></span> for <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>U</mi><mo>⊆</mo><msup><mi mathvariant=\"double-struck\">R</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">U\\subseteq\\R^n</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.8193em;vertical-align:-0.136em;\"></span><span class=\"mord mathnormal\" style=\"margin-right:0.10903em;\">U</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">⊆</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.6889em;\"></span><span class=\"mord\"><span class=\"mord mathbb\">R</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6644em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\">n</span></span></span></span></span></span></span></span></span></span></span> open. That's what I'm currently working towards</p>",
+        "id": 438108840,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715433273
+    },
+    {
+        "content": "<p>The D-topology has also been giving me trouble because it is in many cases different from the usual topology on a space, so I haven't been able to register it as an instance. Since mathlib doesn't really support non-standard topologies on a space, this means that it's currently a bit hard to work with</p>",
+        "id": 438109052,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715433500
+    },
+    {
+        "content": "<p>I think things should be ready though to do some more abstract things like defining the category of diffeological spaces or the space of all smooth maps and the diffeology on it - so if that's something you want to go for, feel free to do so</p>",
+        "id": 438109172,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715433612
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"646363\">@Ben Eltschig</span> All sounds good - thanks for adding me to the repository :) .  When I get round to it, I will create my own branch and see what I can add - but yes most likely focusing on the abstract nonsense side of things (at least for now).</p>",
+        "id": 438111545,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1715436106
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"646363\">Ben Eltschig</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Diffeology/near/438109052\">said</a>:</p>\n<blockquote>\n<p>Since mathlib doesn't really support non-standard topologies on a space, this means that it's currently a bit hard to work with</p>\n</blockquote>\n<p>Presumably you should just define <code>Diffeological X := X</code>, and then put the D-topology on <code>Diffeological X</code> instead. Type synonyms are the usual approach here.</p>",
+        "id": 438161207,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715494301
+    },
+    {
+        "content": "<p>I probably will also put the D-topology on a type synonym eventually, yes. I'm not sure if that completely solves the problem though - I also want to talk about nice spaces like <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi mathvariant=\"double-struck\">R</mi><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">\\R^n</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:0.6889em;\"></span><span class=\"mord\"><span class=\"mord mathbb\">R</span><span class=\"msupsub\"><span class=\"vlist-t\"><span class=\"vlist-r\"><span class=\"vlist\" style=\"height:0.6644em;\"><span style=\"top:-3.063em;margin-right:0.05em;\"><span class=\"pstrut\" style=\"height:2.7em;\"></span><span class=\"sizing reset-size6 size3 mtight\"><span class=\"mord mathnormal mtight\">n</span></span></span></span></span></span></span></span></span></span></span> as diffeological spaces after all, preferably without passing to a type synonym each time. My hope is that it will be possible to set things up in such a way that theorems involving the D-topology apply to both, or at least can be easily set up to have a variant for spaces on which the D-topology and the usual topology agree.</p>",
+        "id": 438181551,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715516879
+    },
+    {
+        "content": "<p>You can have a typeclass <code>HasDTopology</code>, saying that the topology is equal to the D-topology (whatever the D-topology is). In lemmas, don't work with the type synonym, just with a generic type alpha with assumptions <code>[TopologicalSpace α] [HasDTopology α]</code>. And register instances that \\R^n or nice spaces satisfy <code>HasDTopology</code>, to make sure that your lemmas apply directly to these spaces. And define your type synonym in general, put the D-topology on it, and register the instance <code>HasDTopology</code> for the type synonym. In this way, everything should work smoothly.</p>",
+        "id": 438185370,
+        "sender_full_name": "Sébastien Gouëzel",
+        "timestamp": 1715521085
+    },
+    {
+        "content": "<p>yep, that's the approach I'm currently going for <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 438185500,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715521227
+    },
+    {
+        "content": "<p>there's a few small annoyances still, like that I can't register <code>HasDTopology</code> on open subsets because openness is not information that's available to typeclass inference - but ultimately it's the most promising approach I've seen so far</p>",
+        "id": 438185619,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1715521341
+    },
+    {
+        "content": "<p><a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Fact#doc\">docs#Fact</a> is useful here</p>",
+        "id": 438187215,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715522892
+    },
+    {
+        "content": "<p>Instead of using a subset and the fact that it's open, you can use <code>U : Opens X</code>, which is open by definition, so typeclass inference can be used here.</p>",
+        "id": 438191184,
+        "sender_full_name": "Sébastien Gouëzel",
+        "timestamp": 1715526699
+    }
+]

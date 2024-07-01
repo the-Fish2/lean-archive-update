@@ -1,0 +1,212 @@
+[
+    {
+        "content": "<p>I am having the exact same problem, however on this environment:<br>\n<a href=\"https://github.com/bernborgess/lean-cutting-planes/blob/main/lean-toolchain\">toolchain</a><br>\n<code>leanprover/lean4:v4.7.0</code><br>\n<a href=\"https://github.com/bernborgess/lean-cutting-planes/blob/main/lakefile.lean\">lakefile</a></p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Lake</span>\n<span class=\"kn\">open</span> <span class=\"n\">Lake</span> <span class=\"n\">DSL</span>\n\n<span class=\"n\">package</span> <span class=\"bp\">«</span><span class=\"n\">lean</span><span class=\"bp\">-</span><span class=\"n\">cutting</span><span class=\"bp\">-</span><span class=\"n\">planes</span><span class=\"bp\">»</span> <span class=\"n\">where</span>\n\n<span class=\"n\">require</span> <span class=\"n\">mathlib</span> <span class=\"k\">from</span> <span class=\"n\">git</span>\n  <span class=\"s2\">\"https://github.com/leanprover-community/mathlib4\"</span>\n\n<span class=\"n\">lean_lib</span> <span class=\"bp\">«</span><span class=\"n\">LeanCuttingPlanes</span><span class=\"bp\">»</span> <span class=\"n\">where</span>\n\n<span class=\"kd\">@[</span><span class=\"n\">default_target</span><span class=\"kd\">]</span>\n<span class=\"n\">lean_exe</span> <span class=\"bp\">«</span><span class=\"n\">lean</span><span class=\"bp\">-</span><span class=\"n\">cutting</span><span class=\"bp\">-</span><span class=\"n\">planes</span><span class=\"bp\">»</span> <span class=\"n\">where</span>\n  <span class=\"n\">root</span> <span class=\"o\">:=</span> <span class=\"bp\">`</span><span class=\"n\">Main</span>\n</code></pre></div>\n<p>And also, <code>lake update</code> returns:</p>\n<div class=\"codehilite\" data-code-language=\"Text only\"><pre><span></span><code>PS D:\\ic\\lean-cutting-planes&gt; lake update\nerror: ┬½lean-cutting-planes┬╗: could not rename packages directory (.\\.lake/packages -&gt; .\\.lake\\packages): no error (error code: 0)\n</code></pre></div>\n<p>And <code>lake exe cache get</code>:</p>\n<div class=\"codehilite\" data-code-language=\"Text only\"><pre><span></span><code>PS D:\\ic\\lean-cutting-planes&gt; lake exe cache get\ninfo: [1/9] Building Cache.IO\ninfo: [2/9] Building Cache.Hashing\ninfo: [2/9] Compiling Cache.IO\ninfo: [4/9] Compiling Cache.Hashing\ninfo: [4/9] Building Cache.Requests\ninfo: [6/9] Building Cache.Main\ninfo: [6/9] Compiling Cache.Requests\ninfo: [7/9] Compiling Cache.Main\ninfo: [9/9] Linking cache.exe\nNo files to download\nDecompressing 4381 file(s)\n[...]\nC:\\Users\\foo\\.cache\\mathlib\\0f6c25b493881f3b.ltar: The process cannot access the file because it is being used by another process. (os error 32)\nuncaught exception: leantar failed with error code 1\n</code></pre></div>\n<p>And with <code>lake build</code></p>\n<div class=\"codehilite\" data-code-language=\"Text only\"><pre><span></span><code>PS D:\\ic\\lean-cutting-planes&gt; lake build\n[1395/1395] Linking lean-cutting-planes.exe\nerror: failed to execute `c:\\Users\\foo\\.elan\\toolchains\\leanprover--lean4---v4.7.0\\bin\\leanc.exe`: unspecified system_category error (error code: 87)\n</code></pre></div>\n<p>Now, with a fresh project that depends on <code>mathlib4</code> it's the same</p>",
+        "id": 435056418,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1713901396
+    },
+    {
+        "content": "<p>I get this error as well on Windows when trying to run <code>lake update</code> in a project using <code>leanprover/lean4:v4.7.0-rc2</code></p>",
+        "id": 437613180,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1715160838
+    },
+    {
+        "content": "<p>The original issue was fixed in 4.8.0, for other errors let's start separate threads/issue reports</p>",
+        "id": 437613588,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1715160995
+    },
+    {
+        "content": "<p>3 messages were moved here from <a class=\"stream-topic\" data-stream-id=\"287929\" href=\"/#narrow/stream/287929-mathlib4/topic/error.20building.20windows.20exe.20.20proj\">#mathlib4 &gt; error building windows exe  proj</a> by <span class=\"user-mention silent\" data-user-id=\"111080\">Floris van Doorn</span>.</p>",
+        "id": 437614436,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1715161317
+    },
+    {
+        "content": "<p>Ah, if the rename is the error you received, then that as well should be fixed :) <a href=\"https://github.com/leanprover/lean4/commit/e54a0d7b89b7b8e4393b91e81f471d81f67ca713\">https://github.com/leanprover/lean4/commit/e54a0d7b89b7b8e4393b91e81f471d81f67ca713</a></p>",
+        "id": 437614859,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1715161455
+    },
+    {
+        "content": "<p>Ok, I moved this to a separate thread.<br>\nWhen running <code>lake update</code> in Windows in this repository<br>\n<a href=\"https://github.com/fpvandoorn/carleson/tree/9e06a00378a321140e8fd366a8f5fa96844f1fc5\">https://github.com/fpvandoorn/carleson/tree/9e06a00378a321140e8fd366a8f5fa96844f1fc5</a><br>\nat Lean version <code>leanprover/lean4:v4.7.0-rc2</code><br>\nI get the error</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">Floris</span><span class=\"bp\">@</span><span class=\"n\">Dell</span><span class=\"bp\">-</span><span class=\"n\">E</span> <span class=\"n\">MINGW64</span> <span class=\"bp\">~/</span><span class=\"n\">projects</span><span class=\"bp\">/</span><span class=\"n\">carleson</span> <span class=\"o\">(</span><span class=\"n\">master</span><span class=\"o\">)</span>\n<span class=\"bp\">$</span> <span class=\"n\">lake</span> <span class=\"n\">update</span>\n<span class=\"n\">error</span><span class=\"o\">:</span> <span class=\"n\">carleson</span><span class=\"o\">:</span> <span class=\"n\">could</span> <span class=\"n\">not</span> <span class=\"n\">rename</span> <span class=\"n\">packages</span> <span class=\"n\">directory</span> <span class=\"o\">(</span><span class=\"bp\">.\\.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">packages</span> <span class=\"bp\">-&gt;</span> <span class=\"bp\">.\\.</span><span class=\"n\">lake</span><span class=\"bp\">\\</span><span class=\"n\">packages</span><span class=\"o\">):</span> <span class=\"n\">no</span> <span class=\"n\">error</span> <span class=\"o\">(</span><span class=\"n\">error</span> <span class=\"n\">code</span><span class=\"o\">:</span> <span class=\"mi\">0</span><span class=\"o\">)</span>\n</code></pre></div>",
+        "id": 437614891,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1715161469
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110024\">Sebastian Ullrich</span> <a href=\"#narrow/stream/270676-lean4/topic/could.20not.20rename.20packages.20directory/near/437614859\">said</a>:</p>\n<blockquote>\n<p>Ah, if the rename is the error you received, then that as well should be fixed :) <a href=\"https://github.com/leanprover/lean4/commit/e54a0d7b89b7b8e4393b91e81f471d81f67ca713\">https://github.com/leanprover/lean4/commit/e54a0d7b89b7b8e4393b91e81f471d81f67ca713</a></p>\n</blockquote>\n<p>What is currently the most convenient way to update <code>lean-toolchain</code> when <code>lake update</code> errors?</p>",
+        "id": 437615046,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1715161534
+    },
+    {
+        "content": "<p>there isn't one, it's copy paste</p>",
+        "id": 437615726,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1715161777
+    },
+    {
+        "content": "<p>the convenient way is the mathlib post-update hook but this only works if lake hasn't had a forward-incompatible change recently</p>",
+        "id": 437615853,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1715161817
+    },
+    {
+        "content": "<p>I can confirm that this is fixed after manually replacing the contents of <code>lean-toolchain</code> with <code>leanprover/lean4:v4.8.0-rc1</code>. Thanks!</p>",
+        "id": 437618950,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1715162965
+    },
+    {
+        "content": "<p>Right now the error changed to aesop config:</p>\n<div class=\"codehilite\" data-code-language=\"Text only\"><pre><span></span><code>PS D:\\ic\\lean-cutting-planes&gt; lake update\nerror: .\\.lake\\packages\\aesop\\lakefile.toml:1:0: error: unexpected identifier; expected command\nerror: .\\.lake\\packages\\aesop\\lakefile.toml: package configuration has errors\n</code></pre></div>",
+        "id": 437632644,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715168708
+    },
+    {
+        "content": "<p>Your lean-toolchain is likely older than aesop's, try copying it over</p>",
+        "id": 437634070,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1715169260
+    },
+    {
+        "content": "<p>Changed to <code>leanprover/lean4:v4.8.0-rc1</code>. Now <code>lake update</code> works</p>",
+        "id": 437657136,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715176705
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> made <a href=\"https://github.com/leanprover/lean4/pull/4103\">lean#4103</a> <a href=\"#narrow/stream/287929-mathlib4/topic/lake.20update.20not.20working/near/437555363\">last night</a> about how there should be more of a warning for toolchain mismatch on lake update, so if anyone is looking for an issue to upvote, perhaps this is it.</p>",
+        "id": 437659135,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1715177253
+    },
+    {
+        "content": "<p>However on <code>lake build</code> i get a <a href=\"https://pastebin.com/ct9LysTa\">huge error</a> ending with:</p>\n<div class=\"codehilite\" data-code-language=\"Text only\"><pre><span></span><code>error: failed to execute 'c:\\Users\\bernb\\.elan\\toolchains\\leanprover--lean4---v4.8.0-rc1\\bin\\leanc.exe': unspecified system_category error (error code: 87)\nSome build steps logged failures:\n- Linking lean-cutting-planes.exe\nerror: build failed\n</code></pre></div>",
+        "id": 437659187,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715177272
+    },
+    {
+        "content": "<p>Last night I had to <code>rm -rf .lake</code> to remove the <code>.lake</code> folder to get it to work after I updated the toolchain</p>",
+        "id": 437659402,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1715177330
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"282271\">Bolton Bailey</span> <a href=\"#narrow/stream/270676-lean4/topic/could.20not.20rename.20packages.20directory/near/437659402\">said</a>:</p>\n<blockquote>\n<p>Last night I had to remove the <code>.lake</code> folder to get it to work after I updated the toolchain</p>\n</blockquote>\n<p>What is your toolchain now?</p>",
+        "id": 437659516,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715177365
+    },
+    {
+        "content": "<p>leanprover/lean4:v4.8.0-rc1</p>",
+        "id": 437659788,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1715177441
+    },
+    {
+        "content": "<p>Hmm, maybe this is a different issue, sorry, <code>lake update</code> was the thing that was broken for me after updating the toolchain.</p>",
+        "id": 437660019,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1715177518
+    },
+    {
+        "content": "<p>Tried deleting <code>.lake</code> but the outcome is the same, sadly.</p>",
+        "id": 437663619,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715178674
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"671510\">@Bernardo Borges</span>, could you post the URL of a repo that shows this problem?</p>",
+        "id": 437744419,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715209498
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/270676-lean4/topic/could.20not.20rename.20packages.20directory/near/437744419\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"671510\">Bernardo Borges</span>, could you post the URL of a repo that shows this problem?</p>\n</blockquote>\n<p>Surely, its <a href=\"https://github.com/bernborgess/lean-cutting-planes\">https://github.com/bernborgess/lean-cutting-planes</a></p>",
+        "id": 437749429,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715213298
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"671510\">@Bernardo Borges</span>, for me:</p>\n<ul>\n<li><code>git clone https://github.com/bernborgess/lean-cutting-planes</code></li>\n<li><code>cd lean-cutting-planes</code></li>\n<li><code>git checkout 3eae7fc729e0c895d28992a36b271b8f485c28bf</code> (current master)</li>\n<li>change <code>lean-toolchain</code> to <code>leanprover/lean4:v4.8.0-rc1</code></li>\n<li><code>lake update</code></li>\n<li><code>lake exe cache get</code></li>\n<li><code>lake build</code></li>\n</ul>\n<p>succeeds.</p>",
+        "id": 437752536,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715216266
+    },
+    {
+        "content": "<p>Ok! I'll try it again this way</p>",
+        "id": 437752616,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715216335
+    },
+    {
+        "content": "<p>So, I cloned the project again and followed each step. All is fine, until the <code>lake build</code>, that fails with an <a href=\"https://pastebin.com/T2psBr4v\">error</a> (password is \"rename\")</p>\n<div class=\"codehilite\" data-code-language=\"Text only\"><pre><span></span><code>error: failed to execute 'c:\\Users\\bernb\\.elan\\toolchains\\leanprover--lean4---v4.8.0-rc1\\bin\\leanc.exe': unspecified system_category error (error code: 87)\nSome build steps logged failures:\n- Linking lean-cutting-planes.exe\nerror: build failed\n</code></pre></div>",
+        "id": 437818006,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715260852
+    },
+    {
+        "content": "<p>Sorry, this has exceeded my lake expertise, I've never built an <code>.exe</code> on windows. :-(</p>",
+        "id": 437907064,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715301053
+    },
+    {
+        "content": "<p>87 is <code>ERROR_INVALID_PARAMETER</code> (\"The parameter was incorrect\"). Looks like <code>lake</code> called <code>CreateProcess</code> with a 56856-character string as the <code>lpCommandLine</code> argument, and that's invalid because the maximum length for that parameter is 32767 characters. I was able to get an exe by writing the arguments to a file <code>args.txt</code> then invoking leanc as <code>leanc.exe @args.txt</code>. Maybe <code>lake</code> should be doing that for you.</p>",
+        "id": 437940675,
+        "sender_full_name": "Richard Copley",
+        "timestamp": 1715327895
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"315577\">@Mac Malone</span>, do you know what's going on here?</p>\n<p>We may need a bug report with a repro.</p>",
+        "id": 437942673,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715328791
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> Yeah, this should get a bug report. Command line limits were a anticipated problem but were put off until they actually become one. It seems we have reached that point.</p>",
+        "id": 437943098,
+        "sender_full_name": "Mac Malone",
+        "timestamp": 1715328965
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"400544\">@Richard Copley</span>, would you be able to write an issue at the lean repository showing how to reproduce your observations above?</p>",
+        "id": 437943787,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715329234
+    },
+    {
+        "content": "<p>Not until this evening (after <time datetime=\"2024-05-10T16:00:00Z\">2024-05-10T17:00:00+01:00</time>) or tomorrow, I'm afraid, so if someone beats me to it that would be good. I did the commands in <a href=\"#narrow/stream/270676-lean4/topic/could.20not.20rename.20packages.20directory/near/437752536\">your message</a> and got the same error as Bernardo, so anyone on Windows should be able to do it.</p>",
+        "id": 437945439,
+        "sender_full_name": "Richard Copley",
+        "timestamp": 1715329984
+    },
+    {
+        "content": "<p>Actually <span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span>, <span class=\"user-mention\" data-user-id=\"315577\">@Mac Malone</span>, I'll be a little more assertive, and say that I'm not the right person to create the bug report, because I don't know enough about Lean as a general-purpose language to do it properly. Sorry!</p>",
+        "id": 437951142,
+        "sender_full_name": "Richard Copley",
+        "timestamp": 1715332597
+    },
+    {
+        "content": "<p>How can I help?</p>",
+        "id": 437958329,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715335940
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"671510\">@Bernardo Borges</span>, pretty much just combining my command line list above, with whatever output you get from running that on WIndows. Richard's post above seems to do a good job of highlighting the relevant information. We just need it in an issue on the lean4 repository, so that when and if Mac has time to deal with it, there's a simple to reproduce bug to observe.</p>",
+        "id": 437970160,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715342218
+    },
+    {
+        "content": "<p>Created the issue <a href=\"https://github.com/leanprover/lean4/issues/4159\">https://github.com/leanprover/lean4/issues/4159</a></p>",
+        "id": 438599656,
+        "sender_full_name": "Bernardo Borges",
+        "timestamp": 1715700026
+    }
+]

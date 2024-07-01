@@ -1,0 +1,278 @@
+[
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> recently <a href=\"#narrow/stream/287929-mathlib4/topic/lake.20update.20not.20working/near/437569083\">recommended</a> to me that I use <a href=\"https://github.com/leanprover/lean-action\"><code>lean-action</code></a> to CI my lean project. This seems to be working well, kudos to <span class=\"user-mention\" data-user-id=\"699684\">@Austin Letson</span> for making it. I have a few questions:</p>\n<ul>\n<li>Who pays for the compute to run this action? Is there a limit to how many times I can run it per month?</li>\n<li>Is there an example of a repo with testing set up, so that I can get testing to work?</li>\n</ul>\n<p>Thanks!</p>",
+        "id": 439409873,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1716095872
+    },
+    {
+        "content": "<p>You may check out <a href=\"https://github.com/leanprover-community/aesop/pull/135\">leanprover-community/aesop#135</a> and <a href=\"https://github.com/leanprover-community/aesop/pull/136\">leanprover-community/aesop#136</a> .</p>\n<p>Your own Github account pays for the compute, which is free for public repo.</p>",
+        "id": 439419792,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1716106022
+    },
+    {
+        "content": "<blockquote>\n<ul>\n<li>Is there an example of a repo with testing set up, so that I can get testing to work?</li>\n</ul>\n</blockquote>\n<p>In addition to  aesop, <a href=\"https://github.com/leanprover-community/import-graph/pull/9\">import-graph</a> also uses <code>lean-action</code> to run <code>lake test</code>. I just created a PR to add these examples to the README.md.</p>",
+        "id": 439432139,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716118903
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"282271\">@Bolton Bailey</span> As lean users start to use the alpha version, we want to collect feedback to improve.  If you experience issues or have recommendations for how we could improve docs/setup/usage let us know! You can <a href=\"https://github.com/leanprover/lean-action/issues\">create an issue</a> or message on Zulip.</p>",
+        "id": 439432236,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716119042
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"699684\">@Austin Letson</span> My personal feedback is it would be nice to support specifying the directory of the Lean project,  <a href=\"https://github.com/cedar-policy/cedar-spec/tree/main/cedar-lean\">https://github.com/cedar-policy/cedar-spec/tree/main/cedar-lean</a> is one such example.</p>\n<p>This would also support multiple Lean projects in one repo, via multiple lean-action steps.</p>",
+        "id": 439435485,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1716122355
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"296911\">@Utensil Song</span> Thanks for pointing this out. I created <a href=\"https://github.com/leanprover/lean-action/issues/34\">an issue</a> to support this use case.</p>",
+        "id": 439451967,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716138226
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"282271\">Bolton Bailey</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/439409873\">said</a>:</p>\n<blockquote>\n<ul>\n<li>Is there an example of a repo with testing set up, so that I can get testing to work?</li>\n</ul>\n</blockquote>\n<p>Batteries now uses <code>lake test</code>, and <a href=\"https://github.com/leanprover-community/mathlib4/pull/12943\">#12943</a> is the Mathlib PR (awaiting-review for 4 days, hint hint) that will enable <code>lake test</code> in Mathlib.</p>\n<p>We need to make a few changes in Lake that will not land until at least <code>v4.9.0-rc1</code>, but we are hoping that <code>lake test</code> (and lean-action) will be viable for everyone soon, and indeed that <code>lake new</code> will set up your project to use <code>lean-action</code>.</p>",
+        "id": 439473574,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716159973
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"699684\">Austin Letson</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/439451967\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"296911\">Utensil Song</span> Thanks for pointing this out. I created <a href=\"https://github.com/leanprover/lean-action/issues/34\">an issue</a> to support this use case.</p>\n</blockquote>\n<p>Thanks for the issue, per my test with lean-action, <code>working-directory</code> doesn't work with <code>use</code>, it only works with <code>run</code> etc.</p>",
+        "id": 439512774,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1716188111
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"296911\">Utensil Song</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/439512774\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"699684\">Austin Letson</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/439451967\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"296911\">Utensil Song</span> Thanks for pointing this out. I created <a href=\"https://github.com/leanprover/lean-action/issues/34\">an issue</a> to support this use case.</p>\n</blockquote>\n<p>Thanks for the issue, per my test with lean-action, <code>working-directory</code> doesn't work with <code>use</code>, it only works with <code>run</code> etc.</p>\n</blockquote>\n<p>Ah okay. In that case we can definitely create an input that allows users to specify a Lean directory directly.</p>",
+        "id": 439550315,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716203006
+    },
+    {
+        "content": "<p>For those who are already trying out <code>lean-action</code>, <code>v1-beta</code> is now available <span aria-label=\"tada\" class=\"emoji emoji-1f389\" role=\"img\" title=\"tada\">:tada:</span> </p>\n<p><code>v1-beta</code> includes usability improvements and a new <code>build-args</code> input to support additional use cases, such as <code>batteries</code> <code>lake build -Kwerror</code>.</p>\n<p>The <a href=\"https://github.com/leanprover/lean-action/releases\">release notes</a> are on GitHub.</p>",
+        "id": 439910313,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716327428
+    },
+    {
+        "content": "<p>Related,  I just opened a <a href=\"https://github.com/leanprover-community/batteries/pull/805\">PR</a> to use <code>lean-action</code> in <code>batteries</code>.</p>",
+        "id": 439910371,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716327453
+    },
+    {
+        "content": "<p>Also, thank you to <span class=\"user-mention\" data-user-id=\"613177\">@Oliver Butterley</span> for driving many of the improvements in this version!</p>",
+        "id": 439914161,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716328834
+    },
+    {
+        "content": "<p>Thanks for doing this!</p>\n<p>For me the main regression is that the CI output is less easily interpretable.</p>\n<p>Can we achieve separate top level items for build, test, etc? I'm not sure how that would be done, at this point.</p>",
+        "id": 439925479,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716333419
+    },
+    {
+        "content": "<p>Further, could you run some tests in which you break the build, break a test, and break the linter, and them link from the PR description to the build outputs, so we can see what they each look like?</p>",
+        "id": 439925528,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716333456
+    },
+    {
+        "content": "<p>(i.e. do these just by pushing commits to the PR itself; we squash merge in the end, so once they are reverted after CI has run, these commits can harmlessly stay in the PR history)</p>",
+        "id": 439925608,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716333490
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> design the desired user interface that is best for those who will use the tooling and we can make it happen! Not everything is possible but most things are. What exact details should be seen and where should they be seen?</p>\n<p>Actions can output information in three ways: <strong>logs</strong>, <strong>annotations</strong> and <strong>summaries</strong>. </p>\n<ul>\n<li>The log unavoidably contains a lot of lines of info and so is not useful as an overview.</li>\n<li>Annotations are displayed on the job summary page and are of type (notice | warning | error). (This is the place where all the \"Node.js 16 actions are deprecated\" messages are written.) Annotations can have links to files and lines within those files. Creating the action we have total control on exactly what the annotations are.</li>\n<li><a href=\"https://github.blog/2022-05-09-supercharging-github-actions-with-job-summaries/\">Summaries</a> give the most flexibility. This is markdown formatted, appears on the job summary page and we have total control on what is written there. Possibly a table displaying the steps and concise (and colourful) info on the results from each? </li>\n</ul>\n<p>Additionally the action could produce a markdown formatted summary which is then used by another action to be sent as a message some place if that happens to be useful for the particular PR / reviewing setup.</p>",
+        "id": 440026618,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1716360891
+    },
+    {
+        "content": "<p>Okay! :-)</p>\n<p>My basic complaint is that pre-<code>lean-action</code>, we can easily see whether a PR failed at build, test, or lint, as soon as we click through to the build output, e.g.</p>\n<p><a href=\"/user_uploads/3121/0BmKPRqm7Xt96uAXt8s4BNGa/Screenshot-2024-05-22-at-5.01.07PM.png\">Screenshot-2024-05-22-at-5.01.07PM.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/0BmKPRqm7Xt96uAXt8s4BNGa/Screenshot-2024-05-22-at-5.01.07PM.png\" title=\"Screenshot-2024-05-22-at-5.01.07PM.png\"><img src=\"/user_uploads/3121/0BmKPRqm7Xt96uAXt8s4BNGa/Screenshot-2024-05-22-at-5.01.07PM.png\"></a></div><p>from <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9143437388/job/25140072702?pr=782\">https://github.com/leanprover-community/batteries/actions/runs/9143437388/job/25140072702?pr=782</a></p>\n<p>vs</p>\n<p><a href=\"/user_uploads/3121/3KkLpzTQstu9aE5VhHzZZ8Ul/Screenshot-2024-05-22-at-5.01.25PM.png\">Screenshot-2024-05-22-at-5.01.25PM.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/3KkLpzTQstu9aE5VhHzZZ8Ul/Screenshot-2024-05-22-at-5.01.25PM.png\" title=\"Screenshot-2024-05-22-at-5.01.25PM.png\"><img src=\"/user_uploads/3121/3KkLpzTQstu9aE5VhHzZZ8Ul/Screenshot-2024-05-22-at-5.01.25PM.png\"></a></div><p>from <a href=\"https://github.com/leanprover-community/batteries/actions/runs/9181778942/job/25249274199?pr=805\">https://github.com/leanprover-community/batteries/actions/runs/9181778942/job/25249274199?pr=805</a> where all the good stuff is hidden in the lean-action step, and even when we open that we only get</p>\n<p><a href=\"/user_uploads/3121/RNn_NcrAN6TdOH8eNVZqj_es/Screenshot-2024-05-22-at-5.01.36PM.png\">Screenshot-2024-05-22-at-5.01.36PM.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/RNn_NcrAN6TdOH8eNVZqj_es/Screenshot-2024-05-22-at-5.01.36PM.png\" title=\"Screenshot-2024-05-22-at-5.01.36PM.png\"><img src=\"/user_uploads/3121/RNn_NcrAN6TdOH8eNVZqj_es/Screenshot-2024-05-22-at-5.01.36PM.png\"></a></div><p>where it is not at all obvious where the build / test /lint segments of the output start and stop.</p>",
+        "id": 440027866,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716361491
+    },
+    {
+        "content": "<p>It's true that \"The log unavoidably contains a lot of lines of info\", but I don't think it's true that \"and so is not useful as an overview\". Just plain text section headings separating things would help.</p>\n<p>But really we want separate sections on the build output screen, which I think can only be achieved by having separate steps.</p>",
+        "id": 440028096,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716361571
+    },
+    {
+        "content": "<p>Is there something fundamental that the step sections can do that the nested groups can't? If the output was cleaned up into</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"bp\">&gt;</span><span class=\"w\"> </span><span class=\"n\">Lake</span><span class=\"w\"> </span><span class=\"n\">Build</span>\n<span class=\"bp\">&gt;</span><span class=\"w\"> </span><span class=\"n\">Lake</span><span class=\"w\"> </span><span class=\"n\">Test</span>\n<span class=\"bp\">&gt;</span><span class=\"w\"> </span><span class=\"n\">Lint</span>\n</code></pre></div>\n<p>would that be sufficient?</p>",
+        "id": 440033844,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1716363795
+    },
+    {
+        "content": "<p>One way is to make it to have more action steps like <a href=\"https://github.com/quarto-dev/quarto-actions\">https://github.com/quarto-dev/quarto-actions</a>, so the user can choose to run all step or organize the steps as how they would like it.</p>",
+        "id": 440034112,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1716363884
+    },
+    {
+        "content": "<p>There is also one clear limitation of having separate steps: they are run in order. Really for the highest possible throughput, all (expensive) CI actions would have to be modeled as Lake build targets that are scheduled in parallel as determined by Lake. If the output of such an approach that does not allow for linear section names is not sufficiently clear, we should look at how to improve it.</p>",
+        "id": 440035206,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1716364305
+    },
+    {
+        "content": "<p>Another choice may be using <a href=\"https://github.blog/2022-02-10-using-reusable-workflows-github-actions/\">Reusable workflows</a> to have all these steps run in one go but logged as separate steps.</p>\n<p><a href=\"/user_uploads/3121/GyuQwkXqv4ov1-V7fbCY8uBv/image.png\">image.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/GyuQwkXqv4ov1-V7fbCY8uBv/image.png\" title=\"image.png\"><img src=\"/user_uploads/3121/GyuQwkXqv4ov1-V7fbCY8uBv/image.png\"></a></div>",
+        "id": 440035385,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1716364377
+    },
+    {
+        "content": "<p>Nesting is I think fine.</p>",
+        "id": 440037837,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716365291
+    },
+    {
+        "content": "<p>There seems to be <a href=\"https://github.com/actions/toolkit/pull/1001\">actions/toolkit#1001</a> regarding nested groups.</p>",
+        "id": 440044020,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1716367469
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"296911\">Utensil Song</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/440035385\">said</a>:</p>\n<blockquote>\n<p>Another choice may be using <a href=\"https://github.blog/2022-02-10-using-reusable-workflows-github-actions/\">Reusable workflows</a> to have all these steps run in one go but logged as separate steps.</p>\n</blockquote>\n<p><span aria-label=\"thinking\" class=\"emoji emoji-1f914\" role=\"img\" title=\"thinking\">:thinking:</span> that would give the separate steps and currently lean-action is a composite action so adapting one to the other is straight forward. I'm not aware of possible downsides except that it couldn't be listed on Github Marketplace and couldn't later become a fully fledged javascript or docker action.</p>",
+        "id": 440046651,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1716368461
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"296911\">Utensil Song</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/440044020\">said</a>:</p>\n<blockquote>\n<p>There seems to be <a href=\"https://github.com/actions/toolkit/pull/1001\">actions/toolkit#1001</a> regarding nested groups.</p>\n</blockquote>\n<p>Nesting a grouping in the github actions log is a bit primitive. It would be possible to just add blank lines and headers to separate the text a bit. But doesn't seem the perfect solution.</p>",
+        "id": 440047125,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1716368617
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"296911\">Utensil Song</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/440034112\">said</a>:</p>\n<blockquote>\n<p>One way is to make it to have more action steps like <a href=\"https://github.com/quarto-dev/quarto-actions\">https://github.com/quarto-dev/quarto-actions</a>, so the user can choose to run all step or organize the steps as how they would like it.</p>\n</blockquote>\n<p>Structuring the workflow like this or, more or less equivalently, like <a href=\"https://github.com/microsoft/action-python\">action-python</a> does have the benefit of all the steps being separate and the use totally customizable. </p>\n<p>Then again, could more functionality be built into lake and so each desired step is already very concise?</p>",
+        "id": 440048348,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1716369068
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"613177\">Oliver Butterley</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/440046651\">said</a>:</p>\n<blockquote>\n<p>except that it couldn't be listed on Github Marketplace</p>\n</blockquote>\n<p>I'd prefer we avoid that.</p>",
+        "id": 440057161,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716372088
+    },
+    {
+        "content": "<p>Let's not add too much technology here. I think just plain text headers and blank lines is a great start, and we can iteratively ask for changes in <code>lake</code> output too, if needed.</p>",
+        "id": 440057353,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716372152
+    },
+    {
+        "content": "<p>One thing to note is that when there is a failure, the log group where the failure occurred is automatically expanded. I added links to examples on the <a href=\"https://github.com/leanprover-community/batteries/pull/805\">batteries pr</a>. This isn't as clear as the multi-step workflow, but it is better than manually expanding the log groups.</p>\n<p>I agree with <span class=\"user-mention\" data-user-id=\"613177\">@Oliver Butterley</span> that summaries and annotations could complement the logs. To give an idea of what this would look like, <a href=\"https://github.com/leanprover/lean-action/pull/31#issuecomment-2119024832\">here</a> is the <code>lean-action</code> PR for adding <code>lake check-test</code> where we used a summary to surface the reason for the workflow failure to the user.</p>",
+        "id": 440087663,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716383202
+    },
+    {
+        "content": "<p>I have created a PR to improve the log group headers and add blank lines <a href=\"https://github.com/leanprover/lean-action/pull/41\">here</a>.</p>\n<p>This is what the log output looks like now: <br>\n<a href=\"/user_uploads/3121/5XB5F91VPFrb8t5lVZZHeVXy/2024-05-22-090841-screenshot.png\">2024-05-22-090841-screenshot.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/5XB5F91VPFrb8t5lVZZHeVXy/2024-05-22-090841-screenshot.png\" title=\"2024-05-22-090841-screenshot.png\"><img src=\"/user_uploads/3121/5XB5F91VPFrb8t5lVZZHeVXy/2024-05-22-090841-screenshot.png\"></a></div><p>There is still room for improvement. I haven't figured out how to control the log output of the <code>actions/cache</code> steps, but there may be a workaround. I used a workaround I found <a href=\"https://github.com/actions/runner/issues/1877#issuecomment-1987226919\">here</a> to change some of the log group names.</p>",
+        "id": 440089177,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716383643
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"699684\">@Austin Letson</span> Thanks for doing this! I've updated most of my active repos to use lean-actions today and it works totally fine so far.</p>",
+        "id": 440093454,
+        "sender_full_name": "François G. Dorais",
+        "timestamp": 1716384926
+    },
+    {
+        "content": "<p>Yay! I am glad it is working well <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 440194941,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716416723
+    },
+    {
+        "content": "<p>Thanks for the links to the failure mode logs. They look good. I added a suggestion for a name for the build step (users reading the log care what it is doing, not what the action is called).</p>\n<p>If that looks good, I propose we merge!</p>",
+        "id": 440196333,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716417316
+    },
+    {
+        "content": "<p>Good point. The new name looks good to me! I have updated the PR.</p>",
+        "id": 440202997,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1716420079
+    },
+    {
+        "content": "<p>Merged. Let's keep an eye on it!</p>",
+        "id": 440203789,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716420401
+    },
+    {
+        "content": "<p>How can I use lean-actions to do lake update but not lake build?</p>",
+        "id": 445880720,
+        "sender_full_name": "François G. Dorais",
+        "timestamp": 1718897345
+    },
+    {
+        "content": "<p>Currently lean-action always runs lake build. We are currently working on supporting use cases which don't include lake build. This functionality will likely be available in the next couple of weeks.</p>",
+        "id": 445890651,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1718900122
+    },
+    {
+        "content": "<h1>v1-beta.1 Release of <code>lean-action</code> <span aria-label=\"rocket\" class=\"emoji emoji-1f680\" role=\"img\" title=\"rocket\">:rocket:</span></h1>\n<p>v1-beta.1 adds new features and improvements to <code>lean-action</code>:</p>\n<ul>\n<li>\n<p>new <code>lake-package-directory</code> input to specify the directory to run Lake commands. <br>\nThis input will enable users to use <code>lean-action</code> when Lake packages are contained in repository subdirectories.</p>\n</li>\n<li>\n<p>new <code>use-github-cache</code> input to specify if <code>lean-action</code> should use <code>actions/cache</code> to cache the <code>.lake</code> folder (useful for debugging and testing)</p>\n</li>\n<li><code>build-status</code> and <code>test-status</code> output parameters to use in subsequent workflow steps</li>\n</ul>\n<p>Additionally, <code>lean-action</code> now supports a fully automated functional test suite to ensure that future improvements and changes don't break existing functionality.</p>\n<p>You can view the full release notes <a href=\"https://github.com/leanprover/lean-action/releases/tag/v1-beta.1\">here</a>.</p>\n<h2>Upgrading to v1-beta.1</h2>\n<p>All workflows with<code>- uses: leanprover/lean-action@v1-beta</code> will automatically start using <code>v1-beta.1</code> instead of <code>v1-beta.0</code>, so no action is required to upgrade to <code>v1-beta.1</code>.</p>\n<p>If you have any questions or encounter any issues, you can post in this Zulip thread or create an issue on GitLab.</p>\n<p>Thank you to <span class=\"user-mention\" data-user-id=\"626349\">@Asei Inoue</span>, <span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span>, and <span class=\"user-mention\" data-user-id=\"296911\">@Utensil Song</span> for feedback and help with this release.</p>",
+        "id": 446073722,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1718973155
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"699684\">@Austin Letson</span>, thanks so much for this great work on a foundational tool for the ecosystem!</p>",
+        "id": 446192052,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719011131
+    },
+    {
+        "content": "<p>A milestone I'm really excited about is getting <code>lake new</code> to include a Github workflow running <code>lean-action</code>.</p>\n<p>Do we still have technical blockers for this? Or is it a matter of writing the PR that adds to the <code>lake new</code> templates?</p>",
+        "id": 446192244,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719011185
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/113488-general/topic/lean-action/near/446192244\">said</a>:</p>\n<blockquote>\n<p>A milestone I'm really excited about is getting <code>lake new</code> to include a Github workflow running <code>lean-action</code>.</p>\n<p>Do we still have technical blockers for this? Or is it a matter of writing the PR that adds to the <code>lake new</code> templates?</p>\n</blockquote>\n<p>I am excited about this milestone as well! I recommend waiting until the <code>v1</code> release of <code>lean-action</code> to ship it with <code>lake new/init</code>. <code>v1</code> will likely not be backward compatible with the beta versions. There are a few outstanding issues that I would like to complete for <code>v1</code> (<a href=\"https://github.com/leanprover/lean-action/issues?q=is%3Aopen+is%3Aissue+label%3Av1-release\">link to the filtered list on GitHub</a>). One issue already has <a href=\"https://github.com/leanprover/lean-action/pull/61\">a PR</a>. This PR will impact the user experience, so I have added you as a reviewer.</p>\n<p>All this being said, I estimate <code>v1</code> will be ready in 2-3 weeks, and I see no reason why we couldn't work on adding the functionality to Lake in parallel. Should I create an issue on leanprover/lean4 to add a <code>lake new</code> template?</p>",
+        "id": 446263130,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1719055085
+    },
+    {
+        "content": "<p>Another related note: When writing the functional tests for <code>lean-action</code>, my primary focus has been testing <code>lean-action</code>on packages created with <code>lake new/init</code>. For example, in the <a href=\"https://github.com/leanprover/lean-action/actions/runs/9612611445\">test run for <code>v1-beta.1</code></a> the <code>lake-init-success</code> matrix runs <code>lean-action</code> on packages created with <code>lake init standalone</code>, <code>lake init mathdep math</code>, and <code>lake init tomltest .toml</code>. Other tests run <code>lake init</code> and then introduce a change to the Lake file, e.g., adding a <code>@[test_driver]</code> or an obvious syntax error and confirming <code>lean-action</code> behaves correctly.</p>\n<p>Expanding our functional tests with more scenarios shouldn't take much effort and will allow us to identify issues users may encounter when using <code>lean-action</code> out of the box with <code>lake new</code>. I welcome any suggestions for additional test cases. Also tagging <span class=\"user-mention\" data-user-id=\"315577\">@Mac Malone</span> for his input.</p>",
+        "id": 446264111,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1719055874
+    },
+    {
+        "content": "<p>I created an <a href=\"https://github.com/leanprover/lean4/issues/4606\">issue</a> and corresponding <a href=\"https://github.com/leanprover/lean4/pull/4608\">draft PR</a> to add a lean-action workflow on <code>lake new/init</code>.</p>",
+        "id": 448312705,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1719836083
+    },
+    {
+        "content": "<p>Mac is on vacation this week, but looking forward to discussing this when he is back!</p>",
+        "id": 448312842,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719836126
+    },
+    {
+        "content": "<p>Sounds good!</p>",
+        "id": 448313705,
+        "sender_full_name": "Austin Letson",
+        "timestamp": 1719836334
+    }
+]

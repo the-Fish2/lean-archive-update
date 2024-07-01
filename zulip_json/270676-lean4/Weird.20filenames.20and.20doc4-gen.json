@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>When trying to get doc-gen4 to work with a project, I got a failure when trying to build a module/filename containing characters that need french quoting. Perhaps this is expected and just not supported by doc-gen4. I made a minimal working example here:<br>\n<a href=\"https://github.com/mo271/TestProject\">https://github.com/mo271/TestProject</a><br>\nThis project contains a file <code>TestProject/Erdős.lean</code>. When running </p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">DOCGEN_SRC</span><span class=\"bp\">=</span><span class=\"s2\">\"vscode\"</span> <span class=\"n\">lake</span> <span class=\"bp\">-</span><span class=\"n\">R</span> <span class=\"bp\">-</span><span class=\"n\">Kenv</span><span class=\"bp\">=</span><span class=\"n\">dev</span> <span class=\"n\">build</span> <span class=\"n\">TestProject</span><span class=\"o\">:</span><span class=\"n\">docs</span>\n</code></pre></div>\n<p>I get an error:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"o\">[</span><span class=\"mi\">155</span><span class=\"bp\">/</span><span class=\"mi\">159</span><span class=\"o\">]</span> <span class=\"n\">Documenting</span> <span class=\"n\">module</span><span class=\"o\">:</span> <span class=\"n\">TestProject.</span><span class=\"bp\">«</span><span class=\"n\">Erd</span><span class=\"bp\">ő</span><span class=\"n\">s</span><span class=\"bp\">»</span>\n<span class=\"n\">error</span><span class=\"o\">:</span> <span class=\"n\">no</span> <span class=\"n\">such</span> <span class=\"n\">file</span> <span class=\"n\">or</span> <span class=\"n\">directory</span> <span class=\"o\">(</span><span class=\"n\">error</span> <span class=\"n\">code</span><span class=\"o\">:</span> <span class=\"mi\">2</span><span class=\"o\">)</span>\n  <span class=\"n\">file</span><span class=\"o\">:</span> <span class=\"bp\">./.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">build</span><span class=\"bp\">/</span><span class=\"n\">doc</span><span class=\"bp\">/</span><span class=\"n\">TestProject</span><span class=\"bp\">/</span><span class=\"n\">Erd</span><span class=\"bp\">ő</span><span class=\"n\">s.html</span>\n</code></pre></div>\n<p>and indeed this file is not present:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">ls</span> <span class=\"bp\">./.</span><span class=\"n\">lake</span><span class=\"bp\">/</span><span class=\"n\">build</span><span class=\"bp\">/</span><span class=\"n\">doc</span><span class=\"bp\">/</span><span class=\"n\">TestProject</span>\n<span class=\"n\">Basic.html</span>  <span class=\"n\">Basic.html.hash</span>  <span class=\"n\">Basic.html.trace</span>  <span class=\"bp\">«</span><span class=\"n\">Erd</span><span class=\"bp\">ő</span><span class=\"n\">s</span><span class=\"bp\">».</span><span class=\"n\">html</span>  <span class=\"n\">Erd</span><span class=\"bp\">ő</span><span class=\"n\">s.html.trace</span>\n</code></pre></div>\n<p>However, <code> «Erdős».html</code> is there. I think the name of the missing file comes from this line:<br>\n<a href=\"https://github.com/leanprover/doc-gen4/blob/a34d3c1f7b72654c08abe5741d94794db40dbb2e/lakefile.lean#L139\">https://github.com/leanprover/doc-gen4/blob/a34d3c1f7b72654c08abe5741d94794db40dbb2e/lakefile.lean#L139</a><br>\nwhile the file that is present is written here: <a href=\"https://github.com/leanprover/doc-gen4/blob/a34d3c1f7b72654c08abe5741d94794db40dbb2e/DocGen4/Output/Base.lean#L125\">https://github.com/leanprover/doc-gen4/blob/a34d3c1f7b72654c08abe5741d94794db40dbb2e/DocGen4/Output/Base.lean#L125</a></p>\n<p>Is there an easy fix for that or is the solution to use more conventional names?</p>",
+        "id": 434611197,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1713725882
+    },
+    {
+        "content": "<p>Is <code>mod.filePath</code> set incorrectly there?</p>",
+        "id": 434611551,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1713726190
+    },
+    {
+        "content": "<p>not sure which one it incorrect, but this one is set to the name without the french quotes : <code>./.lake/build/doc/TestProject/Erdős.html</code><br>\n<a href=\"https://github.com/leanprover/lean4/blob/62cdb51ed5b9d8487877d5a4adbcd4659d81fc6a/src/lake/Lake/Config/Module.lean#L65-L66\">https://github.com/leanprover/lean4/blob/62cdb51ed5b9d8487877d5a4adbcd4659d81fc6a/src/lake/Lake/Config/Module.lean#L65-L66</a></p>",
+        "id": 434613968,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1713728453
+    },
+    {
+        "content": "<p>bumping this: Has anyone been able to use doc4-gen together with filenames that work only with french quotes?</p>",
+        "id": 437002682,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1714810090
+    }
+]

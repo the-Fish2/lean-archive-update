@@ -1,0 +1,56 @@
+[
+    {
+        "content": "<p>How can I prove this?</p>\n<p><del>theorem dvd_of_pow_dvd_pow {α : Type*} [CommMonoid α] {a b : α} {n : ℕ} (hn : 0 &lt; n) (h : a ^ n ∣ b ^ n) : a ∣ b :=  by sorry</del></p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kd\">theorem</span> <span class=\"n\">Int.dvd_of_pow_dvd_pow</span> <span class=\"o\">{</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">ℤ</span><span class=\"o\">}</span> <span class=\"o\">{</span><span class=\"n\">n</span> <span class=\"o\">:</span> <span class=\"n\">ℕ</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">hn</span> <span class=\"o\">:</span> <span class=\"mi\">0</span> <span class=\"bp\">&lt;</span> <span class=\"n\">n</span><span class=\"o\">)</span>\n  <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">a</span> <span class=\"bp\">^</span> <span class=\"n\">n</span> <span class=\"bp\">∣</span> <span class=\"n\">b</span> <span class=\"bp\">^</span> <span class=\"n\">n</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">a</span> <span class=\"bp\">∣</span> <span class=\"n\">b</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span> <span class=\"gr\">sorry</span>\n</code></pre></div>",
+        "id": 431879440,
+        "sender_full_name": "Casavaca",
+        "timestamp": 1712561872
+    },
+    {
+        "content": "<p>I'm not sure your first lemma is true: does it work for <code>Z/p^3</code>, <code>a=p^2, b=p, n=3</code>?</p>",
+        "id": 431881467,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1712562342
+    },
+    {
+        "content": "<p>You are right. I'll update my message.</p>",
+        "id": 431882592,
+        "sender_full_name": "Casavaca",
+        "timestamp": 1712562664
+    },
+    {
+        "content": "<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Mathlib.Data.Int.GCD</span>\n\n<span class=\"kd\">theorem</span> <span class=\"n\">Int.dvd_of_pow_dvd_pow</span> <span class=\"o\">{</span><span class=\"n\">a</span> <span class=\"n\">b</span> <span class=\"o\">:</span> <span class=\"n\">ℤ</span><span class=\"o\">}</span> <span class=\"o\">{</span><span class=\"n\">n</span> <span class=\"o\">:</span> <span class=\"n\">ℕ</span><span class=\"o\">}</span> <span class=\"o\">(</span><span class=\"n\">hn</span> <span class=\"o\">:</span> <span class=\"mi\">0</span> <span class=\"bp\">&lt;</span> <span class=\"n\">n</span><span class=\"o\">)</span>\n    <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">a</span> <span class=\"bp\">^</span> <span class=\"n\">n</span> <span class=\"bp\">∣</span> <span class=\"n\">b</span> <span class=\"bp\">^</span> <span class=\"n\">n</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">a</span> <span class=\"bp\">∣</span> <span class=\"n\">b</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n  <span class=\"n\">exact</span><span class=\"bp\">?</span> <span class=\"n\">says</span> <span class=\"n\">exact</span> <span class=\"o\">(</span><span class=\"n\">pow_dvd_pow_iff</span> <span class=\"n\">hn</span><span class=\"o\">)</span><span class=\"bp\">.</span><span class=\"n\">mp</span> <span class=\"n\">h</span>\n</code></pre></div>",
+        "id": 431888218,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1712563975
+    },
+    {
+        "content": "<p>Strangely enough I also missed to find this very recently. I am adding in <a href=\"https://github.com/leanprover-community/mathlib4/pull/11767\">#11767</a> a generalization (and also changing the assumption to <code>n \\neq 0</code>)</p>",
+        "id": 431888921,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1712564134
+    },
+    {
+        "content": "<p>I've thought a little bit about it, and I don't think one can do better than integrally closed domains (being a domain is not enough)</p>",
+        "id": 431889396,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1712564232
+    },
+    {
+        "content": "<p>Thank you. Now I know why I missed it and what I should do:</p>\n<p>I missed it because I just imported Mathlib.Tactics and use moogle to search for tactics. I found some tactic but not applicable in my case.<br>\nI should just import the whole Mathlib and try <code>exact?</code> or <code>apply?</code></p>",
+        "id": 431890887,
+        "sender_full_name": "Casavaca",
+        "timestamp": 1712564575
+    },
+    {
+        "content": "<p>(I found the import by running <code>exact?</code> using <code>import Mathlib</code> and then reduced the import to the one containing the lemma.)</p>",
+        "id": 431894012,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1712565240
+    },
+    {
+        "content": "<p>I found <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Nat.pow_dvd_pow_iff#doc\">docs#Nat.pow_dvd_pow_iff</a> and <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Int.pow_dvd_pow_iff#doc\">docs#Int.pow_dvd_pow_iff</a> in loogle.</p>",
+        "id": 433148294,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1713113328
+    }
+]

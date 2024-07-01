@@ -10,5 +10,11 @@
         "id": 409122196,
         "sender_full_name": "Flo (Florent Schaffhauser)",
         "timestamp": 1703062146
+    },
+    {
+        "content": "<p>Just noticed (from a big quote in the article) that they recruited Jordan Ellenberg as a coauthor this time :)</p>\n<p>Also the <a href=\"https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/Mathematical-discoveries-from-program-search-with-large-language-models.pdf\">DeepMind version</a> of the paper is much better than the Nature accelerated version, without big banners across the pages and with the figures correctly inserted.</p>",
+        "id": 409256374,
+        "sender_full_name": "Junyan Xu",
+        "timestamp": 1703104567
     }
 ]

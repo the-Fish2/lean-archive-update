@@ -670,5 +670,11 @@
         "id": 364864483,
         "sender_full_name": "Yury G. Kudryashov",
         "timestamp": 1686318870
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/12852\">#12852</a> is a step towards derivatives for functions between TVS</p>",
+        "id": 439081877,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1715885500
     }
 ]

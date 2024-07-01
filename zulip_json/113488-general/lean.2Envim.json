@@ -2254,5 +2254,1169 @@
         "id": 407777250,
         "sender_full_name": "Matthew Ballard",
         "timestamp": 1702488513
+    },
+    {
+        "content": "<p>I haven't bothered setting up an <code>autocmd</code> to only run this in the Mathlib repo, but for anyone who works on Mathlib and might find it useful, <a href=\"https://github.com/Julian/dotfiles/commit/a3091b44a123931630c0241e1f836e7f4dd8e89b\">https://github.com/Julian/dotfiles/commit/a3091b44a123931630c0241e1f836e7f4dd8e89b</a> is how you run the Mathlib4 style checker using <a href=\"https://github.com/mfussenegger/nvim-lint\">nvim-lint</a> to catch style mistakes as you edit. I'll add it to the wiki whenever I get to doing the aforementioned autocmd'ing.</p>",
+        "id": 417008274,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1705771308
+    },
+    {
+        "content": "<p>Inspired by recent discussion on the emacs mode, I’d like to give lean.nvim another try. But the first thing I wanted to do doesn’t seem to work. I’d like to resize the info view but <code>Ctrl-w =</code> doesn’t seem to do anything. <span class=\"user-mention\" data-user-id=\"321696\">@Julian Berman</span></p>",
+        "id": 423072363,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708713034
+    },
+    {
+        "content": "<p>Same here. Though resizing just the infoview with <code>Ctrl-w  &gt;</code>, etc. works fine.</p>",
+        "id": 423073962,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708713729
+    },
+    {
+        "content": "<p>Also do you have an example config for semantic syntax highlighting? The default one is really not usable at all (or else there is something wrong with my config).</p>",
+        "id": 423074031,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708713757
+    },
+    {
+        "content": "<p>Nice! Your suggestions obviously are super welcome. For that one -- you want your infoview equal width obviously? We set <code>winfixwidth</code> so that infoview contents don't jump around as you open and close windows -- if you <em>do</em> want to use ^W=, you can first turn that off. I can add that as a config option to make that directly supported</p>",
+        "id": 423074053,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708713765
+    },
+    {
+        "content": "<p>In the immediate meantime you can use <code>lua vim.wo[require('lean.infoview').get_current_infoview().window].winfixwidth = false</code> and then ^W= should work again</p>",
+        "id": 423074187,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708713834
+    },
+    {
+        "content": "<p>Indeed this fixes the issue.</p>",
+        "id": 423074382,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708713916
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423074031\">said</a>:</p>\n<blockquote>\n<p>Also do you have an example config for semantic syntax highlighting? The default one is really not usable at all (or else there is something wrong with my config).</p>\n</blockquote>\n<p>I only set one thing in mine it looks like -- <a href=\"https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/after/syntax/lean.lua#L1-L8\">https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/after/syntax/lean.lua#L1-L8</a> -- but it will depend on your theme. Try what I use for a moment, see if it's more correct -- I'm using kanagawa -- <a href=\"https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/lua/plugins/init.lua#L3-L12\">https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/lua/plugins/init.lua#L3-L12</a></p>",
+        "id": 423074404,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708713925
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423074382\">said</a>:</p>\n<blockquote>\n<p>Indeed this fixes the issue.</p>\n</blockquote>\n<p>OK, cool, I'll add an option in a bit which causes <code>lean.nvim</code> to not set that option, and presumably also you'd like the width/height to not be set at all so it starts off equal size? If so I'll just make it do that too.</p>",
+        "id": 423074664,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714020
+    },
+    {
+        "content": "<p>The starting size question is really tricky because it depends a lot on your screen size.</p>",
+        "id": 423075218,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708714213
+    },
+    {
+        "content": "<p>Right, there's an open issue to do this with percentages</p>",
+        "id": 423075254,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714232
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"321696\">@Julian Berman</span> While you're here, is there a simple way to have the infoview automatically close when you close all of the buffers with <code>.lean</code> files?</p>",
+        "id": 423075294,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708714249
+    },
+    {
+        "content": "<p>The syntax highlighting is still very weird, I will try your theme.</p>",
+        "id": 423075314,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708714262
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"687698\">Chris Henson</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423075294\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"321696\">Julian Berman</span> While you're here, is there a simple way to have the infoview automatically close when you close all of the buffers with <code>.lean</code> files?</p>\n</blockquote>\n<p>the \"robust way\" we haven't implemented yet because it's more complicated than it sounds -- but there's a simple way which will work that you can use which another contributor wrote out, one sec.</p>",
+        "id": 423075359,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714286
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"687698\">@Chris Henson</span> try this by <span class=\"user-mention\" data-user-id=\"668081\">@Francisco Giordano</span> : <a href=\"https://github.com/Julian/lean.nvim/issues/43#issuecomment-1850633100\">https://github.com/Julian/lean.nvim/issues/43#issuecomment-1850633100</a> and please let me/us know if it works (well or otherwise)</p>",
+        "id": 423075543,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714358
+    },
+    {
+        "content": "<p>I am hoping to have some more time for Lean in the next few weeks (part of my secret plan to merge it in <em>part</em> with my day job) -- but nag-driven-development is also very effective, so if you or anyone run into issues do complain.</p>",
+        "id": 423075657,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714424
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321696\">Julian Berman</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423075543\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"687698\">Chris Henson</span> try this by <span class=\"user-mention silent\" data-user-id=\"668081\">Francisco Giordano</span> : <a href=\"https://github.com/Julian/lean.nvim/issues/43#issuecomment-1850633100\">https://github.com/Julian/lean.nvim/issues/43#issuecomment-1850633100</a> and please let me/us know if it works (well or otherwise)</p>\n</blockquote>\n<p>On first try it seems to work as expected, thank you! Your work on this plugin is much appreciated.</p>",
+        "id": 423076354,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708714706
+    },
+    {
+        "content": "<p>I can confirm that changing to your theme gives more meaningful colors.</p>",
+        "id": 423076794,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708714892
+    },
+    {
+        "content": "<p>Great! Obviously the one I use I don't think is the only one that will work -- what you'd be looking for is some reasonably modern theme, because neovim 0.9 changed the name of highlight groups a bit, so the theme has to keep up</p>",
+        "id": 423076886,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714927
+    },
+    {
+        "content": "<p>But before this I used to use <code>edge</code> and that worked fine too I think.</p>",
+        "id": 423076904,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714936
+    },
+    {
+        "content": "<p>(if you want details on how to manually change colors we should obviously document that too...)</p>",
+        "id": 423076969,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714966
+    },
+    {
+        "content": "<p>But it is also very dull and looses nice other things like thinner vertical lines separating buffers or removing the stupid tildes at the end of a buffer.</p>",
+        "id": 423076979,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708714972
+    },
+    {
+        "content": "<p>I was using onedark</p>",
+        "id": 423077018,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708714993
+    },
+    {
+        "content": "<p>that shouldn't be related, it's funny if a theme is messing with the latter at least</p>",
+        "id": 423077030,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708714999
+    },
+    {
+        "content": "<p>those are normal settings, which I guess the theme is changing on your behalf</p>",
+        "id": 423077068,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708715014
+    },
+    {
+        "content": "<p>I don't remember what the tilde one is called, it's the first thing everyone turns off, let's see...</p>",
+        "id": 423077094,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708715025
+    },
+    {
+        "content": "<p>Weird, it seems to be gone now.</p>",
+        "id": 423077167,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708715047
+    },
+    {
+        "content": "<p>OK cool -- are you roughly in working shape then?</p>",
+        "id": 423077245,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708715087
+    },
+    {
+        "content": "<p>Yes it seems ok now. Thanks a lot for your help!</p>",
+        "id": 423077387,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708715153
+    },
+    {
+        "content": "<p>Let me now try to <em>edit</em> code…</p>",
+        "id": 423077466,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708715172
+    },
+    {
+        "content": "<p>Before I tried editing code for real I went to get some coffee. When I came back to my office I immediately noticed the CPU fan noise. It turns out nvim was using 100% of a CPU…</p>",
+        "id": 423081244,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708716695
+    },
+    {
+        "content": "<p>Was it compiling mathlib? Or doing nothing?</p>",
+        "id": 423081728,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708716893
+    },
+    {
+        "content": "<p>Doing nothing</p>",
+        "id": 423086225,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708718659
+    },
+    {
+        "content": "<p>Strange. Only thing I'd say is make sure you're up to date, and if it happens again we can maybe strace to see what the heck it's doing.</p>",
+        "id": 423086922,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708718954
+    },
+    {
+        "content": "<p>Ah wait sorry, we still haven't addressed <a href=\"https://github.com/Julian/lean.nvim/issues/289\">https://github.com/Julian/lean.nvim/issues/289</a>, which I forgot about -- after tweaking a lean setting I don't think any of us have encountered that in awhile, but we didn't change the default</p>",
+        "id": 423087278,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708719113
+    },
+    {
+        "content": "<p>I still think it probably sounds like a lean bug but I am not good enough at figuring out how to isolate it.</p>",
+        "id": 423087371,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708719139
+    },
+    {
+        "content": "<p>Anyways Patrick, try adding this: <a href=\"https://github.com/Julian/dotfiles/blob/main/.config/nvim/lua/plugins/lsp.lua#L245\">https://github.com/Julian/dotfiles/blob/main/.config/nvim/lua/plugins/lsp.lua#L245</a></p>",
+        "id": 423087529,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708719217
+    },
+    {
+        "content": "<p>(disabling editDelay)</p>",
+        "id": 423087561,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708719237
+    },
+    {
+        "content": "<p>If that makes it go away maybe I'll make it the default, this has been an issue for ages so may as well make it work out of the box</p>",
+        "id": 423087765,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708719312
+    },
+    {
+        "content": "<p>I have been living happily for a long time now with this as my setting</p>",
+        "id": 423088218,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1708719525
+    },
+    {
+        "content": "<p>Ok, much as it makes me uncomfortable to change lean behavior, I trust your vote, will tweak it later</p>",
+        "id": 423088483,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708719634
+    },
+    {
+        "content": "<p>Ok I added the option, we’ll see whether this happens again.</p>",
+        "id": 423089050,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708719896
+    },
+    {
+        "content": "<p>Julian, the video in the README is very frustrating because it shows many things you can do but then nothing in this README explain how to do them.</p>",
+        "id": 423104629,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708727190
+    },
+    {
+        "content": "<p>For instance I don’t how to jump to definition. The obvious <code>gd</code> works in the info view but not in the main buffer.</p>",
+        "id": 423104740,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708727247
+    },
+    {
+        "content": "<p>A bit of that is because don't terribly want to document \"normal\" neovim things -- which I recognize makes it hard to get started if you don't already use \"normal\" neovim heavily, but your question basically applies to any language -- I am probably happy to answer how to do things if you have specific ones</p>",
+        "id": 423105837,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708727862
+    },
+    {
+        "content": "<p>For <code>gd</code>, that question is related to <a href=\"https://github.com/neovim/neovim/issues/24252\">https://github.com/neovim/neovim/issues/24252</a> -- which don't bother reading -- but basically it is still being worked on upstream whether default mappings will automatically be made for LSP things! Only <code>K</code> is automatically mapped right now</p>",
+        "id": 423105906,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708727894
+    },
+    {
+        "content": "<p>So in short, if you want a set of good mappings, here's what I use: <a href=\"https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/lua/plugins/lsp.lua#L18-L92\">https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/lua/plugins/lsp.lua#L18-L92</a></p>",
+        "id": 423105953,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708727942
+    },
+    {
+        "content": "<p>You can point to the documentation page of <code>lsp</code> for neovim which lists useful functions to bind.</p>",
+        "id": 423105960,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1708727946
+    },
+    {
+        "content": "<p>I mean, in the docs for <code>lean.nvim</code>.</p>",
+        "id": 423105979,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1708727960
+    },
+    {
+        "content": "<p>And to your config file as an example.</p>",
+        "id": 423106006,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1708727987
+    },
+    {
+        "content": "<p>In particular the line that makes <code>gd</code> work is this one: <a href=\"https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/lua/plugins/lsp.lua#L25\">https://github.com/Julian/dotfiles/blob/3fd4b990155547676c97a995191ef6b66bfa1286/.config/nvim/lua/plugins/lsp.lua#L25</a> which is equivalent to <code>vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = 0 })</code></p>",
+        "id": 423106134,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708728053
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"214703\">Yury G. Kudryashov</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423106006\">said</a>:</p>\n<blockquote>\n<p>And to your config file as an example.</p>\n</blockquote>\n<p>we do both of these already! It's not enough clearly though</p>",
+        "id": 423106158,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708728069
+    },
+    {
+        "content": "<p><a href=\"https://github.com/Julian/lean.nvim?tab=readme-ov-file#configuration--usage\">https://github.com/Julian/lean.nvim?tab=readme-ov-file#configuration--usage</a> and/or <a href=\"https://github.com/Julian/lean.nvim/wiki/Getting-Started-From-the-Ground-Up\">https://github.com/Julian/lean.nvim/wiki/Getting-Started-From-the-Ground-Up</a> in particular points you to the neovim docs, including a suggested setup</p>",
+        "id": 423106219,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708728117
+    },
+    {
+        "content": "<p>But I sympathize that it's hard to know that that's where you need to look if you don't know why something doesn't work</p>",
+        "id": 423106277,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708728130
+    },
+    {
+        "content": "<p>(All again to say if you have specific suggestions I'm all for helping)</p>",
+        "id": 423106290,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708728141
+    },
+    {
+        "content": "<p>Patrick let me know if you have other examples and I can try to either answer or document or both</p>",
+        "id": 423106521,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708728291
+    },
+    {
+        "content": "<p>Thanks. Part of the issue is that I recently tried to modernize my vim. In particular I try to use lua configuration files and there are many things I don’t understand. In particular I already have a line that tries to bind this but it doesn’t seem to work.</p>",
+        "id": 423107806,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729127
+    },
+    {
+        "content": "<p>Your dotfiles aren't public by chance are they? Make sure you're doing the mapping inside of the function that you pass to <code>lsp = { on_attach = THISFUNCTION } }</code></p>",
+        "id": 423108132,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729323
+    },
+    {
+        "content": "<p>They are almost entirely the files from kickstart.vim</p>",
+        "id": 423108218,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729375
+    },
+    {
+        "content": "<p>Ah that's good, I want to show an example using kickstart.vim but haven't had the time to look at it</p>",
+        "id": 423108248,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729394
+    },
+    {
+        "content": "<p>Actually on this computer I tried the variant <a href=\"https://github.com/dam9000/kickstart-modular.nvim\">https://github.com/dam9000/kickstart-modular.nvim</a></p>",
+        "id": 423108374,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729471
+    },
+    {
+        "content": "<p>In particular I have the lines <a href=\"https://github.com/dam9000/kickstart-modular.nvim/blob/master/lua/lsp-setup.lua#L23-L25\">https://github.com/dam9000/kickstart-modular.nvim/blob/master/lua/lsp-setup.lua#L23-L25</a></p>",
+        "id": 423108411,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729502
+    },
+    {
+        "content": "<p>But still no bindings</p>",
+        "id": 423108426,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729512
+    },
+    {
+        "content": "<p>Are you passing that function to lean.nvim?</p>",
+        "id": 423108459,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729533
+    },
+    {
+        "content": "<p>I can call the lsp function from command mode so this is definitely a binding issue.</p>",
+        "id": 423108471,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729542
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321696\">Julian Berman</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423108459\">said</a>:</p>\n<blockquote>\n<p>Are you passing that function to lean.nvim?</p>\n</blockquote>\n<p>I don’t know how to do that, so probably no.</p>",
+        "id": 423108548,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729574
+    },
+    {
+        "content": "<p>I really know nothing about this lua world. I’ve been using vim for 20 years but not in this modern way.</p>",
+        "id": 423108577,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708729601
+    },
+    {
+        "content": "<p>Here's the short explanation</p>",
+        "id": 423108615,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729631
+    },
+    {
+        "content": "<p>These lines in the example: <a href=\"https://github.com/dam9000/kickstart-modular.nvim/blob/master/lua/lsp-setup.lua#L71-L95\">https://github.com/dam9000/kickstart-modular.nvim/blob/master/lua/lsp-setup.lua#L71-L95</a> are trying to tell you \"enable whatever languages you use\"</p>",
+        "id": 423108708,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729697
+    },
+    {
+        "content": "<p>But lean.nvim -- much like the rust plugin -- handle calling that on your behalf already</p>",
+        "id": 423108725,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729717
+    },
+    {
+        "content": "<p>You essentially need to keep a reference to that on_attach function, and then pass it to lean.nvim when you call its setup</p>",
+        "id": 423108771,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729759
+    },
+    {
+        "content": "<p>The cheap and easy way for right now is instead of <code>local on_attach</code>, do <code>_G.on_attach = function() ....</code></p>",
+        "id": 423108789,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729780
+    },
+    {
+        "content": "<p>and now you have a global function called <code>_G.on_attach</code> -- then when you call <code>require('lean').setup{ ... }</code>, now you use <code>_G.on_attach</code> as your on_attach function</p>",
+        "id": 423108868,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729810
+    },
+    {
+        "content": "<p>Does that make any sense, or do you want me to try to write it out a bit more specifically? If you paste how (or if) you're currently calling <code>lean.setup{}</code> that also might help.</p>",
+        "id": 423108908,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708729851
+    },
+    {
+        "content": "<p>I cannot get it to work. I think I will put my config on GitHub. It will be convenient to share it among my computers anyway.</p>",
+        "id": 423109111,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708730014
+    },
+    {
+        "content": "<p>I dumped everything on <a href=\"https://github.com/PatrickMassot/neovim_config\">https://github.com/PatrickMassot/neovim_config</a>. It features the whole kickstart repo which is maybe not very smart.</p>",
+        "id": 423109446,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708730248
+    },
+    {
+        "content": "<p>I need to go anyway, but I’ll try again tonight.</p>",
+        "id": 423109472,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708730273
+    },
+    {
+        "content": "<p>It feels a lot more promising than last time I tried.</p>",
+        "id": 423109527,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708730289
+    },
+    {
+        "content": "<p>One thing I can already say is that having the infoview as an ordinary buffer is a bit annoying. It makes it more complicated to quit (I need a <code>:qa</code> when I really mean <code>:q</code>) and it messes up <code>:bp</code>.</p>",
+        "id": 423109632,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708730387
+    },
+    {
+        "content": "<p>I have limited time tonight but will take a quick look now to see if I can just give you some hint.</p>",
+        "id": 423109720,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708730439
+    },
+    {
+        "content": "<blockquote>\n<p>One thing I can already say is that having the infoview as an ordinary buffer is a bit annoying. It makes it more complicated to quit (I need a :qa when I really mean :q) and it messes up :bp.</p>\n</blockquote>\n<p>The <code>:q</code> thing is obviously related to the <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423076354\">discussion above</a> -- you can use the same autocommand to have the infoview quit</p>",
+        "id": 423109749,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708730460
+    },
+    {
+        "content": "<p>(Which means then you won't need <code>:qa</code>)</p>",
+        "id": 423109763,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708730467
+    },
+    {
+        "content": "<p><code>:bp</code> I would simply recommend you never use honestly</p>",
+        "id": 423109769,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708730474
+    },
+    {
+        "content": "<p>Even if it's a bit of retraining muscles.</p>",
+        "id": 423109780,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708730483
+    },
+    {
+        "content": "<p>But the modern way is to use a fuzzy finder</p>",
+        "id": 423109790,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708730489
+    },
+    {
+        "content": "<p>(Telescope being the one that all the kids are excited about these last 5 years, so you may as well use it)</p>",
+        "id": 423109806,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708730511
+    },
+    {
+        "content": "<p>OK I got a few minutes to look -- you have it almost right but there is some issue with what order files are loading in, which is common.</p>\n<p>You can fix this in a crude way with:</p>\n<div class=\"codehilite\" data-code-language=\"Diff\"><pre><span></span><code><span class=\"gh\">diff --git a/lua/lazy-plugins.lua b/lua/lazy-plugins.lua</span>\n<span class=\"gh\">index 5049773..6fe4300 100644</span>\n<span class=\"gd\">--- a/lua/lazy-plugins.lua</span>\n<span class=\"gi\">+++ b/lua/lazy-plugins.lua</span>\n<span class=\"gu\">@@ -215,7 +215,10 @@ require('lazy').setup({</span>\n<span class=\"w\"> </span>    -- see details below for full configuration options\n<span class=\"w\"> </span>    opts = {\n<span class=\"w\"> </span>      lsp = {\n<span class=\"gd\">-        on_attach = _G.on_attach,</span>\n<span class=\"gi\">+        on_attach = function(client, bufnr)</span>\n<span class=\"gi\">+          require('lsp-setup')</span>\n<span class=\"gi\">+          on_attach(client, bufnr)</span>\n<span class=\"gi\">+        end,</span>\n<span class=\"w\"> </span>        init_options = { editDelay = 0 },\n<span class=\"w\"> </span>      },\n<span class=\"w\"> </span>      mappings = true,\n</code></pre></div>\n<p>which seems to make things work here -- this <code>which-key</code> plugin which I've heard of but don't use kind of makes it a bit annoying to diagnose because it is messing with <code>gd</code> itself, but whatever -- I think just that change above will unblock you for now. Honestly I'm a bit disappointed at how slow this setup is that they start you with :/ but ok whatever, it has some decent plugins they're setting you up with at least.</p>\n<p>If the above doesn't help I can send a PR tomorrow.</p>",
+        "id": 423116072,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708735333
+    },
+    {
+        "content": "<p>It works, thanks!</p>",
+        "id": 423190024,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708795583
+    },
+    {
+        "content": "<p>(including the autocommand to close the infoview).</p>",
+        "id": 423190735,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708796314
+    },
+    {
+        "content": "<p>Great! I put in the default for <code>editDelay = 0</code>, so that now should be automatic. I will probably not do the width thing immediately, I want to think it through a bit, because I don't remember why everything works as it does with our window management (but I will do something at some point and let you know). Keep feedback coming.</p>",
+        "id": 423200293,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708805271
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"321696\">@Julian Berman</span> Is there a way to configure the infoview to advance manually instead of based on the current cursor position?</p>",
+        "id": 423298481,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708901699
+    },
+    {
+        "content": "<p>Do you mean you want to pause updates to it, or to force it to update itself, or to have it show the state at a different cursor location, or choice D :)?</p>",
+        "id": 423300468,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708903731
+    },
+    {
+        "content": "<p>Or you mean you want it to not automatically update and only update when you tell it to?</p>",
+        "id": 423300488,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708903759
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321696\">Julian Berman</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423300488\">said</a>:</p>\n<blockquote>\n<p>Or you mean you want it to not automatically update and only update when you tell it to?</p>\n</blockquote>\n<p>This is what I meant. Only move the infoview to the current cursor position when you tell it to.</p>",
+        "id": 423300694,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708903984
+    },
+    {
+        "content": "<p>Got it - you're aware of pins right? Just to be sure you're not doing this for that reason?</p>",
+        "id": 423300821,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708904133
+    },
+    {
+        "content": "<p>(i.e. because you want to watch what's happening at some other location)</p>",
+        "id": 423300826,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708904149
+    },
+    {
+        "content": "<p>I don't think I am, what are pins?</p>",
+        "id": 423301038,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708904350
+    },
+    {
+        "content": "<p>Oh I see a description in the docs, let me try it out and see how it works.</p>",
+        "id": 423301130,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708904439
+    },
+    {
+        "content": "<p>I see. Not what I meant, but the pins feature is very nice! I am curious how often/how you use the diff pins, they seem interesting.</p>\n<p>I still would sometimes prefer advancing the infoview manually. It is just an issue of preference, sometimes the constantly changing infoview is a bit hard on the eyes for my taste. I realize I can mostly get what I want with pausing/unpausing the infoview.</p>",
+        "id": 423303105,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708906308
+    },
+    {
+        "content": "<p>No I was going to say exactly that (that I sometimes get annoyed at how spasmy the infoview is)</p>",
+        "id": 423303537,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708906669
+    },
+    {
+        "content": "<p>I'll fix that at some point, I've wanted to do it in a general way but I still haven't managed to do that, so I'll do the hacky one at some point, just so that it doesn't continuously flash back and forth and clear itself</p>",
+        "id": 423303595,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708906699
+    },
+    {
+        "content": "<p>Anyways, the answer for pausing is <code>lua require'lean.infoview'.pin_toggle_pause()</code></p>",
+        "id": 423303719,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708906830
+    },
+    {
+        "content": "<p>Which is really confusingly named, I thought I'd renamed that by now but guess not.</p>",
+        "id": 423303730,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708906841
+    },
+    {
+        "content": "<p>I don't think we bind a key to that by default but you can of course.</p>",
+        "id": 423303742,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708906854
+    },
+    {
+        "content": "<p>oh we do, it's &lt;localleader&gt;p</p>",
+        "id": 423303756,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708906867
+    },
+    {
+        "content": "<p>Yeah I tried that, it works well for me. I'm curious, if I bind calling that twice (to unpause and pause again) will it wait for things to run in-between, or potentially interrupt Lean?</p>",
+        "id": 423304277,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708907362
+    },
+    {
+        "content": "<p>Are you doing that to implement the \"refresh the infoview now\" bit?</p>",
+        "id": 423304428,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708907506
+    },
+    {
+        "content": "<p>We should expose some function to do that if we don't already clearly.</p>",
+        "id": 423304435,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708907518
+    },
+    {
+        "content": "<p>But that should be fine</p>",
+        "id": 423304450,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708907523
+    },
+    {
+        "content": "<p>Yeah pretty much. Maybe not a robust way, but I think I might try it for a bit. Thanks again for the help! (Which in this case was a good reminder to read the docs haha)</p>",
+        "id": 423304603,
+        "sender_full_name": "Chris Henson",
+        "timestamp": 1708907680
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321696\">Julian Berman</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423074187\">said</a>:</p>\n<blockquote>\n<p>In the immediate meantime you can use <code>lua vim.wo[require('lean.infoview').get_current_infoview().window].winfixwidth = false</code> and then ^W= should work again</p>\n</blockquote>\n<p>What would be the syntax to put that in a config file? Currently the first thing I do whenever I open a Lean file is to search this is my command history.</p>",
+        "id": 423497405,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708987604
+    },
+    {
+        "content": "<p>The Hoskinson center bought me a giant screen for my office and it is very frustrating to have a super narrow infoview window.</p>",
+        "id": 423497676,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708987696
+    },
+    {
+        "content": "<p>Create a file called <code>~/.config/nvim/after/plugin/leaninfo.lua</code> and put:</p>\n<div class=\"codehilite\" data-code-language=\"Lua\"><pre><span></span><code><span class=\"n\">vim</span><span class=\"p\">.</span><span class=\"n\">opt_local</span><span class=\"p\">.</span><span class=\"n\">winfixwidth</span> <span class=\"o\">=</span> <span class=\"kc\">false</span>\n<span class=\"n\">vim</span><span class=\"p\">.</span><span class=\"n\">opt_local</span><span class=\"p\">.</span><span class=\"n\">winfixheight</span> <span class=\"o\">=</span> <span class=\"kc\">false</span>\n</code></pre></div>\n<p>in it</p>",
+        "id": 423498793,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708988107
+    },
+    {
+        "content": "<p>You can also consider upping the <code>width</code> and <code>height</code> setting in your Lean setup settings, if all you want is a wider one and you don't specifically care about <code>^W=</code> in particular (let me know if you need syntax for that)</p>",
+        "id": 423498894,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708988146
+    },
+    {
+        "content": "<p>(And yeah we should definitely pick some width relative to your screen width -- I use a portrait monitor and my infoview is then on top not the side so this doesn't bother me otherwise probably I'd have fixed it already. I can try to get to it at some point.)</p>",
+        "id": 423499075,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708988214
+    },
+    {
+        "content": "<p>Oh that’s simple. I was afraid because of the <code>require('lean.infoview').get_current_infoview().window</code> bit.</p>",
+        "id": 423500478,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708988719
+    },
+    {
+        "content": "<p>Doesn’t seem to work.</p>",
+        "id": 423500808,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708988861
+    },
+    {
+        "content": "<p>I am afraid something is messing with the way \"normal\" neovim works in that setup again :/ -- I'll have to look at the layout again.</p>",
+        "id": 423501071,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708989008
+    },
+    {
+        "content": "<p>Oh no, it's me who's a dum dum doing too many things at once.</p>",
+        "id": 423501525,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708989285
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110031\">@Patrick Massot</span> <code>~/.config/nvim/after/ftplugin/leaninfo.lua</code> not <code>plugin</code></p>",
+        "id": 423501562,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708989303
+    },
+    {
+        "content": "<p>It works!</p>",
+        "id": 423501869,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708989479
+    },
+    {
+        "content": "<p>Great. Hopefully you see what that does.</p>",
+        "id": 423501939,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708989499
+    },
+    {
+        "content": "<p>Sure</p>",
+        "id": 423501951,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708989509
+    },
+    {
+        "content": "<p>And is there a way to avoid typing the ^w= at startup?</p>",
+        "id": 423501994,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708989541
+    },
+    {
+        "content": "<p>Add <code>vim.cmd.wincmd('=')</code> to the bottom of that file is a cheap way</p>",
+        "id": 423502149,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708989628
+    },
+    {
+        "content": "<p>Thanks, that’s a much better starting point.</p>",
+        "id": 423502886,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708990027
+    },
+    {
+        "content": "<p>The README says there is some interactive widgets support but I don’t see anything. What is the current status? Even before displaying a widget, can you select things in the infoview?</p>",
+        "id": 423504966,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708991252
+    },
+    {
+        "content": "<p>Yeah, move to the infoview window and press enter to \"click\" , and tab to move into the popup</p>",
+        "id": 423507031,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708992364
+    },
+    {
+        "content": "<p>Can gove more details tomorrow</p>",
+        "id": 423507041,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1708992371
+    },
+    {
+        "content": "<p>This is not what I am talking about. I ask about the analogue of VSCode shift click.</p>",
+        "id": 423517893,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1708999235
+    },
+    {
+        "content": "<p>Yet more proof that nobody other than Patrick knows about this shift click thing :-)</p>",
+        "id": 423555132,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1709022747
+    },
+    {
+        "content": "<p>Maybe there should be a blog post about it? Although with this worrying development of Patrick switching from VS Code, maybe the fact that you can shift click on things will soon be lost in time...</p>",
+        "id": 423555648,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1709022983
+    },
+    {
+        "content": "<p>We'll document these more obscure VS Code features in a reasonable place in the future so that they are not lost to time and forgotten :-)<br>\nFor InfoView features specifically, we still have to look into whether implementing our own context menu for the InfoView is possible.</p>",
+        "id": 423560447,
+        "sender_full_name": "Marc Huisinga",
+        "timestamp": 1709024339
+    },
+    {
+        "content": "<p>Patrick yeah I don't know that I know what shift-click does, or when it does anything -- I just tried typing some random goal and shift clicking and I don't see things happening, can you share some example and tell me what it should do?</p>",
+        "id": 423604900,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709040145
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"221921\">Marc Huisinga</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423560447\">said</a>:</p>\n<blockquote>\n<p>We'll document these more obscure VS Code features in a reasonable place in the future so that they are not lost to time and forgotten :-)<br>\nFor InfoView features specifically, we still have to look into whether implementing our own context menu for the InfoView is possible.</p>\n</blockquote>\n<p>Yeah such a list would definitely help me have more parity with VSCode features.</p>",
+        "id": 423605143,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709040233
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321696\">Julian Berman</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423604900\">said</a>:</p>\n<blockquote>\n<p>Patrick yeah I don't know that I know what shift-click does, or when it does anything -- I just tried typing some random goal and shift clicking and I don't see things happening, can you share some example and tell me what it should do?</p>\n</blockquote>\n<p>See <a href=\"https://drops.dagstuhl.de/storage/00lipics/lipics-vol268-itp2023/LIPIcs.ITP.2023.24/LIPIcs.ITP.2023.24.pdf\">https://drops.dagstuhl.de/storage/00lipics/lipics-vol268-itp2023/LIPIcs.ITP.2023.24/LIPIcs.ITP.2023.24.pdf</a> (section 3.2). Many widgets trigger only in a specific selection context.</p>",
+        "id": 423610928,
+        "sender_full_name": "Marc Huisinga",
+        "timestamp": 1709042192
+    },
+    {
+        "content": "<p>Aha.  I see the mechanics from there, thanks. Is there some widget in Mathlib I can use to test that out? Ideally one that doesn't target HTML output?</p>",
+        "id": 423616743,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709043841
+    },
+    {
+        "content": "<p>This is the fundamental component of almost any widget whose purpose is not to draw a nice picture you can show in talks but never use for real.</p>",
+        "id": 423623686,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1709045463
+    },
+    {
+        "content": "<p>It is used by the <code>conv?</code> or calc widgets for instance.</p>",
+        "id": 423623809,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1709045497
+    },
+    {
+        "content": "<p>Yeah I've used it for <code>calc</code>. It's still a little-known feature though!</p>",
+        "id": 423624449,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1709045651
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423623809\">said</a>:</p>\n<blockquote>\n<p>It is used by the <code>conv?</code> or calc widgets for instance.</p>\n</blockquote>\n<p>Got it, OK, I suspect it's probably not too difficult to get working but I don't have time to look today, and probably it needs a small bit of thought for what the UI should be in nvim to replace shift+click. I guess some text objects to add regions to the ones you're selecting, and then some way to clear them, kind of like how the quickhl plugin works. But have to try to use the widgets to see. Maybe later in the week.</p>",
+        "id": 423633471,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709048081
+    },
+    {
+        "content": "<p><code>suffices by</code> doesn't update the infoview properly. is this a lean.nvim issue?</p>\n<p>example:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kd\">example</span> <span class=\"o\">(</span><span class=\"n\">h</span> <span class=\"o\">:</span> <span class=\"n\">p</span> <span class=\"bp\">∧</span> <span class=\"n\">q</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">q</span> <span class=\"bp\">∧</span> <span class=\"n\">p</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n  <span class=\"k\">have</span> <span class=\"n\">hp</span> <span class=\"o\">:</span> <span class=\"n\">p</span> <span class=\"o\">:=</span> <span class=\"n\">h.left</span>\n  <span class=\"k\">suffices</span> <span class=\"n\">hq</span> <span class=\"o\">:</span> <span class=\"n\">q</span> <span class=\"kd\">by</span>\n    <span class=\"c1\">-- cursor here</span>\n    <span class=\"n\">exact</span> <span class=\"o\">(</span><span class=\"n\">And.intro</span> <span class=\"n\">hq</span> <span class=\"n\">hp</span><span class=\"o\">)</span>\n  <span class=\"n\">exact</span> <span class=\"n\">And.right</span> <span class=\"n\">h</span>\n</code></pre></div>\n<p>putting the cursor in the line after <code>by</code> doesn't add <code>hq</code> as a hypothesis. it does immediately after <code>by</code> though</p>",
+        "id": 423709485,
+        "sender_full_name": "Francisco Giordano",
+        "timestamp": 1709072608
+    },
+    {
+        "content": "<p>This has been brought up also for VSCode, not just for lean.nvim.</p>",
+        "id": 423710292,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1709072966
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"321696\">Julian Berman</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423633471\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/113488-general/topic/lean.2Envim/near/423623809\">said</a>:</p>\n<blockquote>\n<p>It is used by the <code>conv?</code> or calc widgets for instance.</p>\n</blockquote>\n<p>Got it, OK, I suspect it's probably not too difficult to get working but I don't have time to look today, and probably it needs a small bit of thought for what the UI should be in nvim to replace shift+click. I guess some text objects to add regions to the ones you're selecting, and then some way to clear them, kind of like how the quickhl plugin works. But have to try to use the widgets to see. Maybe later in the week.</p>\n</blockquote>\n<p>I looked at this briefly this afternoon and I still don't quite see how it works in VSCode. I see which RPC method is used to get the available widgets, and added support for it to neovim, but I still don't see where the data on what is selected actually gets <em>sent</em> rather than just collected. Will see about having another look when I get some more spare cycles.</p>",
+        "id": 424560738,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709515265
+    },
+    {
+        "content": "<p>I’m sure <span class=\"user-mention\" data-user-id=\"110043\">@Gabriel Ebner</span> or <span class=\"user-mention\" data-user-id=\"128280\">@Wojciech Nawrocki</span> can easily answer this question.</p>",
+        "id": 424565119,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1709518793
+    },
+    {
+        "content": "<blockquote>\n<p>still don't see where the data on what is selected actually gets sent rather than just collected</p>\n</blockquote>\n<p>I'm not entirely clear on what you mean by 'sent' and 'collected'; in general, the selection (more or less an array of the selected terms) is passed as a prop to the main function of the JS code of each widget that is currently being displayed. Widgets can then choose to do whatever they want with it. A widget written with <code>mk_rpc_widget%</code>, such as <a href=\"https://github.com/leanprover-community/mathlib4/blob/52762e248fde90c70e53dbc0aa1cbd5ed2db7f96/Mathlib/Tactic/Widget/Conv.lean#L130\">the <code>conv</code> one</a>, will proceed to call the RPC method that was used to define said widget with the new selection data and then display the HTML reply.</p>",
+        "id": 424566480,
+        "sender_full_name": "Wojciech Nawrocki",
+        "timestamp": 1709519880
+    },
+    {
+        "content": "<p>Aha I was afraid of that. So the actual data gets passed across the JavaScript boundary (to the thing that VSCode execs from getWidgetSource) rather than back to the server?</p>",
+        "id": 424566944,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709520147
+    },
+    {
+        "content": "<p>If so that makes this nearly impossible to implement, or at least means it's time to head back to investigating embedding a JS engine :/</p>",
+        "id": 424567004,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709520188
+    },
+    {
+        "content": "<p>Yep, the ability to run JS is pretty fundamental to some more sophisticated widgets. That said, any widgets implemented with <code>mk_rpc_widget%</code> will send the data right back to the server (<a href=\"https://github.com/leanprover-community/ProofWidgets4/blob/62483831f70341e0d2ac22de0cf7fbc46201210a/widget/src/ofRpcMethod.tsx\">here is the logic</a>) which you could theoretically reimplement in vim. Though it would be relying on an implementation detail that may change at any point :/</p>",
+        "id": 424567288,
+        "sender_full_name": "Wojciech Nawrocki",
+        "timestamp": 1709520387
+    },
+    {
+        "content": "<p>Yeah I mean I certainly expected to run into this if I tried to integrate with \"fancy widget that renders a rubik's cube and lets you move it\", but less so for this where it seems like JS doesn't need to be involved at all</p>",
+        "id": 424749271,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709587199
+    },
+    {
+        "content": "<p>Will have to put this on the back burner, I'm sure any of 1) try out a JS engine and/or shadow DOM in the background, 2) proceed down that implementation detail path or 3) try to special case the specific JS source code for <code>mk_rpc_widget%</code> is an avenue forward but it's not a \"hour and then it's working\" one. Will give it another shot though at some point. Thanks for the info.</p>",
+        "id": 424749516,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1709587292
+    },
+    {
+        "content": "<p>This is a long thread!   Is the idea that all lean.nvim questions and discussion should goes here?  I've been posting about lean.nvim in \"new members\", because I'm just figuring things out with my Lean config.</p>",
+        "id": 426668735,
+        "sender_full_name": "mars0i",
+        "timestamp": 1710474049
+    },
+    {
+        "content": "<p>I think either way is fine -- I occasionally stick small announcements in this one mostly so that people who don't care about nvim can have muted this thread, but yeah I don't think it's a problem if you create new ones.</p>",
+        "id": 426720900,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1710500983
+    },
+    {
+        "content": "<p>Random plugin tip which I just discovered myself last week. <code>aznhe21/actions-preview.nvim</code> is nice, it will show you previews of what a code action will do before you apply it (via telescope). Here for instance is what it shows for some simple <code>simp</code> try this replacement:</p>\n<p><a href=\"/user_uploads/3121/cp-Sd70K0uFvvwziZuKMRqhm/output.gif\">output.gif</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/cp-Sd70K0uFvvwziZuKMRqhm/output.gif\" title=\"output.gif\"><img src=\"/user_uploads/3121/cp-Sd70K0uFvvwziZuKMRqhm/output.gif\"></a></div>",
+        "id": 427277376,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1710724314
+    },
+    {
+        "content": "<p>With the update to lake in v4.8.0-rc1, I am getting some papercuts. </p>\n<p>For example, when jumping into a new file, I will still get a <code>Building ...</code> message which amusingly changes when moving the cursor. If I try to active the language server before it finishes, nvim freezes.</p>",
+        "id": 437526307,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715113831
+    },
+    {
+        "content": "<p>I also noticed weird behavior</p>",
+        "id": 437526385,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1715113873
+    },
+    {
+        "content": "<p>The building is not lean.nvim but <code>lake</code></p>",
+        "id": 437526596,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1715113958
+    },
+    {
+        "content": "<p>So people are seeing this in VS Code also? I didn't notice any messages like that</p>",
+        "id": 437526654,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715113989
+    },
+    {
+        "content": "<p>I did not try in VSCode yet.</p>",
+        "id": 437526710,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1715114025
+    },
+    {
+        "content": "<p>I don't know if they are seeing it in vscode but if you run <code>lake build</code> on the command line afte changing one file you will see that it spits out many build lines. This is a known <code>lake</code> regression, it is also known how this happens.</p>",
+        "id": 437526840,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1715114084
+    },
+    {
+        "content": "<p>Oh</p>",
+        "id": 437526864,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715114098
+    },
+    {
+        "content": "<p>Note that <code>lake</code> is not actually building, it merely prints too early that it is bulding</p>",
+        "id": 437526871,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1715114101
+    },
+    {
+        "content": "<p>Only to then notice that in fact, there is nothing to build</p>",
+        "id": 437526923,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1715114126
+    },
+    {
+        "content": "<p>I also miss the cascading build output but that is off topic</p>",
+        "id": 437527015,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715114171
+    },
+    {
+        "content": "<p>I don't have any real time to dig into anything today but if there's consensus something needs looking into I'll try to have a look once things settle down a bit.</p>",
+        "id": 437529648,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1715115424
+    },
+    {
+        "content": "<p>It sounds like we wait for changes to lake for now</p>",
+        "id": 437529924,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715115545
+    },
+    {
+        "content": "<p>This is probably just user error, but I'm noticing that importing a file with a lot of trace output (e.g. <code>set_option trace.profiler true</code>) causes nvim to take up a huge amount of cpu power before the server can start building the file itself. I don't particularly care about the trace output of files I'm importing, so is there any way to hide this information and not have it slow down my nvim so much?</p>",
+        "id": 439232661,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1715955390
+    },
+    {
+        "content": "<p>That sounds like the sort of thing that shouldn't differ (<em>fingers crossed</em>) between nvim and VSCode (in the sense that I can't think of anything we'd particularly be doing for trace output different from any other retrieved state) -- can you check if you see similar behavior in VSCode perhaps?</p>",
+        "id": 439239095,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1715957485
+    },
+    {
+        "content": "<p>If the answer is no I can do some profiling to see what's up.</p>",
+        "id": 439239222,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1715957519
+    },
+    {
+        "content": "<p>Is this because <code>lake</code> is now more verbose on loading things in general?</p>",
+        "id": 439239873,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715957690
+    },
+    {
+        "content": "<p>Just tested this on VS Code and it doesn't seem (particularly) slow. I also didn't see any trace output in the infoview, only the <code>[1305/1306] Compiling Mathlib.Whatever.File</code>messages.</p>",
+        "id": 439246602,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1715959752
+    },
+    {
+        "content": "<p>Huh. Interesting. Does VSCode not show trace output at all? Or put it somewhere else?</p>",
+        "id": 439248931,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1715960479
+    },
+    {
+        "content": "<p>I can try to have a look but not before Sunday most likely.</p>",
+        "id": 439248974,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1715960494
+    },
+    {
+        "content": "<p>I also saw vim being completely frozen while lake is working, which never happened to me with VSCode.</p>",
+        "id": 439249881,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1715960819
+    },
+    {
+        "content": "<p>Things seem much better (and prettier!) with <code>v4.8.0-rc2</code></p>",
+        "id": 440038678,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1716365593
+    },
+    {
+        "content": "<p>Are the freezes fixed?</p>",
+        "id": 440046766,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716368508
+    },
+    {
+        "content": "<p>One data point but yes. I think the output from lake was overwhelming the buffer.</p>",
+        "id": 440047010,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1716368577
+    },
+    {
+        "content": "<p>Interesting, OK, I wonder / worry whether the latter is some other (albeit less pressing) issue then.</p>",
+        "id": 440047085,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716368604
+    },
+    {
+        "content": "<p>Have you ever looked at any gigantic traces and noticed similar issues?</p>",
+        "id": 440047129,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716368618
+    },
+    {
+        "content": "<p>Maybe in the past. Those truncate the unfolding now so it’s less often you see a giant dump.</p>",
+        "id": 440047503,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1716368761
+    },
+    {
+        "content": "<p>It appears that <code>vim.lsp.client</code> has had its fields rearranged. <code>get_language_id</code> moved out from under <code>config</code> and up to the same level directly under <code>client</code>. <a href=\"https://github.com/Julian/lean.nvim/pull/336\">https://github.com/Julian/lean.nvim/pull/336</a> </p>\n<p>Not sure how the tests are broken...</p>",
+        "id": 440060589,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1716373338
+    },
+    {
+        "content": "<p>There's some other change in 0.10 that I haven't had a chance to look into... from what I saw in the half hour I gave it previously, it's something only broken in the tests, not in real life. So, the best kind of broken.</p>",
+        "id": 440061385,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716373651
+    },
+    {
+        "content": "<p>We also seem to have no test for <code>restart_file</code> obviously which is how we don't notice that change, but that should hopefully be easy to add. I merged your PR for now, thanks for noticing!</p>",
+        "id": 440061624,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716373767
+    },
+    {
+        "content": "<p>The build logs appear a lot faster indeed, that's very good! The trace output seems to be as slow as ever unfortunately. :(</p>",
+        "id": 440084533,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1716382271
+    },
+    {
+        "content": "<p>I forgot to say last time: In case it matters, I'm using <code>nvim-qt</code> under X11 on Arch Linux.</p>",
+        "id": 440084603,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1716382298
+    },
+    {
+        "content": "<p>Anne can you give me some simple-ish thing which reproduces the slowness for you, I can at least see if nvim profiling says anything useful</p>",
+        "id": 440091089,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716384217
+    },
+    {
+        "content": "<p>Looks like putting a <code>set_option trace.profiler</code> true above any expensive file in Mathlib (i.e. one of the top files <a href=\"http://speed.lean-fro.org/mathlib4/run-detail/e7b27246-a3e6-496a-b552-ff4b45c7236e/1c61cabadc2fc201584b9597057da18f09db0489\">listed here</a> ordered by \"value\"), then importing it from a test file would work.</p>",
+        "id": 440094836,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1716385327
+    },
+    {
+        "content": "<p>Actually doing it with the most expensive file, <code>Mathlib.RingTheory.Kaehler,</code> takes a minute or so on my machine before it starts the actual trace output, so presumably you might want to try out a medium-slow file first.</p>",
+        "id": 440094881,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1716385343
+    },
+    {
+        "content": "<p>So explicit repro steps;</p>\n<ul>\n<li>Open a file in Mathlib (e.g. <code>Mathlib.RingTheory.Kaehler</code>)</li>\n<li>Add a line to the top <code>set_option trace.profiler true</code></li>\n<li>Don't close the buffer or run <code>lake build</code></li>\n<li>Make a new file <code>test.lean</code> with the contents:</li>\n</ul>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"n\">Mathlib.RingTheory.Kaehler</span>\n\n<span class=\"k\">#eval</span><span class=\"w\"> </span><span class=\"s2\">\"... trace output done!\"</span>\n</code></pre></div>\n<ul>\n<li>See that vim displays the trace output on the <code>import</code> line extremely slowly.</li>\n</ul>",
+        "id": 440095246,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1716385459
+    },
+    {
+        "content": "<p>It don't see any trace output now but it is quite slow.</p>",
+        "id": 440098090,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1716386224
+    },
+    {
+        "content": "<p>It seems very slow without the tracing though</p>",
+        "id": 440098524,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1716386331
+    },
+    {
+        "content": "<p>I too see no trace output in <code>test.lean</code>. I happened to pick <code>Mathlib.Analysis.Calculus.ContDiff.Defs</code> -- on my machine here simply opening that file and waiting for it to finish processing / have the yellow bars disappear takes ~38.5 seconds (timed by hand) -- but that time is the same trying it a few times both in VSCode and neovim, so that's.. \"good\" at least.</p>",
+        "id": 440298495,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716462215
+    },
+    {
+        "content": "<p>Next will try again with <code>set_option trace.profiler</code> and just see how long it takes, and assuming you're right that it's much slower in neovim will try to see if I can tell why.</p>",
+        "id": 440298507,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1716462221
+    },
+    {
+        "content": "<p>I hope this message affects precisely no one, but I have just removed Lean 3 support from lean.nvim to shed some lines of conditional code. There is a <code>lean3</code> git tag on the last commit containing Lean 3 support, should any future time traveller need Lean 3.<br>\n<code>lean.nvim</code>'s test suite passes, and a few minutes of manual playing seems to reveal nothing horridly broken, so I believe I've done the surgery correctly, but feel free to raise issues if anything seems amiss.</p>",
+        "id": 443709322,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1718007512
     }
 ]

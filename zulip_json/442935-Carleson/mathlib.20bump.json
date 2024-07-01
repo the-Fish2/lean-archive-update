@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p>I don't really know how often I should bump Mathlib for a project like this (since it can be a little inconvenient), but I'm bumping Mathlib now (from <code>v4.9.0-rc1</code> to <code>v4.9.0-rc3</code>). I'm planning to bump 1-2 times per month, but I could also do it more/less often. There were no fixes needed yet (that will probably be a temporary luxury).</p>",
+        "id": 447002496,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1719351303
+    }
+]

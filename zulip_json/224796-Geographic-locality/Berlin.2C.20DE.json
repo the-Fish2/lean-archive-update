@@ -28,5 +28,65 @@
         "id": 384507814,
         "sender_full_name": "Adam Kurkiewicz",
         "timestamp": 1691936415
+    },
+    {
+        "content": "<p>Hello everybody. I'm finishing my PhD in symplectic geometry (working with Chris Wendl at HU, on equivariant pseudo-holomorphic curves). I started really working with Lean last autumn, got hooked pretty quickly and stuck around because I like this community.</p>\n<p>My eventual vision is to formalise symplectic geometry. As that field has pretty broad foundations, I'm interested in formalising many things. So far, I worked on formalising Sard's theorem, some differential geometry and the inverse function theorem (for Banach manifolds). Recently, I started cleaning and helping to upstream results from the sphere eversion project: it would be a shame for this to rot outside of mathlib. I guess I like cleaning up and polishing.</p>",
+        "id": 427228022,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1710711245
+    },
+    {
+        "content": "<p>These are great topics! Looking forward to seeing lots of PRs. :-) And getting sphere eversion material in is super helpful.</p>",
+        "id": 427240347,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1710714458
+    },
+    {
+        "content": "<p>New large PRs will have to wait a bit until my thesis is done. <em>If</em> you reading this want to help, feel free to review some of my pending PRs :-)</p>\n<p>You can also help me working on <a href=\"https://github.com/leanprover-community/mathlib4/pull/8738\">#8738</a>, <a href=\"https://github.com/leanprover-community/mathlib4/pull/11185\">#11185</a> or <a href=\"https://github.com/leanprover-community/mathlib4/pull/10303\">#10303</a>: all of them require some work; I'll get to them eventually, but not necessarily soon. (Feel free to ping me if something is unclear from the thread.)</p>",
+        "id": 427419572,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1710756861
+    },
+    {
+        "content": "<p>We prefer small PRs anyway ;)</p>",
+        "id": 427428720,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1710758568
+    },
+    {
+        "content": "<p>I meant \"large\" as in \"new conceptual work\" - but I agree with you :-)</p>",
+        "id": 427432272,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1710759207
+    },
+    {
+        "content": "<p>The work that you are doing is super useful. I am really sorry I don’t have more time to work with you, I hope that will change. I’m not reviewing the PRs coming from the sphere eversion since they are mostly PRing my code, but I’m very grateful that you do this.</p>",
+        "id": 427513345,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1710776047
+    },
+    {
+        "content": "<p>(Maybe this is a discussion for another thread, but if reviewing these PRs is the bottleneck I would not object to Patrick merging Michael's PRs from sphere eversion.)</p>",
+        "id": 427590509,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1710802855
+    },
+    {
+        "content": "<p>Bioinfo here, as well, part-time biocurating for Reactome, but that's the job, math is the hobby.</p>",
+        "id": 432550089,
+        "sender_full_name": "Ralf Stephan",
+        "timestamp": 1712768844
+    },
+    {
+        "content": "<p>Cross-linking for visibility: there will be an <a href=\"#narrow/stream/113486-announce/topic/Informal.20Lean.20workshop.20in.20Berlin/near/432943504\">informal Lean workshop</a> at the HU math department in Adlershof on May 10. The main target group are university people, but that's not a hard requirement.</p>",
+        "id": 432943924,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1712940821
+    },
+    {
+        "content": "<p>Hey,  I work in Berlin <span aria-label=\"bear\" class=\"emoji emoji-1f43b\" role=\"img\" title=\"bear\">:bear:</span></p>",
+        "id": 437892307,
+        "sender_full_name": "Yves Jäckle",
+        "timestamp": 1715291423
     }
 ]

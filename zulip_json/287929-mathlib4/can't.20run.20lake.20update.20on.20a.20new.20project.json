@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>I created a new project with <code>lake +leanprover/lean4:nightly-2024-04-24 new project math</code> and ran <code>lake update</code> inside the project folder. The cmd uses basically no cpu for about 3 minutes and then exits with:</p>\n<p><code>info: project: no previous manifest, creating one from scratch\ninfo: mathlib: cloning https://github.com/leanprover-community/mathlib4.git to '.\\.\\.lake\\packages\\mathlib'\nerror: external command 'git' exited with code 128</code><br>\nwith only an empty mathlib folder in <code>.lake/packages</code> created.</p>\n<p>This doesn't happen with other git projects, and I don't know how to get a more specific error message. Would love some help.</p>",
+        "id": 443600888,
+        "sender_full_name": "Nir Paz",
+        "timestamp": 1717944164
+    },
+    {
+        "content": "<p>Seems like that's a generic git error, so could be pretty much anything :/</p>",
+        "id": 443601538,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1717944708
+    },
+    {
+        "content": "<p>I think this is covered under <a href=\"https://github.com/leanprover/lean4/pull/4302\">lean#4302</a>. In the meantime, can you check that you can do a <code>git clone</code> of mathlib successfully?</p>",
+        "id": 443751280,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718019835
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> I just tried again and it works now (possibly because I'm on a different wifi?) Thanks anyways (:</p>",
+        "id": 443756485,
+        "sender_full_name": "Nir Paz",
+        "timestamp": 1718021575
+    }
+]

@@ -262,5 +262,347 @@
         "id": 405432448,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1701461984
+    },
+    {
+        "content": "<p>Cross-posting this: <a class=\"stream-topic\" data-stream-id=\"219941\" href=\"/#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/AlphaGeometry\">#Machine Learning for Theorem Proving &gt; AlphaGeometry</a> Solves 25 of 30 recent olympiad geometry problems.</p>",
+        "id": 416083113,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1705512335
+    },
+    {
+        "content": "<p>I'm looking to connect with people from India who want to put together a team to participate in the AIMO prize 2024 as well as the IMO-Grand-Challenge. I met <span class=\"user-mention\" data-user-id=\"266304\">@Siddhartha Gadgil</span> this Saturday at IISc, Bangalore. <span aria-label=\"pray\" class=\"emoji emoji-1f64f\" role=\"img\" title=\"pray\">:pray:</span> </p>\n<p>We have a whatsapp group. Please DM me if anyone discovers this thread and wants to join. :-)</p>",
+        "id": 422363190,
+        "sender_full_name": "Nilesh",
+        "timestamp": 1708415552
+    },
+    {
+        "content": "<p>Im interested in collaborating with any open groups/teams aimed at tackling the AIMO prize 2024, if anyone is open please DM me, thank you :)</p>",
+        "id": 422793810,
+        "sender_full_name": "David Afonso Valente",
+        "timestamp": 1708600096
+    },
+    {
+        "content": "<p>preliminary AIMO \"progress prize\" rules were announced just now:<br>\n<a href=\"https://www.reddit.com/r/AIMOprize/comments/1ay4aiu/progress_prize_pre_announcement/\">https://www.reddit.com/r/AIMOprize/comments/1ay4aiu/progress_prize_pre_announcement/</a></p>",
+        "id": 423070109,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1708712145
+    },
+    {
+        "content": "<blockquote>\n<p>We will have 100 completely new problems created. Problems will be in style of AIME: <a href=\"https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions\">https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions</a>.</p>\n<p>In particular, the answer to each problem is a number from 0 to 999.</p>\n<p>Complexity of problems will be a bit easier than AIME and targeted between AIME and AMC'12 level: <a href=\"https://artofproblemsolving.com/wiki/index.php/AMC_12_Problems_and_Solutions\">https://artofproblemsolving.com/wiki/index.php/AMC_12_Problems_and_Solutions</a></p>\n<p>Processing multi modal inputs (specifically diagrams) is not required, all problems are text only (although geometry problems are allowed).</p>\n<p>Total prize fund is $1,048,576.</p>\n</blockquote>",
+        "id": 423070208,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1708712178
+    },
+    {
+        "content": "<p>The first progress prize competition is now live and accepting submissions: <a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/overview\">https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/overview</a></p>",
+        "id": 430818537,
+        "sender_full_name": "Terence Tao",
+        "timestamp": 1712072181
+    },
+    {
+        "content": "<ul>\n<li>submission deadline: 27June 2024 </li>\n<li>scored on 50 new problems, difficulty between AMC and AIME, stated in English/LaTeX, answers between 0 and 999</li>\n<li>submissions get a total of 9 hours of compute time on a machine with 4 cpus, 29GB of memory, and either a P100 gpu or 2xT4 gpus (Kaggle also has a TPU option, but I think it's not allowed for submissions in this contest?)</li>\n<li>max team size of 5</li>\n<li>\"Freely &amp; publicly available external data is allowed, including pre-trained models\"</li>\n<li>no live internet access allowed during evaluation</li>\n</ul>",
+        "id": 430838215,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712078308
+    },
+    {
+        "content": "<p>Also the way they deal with the problems is interesting. 110 problems were created for this contest.</p>\n<ul>\n<li>10 problems are \"training problems\", which you can read if you enter the competition</li>\n<li>50 problems are \"public problems\", which are <em>not</em> publicly available, but which are used over the next three months to assess the quality of submissions on the leaderboard: <a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/leaderboard\">https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/leaderboard</a></li>\n<li>50 problems are \"private problems\" and are actually used to determine the competition ranking.</li>\n</ul>",
+        "id": 430843727,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1712080340
+    },
+    {
+        "content": "<p>too bad zero of them are actually public for non-contestants</p>",
+        "id": 430848060,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1712081870
+    },
+    {
+        "content": "<p>To sign up, I needed to agree to the terms:<br>\n\"You agree to use reasonable and suitable measures to prevent persons who have not formally agreed to these Rules from gaining access to the Competition Data.\"</p>",
+        "id": 430848769,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712082142
+    },
+    {
+        "content": "<p>I haven't managed to get in -- \"unable to phone verify\", on the other hand, so far I am looking at it more out of curiosity, not sure if I would compete in this</p>",
+        "id": 430849771,
+        "sender_full_name": "Mirek Olšák",
+        "timestamp": 1712082526
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span> <a href=\"#narrow/stream/208328-IMO-grand-challenge/topic/AI.20Math.20Olympiad.20Prize/near/430848060\">said</a>:</p>\n<blockquote>\n<p>too bad zero of them are actually public for non-contestants</p>\n</blockquote>\n<p>It is <em>highly nontrivial</em> to make 110 original questions of this nature.</p>",
+        "id": 430860330,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1712086723
+    },
+    {
+        "content": "<p>Actually, when  I searched enough, I was able to find some examples of the <code>train</code> problems in publicly available on the Kaggle website...</p>",
+        "id": 431287970,
+        "sender_full_name": "Mirek Olšák",
+        "timestamp": 1712229726
+    },
+    {
+        "content": "<p>Yeah, the 10 training problems + (unofficial) solutions are now visible here: <a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/490640\">https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/490640</a><br>\nThere was apparently a mistake/typo in one of the training problems.</p>",
+        "id": 431292421,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1712231093
+    },
+    {
+        "content": "<p>Maybe I'm confused about the rules... looking at the <a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/models\">models</a> tab lists things like mixtral, which I can't imagine would run on the VMs provided for this competition, as well as Gemini pro which is certainly not open-source and only behind an API. What do the models listed here actually refer to?</p>",
+        "id": 431295397,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712231949
+    },
+    {
+        "content": "<p>Mixtral with 4-bit quantization just barely fits into RAM.</p>",
+        "id": 431295583,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712232001
+    },
+    {
+        "content": "<p>not sure why Gemini is listed there</p>",
+        "id": 431295675,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712232017
+    },
+    {
+        "content": "<p>oh wow. is that with the 2xT4 or the P100? P100 has something like ~18G ram right?</p>",
+        "id": 431295846,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712232058
+    },
+    {
+        "content": "<p>I mean CPU RAM</p>",
+        "id": 431295992,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712232098
+    },
+    {
+        "content": "<p>aha I see. But in this case I think the 9 hour limit would be an issue if you're not using the GPU</p>",
+        "id": 431296262,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712232163
+    },
+    {
+        "content": "<p>but also looks like each GPU in the T4x2 configuration has 15GB of memory, so I think it fits there too?</p>",
+        "id": 431296268,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712232165
+    },
+    {
+        "content": "<p>Trying to run models on more than one GPU is intimidating for me... does the transformers library do the hard work for you? Edit: it seems that a simple <code>device_map = 'auto'</code> might just do the trick</p>",
+        "id": 431297161,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712232431
+    },
+    {
+        "content": "<p>The starter notebook I'm looking at uses llama_cpp (through a python wrapper), which seems to be pretty good at spreading things out:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">llama_new_context_with_model</span><span class=\"o\">:</span> <span class=\"n\">total</span> <span class=\"n\">VRAM</span> <span class=\"n\">used</span><span class=\"o\">:</span> <span class=\"mi\">25329</span><span class=\"bp\">.</span><span class=\"mi\">59</span> <span class=\"n\">MiB</span> <span class=\"o\">(</span><span class=\"n\">model</span><span class=\"o\">:</span> <span class=\"mi\">25145</span><span class=\"bp\">.</span><span class=\"mi\">55</span> <span class=\"n\">MiB</span><span class=\"o\">,</span> <span class=\"n\">context</span><span class=\"o\">:</span> <span class=\"mi\">184</span><span class=\"bp\">.</span><span class=\"mi\">04</span> <span class=\"n\">MiB</span><span class=\"o\">)</span>\n</code></pre></div>",
+        "id": 431298360,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712232776
+    },
+    {
+        "content": "<p>Is this starter notebook available publicly? Do you mind sharing?</p>",
+        "id": 431298646,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712232867
+    },
+    {
+        "content": "<p><a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/490734\">https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/490734</a></p>",
+        "id": 431298892,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1712232933
+    },
+    {
+        "content": "<p>The submissions so far are able to solve 17/50 problems of the public problems, which is quite an impressive score!</p>",
+        "id": 432029539,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1712596571
+    },
+    {
+        "content": "<p>FWIW, there's a public notebook that gets 13/50 (and supposedly just by setting a higher temp it's possible to get a few more)</p>",
+        "id": 432031051,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712597205
+    },
+    {
+        "content": "<p>All this public notebook does is essentially self-consistency chain of thought together with straightforward python code execution, along with a particular choice of open-source model.</p>",
+        "id": 432031284,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712597275
+    },
+    {
+        "content": "<p>Is there an easy link to this notebook for those of us too lazy to go hunting?</p>",
+        "id": 432034785,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1712598484
+    },
+    {
+        "content": "<p>I think this is it: <a href=\"https://www.kaggle.com/code/olyatsimboy/aimo-zero-shot-sc-mmos-deepseekmath\">https://www.kaggle.com/code/olyatsimboy/aimo-zero-shot-sc-mmos-deepseekmath</a></p>",
+        "id": 432035246,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712598616
+    },
+    {
+        "content": "<p>Am I right in thinking that one can cheat in the following way: look at the training data, solve the problems manually, and then write some kind of obfuscated code which just prints out the correct solutions? And then you'd get 0 on the test data (so wouldn't win any $$) but you could still be top of the kaggle leader board? Or have I misunderstood how things work?</p>",
+        "id": 432035506,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1712598700
+    },
+    {
+        "content": "<p>I think submitted notebooks don't have internet access, and we don't know the problems that they run on.</p>",
+        "id": 432035713,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712598759
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"243562\">Adam Topaz</span> <a href=\"#narrow/stream/208328-IMO-grand-challenge/topic/AI.20Math.20Olympiad.20Prize/near/432035246\">said</a>:</p>\n<blockquote>\n<p>I think this is it: <a href=\"https://www.kaggle.com/code/olyatsimboy/aimo-zero-shot-sc-mmos-deepseekmath\">https://www.kaggle.com/code/olyatsimboy/aimo-zero-shot-sc-mmos-deepseekmath</a></p>\n</blockquote>\n<p>Note that this gets 0/10 on the test set, but if you change the <code>n_repetitions</code> to <code>5</code> on the test set it does get more than 0.</p>",
+        "id": 432036101,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712598874
+    },
+    {
+        "content": "<p>The problems are not publicly available. Even the so-called public problems are unknown, the only thing known is the leaderboard of scores that programs get on the public problems.</p>",
+        "id": 432036189,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1712598903
+    },
+    {
+        "content": "<p>right, and since there's no internet access you can't make a submission that just uploads the problems somewhere</p>",
+        "id": 432036317,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712598949
+    },
+    {
+        "content": "<p>the 10 test problems that we can read are disjoint from the public or private set.</p>",
+        "id": 432036322,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1712598950
+    },
+    {
+        "content": "<p>So the 50 \"public\" problems are not known to the people writing the AIs? I had misunderstood. (I knew they weren't available to the general public)</p>",
+        "id": 432037810,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1712599402
+    },
+    {
+        "content": "<p>The problem texts aren't public, but the success rate on them is</p>",
+        "id": 432037929,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1712599434
+    },
+    {
+        "content": "<p>Then what is the point of splitting the 100 secret questions into two sets of 50? Sorry to ask such basic questions,</p>",
+        "id": 432044212,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1712601673
+    },
+    {
+        "content": "<p>so that you can't optimize your submissions to the actual problems that will determine the prize</p>",
+        "id": 432044650,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712601868
+    },
+    {
+        "content": "<p>submissions close in june, and then the submissions run on the <em>SUPER SECRET</em> 50 questions that no submission has seen before.</p>",
+        "id": 432044728,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712601897
+    },
+    {
+        "content": "<p>But I thought we'd just established that we can't see the problems?</p>",
+        "id": 432044729,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1712601897
+    },
+    {
+        "content": "<p>yeah but you can still tune your model by making submissions each day and seeing what score you get</p>",
+        "id": 432044819,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712601919
+    },
+    {
+        "content": "<p>This was posted two days ago: <a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/492178\">https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/492178</a></p>\n<p>Also, there is currently a public notebook that supposedly gets 16/20 here: <a href=\"https://www.kaggle.com/code/quan0095/more-diversity-in-output-improve-score\">https://www.kaggle.com/code/quan0095/more-diversity-in-output-improve-score</a></p>\n<p>But the highest score is still 17/20 :-/</p>",
+        "id": 432566156,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712775139
+    },
+    {
+        "content": "<p>\"16/50\", if I understand correctly</p>",
+        "id": 432646883,
+        "sender_full_name": "Mauricio Collares",
+        "timestamp": 1712822112
+    },
+    {
+        "content": "<p>Curious whether anyone has attempted <a href=\"https://arxiv.org/abs/2404.06405\">https://arxiv.org/abs/2404.06405</a> as an accompany tool to LLMs?</p>\n<blockquote>\n<p>solves 21 out of 30 methods by just using a CPU-only laptop with a time limit of 5 minutes per problem. Essentially, this classic method solves just 4 problems less than AlphaGeometry</p>\n</blockquote>",
+        "id": 432653484,
+        "sender_full_name": "fzyzcjy",
+        "timestamp": 1712824404
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"325367\">Mauricio Collares</span> <a href=\"#narrow/stream/208328-IMO-grand-challenge/topic/AI.20Math.20Olympiad.20Prize/near/432646883\">said</a>:</p>\n<blockquote>\n<p>\"16/50\", if I understand correctly</p>\n</blockquote>\n<p>Yeah, sorry both 20's were a typo</p>",
+        "id": 432688021,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1712836432
+    },
+    {
+        "content": "<p>This notebook has now got 20/50: <a href=\"https://www.kaggle.com/code/piotrzamisnii/aimo-zero-shot-sc-mmos-deepseekmath-e3248b\">https://www.kaggle.com/code/piotrzamisnii/aimo-zero-shot-sc-mmos-deepseekmath-e3248b</a> </p>\n<p>Note that it is essentially identical to the ones mentioned above which got 13 and eventually 17 by adjusting the temperature, and number of repetitions. I find it a bit disappointing that getting to 20/50 was more-or-less a lottery.</p>",
+        "id": 434345620,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1713527409
+    },
+    {
+        "content": "<p>version 2 of this notebook had the following suspicious code:</p>\n<div class=\"codehilite\" data-code-language=\"Python\"><pre><span></span><code><span class=\"k\">for</span> <span class=\"n\">a</span><span class=\"p\">,</span> <span class=\"n\">b</span> <span class=\"ow\">in</span> <span class=\"nb\">zip</span><span class=\"p\">(</span><span class=\"n\">total_answers</span><span class=\"p\">,</span> <span class=\"n\">total_results</span><span class=\"p\">):</span>\n    <span class=\"n\">a</span> <span class=\"o\">=</span> <span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">array</span><span class=\"p\">(</span><span class=\"n\">a</span><span class=\"p\">)</span>\n    <span class=\"n\">b</span> <span class=\"o\">=</span> <span class=\"n\">np</span><span class=\"o\">.</span><span class=\"n\">array</span><span class=\"p\">(</span><span class=\"n\">b</span><span class=\"p\">)</span>\n    <span class=\"n\">a</span><span class=\"p\">[</span><span class=\"n\">a</span> <span class=\"o\">&lt;</span> <span class=\"mi\">0</span><span class=\"p\">]</span> <span class=\"o\">=</span> <span class=\"n\">b</span><span class=\"p\">[</span><span class=\"n\">a</span> <span class=\"o\">&lt;</span> <span class=\"mi\">0</span><span class=\"p\">]</span>\n    <span class=\"n\">pred</span> <span class=\"o\">=</span> <span class=\"n\">Counter</span><span class=\"p\">(</span><span class=\"n\">a</span><span class=\"o\">.</span><span class=\"n\">tolist</span><span class=\"p\">())</span><span class=\"o\">.</span><span class=\"n\">most_common</span><span class=\"p\">(</span><span class=\"mi\">2</span><span class=\"p\">)</span>\n    <span class=\"n\">enumerates</span> <span class=\"o\">=</span> <span class=\"n\">df</span><span class=\"o\">.</span><span class=\"n\">enumerates</span><span class=\"o\">.</span><span class=\"n\">values</span><span class=\"p\">[</span><span class=\"n\">enumerate_i</span><span class=\"p\">]</span>\n    <span class=\"k\">if</span> <span class=\"n\">enumerates</span> <span class=\"ow\">in</span> <span class=\"p\">[</span><span class=\"mi\">3</span><span class=\"p\">,</span> <span class=\"mi\">4</span><span class=\"p\">,</span> <span class=\"mi\">5</span><span class=\"p\">]:</span>\n        <span class=\"n\">ans</span> <span class=\"o\">=</span> <span class=\"n\">pred</span><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">][</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n    <span class=\"k\">elif</span> <span class=\"n\">enumerates</span> <span class=\"ow\">in</span> <span class=\"p\">[</span><span class=\"mi\">30</span><span class=\"p\">,</span> <span class=\"mi\">36</span><span class=\"p\">]:</span>\n        <span class=\"n\">ans</span> <span class=\"o\">=</span> <span class=\"n\">pred</span><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">][</span><span class=\"mi\">0</span><span class=\"p\">]</span> <span class=\"k\">if</span> <span class=\"ow\">not</span> <span class=\"n\">pred</span><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">][</span><span class=\"mi\">0</span><span class=\"p\">]</span> <span class=\"o\">&lt;</span> <span class=\"mi\">0</span> <span class=\"k\">else</span> <span class=\"n\">pred</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">][</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n    <span class=\"k\">else</span><span class=\"p\">:</span>\n        <span class=\"n\">ans</span> <span class=\"o\">=</span> <span class=\"n\">pred</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">][</span><span class=\"mi\">0</span><span class=\"p\">]</span> <span class=\"k\">if</span> <span class=\"ow\">not</span> <span class=\"n\">pred</span><span class=\"p\">[</span><span class=\"mi\">0</span><span class=\"p\">][</span><span class=\"mi\">0</span><span class=\"p\">]</span> <span class=\"o\">&lt;</span> <span class=\"mi\">0</span> <span class=\"k\">else</span> <span class=\"n\">pred</span><span class=\"p\">[</span><span class=\"mi\">1</span><span class=\"p\">][</span><span class=\"mi\">0</span><span class=\"p\">]</span>\n    <span class=\"n\">enumerate_i</span><span class=\"o\">+=</span> <span class=\"mi\">1</span>\n    <span class=\"n\">final_answers</span><span class=\"o\">.</span><span class=\"n\">append</span><span class=\"p\">(</span><span class=\"n\">ans</span><span class=\"p\">)</span>\n    <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">ans</span><span class=\"p\">)</span>\n</code></pre></div>",
+        "id": 434346889,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1713527935
+    },
+    {
+        "content": "<p>What does that code do?</p>",
+        "id": 434356829,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713531331
+    },
+    {
+        "content": "<p>Disclosure: as of recently I am one of the people involved with the organisation of this prize</p>",
+        "id": 434356984,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713531378
+    },
+    {
+        "content": "<p><code>total_answers</code> and <code>total_results</code> hold solution values that were computed in different ways. (I think the former is from running generated python code and the latter is from parsing what's in a generated \\box{}.) The above code implements voting, so that the most common solution gets chosen, with some priority given between the two styles of solution. The weird thing is the hard coding of the priority in problems 3,4,5,30, and 36.</p>",
+        "id": 434358475,
+        "sender_full_name": "David Renshaw",
+        "timestamp": 1713531847
+    },
+    {
+        "content": "<p>Thanks for the explanation!</p>",
+        "id": 434370138,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713535556
+    },
+    {
+        "content": "<p>Huh, I would have figured submissions are run on a random ordering of the 50 problems to prevent any probing.</p>",
+        "id": 434390236,
+        "sender_full_name": "George Tsoukalas",
+        "timestamp": 1713541898
+    },
+    {
+        "content": "<p>The final competition is on 50 private problems that will not be used at all while the submissions are open, so it is impossible to probe the private problems.</p>",
+        "id": 434404344,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1713546906
+    },
+    {
+        "content": "<p><a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/495133\">https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/495133</a></p>",
+        "id": 434431453,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713558793
+    },
+    {
+        "content": "<p>Another submission is claiming 20/50 without probing: <a href=\"https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/492178#2763188\">https://www.kaggle.com/competitions/ai-mathematical-olympiad-prize/discussion/492178#2763188</a></p>",
+        "id": 434571467,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713688570
     }
 ]

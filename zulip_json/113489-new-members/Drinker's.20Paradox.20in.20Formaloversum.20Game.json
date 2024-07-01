@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>Hi<br>\nI think I mostly understood how you prove statements in propositional logic in lean4 through Kevin Buzzard's NNG and I tried to work through the introduction to predicate logic in the <a href=\"https://adam.math.hhu.de/\">Formaloversum</a> (in German). </p>\n<p>I am stuck with the Drinker's paradox. The hints say to use \"by_cases\" and \"push_neg at h\". I could resolve one of the two cases, but I don't know how to do the second. This is what I tried so far:</p>\n<p>by_cases h:∀ (y:People), isDrinking y<br>\nuse default<br>\nintro hd<br>\nassumption<br>\npush_neg at h</p>\n<p>Any help or hints how to proceed are greatly appreciated.</p>",
+        "id": 412190547,
+        "sender_full_name": "Thomas Preu",
+        "timestamp": 1704908326
+    },
+    {
+        "content": "<p>Can you please<br>\n(1) post fully working code (right now we can't even see the formal statement you're trying to prove, and there are many ways to formalise the Drinker's paradox); see <a href=\"https://leanprover-community.github.io/mwe.html\">#mwe</a> for more information<br>\n(2) enclose your code in backticks; see <a href=\"https://github.com/leanprover-community/mathlib/wiki/Code-in-backticks\">#backticks</a> for more information.</p>",
+        "id": 412191348,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1704908671
+    },
+    {
+        "content": "<p>OK, sorry. Thank you for your patience.<br>\nCopying from the Webpage the statement is printed in several lines for better readability (not sure if line breaks are important)</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kd\">example</span> <span class=\"o\">{</span><span class=\"n\">People</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">Inhabited</span> <span class=\"n\">People</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">isDrinking</span> <span class=\"o\">:</span> <span class=\"n\">People</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span><span class=\"o\">)</span> <span class=\"o\">:</span>\n  <span class=\"bp\">∃</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"o\">:</span> <span class=\"n\">People</span><span class=\"o\">),</span> <span class=\"n\">isDrinking</span> <span class=\"n\">x</span> <span class=\"bp\">→</span> <span class=\"bp\">∀</span> <span class=\"o\">(</span><span class=\"n\">y</span> <span class=\"o\">:</span> <span class=\"n\">People</span><span class=\"o\">),</span> <span class=\"n\">isDrinking</span> <span class=\"n\">y</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n</code></pre></div>\n<p>This is given on the web site. And here's what I tried so far</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">by_cases</span> <span class=\"n\">h</span><span class=\"o\">:</span><span class=\"bp\">∀</span> <span class=\"o\">(</span><span class=\"n\">y</span><span class=\"o\">:</span><span class=\"n\">People</span><span class=\"o\">),</span> <span class=\"n\">isDrinking</span> <span class=\"n\">y</span>\n<span class=\"n\">use</span> <span class=\"n\">default</span>\n<span class=\"n\">intro</span> <span class=\"n\">hd</span>\n<span class=\"n\">assumption</span>\n<span class=\"n\">push_neg</span> <span class=\"n\">at</span> <span class=\"n\">h</span>\n</code></pre></div>",
+        "id": 412369873,
+        "sender_full_name": "Thomas Preu",
+        "timestamp": 1704987647
+    },
+    {
+        "content": "<p>Do you have a paper proof, and your problem is only the translation to lean, or do you not know how to prove it at all?</p>",
+        "id": 412375150,
+        "sender_full_name": "Luigi Massacci",
+        "timestamp": 1704989369
+    },
+    {
+        "content": "<p>Just to expand on what Luigi said -- right now Lean does not do magic; you have to know the proof on paper before you can formalise it. (But you are going along the right lines)</p>",
+        "id": 412406447,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1705000941
+    },
+    {
+        "content": "<p>After <code>push_neg at h</code>, your assumption <code>h</code> is the existential statement <code>∃ (y : People), ¬isDrinking y</code>.  A good proof-writing guideline is: if you know something exists, give it a name.  So it would be helpful to introduce a name for a person who isn't drinking.  Do you know a tactic for doing that?</p>",
+        "id": 412407609,
+        "sender_full_name": "Dan Velleman",
+        "timestamp": 1705001406
+    },
+    {
+        "content": "<p>Actually I stand corrected: Lean does do magic:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Mathlib</span>\n<span class=\"kn\">import</span> <span class=\"n\">LeanCopilot</span>\n\n<span class=\"kd\">example</span> <span class=\"o\">{</span><span class=\"n\">People</span> <span class=\"o\">:</span> <span class=\"kt\">Type</span><span class=\"o\">}</span> <span class=\"o\">[</span><span class=\"n\">Inhabited</span> <span class=\"n\">People</span><span class=\"o\">]</span> <span class=\"o\">(</span><span class=\"n\">isDrinking</span> <span class=\"o\">:</span> <span class=\"n\">People</span> <span class=\"bp\">→</span> <span class=\"kt\">Prop</span><span class=\"o\">)</span> <span class=\"o\">:</span>\n    <span class=\"bp\">∃</span> <span class=\"o\">(</span><span class=\"n\">x</span> <span class=\"o\">:</span> <span class=\"n\">People</span><span class=\"o\">),</span> <span class=\"n\">isDrinking</span> <span class=\"n\">x</span> <span class=\"bp\">→</span> <span class=\"bp\">∀</span> <span class=\"o\">(</span><span class=\"n\">y</span> <span class=\"o\">:</span> <span class=\"n\">People</span><span class=\"o\">),</span> <span class=\"n\">isDrinking</span> <span class=\"n\">y</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n  <span class=\"n\">by_cases</span> <span class=\"n\">h</span><span class=\"o\">:</span><span class=\"bp\">∀</span> <span class=\"o\">(</span><span class=\"n\">y</span><span class=\"o\">:</span><span class=\"n\">People</span><span class=\"o\">),</span> <span class=\"n\">isDrinking</span> <span class=\"n\">y</span>\n  <span class=\"n\">use</span> <span class=\"n\">default</span>\n  <span class=\"n\">intro</span> <span class=\"n\">hd</span>\n  <span class=\"n\">assumption</span>\n  <span class=\"n\">push_neg</span> <span class=\"n\">at</span> <span class=\"n\">h</span>\n  <span class=\"n\">search_proof</span> <span class=\"c1\">-- works</span>\n</code></pre></div>",
+        "id": 412408425,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1705001750
+    }
+]

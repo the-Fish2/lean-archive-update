@@ -34,5 +34,47 @@
         "id": 403253531,
         "sender_full_name": "Stefano Volpe",
         "timestamp": 1700518164
+    },
+    {
+        "content": "<p>Just noticed this stream despite flirting with lean for quite a while now. I'm in Rome.</p>",
+        "id": 416779148,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1705671326
+    },
+    {
+        "content": "<p>Cc <span class=\"user-mention\" data-user-id=\"685114\">@Alessio P.</span></p>",
+        "id": 417286075,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1705946467
+    },
+    {
+        "content": "<p>Bologna here <span aria-label=\"wave\" class=\"emoji emoji-1f44b\" role=\"img\" title=\"wave\">:wave:</span></p>",
+        "id": 430063380,
+        "sender_full_name": "Marco Lenci",
+        "timestamp": 1711631209
+    },
+    {
+        "content": "<p>I'm in Italy too! Rome to be precise...</p>",
+        "id": 430070337,
+        "sender_full_name": "Fabrizio Barroero",
+        "timestamp": 1711633536
+    },
+    {
+        "content": "<p>If you want to appear in the map <a href=\"https://leanprover-community.github.io/meet.html\">here</a> you can set the latitude and longitude fields in your Zulip profile.</p>",
+        "id": 430070608,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1711633617
+    },
+    {
+        "content": "<p>(and wait 24 hours)</p>",
+        "id": 430070638,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1711633627
+    },
+    {
+        "content": "<p>Yes, I've already done it</p>",
+        "id": 430079173,
+        "sender_full_name": "Fabrizio Barroero",
+        "timestamp": 1711635881
     }
 ]

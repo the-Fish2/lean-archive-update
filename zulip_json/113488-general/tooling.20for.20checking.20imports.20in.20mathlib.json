@@ -1,0 +1,38 @@
+[
+    {
+        "content": "<p>A recent mathlib PR has the diff for <code>Mathlib/RingTheory/PowerSeries/WellKnown.lean</code> starting</p>\n<div class=\"codehilite\" data-code-language=\"Diff\"><pre><span></span><code><span class=\"gd\">- import Mathlib.RingTheory.PowerSeries.Basic</span>\n<span class=\"gi\">+ import Mathlib.RingTheory.PowerSeries.Inverse</span>\nimport Mathlib.Data.Nat.Parity\n<span class=\"gi\">+ import Mathlib.Data.Nat.Choose.Sum</span>\nimport Mathlib.Algebra.BigOperators.NatAntidiagonal\n</code></pre></div>\n<p>This file is imported by Bernoulli numbers, it's not a leaf file, so I feel obliged to check that this import change isn't disruptive in some way. But can I do this automatically? Is there some sort of program which can be run giving this change a score out of 10 for metrics which people who understand import trees care about? For example it could inform us that the longest pole just doubled.</p>",
+        "id": 437810139,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1715257232
+    },
+    {
+        "content": "<p><a href=\"/user_uploads/3121/ok9ucK_xoJHWvcKqJLX5hncm/imports.png\">imports.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/ok9ucK_xoJHWvcKqJLX5hncm/imports.png\" title=\"imports.png\"><img src=\"/user_uploads/3121/ok9ucK_xoJHWvcKqJLX5hncm/imports.png\"></a></div><p>Here's another one on another PR. I really don't know how to judge these things.</p>",
+        "id": 437820747,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1715261992
+    },
+    {
+        "content": "<p>Metrics such as pole length could be added to the speedcenter, but need an explicit <code>!bench</code> to be reported before merging</p>",
+        "id": 437821737,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1715262351
+    },
+    {
+        "content": "<p>A much more immediate information would be the number of dependencies of a given file before and after the change. The import graph stuff should be able to say that.</p>",
+        "id": 437821943,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1715262423
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"313038\">@Moritz Firsching</span> did some work investigating the number of new imports (by calling several times <code>lake exe graph</code> to some files with a build in between) for that PR: <a href=\"https://github.com/leanprover-community/mathlib4/pull/10635#issuecomment-2022734136\">https://github.com/leanprover-community/mathlib4/pull/10635#issuecomment-2022734136</a><br>\nPerhaps that can be a starting point for a new tool?</p>",
+        "id": 437822875,
+        "sender_full_name": "Rémy Degenne",
+        "timestamp": 1715262763
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/113488-general/topic/tooling.20for.20checking.20imports.20in.20mathlib/near/437820747\">said</a>:</p>\n<blockquote>\n<p><a href=\"/user_uploads/3121/ok9ucK_xoJHWvcKqJLX5hncm/imports.png\">imports.png</a></p>\n<p>Here's another one on another PR. I really don't know how to judge these things.</p>\n</blockquote>\n<p>This looks like my PR. I've just tried <a href=\"https://github.com/leanprover-community/mathlib4/blob/690d741a2041d5670fd10338b772280cca9b47cd/LongestPole/Main.lean#L151-L161\"><code>lake exe pole --to &lt;Module&gt;</code></a> and it seems the longest pole wouldn't change. On the current master branch, <code>Mathlib.Algebra.Module.Torsion</code> has a pole length of 95 whereas the newly added <code>Mathlib.Data.ZMod.Module</code> has 76. The 4 removed imports were redundant before the change, but I haven't considered whether their removal affects the performance in any way.</p>",
+        "id": 437847965,
+        "sender_full_name": "Peiran Wu",
+        "timestamp": 1715271837
+    }
+]

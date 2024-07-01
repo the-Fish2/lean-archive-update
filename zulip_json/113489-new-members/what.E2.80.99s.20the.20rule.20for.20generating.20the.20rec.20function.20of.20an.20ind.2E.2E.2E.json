@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<p>Hi I am a layman in type theory but I am curious in how is the rec function generated given a inductive families defined with the form </p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kd\">inductive</span> <span class=\"n\">foo</span> <span class=\"o\">:</span> <span class=\"bp\">...</span> <span class=\"bp\">→</span> <span class=\"kt\">Sort</span> <span class=\"n\">u</span> <span class=\"n\">where</span>\n  <span class=\"bp\">|</span> <span class=\"n\">constructor₁</span> <span class=\"o\">:</span> <span class=\"bp\">...</span> <span class=\"bp\">→</span> <span class=\"n\">foo</span> <span class=\"bp\">...</span>\n  <span class=\"bp\">|</span> <span class=\"n\">constructor₂</span> <span class=\"o\">:</span> <span class=\"bp\">...</span> <span class=\"bp\">→</span> <span class=\"n\">foo</span> <span class=\"bp\">...</span>\n  <span class=\"bp\">...</span>\n  <span class=\"bp\">|</span> <span class=\"n\">constructorₙ</span> <span class=\"o\">:</span> <span class=\"bp\">...</span> <span class=\"bp\">→</span> <span class=\"n\">foo</span> <span class=\"bp\">...</span>\n</code></pre></div>\n<p>mentioned in <a href=\"https://leanprover.github.io/theorem_proving_in_lean4/inductive_types.html\">https://leanprover.github.io/theorem_proving_in_lean4/inductive_types.html</a></p>",
+        "id": 431757500,
+        "sender_full_name": "Shanghe Chen",
+        "timestamp": 1712486756
+    },
+    {
+        "content": "<p>For example why <code>Eq.rec</code> has a signature like <code>@Eq.rec : {α : Sort u} → {a : α} → {motive : (x : α) → a = x → Sort v}\n                  → motive a rfl → {b : α} → (h : a = b) → motive b h)</code>?</p>",
+        "id": 431757628,
+        "sender_full_name": "Shanghe Chen",
+        "timestamp": 1712486821
+    },
+    {
+        "content": "<p>For<code>Nat.rec</code> it seems intuitive since it restates the inductive principle. But <code>Eq.rec</code> seems not containing such intuition</p>",
+        "id": 431757931,
+        "sender_full_name": "Shanghe Chen",
+        "timestamp": 1712487093
+    }
+]

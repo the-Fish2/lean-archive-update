@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>Hi people,</p>\n<p>I would like to share a plugin that I wrote for <a href=\"https://obsidian.md/\">Obsidian</a>, which provides syntax highlight for Lean codeblocks: <a href=\"https://github.com/tomaz1502/lean-syntax-highlight\">https://github.com/tomaz1502/lean-syntax-highlight</a></p>\n<p>It is already available in the \"community plugins\" section, so you can use by simply browsing and installing it with the plugin manager.</p>\n<p>I would love to hear your feedback :) (also, please note that this is the very first javascript code I wrote) (yes, I like Lean to the point of learning a bit javascript because of it)</p>",
+        "id": 423678480,
+        "sender_full_name": "Tomaz Gomes",
+        "timestamp": 1709061180
+    },
+    {
+        "content": "<p>It might be worth publishing a standalone codemirror package for Lean too; in principle that would give us syntax highlighting in the github editor too, but in practice we can't have nice things when it comes to highlighters (GitHub <a href=\"https://github.com/github-linguist/linguist/issues/3252\">doesn't support</a> anything but first-party highlighters, and CodeMIrror doesn't accept new languages)</p>",
+        "id": 423698390,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1709068729
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"123965\">@Bryan Gin-ge Chen</span> wrote a CodeMirror highlighter for Lean 3 at <a href=\"https://observablehq.com/@bryangingechen/hello-lean-prover#initCodeMirrorLeanMode\">https://observablehq.com/@bryangingechen/hello-lean-prover#initCodeMirrorLeanMode</a>, which might have some tricks you could copy</p>",
+        "id": 423698705,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1709068855
+    },
+    {
+        "content": "<p>Given their response in your comment, maybe we can get the nice things by sending a ticket to Github? But yeah, I will publish an npm package either way.</p>",
+        "id": 423802833,
+        "sender_full_name": "Tomaz Gomes",
+        "timestamp": 1709121415
+    }
+]

@@ -100,5 +100,11 @@
         "id": 404460272,
         "sender_full_name": "Michael Fishman",
         "timestamp": 1701106824
+    },
+    {
+        "content": "<p>I'm learning Lean at Amazon in the Seaport district of downtown Boston.  I'm interested in connections between Lean and protocol verification and machine learning.</p>",
+        "id": 441715674,
+        "sender_full_name": "Mark R. Tuttle",
+        "timestamp": 1717164171
     }
 ]

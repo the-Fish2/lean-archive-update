@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p>Hi all! Over the last couple of months, we have been working on proving one side of the characterization of flow matrices in Lean 4. As of Wednesday, we are done with no sorries left! If anyone is interested, the code can be found at <a href=\"https://github.com/niklasmohrin/lean-seminar-2023\">https://github.com/niklasmohrin/lean-seminar-2023</a> . The theorem we proved is the following: Given an undirected flow network G, we define its flow matrix to be the Matrix M with M[u, v] = \"max flow in G from u to v\". Then, for any Matrix, it holds that M is the flow matrix of some network G if and only if M is symmetrical and forall u, v, w we have min{M[u,v], M[v,w]} &lt;= M[u,w]. One implication follows directly from MinCutMaxFlow theorem, the other one is more interesting, because it turns out that not only is it possible to construct a flow network from a matrix (for which the assumptions hold) with said matrix as its flow matrix, but we can even construct a network whose only non-null capacity edges form a forest! (This is the motivation for the Gomory-Hu-Tree algorithm, which computes such a flow equivalent tree efficiently). We will maybe try to upstream some of the useful stuff into mathlib, but most of our definitions would probably need some work first before being able to be merged into mathlib (for example flows taking values in the natural numbers turns out to be cause more pain than joy - a type parameter would be better).</p>",
+        "id": 418292104,
+        "sender_full_name": "Niklas Mohrin",
+        "timestamp": 1706281225
+    }
+]

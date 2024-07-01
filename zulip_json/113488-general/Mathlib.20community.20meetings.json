@@ -1,0 +1,110 @@
+[
+    {
+        "content": "<p>As just <a href=\"#narrow/stream/113486-announce/topic/Mathlib.20community.20meeting/near/419745839\">announced</a>, we are rebooting community meetings. (We previously ran these regularly during the porting proceess.)</p>",
+        "id": 419745898,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707093011
+    },
+    {
+        "content": "<p>The first meeting will be at <time datetime=\"2024-02-09T15:00:00Z\">2024-02-10T02:00:00+11:00</time> at <a href=\"https://meet.google.com/guj-dcde-cdq\">https://meet.google.com/guj-dcde-cdq</a>, and the intention will be to continue every second month on the 2nd Friday. Note that these meetings will be alternating with the FRO month meetings, which are focussed more on language development and the work of the Lean FRO.</p>\n<p>The meetings will be recorded, and posted online afterwards.</p>\n<p>(Of course, if we discover there is demand for more frequent meetings, we can do that too!)</p>",
+        "id": 419745913,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707093022
+    },
+    {
+        "content": "<p>In planning these meetings, we would like to balance two things:</p>\n<ul>\n<li>Ensuring that community requests and concerns are heard and addressed.</li>\n<li>Staying on topic and avoiding long digressions --- these will be relatively large meetings so we can't waste people's time.</li>\n</ul>\n<p>While we would like to keep these meetings fairly informal, these constraints mean that we will need an agenda. To the extent that a moderator is required, there'll be someone from the maintainers handling each meeting.</p>",
+        "id": 419745919,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707093030
+    },
+    {
+        "content": "<p>I'll post a poll shortly with suggestions of general topics for discussion. (We've already discussed this a bit amongst the maintainers.) Ideally in future we'll keep doing such a poll for each meeting, to try to make sure everyone has a say in what these meetings cover. Please feel free to use this thread to expand on topics, suggest subtopics, etc. But let's not have this thread become actual discussion of the topics! :-)</p>",
+        "id": 419745922,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707093032
+    },
+    {
+        "content": "<p>/poll Discussion topics for February Mathlib community meeting</p>",
+        "id": 419746257,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707093380
+    },
+    {
+        "content": "<p>Was a recording made of this meeting?</p>",
+        "id": 420685504,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1707495492
+    },
+    {
+        "content": "<p>No, but we can do so next time if people are in favor</p>",
+        "id": 420686923,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1707495919
+    },
+    {
+        "content": "<p>Ah, so I guess</p>\n<p><span class=\"user-mention silent\" data-user-id=\"110087\">Scott Morrison</span> <a href=\"#narrow/stream/113488-general/topic/Mathlib.20community.20meetings/near/419745913\">said</a>:</p>\n<blockquote>\n<p>The meetings will be recorded, and posted online afterwards.</p>\n</blockquote>\n<p>wasn't true this time</p>",
+        "id": 420690537,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1707496976
+    },
+    {
+        "content": "<p>Indeed a recording would have been nice, as I had to miss this meeting due to teaching (and thus will probably miss the future ones during this semester).</p>",
+        "id": 420696654,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707498940
+    },
+    {
+        "content": "<p>Similar here: I would have loved to watch a recording later.</p>",
+        "id": 420914367,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1707678639
+    },
+    {
+        "content": "<p>Sorry, yes, absolutely meant to. At the last moment I discovered I couldn't open the meeting and Sebastian or Leo needed to, and then in the rush I forgot to record. Next time!</p>",
+        "id": 420959251,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707718753
+    },
+    {
+        "content": "<p>To get the ball rolling for future meetings, the default date would be <time datetime=\"2024-04-12T14:00:00Z\">2024-04-13T00:00:00+10:00</time>, after the next FRO community meeting at <time datetime=\"2024-03-08T15:00:00Z\">2024-03-09T02:00:00+11:00</time>.</p>",
+        "id": 420959663,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707719002
+    },
+    {
+        "content": "<p>I was wondering if in the meantime we might be interested in holding a \"review party\".</p>\n<p>I was thinking a coordinated time, a zoom room possibly with some breakout rooms for subject areas, and participants do any combination of</p>\n<ul>\n<li>improving editorial processes (tracking slow PRs, auto-recommendation of reviewers, maybe even trying out editflow!)</li>\n<li>assigning PRs to potential reviewers</li>\n<li>closing, reviewing, and marking PRs as awaiting-author.</li>\n</ul>",
+        "id": 420960154,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707719331
+    },
+    {
+        "content": "<p>(I'll take thumbs up on that message as interest; if it's something enough people might participate in, we can move in to scheduling. Please refine the proposal below, too!)</p>",
+        "id": 420960269,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707719404
+    },
+    {
+        "content": "<p>One thing that was briefly mentioned last meeting and I think would be good to raise again next meeting is proof golfing. It's hard to say as sometimes it's stylistic changes that are only positive, and then sometimes it's huge compressions that most people would perceive as negative.</p>",
+        "id": 421422306,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1707908973
+    },
+    {
+        "content": "<p>My favorite example of huge proof compression:<br>\n<a href=\"https://github.com/leanprover-community/mathlib4/blob/a24907839ba28f0009af978642d62e1cc3076038/Mathlib/Data/List/Basic.lean#L2493\">https://github.com/leanprover-community/mathlib4/blob/a24907839ba28f0009af978642d62e1cc3076038/Mathlib/Data/List/Basic.lean#L2493</a></p>",
+        "id": 421424722,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1707909963
+    },
+    {
+        "content": "<p>Cross-linking <a href=\"#narrow/stream/113488-general/topic/Monthly.20Community.20Meeting/near/433547421\">the April edition</a> since <em>I</em> at least would have looked in this thread.</p>",
+        "id": 433565393,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1713285668
+    },
+    {
+        "content": "<p>oops, I didn't realize there were two threads, sorry!</p>",
+        "id": 433583119,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1713292534
+    }
+]

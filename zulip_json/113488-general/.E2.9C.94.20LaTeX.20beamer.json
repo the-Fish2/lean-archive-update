@@ -64,5 +64,23 @@
         "id": 281351474,
         "sender_full_name": "Patrick Massot",
         "timestamp": 1651780804
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"256311\">Jannis Limperg</span> <a href=\"#narrow/stream/113488-general/topic/.E2.9C.94.20LaTeX.20beamer/near/281279118\">said</a>:</p>\n<blockquote>\n<p>Good ol' <code>fragile</code>. \"Half of our stuff doesn't work until you give this random argument and none of our error messages will even hint at this.\"</p>\n</blockquote>\n<p>Guess who just spent half an hour debugging a <code>\\verb||</code> call <span aria-label=\"sweat\" class=\"emoji emoji-1f613\" role=\"img\" title=\"sweat\">:sweat:</span></p>",
+        "id": 413241266,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1705440241
+    },
+    {
+        "content": "<p>Why use verb when you can use mintinline?</p>",
+        "id": 413245886,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1705442244
+    },
+    {
+        "content": "<p>Because I don't know what it is! Does it come from <code>minted</code>?</p>",
+        "id": 413246001,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1705442287
     }
 ]

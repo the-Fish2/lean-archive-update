@@ -1,0 +1,14 @@
+[
+    {
+        "content": "<p>Hi all, Antoine here from the University of Hong Kong. I’ve just come back from a workshop in Singapore about Lean, and am interested in getting my « hands dirty » with Lean ! I<br>\nI am hoping to reach the stage where I can formalise 1) cluster algebras, 2) anything Lie-theoretic.</p>",
+        "id": 436372700,
+        "sender_full_name": "Antoine De Saint Germain",
+        "timestamp": 1714521653
+    },
+    {
+        "content": "<p>Welcome! Some of us are working on a project to Leanify the classification of fd semisimple Lie algebras: <a href=\"https://github.com/orgs/leanprover-community/projects/17\">https://github.com/orgs/leanprover-community/projects/17</a></p>",
+        "id": 436405429,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1714536047
+    }
+]

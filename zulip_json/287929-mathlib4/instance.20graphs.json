@@ -10,5 +10,35 @@
         "id": 405088181,
         "sender_full_name": "Martin Dvořák",
         "timestamp": 1701340801
+    },
+    {
+        "content": "<p>Can we please put those PDFs somewhere more visibly? I often search for it on Zulip and end up opening this thread over and over again.</p>",
+        "id": 438749946,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1715761233
+    },
+    {
+        "content": "<p>Also, how hard would it be to automatically generate a new version of the graph every week or so?</p>",
+        "id": 438750865,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1715761572
+    },
+    {
+        "content": "<p>Now that there is a cron job running in CI, I am fairly confident that we could probably set something up that would produce these graphs regularly and post them, if this is something desirable.</p>",
+        "id": 438781131,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1715772715
+    },
+    {
+        "content": "<p>Honestly, I kind of liked the progress reports during the port and I think that some regular, global information on the \"status\" of mathlib is certainly added value.</p>",
+        "id": 438781766,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1715772968
+    },
+    {
+        "content": "<p>Post to LinkedIn?</p>",
+        "id": 438783139,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715773504
     }
 ]

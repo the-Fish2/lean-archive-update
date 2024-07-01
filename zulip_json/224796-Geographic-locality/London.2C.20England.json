@@ -70,5 +70,149 @@
         "id": 342118331,
         "sender_full_name": "Kevin Buzzard",
         "timestamp": 1678900071
+    },
+    {
+        "content": "<p>I'm in London and between jobs at the moment, and one of the things I will be doing during my break is continuing Mandelbrot set fiddlings (<a href=\"https://github.com/girving/ray\">https://github.com/girving/ray</a>). I'd be fun to catch up with other Lean folk, whether just to have lunch chats or to occasionally work near others to be able to absorb wisdom.</p>",
+        "id": 410851970,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1704205073
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"127136\">@Alex J. Best</span> (who replied in the other thread): Lunch sometime?  Details over DM?</p>",
+        "id": 410852513,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1704205334
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110038\">@Kevin Buzzard</span> Are the Xena Thursday 5-8 p.m. meetings still going?</p>",
+        "id": 410852764,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1704205478
+    },
+    {
+        "content": "<p>Xena will be running, I'm sure, from some point soon - note it's usually mostly students from undergrad to PhD there</p>",
+        "id": 410853257,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1704205716
+    },
+    {
+        "content": "<p>I usually attend Xena with <span class=\"user-mention\" data-user-id=\"132603\">@Calle Sönne</span>, and <span class=\"user-mention\" data-user-id=\"284160\">@Eric Rodriguez</span> mentionned he'd be joining at some point!</p>",
+        "id": 410869436,
+        "sender_full_name": "Paul Lezeau",
+        "timestamp": 1704212218
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"514145\">@Geoffrey Irving</span> I'd be up for joining you guys!</p>",
+        "id": 410869613,
+        "sender_full_name": "Paul Lezeau",
+        "timestamp": 1704212300
+    },
+    {
+        "content": "<p>Me too :)</p>",
+        "id": 410870789,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1704212849
+    },
+    {
+        "content": "<p>Do you mean for lunch or Xena?  I'm up for either.  If lunch, maybe early next week?</p>",
+        "id": 410870924,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1704212902
+    },
+    {
+        "content": "<p>Early next week suits me!</p>",
+        "id": 410873095,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1704213859
+    },
+    {
+        "content": "<p>Xena starts again on 11th btw (but I guess I'll be watching Lean Together for the first bit)</p>",
+        "id": 410884259,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1704218610
+    },
+    {
+        "content": "<p>We used to do Coq, but now we do Lean. Would be great to meet <a href=\"https://www.meetup.com/london-tydd/events/298607045/\">https://www.meetup.com/london-tydd/events/298607045/</a></p>",
+        "id": 417106339,
+        "sender_full_name": "awalterschulze",
+        "timestamp": 1705859447
+    },
+    {
+        "content": "<p>Can you move your message to the \"London, England\" thread linked to above?</p>",
+        "id": 417108618,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1705861180
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"127136\">Alex J. Best</span> has marked this topic as unresolved.</p>",
+        "id": 417115523,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1705866771
+    },
+    {
+        "content": "<p>2 messages were moved here from <a class=\"stream-topic\" data-stream-id=\"224796\" href=\"/#narrow/stream/224796-Geographic-locality/topic/.E2.9C.94.20London.2C.20UK\">#Geographic locality &gt; ✔ London, UK</a> by <span class=\"user-mention silent\" data-user-id=\"127136\">Alex J. Best</span>.</p>",
+        "id": 417115524,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1705866771
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/London.2C.20England/near/417108618\">said</a>:</p>\n<blockquote>\n<p>Can you move your message to the \"London, England\" thread linked to above?</p>\n</blockquote>\n<p>Btw Kevin anyone can more messages within a stream (I think). So I took the liberty of doing just that here.</p>",
+        "id": 417115600,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1705866828
+    },
+    {
+        "content": "<p>Is Xena on tomorrow?  Kevin’s talk is streaming at 5, and I’ll also be curious to watch that; not sure if those two things should connect.</p>",
+        "id": 420313282,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1707329688
+    },
+    {
+        "content": "<p>I suppose an alternative option is actually going to Cambridge…</p>",
+        "id": 420313584,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1707329783
+    },
+    {
+        "content": "<p>I will be giving the talk in Huxley 139 in front of an audience at Imperial, and live streaming to Cambridge. After that we'll all wander up three flights of stairs and have the Xena meeting 6-8pm.</p>",
+        "id": 420324119,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1707333062
+    },
+    {
+        "content": "<p>Great, I’ll join in.</p>",
+        "id": 420326661,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1707333906
+    },
+    {
+        "content": "<p>Feel free to come to Cambridge one of these days, though. There's a few of us there and it would be great to meet you. <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 420333668,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1707336551
+    },
+    {
+        "content": "<p>I will take you up on that!  Gone next week, but I’ll ping some time after that.</p>",
+        "id": 420334708,
+        "sender_full_name": "Geoffrey Irving",
+        "timestamp": 1707336954
+    },
+    {
+        "content": "<p>Would anyone in London be up for another small meetup sometime soon?</p>",
+        "id": 427902652,
+        "sender_full_name": "Paul Lezeau",
+        "timestamp": 1710932781
+    },
+    {
+        "content": "<p>Unexpectedly in London for 24 hours, thanks BA! :-)</p>",
+        "id": 441953207,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1717270641
+    },
+    {
+        "content": "<p>Sadly not here for a couple days!</p>",
+        "id": 441959746,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1717273899
     }
 ]

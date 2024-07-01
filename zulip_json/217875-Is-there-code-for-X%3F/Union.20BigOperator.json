@@ -1,0 +1,32 @@
+[
+    {
+        "content": "<p>I would like to state something like</p>\n<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"kn\">example</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">S</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">Finset</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">Finset</span><span class=\"w\"> </span><span class=\"n\">ℕ</span><span class=\"o\">))</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">T</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">Finset</span><span class=\"w\"> </span><span class=\"n\">ℕ</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"bp\">∪</span><span class=\"w\"> </span><span class=\"n\">s</span><span class=\"w\"> </span><span class=\"bp\">∈</span><span class=\"w\"> </span><span class=\"n\">S</span><span class=\"w\"> </span><span class=\"bp\">=</span><span class=\"w\"> </span><span class=\"n\">T</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"k\">by</span><span class=\"w\"> </span><span class=\"gr\">sorry</span>\n</code></pre></div>\n<p>Does it exist under another name?</p>",
+        "id": 443474973,
+        "sender_full_name": "Ralf Stephan",
+        "timestamp": 1717856887
+    },
+    {
+        "content": "<p>Or maybe indexed if the outer set is a list?</p>",
+        "id": 443475248,
+        "sender_full_name": "Ralf Stephan",
+        "timestamp": 1717857071
+    },
+    {
+        "content": "<p><code>Finset.biUnion</code> where <code>t</code> is id, maybe?</p>",
+        "id": 443475712,
+        "sender_full_name": "Ira Fesefeldt",
+        "timestamp": 1717857481
+    },
+    {
+        "content": "<p>Forget that and use <code>Finset.sup</code></p>",
+        "id": 443475840,
+        "sender_full_name": "Ira Fesefeldt",
+        "timestamp": 1717857576
+    },
+    {
+        "content": "<p>Thanks.</p>",
+        "id": 443476177,
+        "sender_full_name": "Ralf Stephan",
+        "timestamp": 1717857800
+    }
+]

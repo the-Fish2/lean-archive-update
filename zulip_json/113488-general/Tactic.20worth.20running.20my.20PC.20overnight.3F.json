@@ -1,0 +1,158 @@
+[
+    {
+        "content": "<p>I was thinking of ways to outsource more of my work to my computer.<br>\nMaybe there is a way how to make progress on my proofs overnight (other than me having a revelation in a dream).<br>\nWhat if I could configure some tactics (perhaps <code>aesop</code> or <code>simp</code> variants) to be able to succeed even after minutes of no result.<br>\nAny tips?<br>\nI know there will be severely-diminishing results, but I want to try anyway.</p>",
+        "id": 411344624,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1704450705
+    },
+    {
+        "content": "<p>I imagine a hammer would fall into this category, but I think all current hammers for Lean (lean auto, lean-smt, duper,…) have very short timeout times.<br>\nThe existence of such an overnight tool would be really cool though!</p>",
+        "id": 411419980,
+        "sender_full_name": "Max Nowak 🐉",
+        "timestamp": 1704482390
+    },
+    {
+        "content": "<p>I'd also be very in favour of something like this, seems really cool:)</p>",
+        "id": 411420392,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1704482584
+    },
+    {
+        "content": "<p>is there a way to set the timeout on individual invocations?</p>",
+        "id": 411526939,
+        "sender_full_name": "Alok Singh",
+        "timestamp": 1704565451
+    },
+    {
+        "content": "<p><code>set_option maxHeartbeats 0 in ...</code>?</p>",
+        "id": 411545900,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704582699
+    },
+    {
+        "content": "<p>I'm trying to pull from a couple recent deep learning architecture papers to hopefully make a true model-free policy-gradient reinforcement learning approach work, exposing the search tree/graph of attempted tactics and resulting (sub-) goal (-tuples) to let the model choose where to apply a tactic, and ofc also what tactic to apply.</p>\n<p>I'd love some decent information/statistics for the broadly-usable tactics about also critically how long they run/take.<br>\nAnd quite good would be some way to decently predict how long a tactic would run for in a specific situation to let the RL model exploit it when choosing whether it thinks a tactic in a place is (currently) worth it or not.</p>",
+        "id": 411551905,
+        "sender_full_name": "namibj",
+        "timestamp": 1704587651
+    },
+    {
+        "content": "<p>@namibj, check the output of the <code>tactic-benchmark</code> script in the <code>lean-training-data</code> repository for a proof of concept.</p>",
+        "id": 411567426,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704601035
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Scott Morrison</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/411567426\">said</a>:</p>\n<blockquote>\n<p>@namibj, check the output of the <code>tactic-benchmark</code> script in the <code>lean-training-data</code> repository for a proof of concept.</p>\n</blockquote>\n<p>Thanks for the pointer; somehow wasn't aware of that repo before. (I've now tried it a little, though the benchmarking itself should wait until I'm better at writing  Lean so the necessary modifications won't unnecessarily risk frustration in comparatively \"boring\" code.)<br>\n(Getting that benchmarking working will be more of a chore than a fun exercise, at least relative to much of the other Lean code I expect to write in the next weeks.)</p>",
+        "id": 411646847,
+        "sender_full_name": "namibj",
+        "timestamp": 1704673775
+    },
+    {
+        "content": "<p>It hasn't quite bubbled to the top of my list, but I would like to make many further improvements to <code>tactic-benchmark</code>. Really I want to build something much more general, so that is it possible to ask questions like \"For all occurrences of tactic X in the library, try running tactic Y (possibly aware of the context and the proof following X), and tell me about how things went.\"</p>\n<p>If you have particular requests let me know!</p>",
+        "id": 411655259,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704679320
+    },
+    {
+        "content": "<p>How much potential to prove more lemmas does <code>aesop</code> have if allowed an enormous number of heartbeats?<br>\nDo you <span class=\"user-mention\" data-user-id=\"256311\">@Jannis Limperg</span> have examples where <code>aesop</code> succeeds iff given more than the standard number of heartbeats?</p>",
+        "id": 411906447,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1704796439
+    },
+    {
+        "content": "<p>This would probably be a good application for neural approaches, which typically scale better for longer times.  Check out LLMStep and <a href=\"https://github.com/lean-dojo/LeanCopilot\">Lean Copilot</a>. (The later at least is just a tactic, so if you can can get it your vision to work with <code>aesop </code>, I think you could get it to work with Lean copilot.). And I agree RL is good for this setting, especially if there was a large number of sorries you were trying to fill in overnight.  Then it could learn from the ones it solved.  The has been lots of research in this direction (see <a class=\"stream\" data-stream-id=\"219941\" href=\"/#narrow/stream/219941-Machine-Learning-for-Theorem-Proving\">#Machine Learning for Theorem Proving</a> ) but less so practical tools (especially ones intended to be run overnight in batch), but that is just an engineering problem.</p>",
+        "id": 411911989,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1704798204
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"584504\">@Kaiyu Yang</span> is giving a talk on Lean Copilot at Lean Together.</p>",
+        "id": 411912461,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1704798336
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"115715\">Jason Rute</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/411911989\">said</a>:</p>\n<blockquote>\n<p>(see <a class=\"stream\" data-stream-id=\"219941\" href=\"/#narrow/stream/219941-Machine-Learning-for-Theorem-Proving\">#Machine Learning for Theorem Proving</a> )</p>\n</blockquote>\n<p>I was unable to follow that stream as there was a lot going on, so I created a thread<br>\n<a href=\"#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Testimonials\">https://leanprover.zulipchat.com/#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Testimonials</a><br>\nhoping to learn about the fruits of ML for Lean, but nobody posted a testimonial there.</p>\n<p>I am looking forward to the talk on Lean Copilot as I need an overview for Lean users who don't actively watch the ML stuff, which I hope to get from the Lean Together lecture.</p>",
+        "id": 411913753,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1704798770
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"115715\">Jason Rute</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/411911989\">said</a>:</p>\n<blockquote>\n<p>(...) just an engineering problem.</p>\n</blockquote>\n<p>If the research part has been quite successful and some engineering problems are the current bottleneck for deploying AI assistants for Lean, then it is great news I guess?</p>",
+        "id": 411915290,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1704799330
+    },
+    {
+        "content": "<p>Maybe I oversold it slightly.  The current approaches are okay but not great.  Nonetheless, the research is certainly ahead of the practical tools.</p>",
+        "id": 411921135,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1704801675
+    },
+    {
+        "content": "<p>As for your testimonial page I think there are only 2 usable machine learning tools for all of ITPs, Lean Copilot and Coq Tactician.  There are also some hammers, Isabelle Sledgehammer and CoqHammer.  So the lack of testimonials is partly due to a lack of usable tools.</p>",
+        "id": 411921622,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1704801867
+    },
+    {
+        "content": "<p>And there are also some general purpose tools like GitHub Copilot and ChatGPT that some people find valuable.</p>",
+        "id": 411921865,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1704801963
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417654\">Martin Dvořák</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/411915290\">said</a>:</p>\n<blockquote>\n<p>If the research part has been quite successful and some engineering problems are the current bottleneck for deploying AI assistants for Lean, then it is great news I guess?</p>\n</blockquote>\n<p>The major problems with RL as of what I'm aware of published in ATP that'd apply to Lean are:</p>\n<ol>\n<li>parametrization makes there be far too many allowed tactics in any given moment to use techniques that at some point brute-force over these in their reasoning.</li>\n<li>RL has a severe habit of being computationally extremely expensive</li>\n<li>humans look at the previous steps and attempted-but-rejected branches of the tree(-ish) search for a proof. ATP being technically a \"purely simulated environment\" planning task means that the constraints of \"no (free) rollback\" of most well-researched RL settings (simulated robots, real robots, chess, Atari games, etc.) don't apply. So no need for e.g. AlphaGo's monte-carlo tree search, or similar ones that try to build a world model to limit their interaction with the environment and still train their policy (and/or value) functions.</li>\n<li>Lean ATP as a task has an extremely unusually hard to predict task topology. No real use in predicting the results of a tactic, better to just hone one's intuition and try them out to observe the results.</li>\n<li>Lean4's AST is fairly complex, and side-stepping that by using language models massively increases the machine learning compute costs.</li>\n</ol>\n<p>I'm trying to cobble together a model architecture that ought to cope with 1-3 (2. should be treatable by using recent analytical result/developments that use higher-order differentiation to speed up convergence, akin to how Newton's method (applied to the gradient of the loss function) converges faster than plain gradient descent).</p>\n<p>The particular points that are not just an engineering problem AFAIK are how to isolate the model from human-originated identifiers/have the model view the symbols as the abstract entities they are, and how to squeeze out lean actions from an RL policy model that got to think about the proof state to make up it's mind on how to proceed (a diffusion model might work, but my attempts at finding prior art on doing conditioned generative diffusion on ASTs didn't yield anything more relevant than some nice results in generating molecule graphs (bio chemical/pharma industry (-adjacent) research)).</p>\n<p>In general I'd love to collaborate, especially with some help on the Lean parts as I'm sadly fairly new to Lean itself.</p>",
+        "id": 412049000,
+        "sender_full_name": "namibj",
+        "timestamp": 1704852961
+    },
+    {
+        "content": "<p>What is \"task topology\" please?</p>",
+        "id": 412109046,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1704882343
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417654\">Martin Dvořák</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/411906447\">said</a>:</p>\n<blockquote>\n<p>How much potential to prove more lemmas does <code>aesop</code> have if allowed an enormous number of heartbeats?<br>\nDo you <span class=\"user-mention silent\" data-user-id=\"256311\">Jannis Limperg</span> have examples where <code>aesop</code> succeeds iff given more than the standard number of heartbeats?</p>\n</blockquote>\n<p>I don't have any examples like this, no. Ironically, I'm not a very heavy user of Aesop myself. I imagine that Aesop is going to struggle with heartbeat limits deep into Mathlib because it runs <code>simp</code> at lot, so there more heartbeats might help. But we're hopefully talking minutes of runtime here, not hours.</p>\n<p>Generally speaking, Aesop is not designed to be \"complete given infinite time\", like e.g. superposition provers are (in theory). You could try to add very general rules (unfold everything, add all recursors, etc.) but I don't think you'd get anything useful out of this.</p>",
+        "id": 412109662,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1704882520
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417654\">Martin Dvořák</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/412109046\">said</a>:</p>\n<blockquote>\n<p>What is \"task topology\" please?</p>\n</blockquote>\n<p>The topological behavior/properties of the task itself. I had trouble pinning it down compactly; here's the log of my trying with a decent summary at the very end: <a href=\"https://chat.openai.com/share/2e8e0b7f-62cb-427d-8484-e2961a9db0b8\">https://chat.openai.com/share/2e8e0b7f-62cb-427d-8484-e2961a9db0b8</a></p>",
+        "id": 412130984,
+        "sender_full_name": "namibj",
+        "timestamp": 1704889950
+    },
+    {
+        "content": "<p>Note, when AI people use words like “topology” and  “manifold” they use the words more casually than a mathematician means them.</p>",
+        "id": 412152622,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1704897579
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"115715\">Jason Rute</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/412152622\">said</a>:</p>\n<blockquote>\n<p>Not [...]</p>\n</blockquote>\n<p>I'll assume that was supposed to be \"Note\".<br>\nAnd yeah, I'd probably abused \"manifold\" somewhat. I don't expect to have done that nearly as much to \"topology\", though.<br>\nI did very much mean the e.g. connectivity of the time-history sweep/extension of the (observation, action) space, which is embedded in what's _roughly_ just the e.g. (finite-dimensional) rank-3 tensor representation of the raw video sequence (plus the action representation if not implied from the observation history).<br>\nBecause  on a graph search/path-discovery task like ITP, you're dealing with the structure of a hidden graph with tactics as edges and goals as nodes. You can apply a tactic to a goal and if it doesn't fail, the edge exists, and the resulting goal (might be <code>True</code>) is added if not yet part of your visible part of the graph and connected with the edge. If you include tactics with multiple subgoals, you'd get hyperedges, but that doesn't really change much.</p>\n<p>The point being, you're trying to find a path from your theorem initial goal node to a <code>True</code> to finish your proof. That graph's structure is fairly resistant to predicting without just trying. Also the try-able out-degree of a node is, if you're lucky, countably finite: you can't brute-force because tactics are parametric so you'd run into the heat death of the universe before you're done brute-forcing a single node's out-edges.<br>\nThus you have to train a \"gut feeling\"/policy to have a habit of choosing effective tactics. And you need some way to choose where to next apply a tactic.<br>\nRetrieval-less LeanCopilot today for example gives you such a \"gut feeling\", and aesop has some strategies (best/depth/breath first) using a normalized rating of how promising the suggested tactics for a particular goal are, and treating them as success probabilities with a probability tree/nesting calculation.</p>\n<p>Many RL tasks in research are far more predictable: e.g. 3D physics-based game engine simulated robots, or some industrial controller tasks where the structure is often so regular that until recently people have just relied on analytical (near-) optimal solutions with sometimes proven bounds to their in-optimality.</p>",
+        "id": 412188097,
+        "sender_full_name": "namibj",
+        "timestamp": 1704907462
+    },
+    {
+        "content": "<p>Is <code>rw_search</code> from <code>Mathlib.Tactic.RewriteSearch</code> worth running overnight?<br>\nDoes anybody have an experience with <code>rw_search</code> running for more than 5 minutes and eventually finding a proof?</p>",
+        "id": 424630691,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1709551077
+    },
+    {
+        "content": "<p>No.</p>",
+        "id": 424645808,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1709556536
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417654\">Martin Dvořák</span> <a href=\"#narrow/stream/113488-general/topic/Tactic.20worth.20running.20my.20PC.20overnight.3F/near/411906447\">said</a>:</p>\n<blockquote>\n<p>How much potential to prove more lemmas does <code>aesop</code> have if allowed an enormous number of heartbeats?<br>\nDo you <span class=\"user-mention silent\" data-user-id=\"256311\">Jannis Limperg</span> have examples where <code>aesop</code> succeeds iff given more than the standard number of heartbeats?</p>\n</blockquote>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/6176\"><code>aided_by</code></a> <a href=\"#narrow/stream/270676-lean4/topic/Aesop.20etc.20in.20the.20background/near/378792005\"> :thread: </a> seems to be related, and partially answers this question.</p>\n<p>It's not actually for running overnight, instead it's running when the human is thinking, but since it's in the background, it naturally allows more heartbeats (such relaxation is not in the PR yet). Personally, I guess <code>aesop</code>/<code>duper</code> etc. has quite some potential for running for minutes, but not so much for hours.</p>",
+        "id": 426276559,
+        "sender_full_name": "Utensil Song",
+        "timestamp": 1710316022
+    }
+]

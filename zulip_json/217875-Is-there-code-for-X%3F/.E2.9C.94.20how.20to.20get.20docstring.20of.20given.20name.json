@@ -1,0 +1,62 @@
+[
+    {
+        "content": "<p>how to get docstring  of given name as String ?</p>",
+        "id": 447930924,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1719640179
+    },
+    {
+        "content": "<p>background: I am writing Lean document and I want to display docstring message. I want to be able to detect docstring changes because I don't want the contents of a docstring to be changed without my noticing.</p>",
+        "id": 447931254,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1719640280
+    },
+    {
+        "content": "<p>In Python, we get info of docstring by <code>__doc__</code> property</p>",
+        "id": 447933852,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1719641585
+    },
+    {
+        "content": "<p>I found this function but I don't know how to use this....</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"n\">Lean</span>\n\n<span class=\"kn\">open</span><span class=\"w\"> </span><span class=\"n\">Lean</span><span class=\"w\"> </span><span class=\"n\">Parser</span><span class=\"w\"> </span><span class=\"n\">Command</span>\n\n<span class=\"k\">#check</span><span class=\"w\"> </span><span class=\"n\">getDocStringText</span>\n</code></pre></div>",
+        "id": 447934459,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1719641869
+    },
+    {
+        "content": "<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"n\">Batteries</span>\n<span class=\"kn\">open</span><span class=\"w\"> </span><span class=\"n\">Lean</span>\n\n<span class=\"n\">run_meta</span><span class=\"w\"> </span><span class=\"k\">do</span>\n<span class=\"w\">  </span><span class=\"k\">let</span><span class=\"w\"> </span><span class=\"n\">some</span><span class=\"w\"> </span><span class=\"n\">s</span><span class=\"w\"> </span><span class=\"bp\">←</span><span class=\"w\"> </span><span class=\"n\">findDocString?</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"bp\">←</span><span class=\"w\"> </span><span class=\"n\">getEnv</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"ss\">`String</span><span class=\"w\"> </span><span class=\"bp\">|</span><span class=\"w\"> </span><span class=\"n\">failure</span>\n<span class=\"w\">  </span><span class=\"n\">logInfo</span><span class=\"w\"> </span><span class=\"n\">m!</span><span class=\"s2\">\"{s}\"</span>\n</code></pre></div>",
+        "id": 447935311,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719642419
+    },
+    {
+        "content": "<p>(Batteries is only needed here for <code>run_meta</code>. Presumably you're already planning on running this inside a <code>MetaM</code> block.)</p>",
+        "id": 447935901,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719642681
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> Thank you!!! This is very what I want!</p>",
+        "id": 447935960,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1719642727
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"626349\">Asei Inoue</span> has marked this topic as resolved.</p>",
+        "id": 447935977,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1719642731
+    },
+    {
+        "content": "<p>No batteries needed these days,</p>\n<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"n\">Lean</span><span class=\"bp\">.</span><span class=\"n\">Elab</span><span class=\"bp\">.</span><span class=\"n\">Command</span>\n</code></pre></div>\n<p>works as well</p>",
+        "id": 447938801,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1719644019
+    },
+    {
+        "content": "<p>Oops, and I even did that, I think. :-)</p>",
+        "id": 447941153,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719645334
+    }
+]

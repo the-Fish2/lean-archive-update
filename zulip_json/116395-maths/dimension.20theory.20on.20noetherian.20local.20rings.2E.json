@@ -100,5 +100,11 @@
         "id": 294943590,
         "sender_full_name": "Adam Topaz",
         "timestamp": 1661287476
+    },
+    {
+        "content": "<p>Hilbert-Serre theorem is done <a href=\"https://github.com/leanprover-community/mathlib4/pull/9819\">here</a>. It builds modulo linter error</p>",
+        "id": 423687872,
+        "sender_full_name": "Jujian Zhang",
+        "timestamp": 1709064720
     }
 ]

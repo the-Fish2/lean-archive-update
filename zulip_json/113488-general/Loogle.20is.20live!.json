@@ -1534,5 +1534,389 @@
         "id": 400156092,
         "sender_full_name": "Eric Rodriguez",
         "timestamp": 1699025360
+    },
+    {
+        "content": "<p>I have modified the Loogle deployment, so that it should auto-update itself and mathlib every 6 hours. If I broke something along the way, please let me know.<br>\n(I have also rather hastily added path compression to the Suffix tries used for <code>\"name\"</code> matches, so if there are oddities there let me know as well.)</p>",
+        "id": 417704255,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706121202
+    },
+    {
+        "content": "<p>I think the neovim extension is broken, let's see why/how...</p>",
+        "id": 417707958,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1706122608
+    },
+    {
+        "content": "<p>I'm getting 502s look like, but only around half the time or so. Is a deployment still in progress maybe?</p>",
+        "id": 417709200,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1706123066
+    },
+    {
+        "content": "<p>No, should be up and running. Unless I have a bug that makes it crash and it keeps restarting the backend. Unfortunately away from the computer now.</p>",
+        "id": 417709628,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706123241
+    },
+    {
+        "content": "<p>All good, no rush certainly! Yeah it seems to be reproducible with <code>curl -H 'User-Agent: lean.nvim' 'https://loogle.lean-lang.org/json?q=Multiset'</code> and does seem like the backend is crashing and restarting  -- I have a sneaky suspicion it has to do perhaps with the <code>.</code> in the User Agent! In particular <code>'User-Agent: foo'</code> seems to not crash it. But I'm not going to keep testing to be sure :)</p>",
+        "id": 417709936,
+        "sender_full_name": "Julian Berman",
+        "timestamp": 1706123356
+    },
+    {
+        "content": "<p>Ouch: </p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>                    <span class=\"n\">m_client.lables</span><span class=\"o\">(</span><span class=\"s2\">\"nvim\"</span><span class=\"o\">)</span><span class=\"bp\">.</span><span class=\"n\">inc</span><span class=\"o\">()</span>\n</code></pre></div>",
+        "id": 417710259,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706123478
+    },
+    {
+        "content": "<p>And I was wondering why nvim never showed up in the stats :-)</p>",
+        "id": 417710292,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706123491
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"470149\">@Joachim Breitner</span> I know you're quite busy, but personally I would really prefer to have <code>#find</code> working instead of Loogle. Any chance we'll get a PR to Std for it?</p>",
+        "id": 417976624,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1706136214
+    },
+    {
+        "content": "<p>I didn’t know there were users eagerly waiting for loogle-the-command. Good to know!</p>\n<p>Unfortunately, it’s not trivial: The loogle implementation is unusably slow if you don’t have a prebuilt index, and as far as I know we don’t have a story for how such indices would work in arbitrary libraries depending on <code>std</code> – what would be indexed? by whom? when? I guess that difficulty is also why Joe is instead trying to make <code>exact?</code> so fast that it doesn't need an index.</p>\n<p>What would work, I think, is to add Loogle (the library) as a dependency to mathlib and include the index there in the cache, just like we do for library_search etc. That wouldn’t be hard, and it’s mostly a decision by the mathlib people if they want that as an extra dependency.</p>",
+        "id": 417982759,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706139757
+    },
+    {
+        "content": "<p>How long does it take to build the index?</p>",
+        "id": 418000665,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1706151698
+    },
+    {
+        "content": "<p>Two minutes on my laptop when using compiled code. From <code>run_cmd</code> about twice as long.</p>",
+        "id": 418023421,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706168619
+    },
+    {
+        "content": "<p>the cache could in theory be put in the cache, no?</p>",
+        "id": 418027478,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1706170600
+    },
+    {
+        "content": "<p>Yes, that's what I'm saying - but the cache is (currently) a mathlib thing, so there is no need to get Loogle into std, we can just have mathlib depend on the Loogle package.</p>",
+        "id": 418029449,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706171494
+    },
+    {
+        "content": "<p>Not sure if this came up earlier: Can I ask Loogle! for lemmas that contain certain types (or strings in their name etc.) but <em>not</em> certain other types (etc.)? E.g., all lemmas that mention <code>OrderClosedTopology</code> but not <code>LinearOrder</code>. (A minus sign as in \"-LinearOrder\" is read as <code>Neg.neg</code>, so that does not work.)</p>",
+        "id": 418065626,
+        "sender_full_name": "Michael Stoll",
+        "timestamp": 1706184478
+    },
+    {
+        "content": "<p>Not yet, but at least there is an issue for it :-) <a href=\"https://github.com/nomeata/loogle/issues/6\">https://github.com/nomeata/loogle/issues/6</a></p>",
+        "id": 418080519,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706189746
+    },
+    {
+        "content": "<p>OK; I added my \"+1\".</p>",
+        "id": 418087695,
+        "sender_full_name": "Michael Stoll",
+        "timestamp": 1706191931
+    },
+    {
+        "content": "<p>Thanks, that’s useful. I’ll be working on Loogle when I’m either very frustrated with my “day job tasks”, and I need a break, or have just been successfully, and I’m awarding myself a break, so it’ll happen … eventually. But it’s good to know what people find most useful.</p>",
+        "id": 418090985,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1706192910
+    },
+    {
+        "content": "<p>I was about to make a feature request for searching for just definitions and filtering out theorems, but I just discovered an existing way to do so: adding <code>|- (_ : Type _)</code> to a query! For example, I'm using looking at all the functions in the <code>List</code> namespace with <code>\"List.\", |- (_ : Type _)</code></p>",
+        "id": 426473068,
+        "sender_full_name": "Timo Carlin-Burns",
+        "timestamp": 1710394576
+    },
+    {
+        "content": "<p>Right! This is also tracked at  <a href=\"https://github.com/nomeata/loogle/issues/9\">https://github.com/nomeata/loogle/issues/9</a></p>",
+        "id": 426491673,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1710405416
+    },
+    {
+        "content": "<p>What do I need to run <code>loogle</code> CLI on a local repository? Do I add it as a dependency of my repository? Something else?</p>",
+        "id": 426897992,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1710601360
+    },
+    {
+        "content": "<p>Yes, add it as a dependency, import <code>Loogle.Find</code> and use <code>#loogle</code></p>\n<p>Ah, but you want the CLI! Almost same thing, add it as a dependency and run <code>lake exec loogle</code>.</p>\n<p>If you have a large repo or plan to run it often, consider using the options</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>  <span class=\"c1\">--write-index file    persists the search index to a file</span>\n  <span class=\"c1\">--read-index file     read the search index from a file. This file is blindly trusted!</span>\n</code></pre></div>\n<p>(Not many users have done this, so please be patient with and tell me about rough edges.)</p>",
+        "id": 426898329,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1710601678
+    },
+    {
+        "content": "<p>Thank you! I'll try later today.</p>",
+        "id": 426898413,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1710601746
+    },
+    {
+        "content": "<p>How did it go?</p>",
+        "id": 427885632,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1710927415
+    },
+    {
+        "content": "<p>I didn't try, because the project uses old versions of Lean and Mathlib (and I don't own it, so I can't upgrade dependencies at will). Probably, I should find a version of Loogle that uses the same toolchain in the history but I was busy with other stuff.</p>",
+        "id": 428256679,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1711079868
+    },
+    {
+        "content": "<p>Yeah, that’s understandable. And points to a general problem our ecosystem will face as we get more and more libraries that people will want to mix and match. <span aria-label=\"fingers crossed\" class=\"emoji emoji-1f91e\" role=\"img\" title=\"fingers crossed\">:fingers_crossed:</span> that we’ll find a decent way to make that work.</p>",
+        "id": 428278949,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1711095248
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"470149\">@Joachim Breitner</span> Can loogle search for a lemma by exact name?<br>\n(Can in point, I'd like to know if lemmas \"prod\" or \"prod_mk\" are more common.)</p>",
+        "id": 429103135,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1711218177
+    },
+    {
+        "content": "<p>If so, I haven't found out how: my best hack was to simply search for <code>prod</code> (which is not found) and count how many suggestions loogle offers. <span aria-label=\"see no evil\" class=\"emoji emoji-1f648\" role=\"img\" title=\"see no evil\">:see_no_evil:</span></p>",
+        "id": 429103176,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1711218212
+    },
+    {
+        "content": "<p>Another small request: can I search for only <em>definitions</em> or only theorems?</p>",
+        "id": 429105218,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1711219777
+    },
+    {
+        "content": "<p>Is this roughly what you want?<br>\n<span class=\"user-mention\" data-user-id=\"644391\">@loogle</span> \".prod\", fun x =&gt; (?f x, ?g x)</p>",
+        "id": 429105372,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1711219895
+    },
+    {
+        "content": "<p><span aria-label=\"search\" class=\"emoji emoji-1f50d\" role=\"img\" title=\"search\">:search:</span> <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Logic/Equiv/Basic.html#Equiv.prodShear_apply\">Equiv.prodShear_apply</a>, <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Logic/Equiv/Basic.html#Equiv.prodShear_symm_apply\">Equiv.prodShear_symm_apply</a>, and <a href=\"https://loogle.lean-lang.org/?q=%22.prod%22%2C%20fun%20x%20%3D%3E%20%28%3Ff%20x%2C%20%3Fg%20x%29\">153 more</a></p>",
+        "id": 429105373,
+        "sender_full_name": "loogle",
+        "timestamp": 1711219897
+    },
+    {
+        "content": "<p>You can also search all occurrences in Mathlib using VSCode (ctrl+shift+F), either search with regexes (both have a trailing space):<br>\n<code>^(theorem|lemma) ([a-zA-Z.]*\\.)?prod </code><br>\n<code>^(theorem|lemma) ([a-zA-Z.]*\\.)?prod_mk </code></p>",
+        "id": 429105752,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1711220171
+    },
+    {
+        "content": "<p>This is to help you with the query I think you want. To answer your question: in loogle you can search for <code>\"prod\"</code> to search a the substring <code>prod</code>.</p>",
+        "id": 429105838,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1711220278
+    },
+    {
+        "content": "<p>Third feature request: toggling case-sensitivity. I think find this on the web, at least.</p>",
+        "id": 429106066,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1711220424
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"111080\">Floris van Doorn</span> <a href=\"#narrow/stream/113488-general/topic/Loogle.20is.20live!/near/429105372\">said</a>:</p>\n<blockquote>\n<p>Is this roughly what you want?<br>\n<span class=\"user-mention silent\" data-user-id=\"644391\">loogle</span> \".prod\", fun x =&gt; (?f x, ?g x)</p>\n</blockquote>\n<p>That's certainly close, thank you! (It does find lemmas by their name, irrespective of whether they are <em>written</em> as <code>Foo.prod</code> or <code>prod</code> in the source, right?)</p>",
+        "id": 429106210,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1711220523
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"111080\">Floris van Doorn</span> <a href=\"#narrow/stream/113488-general/topic/Loogle.20is.20live!/near/429105752\">said</a>:</p>\n<blockquote>\n<p>You can also search all occurrences in Mathlib using VSCode (ctrl+shift+F), either search with regexes (both have a trailing space):<br>\n<code>^(theorem|lemma) ([a-zA-Z.]*\\.)?prod </code><br>\n<code>^(theorem|lemma) ([a-zA-Z.]*\\.)?prod_mk </code></p>\n</blockquote>\n<p>I tried something like that next (from the terminal). But thanks for the regular expressions help, that I didn't know :-)</p>",
+        "id": 429106283,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1711220566
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"634338\">Michael Rothgang</span> <a href=\"#narrow/stream/113488-general/topic/Loogle.20is.20live!/near/429106210\">said</a>:</p>\n<blockquote>\n<p>That's certainly close, thank you! (It does find lemmas by their name, irrespective of whether they are <em>written</em> as <code>Foo.prod</code> or <code>prod</code> in the source, right?)</p>\n</blockquote>\n<p>Yes, loogle only looks at the full name.</p>",
+        "id": 429112721,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1711225652
+    },
+    {
+        "content": "<p>That regex won't catch <code>@[simp] theorem foo.prod</code> right?</p>",
+        "id": 429120241,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1711231328
+    },
+    {
+        "content": "<p>I think so, yes.</p>",
+        "id": 429120731,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1711231837
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"644391\">@loogle</span>  (p a b: ℤ): a ≡ b [ZMOD p] ↔ p ∣ (a-b)</p>",
+        "id": 430098498,
+        "sender_full_name": "Jeremy Kahn",
+        "timestamp": 1711640537
+    },
+    {
+        "content": "<p>I suggest to search less specifically, just mention the concepts and see what comes up:<br>\n<span class=\"user-mention\" data-user-id=\"644391\">@loogle</span> _ ≡ _ [ZMOD _], _ ∣ (_-_)</p>",
+        "id": 430099782,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1711640789
+    },
+    {
+        "content": "<p><span aria-label=\"search\" class=\"emoji emoji-1f50d\" role=\"img\" title=\"search\">:search:</span> <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Int/ModEq.html#Int.modEq_of_dvd\">Int.modEq_of_dvd</a>, <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Int/ModEq.html#Int.ModEq.dvd\">Int.ModEq.dvd</a>, and <a href=\"https://loogle.lean-lang.org/?q=_%20%E2%89%A1%20_%20%5BZMOD%20_%5D%2C%20_%20%E2%88%A3%20%28_-_%29\">1 more</a></p>",
+        "id": 430099792,
+        "sender_full_name": "loogle",
+        "timestamp": 1711640791
+    },
+    {
+        "content": "<p>(The lemma has <code>b - a</code>, not <code>a - b</code>.)</p>",
+        "id": 430100010,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1711640832
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"644391\">@loogle</span> Finset ?a =&gt; Nat</p>",
+        "id": 430176025,
+        "sender_full_name": "Jeremy Kahn",
+        "timestamp": 1711667662
+    },
+    {
+        "content": "<p><span aria-label=\"exclamation\" class=\"emoji emoji-2757\" role=\"img\" title=\"exclamation\">:exclamation:</span> &lt;input&gt;:1:10: expected end of input</p>",
+        "id": 430176028,
+        "sender_full_name": "loogle",
+        "timestamp": 1711667663
+    },
+    {
+        "content": "<p>I read the instructions this time but I still don't quite understand--is this not the way to search for a function (presumably the cardinality) from finite sets to natural numbers?</p>",
+        "id": 430176239,
+        "sender_full_name": "Jeremy Kahn",
+        "timestamp": 1711667801
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"644391\">@loogle</span> |- Finset ?a -&gt; Nat</p>",
+        "id": 430176529,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1711667996
+    },
+    {
+        "content": "<p><span aria-label=\"search\" class=\"emoji emoji-1f50d\" role=\"img\" title=\"search\">:search:</span> <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card\">Finset.card</a>, <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Multinomial.html#Nat.multinomial\">Nat.multinomial</a>, and <a href=\"https://loogle.lean-lang.org/?q=%7C-%20Finset%20%3Fa%20-%3E%20Nat\">3 more</a></p>",
+        "id": 430176530,
+        "sender_full_name": "loogle",
+        "timestamp": 1711667998
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"432565\">@Jeremy Kahn</span></p>",
+        "id": 430176581,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1711668005
+    },
+    {
+        "content": "<p>Okay brilliant thanks! When should one start a query with |-  ? I had thought it was just for conclusions of theorems (or conclusion with one or more hypotheses), but this is a search for a definition. Is it that there's no real distinction between a function with range Prop and a more general function?</p>",
+        "id": 430177234,
+        "sender_full_name": "Jeremy Kahn",
+        "timestamp": 1711668412
+    },
+    {
+        "content": "<p>I think it may have been <code>-&gt;</code> vs <code>=&gt;</code> that made the difference, not <code>|-</code></p>",
+        "id": 430177688,
+        "sender_full_name": "Matt Diamond",
+        "timestamp": 1711668714
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 430177760,
+        "sender_full_name": "Matt Diamond",
+        "timestamp": 1711668743
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"644391\">@loogle</span> Finset ?a -&gt; Nat</p>",
+        "id": 430177943,
+        "sender_full_name": "Matt Diamond",
+        "timestamp": 1711668850
+    },
+    {
+        "content": "<p><span aria-label=\"search\" class=\"emoji emoji-1f50d\" role=\"img\" title=\"search\">:search:</span> <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Finset/Card.html#Finset.card\">Finset.card</a>, <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/Nat/Choose/Multinomial.html#Nat.multinomial\">Nat.multinomial</a>, and <a href=\"https://loogle.lean-lang.org/?q=Finset%20%3Fa%20-%3E%20Nat\">5 more</a></p>",
+        "id": 430177945,
+        "sender_full_name": "loogle",
+        "timestamp": 1711668851
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"432565\">Jeremy Kahn</span> <a href=\"#narrow/stream/113488-general/topic/Loogle.20is.20live!/near/430177234\">said</a>:</p>\n<blockquote>\n<p>Is it that there's no real distinction between a function with range Prop and a more general function?</p>\n</blockquote>\n<p>Exactly. With <code>|-</code> you restrict the pattern to the “top level” of the definition/theorem type. So <code>foo  = _</code>  will find theorems/definitions that have such an equality anywhere (e.g. within assumptions, or even nested in applications) but <code>|- foo = _</code> will only find those that prove/produce such an equality.</p>",
+        "id": 430236452,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1711708725
+    },
+    {
+        "content": "<p>8 messages were moved from this topic to <a class=\"stream-topic\" data-stream-id=\"113488\" href=\"/#narrow/stream/113488-general/topic/Unicode.20symbols.20in.20Loogle\">#general &gt; Unicode symbols in Loogle</a> by <span class=\"user-mention silent\" data-user-id=\"470149\">Joachim Breitner</span>.</p>",
+        "id": 433125824,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1713092893
+    },
+    {
+        "content": "<p>I love the \"did you maybe mean\" field in loogle. Ideally it should find more miscapitalized words: <code>MeasureTheory.measure</code> should suggest <code>MeasureTheory.Measure</code> and <code>galoisconnection</code> should suggest <code>GaloisConnection</code>.</p>",
+        "id": 434717352,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1713783444
+    },
+    {
+        "content": "<p>Good idea, noted as <a href=\"https://github.com/nomeata/loogle/issues/16\">https://github.com/nomeata/loogle/issues/16</a></p>",
+        "id": 434719012,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1713783983
+    },
+    {
+        "content": "<p>My loogle-fu is still very weak. I want to find the canonical ring homomorphism <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"double-struck\">Z</mi><mi mathvariant=\"normal\">/</mi><mi>n</mi><mi mathvariant=\"double-struck\">Z</mi><mo>→</mo><mi mathvariant=\"double-struck\">Z</mi><mi mathvariant=\"normal\">/</mi><mi>d</mi><mi mathvariant=\"double-struck\">Z</mi></mrow><annotation encoding=\"application/x-tex\">\\Z/n\\Z\\to\\Z/d\\Z</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord mathbb\">Z</span><span class=\"mord\">/</span><span class=\"mord mathnormal\">n</span><span class=\"mord mathbb\">Z</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">→</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord mathbb\">Z</span><span class=\"mord\">/</span><span class=\"mord mathnormal\">d</span><span class=\"mord mathbb\">Z</span></span></span></span> when <span class=\"katex\"><span class=\"katex-mathml\"><math xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>d</mi><mo>∣</mo><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">d\\mid n</annotation></semantics></math></span><span class=\"katex-html\" aria-hidden=\"true\"><span class=\"base\"><span class=\"strut\" style=\"height:1em;vertical-align:-0.25em;\"></span><span class=\"mord mathnormal\">d</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span><span class=\"mrel\">∣</span><span class=\"mspace\" style=\"margin-right:0.2778em;\"></span></span><span class=\"base\"><span class=\"strut\" style=\"height:0.4306em;\"></span><span class=\"mord mathnormal\">n</span></span></span></span>. Should I expect</p>\n<p><span class=\"user-mention\" data-user-id=\"644391\">@loogle</span> |- ZMod ?a →+* ZMod ?b</p>\n<p>to work? Because according to the website, it doesn't.</p>",
+        "id": 437104242,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1714909065
+    },
+    {
+        "content": "<p><span aria-label=\"shrug\" class=\"emoji emoji-1f937\" role=\"img\" title=\"shrug\">:shrug:</span> nothing found</p>",
+        "id": 437104243,
+        "sender_full_name": "loogle",
+        "timestamp": 1714909066
+    },
+    {
+        "content": "<p>Oh maybe it's just not there? Perhaps it's covered by <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=ZMod.castHom#doc\">docs#ZMod.castHom</a></p>",
+        "id": 437104334,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1714909166
+    },
+    {
+        "content": "<p>Sounds like it. At least<br>\n<span class=\"user-mention\" data-user-id=\"644391\">@loogle</span> |- ZMod _ →+* _<br>\nonly has (that) one result</p>",
+        "id": 437105253,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1714910033
+    },
+    {
+        "content": "<p><span aria-label=\"search\" class=\"emoji emoji-1f50d\" role=\"img\" title=\"search\">:search:</span> <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Data/ZMod/Basic.html#ZMod.castHom\">ZMod.castHom</a></p>",
+        "id": 437105256,
+        "sender_full_name": "loogle",
+        "timestamp": 1714910036
+    },
+    {
+        "content": "<p>A useful loogle-fu when your query doesn’t find anything is to make it more permissible, and see if what you want is among the (hopefully not too many) results you then get.</p>",
+        "id": 437105325,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1714910087
+    },
+    {
+        "content": "<p>The Loogle input field now supports the Unicode abbreviations that we know from working in VS Code:</p>\n<p><a href=\"/user_uploads/3121/v4VuLI8-1kOcw7jjBxPaqPYj/unicode-loogle.mp4\">unicode-loogle.mp4</a></p>\n<div class=\"message_inline_image message_inline_video\"><a href=\"/user_uploads/3121/v4VuLI8-1kOcw7jjBxPaqPYj/unicode-loogle.mp4\" title=\"unicode-loogle.mp4\"><video preload=\"metadata\" src=\"/user_uploads/3121/v4VuLI8-1kOcw7jjBxPaqPYj/unicode-loogle.mp4\"></video></a></div><p>Big shout-out to <span class=\"user-mention\" data-user-id=\"221921\">@Marc Huisinga</span>  for creating the TypeScript component for that and helping with the integration.</p>",
+        "id": 446049492,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1718964225
     }
 ]

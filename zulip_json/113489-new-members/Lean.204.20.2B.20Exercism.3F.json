@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<p>Has there been any consideration of adding Lean 4 to <a href=\"https://exercism.org\">Exercism</a>? It seems like a structured and interactive platform like Exercism could be an excellent way for us to learn, practice, and collaborate on Lean 4 used as a programming language. NNG already covers the theorem proving aspect of Lean excellently!</p>\n<p>For those unfamiliar, Exercism is a non-profit, open-source platform offering coding exercises across various languages, supported by a mentoring system where learners receive feedback from experienced practitioners. For more details see <a href=\"https://en.wikipedia.org/wiki/Exercism\">https://en.wikipedia.org/wiki/Exercism</a> and <a href=\"https://exercism.org\">https://exercism.org</a>.</p>",
+        "id": 426443407,
+        "sender_full_name": "Isak Colboubrani",
+        "timestamp": 1710372587
+    },
+    {
+        "content": "<p>I believe as with many learning resources like this it's very much a question of funding and time.</p>\n<p>I doubt that anybody would complain if somebody came along with enough time or resources to make something like that happen!</p>\n<p>For example, NNG for Lean 4 is where it is because the university HHU and the German government (through <a href=\"https://stiftung-hochschullehre.de/\">Stiftung Innovation in der Hochschullehre</a>) put quite some resources into it - and because of Kevin, who I believe also always got tons of support from Imperial College and grants from the UK government (?)</p>",
+        "id": 426447948,
+        "sender_full_name": "Jon Eugster",
+        "timestamp": 1710376126
+    },
+    {
+        "content": "<p>Is this any different to <a href=\"https://www.codewars.com/\">codewars</a>? Someone put in a lot of effort to get Lean 3 supported there.</p>",
+        "id": 426448618,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1710376790
+    }
+]

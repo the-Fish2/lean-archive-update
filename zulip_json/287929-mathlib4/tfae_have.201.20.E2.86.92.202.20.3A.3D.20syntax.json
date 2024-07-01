@@ -1,0 +1,224 @@
+[
+    {
+        "content": "<p>This is a tiny feature request for the <code>tfae</code> tactic suite, and it isn't a particularly urgent one.</p>\n<p>The current syntax for <code>tfae_have</code> is</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>  <span class=\"n\">tfae_have</span> <span class=\"mi\">1</span> <span class=\"bp\">→</span> <span class=\"mi\">2</span>\n  <span class=\"bp\">·</span> <span class=\"c1\">-- some proof</span>\n</code></pre></div>\n<p>For the sake of consistency and brevity, I think it would be great to be able to write</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>  <span class=\"n\">tfae_have</span> <span class=\"mi\">1</span> <span class=\"bp\">→</span> <span class=\"mi\">2</span> <span class=\"o\">:=</span> <span class=\"c1\">-- some proof *term*</span>\n  <span class=\"n\">tfae_have</span> <span class=\"mi\">2</span> <span class=\"bp\">→</span> <span class=\"mi\">3</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n    <span class=\"c1\">-- some proof</span>\n</code></pre></div>",
+        "id": 421976739,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1708146721
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/10653\">#10653</a> :)</p>",
+        "id": 421993364,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708159302
+    },
+    {
+        "content": "<p>(This is an easy change, so I thought I might as well Just Do It. I'm not <em>officially</em> putting it out for review yet until I look it over tomorrow, but given that the change is relatively small, if someone wants to review it and put it on the queue, feel free. :) )</p>",
+        "id": 421993974,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708159592
+    },
+    {
+        "content": "<p>(Ok, now it's out for review—note that half of the PR is just changes to the docs!)</p>",
+        "id": 422048898,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708210574
+    },
+    {
+        "content": "<p>Question: should it support <code>tfae_have 1 → 2 := f ?a ?b</code> like <code>have</code> does to prevent any unexpected jolts? I have a commit ready to go which does this, it just complicates things a little.</p>",
+        "id": 422050243,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708212277
+    },
+    {
+        "content": "<p>Is there a reason it can't fallback to the have tactic and inherit the behavior?</p>",
+        "id": 422050340,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1708212382
+    },
+    {
+        "content": "<p>Let me see if we can do it without losing the monadic version of the tactic.</p>",
+        "id": 422050533,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708212631
+    },
+    {
+        "content": "<p>Perhaps also worth noting that the <code>have h : P; tactic</code> syntax seems to be on its way out, in case dropping that makes things notably easier for you</p>",
+        "id": 422050622,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1708212764
+    },
+    {
+        "content": "<p>I think I would be sad to see that syntax be completely removed. I'm happy with a style guide saying that it shouldn't be used. But I can imagine situations where you want to assert 5 <code>have</code>s without proof, and then hand over to a single tactic that works on all goals simultaneously.</p>",
+        "id": 422065395,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1708230770
+    },
+    {
+        "content": "<p>As a datapoint, <a href=\"https://github.com/leanprover-community/mathlib4/pull/10640\">#10640</a> (ready for review, will rot very quickly) is eliminating almost all uses of the old-fashioned <code>have</code>, <code>suffices</code> and <code>replace</code> throughout the library. Among these (2000 lines changed in 438 files), there are exactly zero fancy uses of the kind you're mentioning.</p>\n<p>In fact, I would argue against this use, because it would feel to me to be favoring golfing and obfuscation over readability (but I know not everyone shares my feeling against golfing).</p>",
+        "id": 422080303,
+        "sender_full_name": "Sébastien Gouëzel",
+        "timestamp": 1708245989
+    },
+    {
+        "content": "<p>I thought it might make sense to actually just refactor <code>tfae_have</code> completely in terms of <code>have</code>. This means we have a couple ugly parsers up front to get the parsing to work—but these are almost identical to the ones for <code>have</code> except for simple, obvious changes, so they should be easy to check. (Likewise, later on, what seems like a chunky block of code is actually just repeating very similar one- or two-liners for the different parsing possibilities, completely formulaically.)</p>\n<p>This means we now get matching (for <code>→</code>) and destructuring (for <code>Iff</code>) basically for free.</p>\n<p>I also thought it made sense to change <code>tfae_have 1 → 2 ...</code> to <code>tfae_have : 1 → 2</code>. (<code>1 → 2</code> does represent the type, after all!) There were 207 instances of these, so that makes up the bulk of the numbers you see on the top of the PR; I got to remove some code from the actual tactic file. (This could also be changed pretty easily.)</p>\n<p>Anyway, this is all just an experiment (and the \"Mathlib <code>have</code>\" behavior is relegated to a single commit, so can be easily excluded if we like). Let me know what you like and/or don't like. :)</p>",
+        "id": 422082936,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708248521
+    },
+    {
+        "content": "<p>Well, <code>1 → 2</code> is not a type, right? Maybe if you change the syntax to <code>have : tfae($1 → $2)</code> then you can start arguing it's a type.</p>",
+        "id": 422083241,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1708248824
+    },
+    {
+        "content": "<p>We write <code>tfae_have h : 1 → 2</code>, though.</p>",
+        "id": 422083321,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708248895
+    },
+    {
+        "content": "<p>Does <code>1 → 2</code> make sense as anything else but (local) notation for a type?</p>",
+        "id": 422083368,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708248953
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"548935\">Thomas Murrills</span> <a href=\"#narrow/stream/287929-mathlib4/topic/tfae_have.201.20.E2.86.92.202.20.3A.3D.20syntax/near/422083321\">said</a>:</p>\n<blockquote>\n<p>We write <code>tfae_have h : 1 → 2</code>, though.</p>\n</blockquote>\n<p>Your message above says <code>tfae_have h : 1 → 2</code> is the syntax you want to migrate to? So I assume it's not current syntax.</p>",
+        "id": 422083491,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1708249044
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"548935\">Thomas Murrills</span> <a href=\"#narrow/stream/287929-mathlib4/topic/tfae_have.201.20.E2.86.92.202.20.3A.3D.20syntax/near/422083368\">said</a>:</p>\n<blockquote>\n<p>Does <code>1 → 2</code> make sense as anything else but (local) notation for a type?</p>\n</blockquote>\n<p>In a combinatorics class it would most certainly denote <code>Fin 1 → Fin 2</code> (or rather <code>{1} → {1, 2}</code>, but that's beside the point).</p>",
+        "id": 422083575,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1708249108
+    },
+    {
+        "content": "<p>No, it is current syntax; that's not the syntax we're migrating to. <code>tfae_have 1 → 2</code> and <code>tfae_have h : 1 → 2</code> are the current syntax options. I'm saying we should migrate to <code>tfae_have : 1 → 2</code> and <code>tfae_have h : 1 → 2</code>.</p>",
+        "id": 422083579,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708249112
+    },
+    {
+        "content": "<p>My point is that here, by writing <code>1 → 2</code>, you really are gesturing to the type <code>P1 → P2</code> for the propositions <code>P1</code>, <code>P2</code> in your TFAE, so this really does amount to a (very) local notation for a type!</p>",
+        "id": 422083747,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708249275
+    },
+    {
+        "content": "<p>I am claiming that you should use quotes if you really want this analogy to work</p>",
+        "id": 422083852,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1708249373
+    },
+    {
+        "content": "<p>Why?</p>",
+        "id": 422083876,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708249401
+    },
+    {
+        "content": "<p>(Though, btw, I have found a grand total of 0 extant uses of <code>tfae_have h : 1 → 2</code>, so it may as well not exist. :P That's besides the point anyway, though.)</p>",
+        "id": 422083971,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708249480
+    },
+    {
+        "content": "<p>because everywhere else in Lean the <code>: α</code> syntax means that <code>α</code> is a type, and <code>1 → 2</code> is <em>not</em> a type. It's a type after \"processing\" it and replacing the <code>1</code> and <code>2</code> by actual propositions, but it's not a type. And incidentally that \"processing, replacing some subexpressions by other subexpressions\" sounds exactly like something a quote would do.</p>",
+        "id": 422084365,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1708249859
+    },
+    {
+        "content": "<p>It sounds to me exactly like something <em>notation</em> would do. :)</p>",
+        "id": 422084501,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708249989
+    },
+    {
+        "content": "<p>Like, I guess the thing for me is that it doesn't seem like a technicality: both \"spiritually\" and literally, <code>1 → 2</code> seems like notation for <code>P1 → P2</code>. It undoubtedly gestures to the type <code>P1 → P2</code>, with <code>1</code> gesturing to <code>P1</code> and <code>2</code> gesturing to <code>P2</code> (in this context, anyway—but we're allowed to use the context for interpreting notation!); but also, in a literal sense, we elaborate the <code>num</code> syntax into these expressions.</p>",
+        "id": 422085258,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708250686
+    },
+    {
+        "content": "<p>What I can see is that maybe having notation that's only active in a type annotation for <code>tfae_have</code> feels unsavory—personally I'd prioritize communicating the roles of things over banishing \"invisible\" scopes (<code>tfae_have</code> is indeed <em>there</em>, so it's not totally invisible, but I can still understand its type annotation \"feeling unconstrained\" by <code>tfae_have</code>, unlike <code>tfae(something)</code>...), but that's ultimately a matter of aesthetics/preferences, and both views are reasonable, I think. :)</p>",
+        "id": 422085694,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708251079
+    },
+    {
+        "content": "<p><del>(Which is why the only solution is to create local <code>OfNat Prop</code> instances.)</del> (I am kidding here, that sounds extremely cursed.)</p>",
+        "id": 422085921,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708251250
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/287929-mathlib4/topic/tfae_have.201.20.E2.86.92.202.20.3A.3D.20syntax/near/422065395\">said</a>:</p>\n<blockquote>\n<p>I think I would be sad to see that syntax be completely removed. I'm happy with a style guide saying that it shouldn't be used. But I can imagine situations where you want to assert 5 <code>have</code>s without proof, and then hand over to a single tactic that works on all goals simultaneously.</p>\n</blockquote>\n<p><code>have : P := ?p</code> should still work for this use-case</p>",
+        "id": 422133120,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1708293934
+    },
+    {
+        "content": "<p>By the way, I think at some point there was some mismatch between the numbering inside the proof (starting at 1) and the numbering in <code>TFAE.out</code> (starting at 0). Is that still the case?</p>",
+        "id": 422133816,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1708294489
+    },
+    {
+        "content": "<p>It looks like it, unfortunately. Btw, <span class=\"user-mention\" data-user-id=\"197836\">@Jireh Loreaux</span> and I are trying to implement a nice interface for accessing and using <code>TFAE</code> statements (see <a class=\"stream-topic\" data-stream-id=\"287929\" href=\"/#narrow/stream/287929-mathlib4/topic/TFAE.20discussion\">#mathlib4 &gt; TFAE discussion</a>), so that you can simply write something like <code>infer : foo → bar</code> and the right lemma will be extracted for you, so hopefully <code>TFAE.out</code> won't need to be used directly. (We're also eventually considering proposing a change to the <code>TFAE</code> type itself so that it doesn't have to be a simple list, and the lemmas can actually have names, though that's a secondary goal.) Early days, but happening! :)</p>",
+        "id": 422134672,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708295188
+    },
+    {
+        "content": "<p>Btw, re: tfae tactic syntax, if we're talking ideals: there's also the option of soon just abandoning <code>tfae_have</code> in favor of some kind of block tactic and/or term, like</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>  <span class=\"n\">tfae</span>\n  <span class=\"bp\">|</span> <span class=\"mi\">1</span> <span class=\"bp\">→</span> <span class=\"mi\">2</span> <span class=\"bp\">=&gt;</span> <span class=\"n\">pq</span>\n  <span class=\"bp\">|</span> <span class=\"mi\">2</span> <span class=\"bp\">→</span> <span class=\"mi\">1</span> <span class=\"bp\">=&gt;</span> <span class=\"n\">qp</span>\n  <span class=\"bp\">|</span> <span class=\"mi\">2</span> <span class=\"bp\">↔</span> <span class=\"mi\">3</span> <span class=\"bp\">=&gt;</span> <span class=\"n\">qr</span>\n</code></pre></div>\n<p>or something like</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>  <span class=\"n\">tfae_where</span>\n    <span class=\"mi\">1</span> <span class=\"bp\">→</span> <span class=\"mi\">2</span> <span class=\"o\">:=</span> <span class=\"n\">pq</span>\n    <span class=\"mi\">2</span> <span class=\"bp\">→</span> <span class=\"mi\">1</span> <span class=\"o\">:=</span> <span class=\"n\">qp</span>\n    <span class=\"mi\">2</span> <span class=\"bp\">↔</span> <span class=\"mi\">3</span> <span class=\"o\">:=</span> <span class=\"n\">qr</span>\n</code></pre></div>\n<p>The first looks nicer imo, but the second is really more in keeping with the typical meaning of lean syntax: we're not matching on anything like <code>1 → 2</code> (or even a term of that type) and using it in the body; instead, we're providing something like <code>1 → 2</code> (like <code>:=</code> does).  Also, in practice a lot of <code>tfae_have</code>s are followed by <code>intro a b c</code> or <code>exact fun a b c ...</code>, and now we can just write <code>tfae_have : 1 → 2 | a, b, c =&gt; ...</code> (with a newline, typically). That's more compatible with the where-like syntax than the <code>=&gt;</code> syntax. (<code>tfae where</code> is not a great initial token, though. Maybe just <code>tfae</code>? This could also be given syntax like a structure instance, e.g. <code>TFAE{ 1 → 2 := pq, 2 → 1 := qp .... }</code>. No solid proposal here, just some thoughts.)</p>\n<p>It looks like almost every <code>TFAE</code> proves goals in this manner anyway, without using other tactics on the main goal besides <code>tfae_have</code>s before <code>tfae_finish</code>.</p>\n<p>This could initially be just a macro over <code>tfae_have</code> and <code>tfae_finish</code>, but could later be optimized further since we have access to all the indices used at once (and don't need to search through the local context).</p>",
+        "id": 422135630,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1708296137
+    },
+    {
+        "content": "<p>AFAIR, one of these syntaxes was suggested when <code>tfae</code> was ported, but we decided to go with mathlib3 syntax for compatibility reasons.</p>",
+        "id": 422141420,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1708301822
+    },
+    {
+        "content": "<p>yes, I think it is safe to migrate from <code>tfae_have</code> / <code>tfae_finish</code> to a single <code>tfae</code> tactic now that the port is done</p>",
+        "id": 422587772,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1708511772
+    },
+    {
+        "content": "<p>Ok! Given that we want to migrate to a block tactic, there's not really any point in using <code>tfae_have :</code> over <code>tfae_have</code>. As such, I've reverted that change in <a href=\"https://github.com/leanprover-community/mathlib4/pull/10653\">#10653</a>.</p>\n<p>Currently <a href=\"https://github.com/leanprover-community/mathlib4/pull/10653\">#10653</a> still supports the \"Mathlib have\"/\"old style\" syntax. I wonder how we should handle deprecating that syntax (and for that matter, deprecating the old-style <code>have</code> syntax) without causing too much strife for anyone downstream. It does de-document the old-style syntax (i.e. removes mention of it from the dosctring), though.</p>\n<p>Likewise, I wonder how to \"deprecate\" <code>tfae_have</code>/<code>tfae_finish</code> when moving to a block tactic. Currently I simply put a note at the start of the docstring of the old tactics stating that the block tactic is preferred. Maybe that's the best we can do for now? Open to suggestions.</p>",
+        "id": 423536904,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1709012967
+    },
+    {
+        "content": "<p>Thanks for all your work on this!</p>\n<p>Can code actions transform one tactic script to another?</p>",
+        "id": 423537043,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1709013080
+    },
+    {
+        "content": "<p>The sequence of PR's is currently:</p>\n<ul>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/10653\">#10653</a> (awaiting-review): introduce <code>tfae_have ... :=</code> syntax</li>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/11000\">#11000</a> (awaiting-review): banish \"old-style\" <code>tfae_have</code> syntax from mathlib</li>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/10991\">#10991</a> (awaiting-review): introduce a (simply-implemented) <code>tfae</code> block tactic</li>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/11003\">#11003</a> (awaiting-review): transition mathlib to a block tactic</li>\n</ul>\n<p>(Note that none of these actually remove functionality.)</p>",
+        "id": 423537323,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1709013260
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/287929-mathlib4/topic/tfae_have.201.20.E2.86.92.202.20.3A.3D.20syntax/near/423537043\">said</a>:</p>\n<blockquote>\n<p>Thanks for all your work on this!</p>\n<p>Can code actions transform one tactic script to another?</p>\n</blockquote>\n<p>In principle! Hmm...if we wanted a code action coming from <code>tfae_have</code>, the issue might be that we'd have to reach up from the <code>tfae_have</code> syntax to get the rest of the syntax, and organize it all at once. This isn't necessarily an insurmountable issue, though.</p>",
+        "id": 423537578,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1709013427
+    },
+    {
+        "content": "<p>The syntax I settled on for the block tactic so far is</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>  <span class=\"n\">tfae</span>\n    <span class=\"mi\">1</span> <span class=\"bp\">→</span> <span class=\"mi\">2</span> <span class=\"o\">:=</span> <span class=\"c\">/-</span><span class=\"cm\"> proof of `P₁ → P₂` -/</span>\n    <span class=\"mi\">2</span> <span class=\"bp\">→</span> <span class=\"mi\">3</span> <span class=\"o\">:=</span> <span class=\"c\">/-</span><span class=\"cm\"> proof of `P₂ → P₃` -/</span>\n    <span class=\"mi\">3</span> <span class=\"bp\">→</span> <span class=\"mi\">1</span> <span class=\"o\">:=</span> <span class=\"c\">/-</span><span class=\"cm\"> proof of `P₃ → P₁` -/</span>\n</code></pre></div>\n<p>I figured the simplest-possible initial token plus the most semantically consistent field notation was the best bet (see above), but I'm open to other opinions! :)</p>",
+        "id": 423539959,
+        "sender_full_name": "Thomas Murrills",
+        "timestamp": 1709014948
+    }
+]

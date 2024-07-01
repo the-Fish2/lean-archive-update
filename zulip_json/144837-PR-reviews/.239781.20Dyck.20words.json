@@ -1,0 +1,14 @@
+[
+    {
+        "content": "<p>I've turned <code>DyckWord</code> into a structure as per the comments and have just finished \"porting\" the code to the new representation. Please review</p>",
+        "id": 441064853,
+        "sender_full_name": "Jeremy Tan",
+        "timestamp": 1716910166
+    },
+    {
+        "content": "<p>I've split off <a href=\"https://github.com/leanprover-community/mathlib4/pull/14162\">#14162</a> which is the whole file up to the definition of semilength. Hopefully I can get this part merged quicker!</p>",
+        "id": 447361520,
+        "sender_full_name": "Jeremy Tan",
+        "timestamp": 1719447460
+    }
+]

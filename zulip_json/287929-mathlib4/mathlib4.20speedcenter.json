@@ -1114,5 +1114,179 @@
         "id": 407983874,
         "sender_full_name": "Matthew Ballard",
         "timestamp": 1702567361
+    },
+    {
+        "content": "<p>Is the current run at the queue looping or am I hallucinating?</p>",
+        "id": 417689978,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1706115928
+    },
+    {
+        "content": "<p>Every time I reload <a href=\"https://github.com/leanprover-community/mathlib4/pull/9948\">#9948</a> has been in process for under a minute</p>",
+        "id": 417692609,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1706116836
+    },
+    {
+        "content": "<p>It seems the task is stuck between server and runner, I'm investigating</p>",
+        "id": 417692780,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1706116910
+    },
+    {
+        "content": "<p>I believe mathlib got larger than the developers of the software anticipated, I multiplied some numbers by 10 and we'll see if that helps</p>",
+        "id": 417693826,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1706117292
+    },
+    {
+        "content": "<p><del>When should we see an effect?</del> Nevermind :)</p>",
+        "id": 417701134,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1706119991
+    },
+    {
+        "content": "<p>It’s happening again</p>",
+        "id": 418827713,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1706618488
+    },
+    {
+        "content": "<p>Talk about exponential growth :)</p>",
+        "id": 418827745,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1706618503
+    },
+    {
+        "content": "<p>This is still going on. It seems to stall for a bit before randomly completing.</p>",
+        "id": 419371945,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1706840690
+    },
+    {
+        "content": "<p>Is there a way to unschedule runs? <a href=\"http://speed.lean-fro.org/mathlib4/task-detail/35d2e5e9-cd08-4ac9-976d-78f6270870d1\">This run</a> is not going to succeed and has been superseded by the next one on the queue.</p>",
+        "id": 419449202,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1706877547
+    },
+    {
+        "content": "<p>Unfortunately I haven't had a chance to look into this yet. Removing one run isn't likely to change much at this point</p>",
+        "id": 419451570,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1706878414
+    },
+    {
+        "content": "<p>If someone wants to poke at it, where can they be directed?</p>",
+        "id": 419511638,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1706898602
+    },
+    {
+        "content": "<p>I believe it's working again now</p>",
+        "id": 419691577,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1707046426
+    },
+    {
+        "content": "<p>Thank you Sebastian! The speedcenter has become a critical tool for profiling changes that we make to mathlib's typeclass setup and as Matt has shown recently there are still some very exciting improvements which we should be able to access.</p>",
+        "id": 419694891,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1707049529
+    },
+    {
+        "content": "<p>I'm glad to hear that, and we do have further plans to make performance debugging easier for developers and users alike!</p>",
+        "id": 419696537,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1707051167
+    },
+    {
+        "content": "<p>Just for the specific Java codebase of the speedcenter, sadly no-one has reached out to me yet regarding the offer to put some hours of work into it for the FRO</p>",
+        "id": 419696646,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1707051245
+    },
+    {
+        "content": "<p>Does the speedcenter make <code>sorry</code> a hard error? If so, can it be overridden?</p>",
+        "id": 420156744,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1707264130
+    },
+    {
+        "content": "<p>The answer is that it (currently) does a straight build not enabling any flags. The script is in <code>/scripts/bench</code> for reference</p>",
+        "id": 420266185,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1707316691
+    },
+    {
+        "content": "<p>I’m trying to figure out <a href=\"http://speed.lean-fro.org/mathlib4/run-detail/66334952-77f1-4f28-81fb-5e89d88d1644\">this</a> run. The total instructions seems greater than the sum of its parts</p>",
+        "id": 426378039,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1710346772
+    },
+    {
+        "content": "<p>Ah, the new file doesn’t show up when sorting by change</p>",
+        "id": 426396016,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1710352037
+    },
+    {
+        "content": "<p>Are people having issues connecting also?</p>",
+        "id": 437668734,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715180327
+    },
+    {
+        "content": "<p>Getting a 504 for the queue</p>",
+        "id": 437668775,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715180340
+    },
+    {
+        "content": "<p>I get “no workers registered” at  <a href=\"http://speed.lean-fro.org/mathlib4/queue\">http://speed.lean-fro.org/mathlib4/queue</a></p>",
+        "id": 437669537,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1715180538
+    },
+    {
+        "content": "<p>Ah, after a while I get 504. Hmm.</p>",
+        "id": 437669949,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1715180658
+    },
+    {
+        "content": "<p>Maybe that was my while deploying <a href=\"http://live.lean-lang.org\">live.lean-lang.org</a>. Let me try to redeploy.</p>",
+        "id": 437670112,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1715180709
+    },
+    {
+        "content": "<p>Nope, didn’t help.<br>\nOddly <a href=\"http://speed.lean-fro.org/lean4/queue\">http://speed.lean-fro.org/lean4/queue</a> still has the runner registered.<br>\nProbably needs <span class=\"user-mention\" data-user-id=\"110024\">@Sebastian Ullrich</span> to have a look (after the office hours)</p>",
+        "id": 437671000,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1715180985
+    },
+    {
+        "content": "<p>Ah, now it’s back it seems!<br>\nYour “<a href=\"http://speed.lean-fro.org/mathlib4/task-detail/d18aea12-fa77-40d0-be43-642578b0bee0\">chore(ConcreteCategory): remove refine' pattern (#12755)</a>” is running.</p>",
+        "id": 437671962,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1715181301
+    },
+    {
+        "content": "<p>Yes, I had to restart the mathlib4 frontend because it thought it already had that same runner registered</p>",
+        "id": 437672483,
+        "sender_full_name": "Sebastian Ullrich",
+        "timestamp": 1715181467
+    },
+    {
+        "content": "<p>There seems to be issues again but Sebastian is on vacation so I don't want to ping him.</p>",
+        "id": 438853656,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715794193
+    },
+    {
+        "content": "<p>It lives!</p>",
+        "id": 439051602,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715874671
     }
 ]

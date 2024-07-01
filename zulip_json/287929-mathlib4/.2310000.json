@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<p>Who wants to claim <a href=\"https://github.com/leanprover-community/mathlib4/pull/10000\">#10000</a> ?</p>",
+        "id": 417626493,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1706096018
+    },
+    {
+        "content": "<p>I'm going to claim <a href=\"https://github.com/leanprover-community/mathlib4/pull/10000\">#10000</a> with <a href=\"https://github.com/leanprover-community/mathlib4/tree/abellimit\">branch#abellimit</a></p>",
+        "id": 418031881,
+        "sender_full_name": "Jeremy Tan",
+        "timestamp": 1706172522
+    },
+    {
+        "content": "<p>…and it's mine</p>",
+        "id": 418120662,
+        "sender_full_name": "Jeremy Tan",
+        "timestamp": 1706201098
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "content": "<p>I want to construct something with transfinite induction, so I want to use induction on the ordinals to define it. I found <code>Ordinal.induction</code>, but</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">induction'</span> <span class=\"n\">o</span> <span class=\"n\">using</span> <span class=\"n\">Ordinal.induction</span> <span class=\"k\">with</span> <span class=\"n\">o</span> <span class=\"n\">IH</span>\n</code></pre></div>\n<p>doesn't work when constructing a non-prop term (type mismatch when assigning motive, expected <code>Ordinal → Prop</code>, got <code>Ordinal → Type</code>).</p>\n<p>MWE:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Mathlib</span>\n\n<span class=\"kd\">def</span> <span class=\"n\">fasd</span> <span class=\"o\">:</span> <span class=\"n\">Ordinal</span> <span class=\"bp\">→</span> <span class=\"n\">ℕ</span> <span class=\"o\">:=</span> <span class=\"k\">fun</span> <span class=\"n\">o</span> <span class=\"bp\">↦</span> <span class=\"kd\">by</span>\n  <span class=\"n\">induction'</span> <span class=\"n\">o</span> <span class=\"n\">using</span> <span class=\"n\">Ordinal.induction</span> <span class=\"k\">with</span> <span class=\"n\">o</span> <span class=\"n\">IH</span> <span class=\"c1\">--type mismatch</span>\n</code></pre></div>\n<p>Is there an easy way to do this?</p>",
+        "id": 438201036,
+        "sender_full_name": "Nir Paz",
+        "timestamp": 1715536640
+    },
+    {
+        "content": "<p>I think <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Ordinal.recOn#doc\">docs#Ordinal.recOn</a> exists?</p>",
+        "id": 438201448,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1715536961
+    },
+    {
+        "content": "<p>it doesn't, but <code>Ordinal</code> is well founded so you can use the equation compiler to define functions by well founded recursion</p>",
+        "id": 438201498,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1715537038
+    },
+    {
+        "content": "<p><a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Ordinal.limitRecOn#doc\">docs#Ordinal.limitRecOn</a> exists if you want to define the function by cases on zero/succ/limit ordinals</p>",
+        "id": 438201533,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1715537063
+    },
+    {
+        "content": "<p>Thanks!</p>",
+        "id": 438202367,
+        "sender_full_name": "Nir Paz",
+        "timestamp": 1715537944
+    }
+]

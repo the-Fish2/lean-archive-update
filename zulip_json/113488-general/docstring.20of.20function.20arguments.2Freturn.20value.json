@@ -1,0 +1,14 @@
+[
+    {
+        "content": "<p>What is the standard way to annotate function arguments and return values in Lean with Doc comments?</p>\n<p>It would be useful to be able to read the documentation when hovering over an argument, but is this difficult to achieve?</p>",
+        "id": 434582559,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1713699708
+    },
+    {
+        "content": "<p>I don’t think this is possible at all. We have markdown in doc strings, that’s about it.</p>",
+        "id": 434586529,
+        "sender_full_name": "Max Nowak 🐉",
+        "timestamp": 1713703876
+    }
+]

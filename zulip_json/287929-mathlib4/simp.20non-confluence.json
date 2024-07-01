@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Mathlib</span>\n\n<span class=\"kd\">example</span> <span class=\"o\">(</span><span class=\"n\">f</span> <span class=\"o\">:</span> <span class=\"n\">Polynomial</span> <span class=\"n\">ℤ</span><span class=\"o\">)</span> <span class=\"o\">:</span> <span class=\"n\">Polynomial.coeff</span> <span class=\"o\">(</span><span class=\"n\">Polynomial.C</span> <span class=\"o\">(</span><span class=\"n\">Polynomial.coeff</span> <span class=\"n\">f</span> <span class=\"mi\">0</span><span class=\"o\">))</span> <span class=\"mi\">1</span> <span class=\"bp\">=</span> <span class=\"mi\">0</span> <span class=\"o\">:=</span> <span class=\"kd\">by</span>\n  <span class=\"c1\">-- simp?  says simp only [eq_intCast]</span>\n    <span class=\"c1\">-- ⊢ Polynomial.coeff (↑(Polynomial.coeff f 0)) 1 = 0</span>\n  <span class=\"n\">simp</span><span class=\"bp\">?</span> <span class=\"o\">[</span><span class=\"bp\">-</span><span class=\"n\">eq_intCast</span><span class=\"o\">]</span> <span class=\"n\">says</span> <span class=\"n\">simp</span> <span class=\"n\">only</span> <span class=\"o\">[</span><span class=\"n\">Polynomial.coeff_C_succ</span><span class=\"o\">]</span> <span class=\"c1\">-- success!</span>\n</code></pre></div>\n<p>It looks like some <code>simp</code> lemmas are missing to make things confluent here.</p>",
+        "id": 411437190,
+        "sender_full_name": "Michael Stoll",
+        "timestamp": 1704491092
+    },
+    {
+        "content": "<p>See also <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Polynomial.20coefficient/near/396948492\">https://leanprover.zulipchat.com/#narrow/stream/217875-Is-there-code-for-X.3F/topic/Polynomial.20coefficient/near/396948492</a></p>",
+        "id": 411444692,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1704495073
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"127136\">@Alex J. Best</span> Maybe you can add a couple more lemmas?</p>",
+        "id": 411497566,
+        "sender_full_name": "Michael Stoll",
+        "timestamp": 1704538368
+    }
+]

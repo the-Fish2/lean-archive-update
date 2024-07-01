@@ -1,0 +1,50 @@
+[
+    {
+        "content": "<p>Is there a reason why this is the case while it is present in the online documentation? or am I doing something wrong?</p>",
+        "id": 447332891,
+        "sender_full_name": "Pietro Lavino",
+        "timestamp": 1719434898
+    },
+    {
+        "content": "<p>Where are you looking in the documentation and where are you looking in the repository?</p>",
+        "id": 447338974,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1719436761
+    },
+    {
+        "content": "<p>I am looking in Mathlib as it is represented inside the mathlib4 repo inside vs code editor and I found Log.ENNReal in <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/SpecialFunctions/Log/ENNReal.html\">https://leanprover-community.github.io/mathlib4_docs/Mathlib/Analysis/SpecialFunctions/Log/ENNReal.html</a></p>",
+        "id": 447339848,
+        "sender_full_name": "Pietro Lavino",
+        "timestamp": 1719437193
+    },
+    {
+        "content": "<p>It's here in the repository: <a href=\"https://github.com/leanprover-community/mathlib4/blob/fed9531b808337631ee5ed4b515b5ac374a2fe68/Mathlib/Analysis/SpecialFunctions/Log/ENNReal.lean\">https://github.com/leanprover-community/mathlib4/blob/fed9531b808337631ee5ed4b515b5ac374a2fe68/Mathlib/Analysis/SpecialFunctions/Log/ENNReal.lean</a> as of three days ago</p>",
+        "id": 447341371,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1719437889
+    },
+    {
+        "content": "<p>You may have an outdated version locally</p>",
+        "id": 447341391,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1719437898
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"307953\">Ruben Van de Velde</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Log.2EENNReal.20is.20not.20in.20Mathlib.20version.20in.20mathlib4.20repo/near/447341371\">said</a>:</p>\n<blockquote>\n<p>It's here in the repository: <a href=\"https://github.com/leanprover-community/mathlib4/blob/fed9531b808337631ee5ed4b515b5ac374a2fe68/Mathlib/Analysis/SpecialFunctions/Log/ENNReal.lean\">https://github.com/leanprover-community/mathlib4/blob/fed9531b808337631ee5ed4b515b5ac374a2fe68/Mathlib/Analysis/SpecialFunctions/Log/ENNReal.lean</a> as of three days ago</p>\n</blockquote>\n<p>I have checked the master branch pulled and Log still seems to be missing the ENNreal file, this is what i get on my terminal    </p>\n<p>ietrolavino@Pietros-MacBook-Air mathlib4 % pietrolavino@Pietros-MacBook-Air mathlib4 % ls -l Mathlib/Analysis/SpecialFunctions/Log</p>\n<p>total 144<br>\n-rw-r--r--  1 pietrolavino  staff  19957 13 Jun 14:09 Base.lean<br>\n-rw-r--r--  1 pietrolavino  staff  24402 13 Jun 14:09 Basic.lean<br>\n-rw-r--r--  1 pietrolavino  staff  15134 13 Jun 14:09 Deriv.lean<br>\n-rw-r--r--  1 pietrolavino  staff   3369 13 Jun 14:09 Monotone.lean<br>\n-rw-r--r--  1 pietrolavino  staff   5275 13 Jun 14:09 NegMulLog.lean</p>",
+        "id": 447628085,
+        "sender_full_name": "Pietro Lavino",
+        "timestamp": 1719539400
+    },
+    {
+        "content": "<p>Not sure what you've done, it's there for me!</p>",
+        "id": 447637634,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719544072
+    },
+    {
+        "content": "<p>What's the output of <code>git show</code>?</p>",
+        "id": 447659616,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1719551763
+    }
+]

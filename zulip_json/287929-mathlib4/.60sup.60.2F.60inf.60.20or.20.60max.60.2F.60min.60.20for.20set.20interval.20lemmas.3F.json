@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>In <a href=\"https://github.com/leanprover-community/mathlib4/pull/11902\">#11902</a> the question came up of whether we should use <code>sup</code>/<code>inf</code> to state lemmas or to use <code>max</code>/<code>min</code>. For example, <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Set.Ico_inter_Ico#doc\">docs#Set.Ico_inter_Ico</a> uses <code>sup</code> and <code>inf</code>, but <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Set.Ico_union_Ico#doc\">docs#Set.Ico_union_Ico</a> uses <code>min</code> and <code>max</code>. I suspect <code>sup</code> and <code>inf</code> work better with the rest of the library, but I am unsure. Certainly the inconsistency is a worse problem than getting the wrong version of the operator. What should we do?</p>",
+        "id": 431504374,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1712316838
+    },
+    {
+        "content": "<p>Unify the operators <span aria-label=\"smiling devil\" class=\"emoji emoji-1f608\" role=\"img\" title=\"smiling devil\">:smiling_devil:</span></p>",
+        "id": 431504479,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1712316869
+    },
+    {
+        "content": "<p>You mean: make <code>max</code>/<code>min</code> notation for <code>sup</code>/<code>inf</code> (or vice versa?)</p>",
+        "id": 431504642,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1712316948
+    },
+    {
+        "content": "<p>(make max just be parse-only notation?)</p>",
+        "id": 431504651,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1712316953
+    }
+]

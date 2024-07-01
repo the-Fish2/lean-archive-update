@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p>In <a href=\"https://github.com/leanprover-community/mathlib4/pull/14044\">#14044</a> I ported from Lean 3 to Lean 4 the surreal multiplication proofs that were in <a href=\"https://github.com/leanprover-community/mathlib/blob/surreal_mul_symm'/src/set_theory/surreal/basic.lean\">this old mathlib3 branch</a>. It looks like the proofs were completed but never ported to Lean 4. Tagging original authors <span class=\"user-mention\" data-user-id=\"459227\">@Violeta Hernández</span> <span class=\"user-mention\" data-user-id=\"224323\">@Junyan Xu</span></p>",
+        "id": 446490416,
+        "sender_full_name": "Ted Hwa",
+        "timestamp": 1719188030
+    }
+]

@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p>Is there something in lean that checks a proof and finds the minimal set of instances used, or something similar to that? It can be really tricky to find what you need in the hierarchy of instances.</p>",
+        "id": 445935233,
+        "sender_full_name": "Nir Paz",
+        "timestamp": 1718911477
+    }
+]

@@ -1,0 +1,50 @@
+[
+    {
+        "content": "<p>Currently, we have 2 instances that turn <code>WithTop</code> into a <code>SuccOrder</code>, depending on whether the original type has a maximal element or not. What do you think about unifying them into</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kd\">def</span> <span class=\"n\">WithTop.succ</span> <span class=\"o\">:</span> <span class=\"n\">WithTop</span> <span class=\"n\">α</span> <span class=\"bp\">→</span> <span class=\"n\">WithTop</span> <span class=\"n\">α</span>\n  <span class=\"bp\">|</span> <span class=\"o\">(</span><span class=\"n\">a</span> <span class=\"o\">:</span> <span class=\"n\">α</span><span class=\"o\">)</span> <span class=\"bp\">=&gt;</span> <span class=\"k\">if</span> <span class=\"n\">succ</span> <span class=\"n\">a</span> <span class=\"bp\">=</span> <span class=\"n\">a</span> <span class=\"k\">then</span> <span class=\"bp\">\\</span><span class=\"n\">top</span> <span class=\"k\">else</span> <span class=\"n\">some</span> <span class=\"o\">(</span><span class=\"n\">succ</span> <span class=\"n\">a</span><span class=\"o\">)</span>\n  <span class=\"bp\">|</span> <span class=\"bp\">\\</span><span class=\"n\">top</span> <span class=\"bp\">=&gt;</span> <span class=\"bp\">\\</span><span class=\"n\">top</span>\n</code></pre></div>",
+        "id": 418210171,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1706243137
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span> <span aria-label=\"up\" class=\"emoji emoji-2b06\" role=\"img\" title=\"up\">:up:</span></p>",
+        "id": 418210191,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1706243161
+    },
+    {
+        "content": "<p>I didn't test that it works for any <code>[PartialOrder α] [SuccOrder α] [DecidableEq α]</code> yet.</p>",
+        "id": 418210330,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1706243274
+    },
+    {
+        "content": "<p>Another option is to test for <code>IsMax a</code> assuming <code>∀ a, Decidable (IsMax a)</code>. On the one hand, this way we can have efficient <code>Decidable</code> instances for this predicate. On the other hand, a generic instance assuming <code>[DecidableEq α] [OrderTop α]</code> would conflict with, e.g., type-specific instance for <code>WithTop _</code>.</p>",
+        "id": 418210530,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1706243413
+    },
+    {
+        "content": "<p>My PR <a href=\"https://github.com/leanprover-community/mathlib4/pull/9480\">#9480</a> depends on the defeq <code>succ (some a) = some (succ a)</code> which isn't preserved by your proposed unification ...</p>",
+        "id": 418228761,
+        "sender_full_name": "Junyan Xu",
+        "timestamp": 1706256674
+    },
+    {
+        "content": "<p>That looks fine to me, but I guess you'll have to fix Junyan's application</p>",
+        "id": 418229589,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1706257099
+    },
+    {
+        "content": "<p>How crucial is the defeq?</p>",
+        "id": 418242384,
+        "sender_full_name": "Eric Rodriguez",
+        "timestamp": 1706262720
+    },
+    {
+        "content": "<p>I can add a <code>def</code> that works in all cases, then use <code>.copy</code> (adding if it's not here yet) to provide necessary defeq in the existing cases.</p>",
+        "id": 418291258,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1706280989
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kd\">variable</span><span class=\"w\"> </span><span class=\"o\">{</span><span class=\"n\">A</span><span class=\"w\"> </span><span class=\"n\">B</span><span class=\"w\"> </span><span class=\"n\">C</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"kt\">Type</span><span class=\"o\">}</span><span class=\"w\"> </span><span class=\"o\">[</span><span class=\"n\">Inhabited</span><span class=\"w\"> </span><span class=\"n\">C</span><span class=\"o\">]</span>\n\n<span class=\"n\">opaque</span><span class=\"w\"> </span><span class=\"n\">f</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">A</span><span class=\"w\"> </span><span class=\"bp\">→</span><span class=\"w\"> </span><span class=\"n\">B</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">→</span><span class=\"w\"> </span><span class=\"n\">C</span>\n\n<span class=\"k\">#check</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">f</span><span class=\"w\"> </span><span class=\"n\">f</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">C</span><span class=\"o\">)</span>\n</code></pre></div>",
+        "id": 448393860,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1719854790
+    },
+    {
+        "content": "<p>I think <code>f f</code> cannot have a correct type.</p>",
+        "id": 448394013,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1719854828
+    },
+    {
+        "content": "<p>Use <code>set_option pp.explicit true</code> to see why it can.</p>",
+        "id": 448394093,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1719854848
+    }
+]

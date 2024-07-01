@@ -1,0 +1,158 @@
+[
+    {
+        "content": "<p>Has the Gaussian elimination algorithm been formalised in Mathlib4? Moogle isn't working for me, and I've gone through parts of Mathlib.LinearAlgebra.Matrix and haven't found any mention of it.</p>",
+        "id": 437918422,
+        "sender_full_name": "Vivek Rajesh Joshi",
+        "timestamp": 1715311351
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110050\">@Sébastien Gouëzel</span></p>",
+        "id": 437921243,
+        "sender_full_name": "Vivek Rajesh Joshi",
+        "timestamp": 1715313854
+    },
+    {
+        "content": "<p>Something a bit strange is going on here.</p>\n<p>Somehow, Gaussian elimination doesn't seem to be particularly important, contrary to the impression that we give undergraduates. I've wondered for a long time why we haven't needed/wanted it. </p>\n<p>There are a lot of different ways one might set up Gaussian elimination, in order to prove things about it. I would want to be pretty confident that whatever way someone choose was actually going to be useful in applications, rather than for its own sake. However, I still don't know what those applications would be. :-)</p>",
+        "id": 437923754,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715316568
+    },
+    {
+        "content": "<p>A long time ago I was trying to set up the theory of semisimple objects in excessive generality (I got derailed) but I did get as far as writing <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=CategoryTheory.Biprod.gaussian#src\">src#CategoryTheory.Biprod.gaussian</a>, which is somewhat related.</p>",
+        "id": 437923759,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715316573
+    },
+    {
+        "content": "<p>Is there some proved algorithm for solving linear equations (or determining they have no solution)?</p>",
+        "id": 437925054,
+        "sender_full_name": "Siddhartha Gadgil",
+        "timestamp": 1715317540
+    },
+    {
+        "content": "<p>No, that's not really the sort of thing Mathlib goes for, historically!</p>",
+        "id": 437926271,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715318689
+    },
+    {
+        "content": "<p>(but also Gaussian elimination is not necessarily the choice once you're interested in algorithms per se!)</p>",
+        "id": 437926717,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715319112
+    },
+    {
+        "content": "<p>Still, see <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Matrix.Pivot.exists_list_transvec_mul_diagonal_mul_list_transvec#doc\">docs#Matrix.Pivot.exists_list_transvec_mul_diagonal_mul_list_transvec</a>, which proves that any matrix is a product of elementary matrices and diagonal matrices. This is a version of Gaussian elimination, although it is formulated as an existence statement, not an algorithm. But the proof is algorithmic, and done via Gaussian elimination.</p>",
+        "id": 437926823,
+        "sender_full_name": "Sébastien Gouëzel",
+        "timestamp": 1715319192
+    },
+    {
+        "content": "<p>Do we have Bruhat decomposition for GLn?</p>",
+        "id": 437929986,
+        "sender_full_name": "Scott Carnahan",
+        "timestamp": 1715321558
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"630477\">Scott Carnahan</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/437929986\">said</a>:</p>\n<blockquote>\n<p>Do we have Bruhat decomposition for GLn?</p>\n</blockquote>\n<p>Pretty sure we don't.</p>",
+        "id": 437932102,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1715323172
+    },
+    {
+        "content": "<p>Speaking of Gaussian elimination, we got it in <a href=\"https://github.com/leanprover-community/mathlib4/pull/12014\">#12014</a> (<code>Mathlib/Tactic/Linarith/SimplexAlgorithm/Gauss.lean</code>)</p>",
+        "id": 437943926,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1715329315
+    },
+    {
+        "content": "<p>The pivot step of gaussian elimination is useful beyond just solving linear inequalitites.</p>",
+        "id": 437946862,
+        "sender_full_name": "Shreyas Srinivas",
+        "timestamp": 1715330638
+    },
+    {
+        "content": "<p>I think Gaussian elimination is also used in <a href=\"https://en.wikipedia.org/wiki/Hermite_normal_form\">Hermite normal form</a> and <a href=\"https://en.wikipedia.org/wiki/Smith_normal_form\">Smith normal form</a>. They are useful, at least in designing number theory algorithms. For example, for number fields there is certain generalization of Smith normal form by Henri Cohen.</p>",
+        "id": 437952228,
+        "sender_full_name": "Jz Pan",
+        "timestamp": 1715333107
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/437932102\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"630477\">Scott Carnahan</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/437929986\">said</a>:</p>\n<blockquote>\n<p>Do we have Bruhat decomposition for GLn?</p>\n</blockquote>\n<p>Pretty sure we don't.</p>\n</blockquote>\n<p>Do we have Jordan-Hölder? If formulated well-enough (two finite chains of modules with simple successive subquotients, one gets a bijection with explicit isomorphisms), then it implies the Bruhat decomposition for GL_n. (See my <em>(Mostly) Commutative Algebra</em>, remark 6.2.13 b), page 248.)<br>\n<a href=\"/user_uploads/3121/qqjss_aII_-sv3oKznBj7cGd/image.png\">image.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/qqjss_aII_-sv3oKznBj7cGd/image.png\" title=\"image.png\"><img src=\"/user_uploads/3121/qqjss_aII_-sv3oKznBj7cGd/image.png\"></a></div>",
+        "id": 438057614,
+        "sender_full_name": "Antoine Chambert-Loir",
+        "timestamp": 1715381584
+    },
+    {
+        "content": "<p>Yes we have it. Grep for \"Jordan-Hölder\"</p>",
+        "id": 438082956,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715407318
+    },
+    {
+        "content": "<p>Oh, that's great! Specifically, it is <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=CompositionSeries.jordan_holder#doc\">docs#CompositionSeries.jordan_holder</a><br>\nRegarding the <em>existence</em> of composition series, is there anything like modules of finite length? Presumably, they could be accessed using the the <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=JordanHolderLattice#doc\">docs#JordanHolderLattice</a> of submodules. (We need a notion of height/coheight in such a thing.)</p>",
+        "id": 438101863,
+        "sender_full_name": "Antoine Chambert-Loir",
+        "timestamp": 1715425661
+    },
+    {
+        "content": "<p>Is <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=height#doc\">docs#height</a> applicable here?</p>",
+        "id": 438103499,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715427696
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"627751\">Vivek Rajesh Joshi</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/437918422\">said</a>:</p>\n<blockquote>\n<p>Has the Gaussian elimination algorithm been formalised in Mathlib4? Moogle isn't working for me, and I've gone through parts of Mathlib.LinearAlgebra.Matrix and haven't found any mention of it.</p>\n</blockquote>\n<p>I cam accross this repo once: <a href=\"https://github.com/jjcrawford/lean-gaussian-elimination\">https://github.com/jjcrawford/lean-gaussian-elimination</a><br>\nIt's in Lean 3 and I can't judge if its complete.</p>",
+        "id": 438167742,
+        "sender_full_name": "Yves Jäckle",
+        "timestamp": 1715501818
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/437923754\">said</a>:</p>\n<blockquote>\n<p>Something a bit strange is going on here.</p>\n<p>Somehow, Gaussian elimination doesn't seem to be particularly important, contrary to the impression that we give undergraduates. I've wondered for a long time why we haven't needed/wanted it. </p>\n<p>There are a lot of different ways one might set up Gaussian elimination, in order to prove things about it. I would want to be pretty confident that whatever way someone choose was actually going to be useful in applications, rather than for its own sake. However, I still don't know what those applications would be. :-)</p>\n</blockquote>\n<p>The factorization of a matrix into elementary matrices Eᵢ such that ||Eᵢ - Id|| &lt; 1 is potentially the simplest way to prove that GLₙ (ℂ) is path connected, from which we can define the logarithm given a path up to homotopy.</p>\n<p>I'd like to ask about SVD as well, since this is used a lot in applied math, in which we can save memory by keeping only the eigenvectors corresponding to the largest eigenvalues, discarding the other eigenvectors and eigenvalues. Maybe people haven't been interested since these benefits would only manifest in a situation which uses particular numbers.</p>",
+        "id": 439938804,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1716341499
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"559197\">Dean Young</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/439938804\">said</a>:</p>\n<blockquote>\n<p>I'd like to ask about SVD</p>\n</blockquote>\n<p>Are you aware of <a href=\"https://github.com/leanprover-community/mathlib4/pull/6042\">#6042</a>?</p>",
+        "id": 439941043,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1716342926
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span> thanks for this, I hadn't seen it.</p>\n<p>It also motivates the Gaussian elimination algorithm in how it uses the eigenvectors of  A * A† - λI and A† * A - λI.</p>",
+        "id": 440129100,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1716394157
+    },
+    {
+        "content": "<p>If you want to help, <a href=\"https://github.com/leanprover-community/mathlib4/pull/6042\">#6042</a> needs a rewrite to deemphasize matrices and emphasize linear maps instead</p>",
+        "id": 440153560,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1716401561
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"130609\">Antoine Chambert-Loir</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/438101863\">said</a>:</p>\n<blockquote>\n<p>Oh, that's great! Specifically, it is <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=CompositionSeries.jordan_holder#doc\">docs#CompositionSeries.jordan_holder</a><br>\nRegarding the <em>existence</em> of composition series, is there anything like modules of finite length? Presumably, they could be accessed using the the <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=JordanHolderLattice#doc\">docs#JordanHolderLattice</a> of submodules. (We need a notion of height/coheight in such a thing.)</p>\n</blockquote>\n<p><span class=\"user-mention\" data-user-id=\"110401\">@Brendan Seamas Murphy</span>  also has an interesting Jordan-Holder to check out-</p>\n<p><a href=\"https://github.com/Shamrock-Frost/jordan-holder\">https://github.com/Shamrock-Frost/jordan-holder</a></p>",
+        "id": 440982788,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1716882611
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"387244\">Yaël Dillies</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Gaussian.20Elimination.20for.20Matrices/near/440153560\">said</a>:</p>\n<blockquote>\n<p>If you want to help, <a href=\"https://github.com/leanprover-community/mathlib4/pull/6042\">#6042</a> needs a rewrite to deemphasize matrices and emphasize linear maps instead</p>\n</blockquote>\n<p>I think I don't fully understand how the computational tasks relate to the proofs here yet. Does Lean simply never do the sorts of tasks that Matlab does?</p>",
+        "id": 440983530,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1716882905
+    },
+    {
+        "content": "<p>No, not really, although that could eventually change</p>",
+        "id": 440984476,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1716883228
+    },
+    {
+        "content": "<p><del>could</del> should!</p>",
+        "id": 440994152,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1716886580
+    }
+]

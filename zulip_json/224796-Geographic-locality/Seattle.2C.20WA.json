@@ -34,5 +34,101 @@
         "id": 302179452,
         "sender_full_name": "Gabriel Ebner",
         "timestamp": 1664848672
+    },
+    {
+        "content": "<p>I'm going to be PostDoc in UW starting September. Any other Lean fanatics in UW? I didn't know anyone from my current school.</p>",
+        "id": 425391579,
+        "sender_full_name": "Xiyu Zhai",
+        "timestamp": 1709844256
+    },
+    {
+        "content": "<p>Jarod Alper is (or at least was) interested in formalization, and I think there was a group of a few other people there as well.</p>",
+        "id": 425396674,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1709846351
+    },
+    {
+        "content": "<p>Are you going to be a postdoc in math, cs, something else?</p>",
+        "id": 425396827,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1709846410
+    },
+    {
+        "content": "<p>My impression was that maths department chair Max Lieblich was interested in Lean and in particular in establishing links with Leo's group, as Leo is also based in Seattle.</p>",
+        "id": 425399103,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1709847320
+    },
+    {
+        "content": "<p>Oh, I didn't know Max was also interested in this!</p>",
+        "id": 425399293,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1709847387
+    },
+    {
+        "content": "<p>I’m going to be a postdoc in cs, machine learning stuffs. I’m trying to combine the powers of llm and formalisation to avoid hallucinations.</p>",
+        "id": 425401039,
+        "sender_full_name": "Xiyu Zhai",
+        "timestamp": 1709848119
+    },
+    {
+        "content": "<p>I assume you know about <a class=\"stream\" data-stream-id=\"219941\" href=\"/#narrow/stream/219941-Machine-Learning-for-Theorem-Proving\">#Machine Learning for Theorem Proving</a> ?</p>",
+        "id": 425401139,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1709848186
+    },
+    {
+        "content": "<p>I am also a great fan of number theory though. I attend the number theory class of Professor Wei Zhang at mit. I planned to learn the full proof of FLT before graduation, but it seems I’m too busy though.</p>",
+        "id": 425401240,
+        "sender_full_name": "Xiyu Zhai",
+        "timestamp": 1709848218
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"243562\">Adam Topaz</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/Seattle.2C.20WA/near/425401139\">said</a>:</p>\n<blockquote>\n<p>I assume you know about <a class=\"stream\" data-stream-id=\"219941\" href=\"/#narrow/stream/219941-Machine-Learning-for-Theorem-Proving\">#Machine Learning for Theorem Proving</a> ?</p>\n</blockquote>\n<p>Yeah, I know. I recently read a lot on that thread</p>",
+        "id": 425401297,
+        "sender_full_name": "Xiyu Zhai",
+        "timestamp": 1709848248
+    },
+    {
+        "content": "<p>I am in Vancouver WA, about 3 hour drive south of you. Would be nice to see Lean take off at UW (I got my Masters there in Electrical Engineering over a decade ago FWIW).  I would be up for taking the train up there for a hackfest or something of that sort if it ever got organized.  Best of luck on the postdoc.</p>",
+        "id": 425427395,
+        "sender_full_name": "Newell Jensen",
+        "timestamp": 1709861285
+    },
+    {
+        "content": "<p>Great to hear that! Looking forward to seeing you there!</p>",
+        "id": 425434320,
+        "sender_full_name": "Xiyu Zhai",
+        "timestamp": 1709865022
+    },
+    {
+        "content": "<p>Sorry I'm seeing this late <span class=\"user-mention\" data-user-id=\"466120\">@Xiyu Zhai</span> but I'm at UW and am interested in Lean as well. I was an undergrad at MIT and did a PhD in number theory at UCLA; I'm now a guest of the PLSE group in UW CSE. I've also talked briefly with Max Lieblich and he is indeed very interested in Lean and apparently has a couple students working with mathlib. There are some people in PLSE also interested in Lean and a chance the graduate PL class might convert from Coq to Lean next school year. Look forward to meeting you this Fall!</p>",
+        "id": 426769550,
+        "sender_full_name": "John Leo",
+        "timestamp": 1710517088
+    },
+    {
+        "content": "<p>If there are courses using Lean there then don’t forget to submit a contribution to <a href=\"https://leanprover-community.github.io/teaching/courses.html\">https://leanprover-community.github.io/teaching/courses.html</a></p>",
+        "id": 426769871,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1710517177
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"641477\">John Leo</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/Seattle.2C.20WA/near/426769550\">said</a>:</p>\n<blockquote>\n<p>Sorry I'm seeing this late <span class=\"user-mention silent\" data-user-id=\"466120\">Xiyu Zhai</span> but I'm at UW and am interested in Lean as well. I was an undergrad at MIT and did a PhD in number theory at UCLA; I'm now a guest of the PLSE group in UW CSE. I've also talked briefly with Max Lieblich and he is indeed very interested in Lean and apparently has a couple students working with mathlib. There are some people in PLSE also interested in Lean and a chance the graduate PL class might convert from Coq to Lean next school year. Look forward to meeting you this Fall!</p>\n</blockquote>\n<p>Great! See you there soon!</p>",
+        "id": 426790857,
+        "sender_full_name": "Xiyu Zhai",
+        "timestamp": 1710523649
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/224796-Geographic-locality/topic/Seattle.2C.20WA/near/426769871\">said</a>:</p>\n<blockquote>\n<p>If there are courses using Lean there then don’t forget to submit a contribution to <a href=\"https://leanprover-community.github.io/teaching/courses.html\">https://leanprover-community.github.io/teaching/courses.html</a></p>\n</blockquote>\n<p>I added the course I am teaching at UW now!</p>",
+        "id": 440576217,
+        "sender_full_name": "Vasily Ilin",
+        "timestamp": 1716584051
+    },
+    {
+        "content": "<p>The UW people here may be interested in the newly-created <a href=\"https://math.washington.edu/events/series/math-ai-seminar\">Math AI seminar</a>. The broad focus of the seminar is math-computer interaction, with emphasis on math formalization and machine learning. Two sample talks are: <a href=\"https://math.washington.edu/events/series/math-ai-seminar\">one</a>, <a href=\"https://math.washington.edu/events/2024-04-15/ai-and-future-mathematics\">two</a>. If you want to receive emails about future events, subscribe to the mailing list here: <a href=\"https://lists.uw.edu/postorius/lists/math_ai_seminar.lists.uw.edu/\">https://lists.uw.edu/postorius/lists/math_ai_seminar.lists.uw.edu/</a>.</p>",
+        "id": 440576541,
+        "sender_full_name": "Vasily Ilin",
+        "timestamp": 1716584240
     }
 ]

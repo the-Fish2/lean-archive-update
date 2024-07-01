@@ -1,0 +1,92 @@
+[
+    {
+        "content": "<p>Hi there! I'm Haitian, a PhD student working with <span class=\"user-mention\" data-user-id=\"422703\">@Malvin Gattinger</span> at ILLC, University of Amsterdam, on a Lean4 project involving the formalization of the interpolation property of PDL. As part of our work, we've developed a formal proof of the Dershowitz-Manna theorem on Multiset ordering, which is often used for proving program termination. You can find our proof here: (<a href=\"https://github.com/m4lvin/lean4-pdl/blob/dmnew/Pdl/MultisetOrder.lean\">https://github.com/m4lvin/lean4-pdl/blob/dmnew/Pdl/MultisetOrder.lean</a>).</p>\n<p>Our goal is to contribute this theorem to mathlib, but before we do, we want to ensure it meets the necessary standards. We're aware that some cleaning up is required and have a few questions:</p>\n<ol>\n<li>Firstly, Malvin <a href=\"#narrow/stream/287929-mathlib4/topic/ReflTransGen.20iff.20finitely.20may.20steps/near/432870510\">previously asked</a> about contributing a theorem to mathlib, only to discover it already existed under a different name. So, it would be helpful if you could confirm that the Dershowitz-Manna theorem has not already been added to mathlib.</li>\n<li>Assuming it hasn't been formalized yet, where should we place this proof within mathlib's structure? Something like <code>Mathlib.Data.Multiset.Order</code>?</li>\n<li>Is it necessary to replace all instances of <code>aesop</code> with explicit proofs?</li>\n</ol>\n<p>Any insights or suggestions you can provide would be greatly appreciated. Looking forward to your guidance!</p>",
+        "id": 434390710,
+        "sender_full_name": "Haitian Wang",
+        "timestamp": 1713542048
+    },
+    {
+        "content": "<p>I can answer 3: no, that's not necessary. You might look if any of your proofs are noticeably slow, though</p>",
+        "id": 434399836,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1713545118
+    },
+    {
+        "content": "<p>Nice job! And no, Dershowitz-Manna is not here :)</p>",
+        "id": 434438529,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1713562149
+    },
+    {
+        "content": "<p>Stupid question: Can you generalise DM to <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finsupp#doc\">docs#Finsupp</a>, in the sense of <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finsupp.toMultiset#doc\">docs#Finsupp.toMultiset</a> ?</p>",
+        "id": 434438631,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1713562202
+    },
+    {
+        "content": "<p>Aha, that we haven't thought about yet. We would have a look and let you know :-)</p>",
+        "id": 434440628,
+        "sender_full_name": "Haitian Wang",
+        "timestamp": 1713563272
+    },
+    {
+        "content": "<p>I did not know <code>Finsupp</code> at all before, we will look into it :)</p>\n<p>If this makes sense: do you mean that the theorem should be proven about <code>Finsupp</code> \"directly\" or whether we can use <code>Finsupp.toMultiset</code> and<code>Multiset.toFinsupp</code> to transfer the theorem we already have?</p>\n<p>(Thinking aloud, the DM proof uses <code>DecidableEq α</code> anyway in which case <code>Finsupp</code> and <code>Multiset</code> are equivalent, right? Though I don't remember where/why exactly it is needed.)</p>",
+        "id": 434604809,
+        "sender_full_name": "Malvin Gattinger",
+        "timestamp": 1713719738
+    },
+    {
+        "content": "<p>We hope to prepare a PR for this next week. Can someone here give Haitian the access rights to push to a branch so we can get the CI checks? His GitHub username is <code>haitian-yuki</code>.</p>",
+        "id": 437960995,
+        "sender_full_name": "Malvin Gattinger",
+        "timestamp": 1715337363
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span> sorry to bother you, but maybe you have the rights to add people to the mathlib repository?</p>",
+        "id": 438766023,
+        "sender_full_name": "Malvin Gattinger",
+        "timestamp": 1715766909
+    },
+    {
+        "content": "<p>Aah, sorry, I missed this request... 1 sec</p>",
+        "id": 438766546,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1715767090
+    },
+    {
+        "content": "<p>Voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 438766704,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1715767148
+    },
+    {
+        "content": "<p>Thank you, no worries!</p>",
+        "id": 438767076,
+        "sender_full_name": "Malvin Gattinger",
+        "timestamp": 1715767264
+    },
+    {
+        "content": "<p>Sorry, I do not!</p>",
+        "id": 438774992,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715770414
+    },
+    {
+        "content": "<p>There is a mathlib branch for this now: <a href=\"https://github.com/leanprover-community/mathlib4/tree/dm_ordering\">dm_ordering</a>, linting and fixes to be done ;-)</p>",
+        "id": 438778350,
+        "sender_full_name": "Malvin Gattinger",
+        "timestamp": 1715771702
+    },
+    {
+        "content": "<p>Concerning the generalization from Multiset to Finsupp, we thought of two things:</p>\n<ol>\n<li>Hopefully easy: via <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finsupp.toMultiset#doc\">docs#Finsupp.toMultiset</a> we can transfer the DM theorem to <code>Finsupp α ℕ</code>.</li>\n<li>More ambitious: define the DM ordering and prove the DM theorem for <code>Finsupp α M</code> where <code>M</code> is something else than <code>ℕ</code>. Naively for me, we are then talking multisets where multiplicities are of type <code>M</code>. For the DM theorem to make sense <code>M</code> needs to have an order, and notions of addition and subtraction.</li>\n</ol>\n<p>We may do (1) still for the PR, but I think we will not do (2) for now, as we do not even know (non-formalized) literature about this.</p>",
+        "id": 438778389,
+        "sender_full_name": "Malvin Gattinger",
+        "timestamp": 1715771718
+    },
+    {
+        "content": "<p>Yes, I know (1) is easy and I know (2) is not standard</p>",
+        "id": 438794285,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715777396
+    }
+]

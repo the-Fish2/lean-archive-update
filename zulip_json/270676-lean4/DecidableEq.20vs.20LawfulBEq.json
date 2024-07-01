@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>What is the relationship between <code>DecidableEq</code> and <code>LawfulBEq</code> please?</p>",
+        "id": 448391716,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1719854248
+    },
+    {
+        "content": "<p>Seems like every instance of one should be an instance of the other, which begs the question, it is really for the best that these be separate typeclasses?</p>",
+        "id": 448404254,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1719858000
+    },
+    {
+        "content": "<p>I suppose you could have DecidableEq and then an unlawful BEq, but then it would feel like the BEq was defined wrong.</p>",
+        "id": 448405368,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1719858310
+    },
+    {
+        "content": "<p>It's perfectly fine to have a non-lawful <code>BEq</code> even if equality is decidable. <code>BEq</code> is a programming concept and you can use it to define whatever notion of equality is convenient for your program. For example, you might have a structure that contains a field which is transient in some sense, and you do not want it to be considered when using the structure as a key in a hash map. Then you would define a <code>BEq</code> that is not lawful, even if equality may be decidable.</p>\n<p>Another example would be IEEE 754 floating point numbers (like the Lean <code>Float</code> type). <code>Float</code> has decidable equality (though I don't know if this can be shown given the way <code>Float</code> is defined in Lean), but the <code>BEq</code> instance, which implements comparison as defined in IEEE 754, is famously not reflexive and hence certainly not lawful.</p>",
+        "id": 448409941,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1719859277
+    }
+]

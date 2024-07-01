@@ -1366,5 +1366,1331 @@
         "id": 408350021,
         "sender_full_name": "Markus Himmel",
         "timestamp": 1702737743
+    },
+    {
+        "content": "<p>Ok I'm ready to start PRing some more modular form things. Could I regain Github permission? my username is <code>CBirkbeck</code>. (I guess the mathlib3 doesn't carry over!)</p>",
+        "id": 409160737,
+        "sender_full_name": "Chris Birkbeck",
+        "timestamp": 1703071364
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"389019\">@Chris Birkbeck</span> <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 409180756,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703077015
+    },
+    {
+        "content": "<p>thank you!</p>",
+        "id": 409180988,
+        "sender_full_name": "Chris Birkbeck",
+        "timestamp": 1703077105
+    },
+    {
+        "content": "<p>Asking for permission. GitHub username: davikrehalt. Planning on initially contributing some theorems for working with lists/finsets. May continue other things in future.</p>",
+        "id": 410483007,
+        "sender_full_name": "Andy Jiang",
+        "timestamp": 1703887632
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"662620\">@Andy Jiang</span> could you be more specific / have a branch to point at?</p>",
+        "id": 411121066,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704339503
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Scott Morrison</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/411121066\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"662620\">Andy Jiang</span> could you be more specific / have a branch to point at?</p>\n</blockquote>\n<p>Um I don't have the code/branch/PR yet but I had some lemmas here -&gt;</p>\n<p><a href=\"#narrow/stream/113489-new-members/topic/Computing.20Finset.20sort.20of.20Finset.20range/near/410424794\">https://leanprover.zulipchat.com/#narrow/stream/113489-new-members/topic/Computing.20Finset.20sort.20of.20Finset.20range/near/410424794</a></p>\n<p>which I thought would be good to have in Mathlib. If you want I can make a ready PR first and then ask for permission here? I just thought the convention was to ask for the permission here first, sorry if not.</p>",
+        "id": 411242481,
+        "sender_full_name": "Andy Jiang",
+        "timestamp": 1704394116
+    },
+    {
+        "content": "<p>No, that's great, you're doing the right thing. We're aspiring to consistently ask new authors about what they are proposing to contribute --- often we skip this step if the responding maintainer already knows the author somehow.</p>",
+        "id": 411292197,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704418090
+    },
+    {
+        "content": "<p>Those lemmas (at least the statements, I didn't look at the proofs) look good to have!</p>",
+        "id": 411292234,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704418116
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"662620\">@Andy Jiang</span>, invitation sent!</p>",
+        "id": 411292845,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704418500
+    },
+    {
+        "content": "<p>Hello, I made my first contribution (<a href=\"https://github.com/leanprover-community/mathlib4/pull/9458\">https://github.com/leanprover-community/mathlib4/pull/9458</a>), and I would like non-master write access so that I can assign myself the PR tags to let CI run on them.<br>\nI can and have run <code>lake build</code> locally, but I would like the piece of mind that I didn't accidentally screw up badly enough that my local setup somehow gives a false positive.</p>\n<p>This contribution is the first one in a series to get my (currently ugly-looking but working) formalization of Rubin's Theorem (<a href=\"https://github.com/adri326/rubin-lean4/\">https://github.com/adri326/rubin-lean4/</a>) into mathlib.</p>\n<p>My github username, as hinted by the links above, is <code>adri326</code></p>",
+        "id": 411446705,
+        "sender_full_name": "Emilie (Shad Amethyst)",
+        "timestamp": 1704496232
+    },
+    {
+        "content": "<p>Once you have push access to non master branches you'll unfortunately need to close <a href=\"https://github.com/leanprover-community/mathlib4/pull/9458\">#9458</a> and open a new PR from a branch of the leanprover-community version of mathlib (we know this isn't the standard procedure for github, but at the end of the day it's the path of least resistance for the community).</p>",
+        "id": 411448656,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1704497461
+    },
+    {
+        "content": "<p>The CI is doomed to not run on PRs from forks?</p>",
+        "id": 411449040,
+        "sender_full_name": "Emilie (Shad Amethyst)",
+        "timestamp": 1704497714
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"380890\">@Emilie (Shad Amethyst)</span>, invitation sent.</p>",
+        "id": 411449186,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1704497806
+    },
+    {
+        "content": "<p>I recently got push access to non-master branches to work on <a href=\"#narrow/stream/287929-mathlib4/topic/Ring.20is.20determined.20by.20Semiring\">this</a>.</p>\n<p>However, although I was able to create a new branch on GitHub using a web browser, I can't seem to push to it from my local copy of the repository (I get a message \"Permission to leanprover-community/mathlib4.git denied to raghuram-13.\" and a 403 error).</p>\n<p>Is there something special I have to do (or does the personal access token need special permissions) to push with this kind of access?</p>",
+        "id": 411498932,
+        "sender_full_name": "Raghuram",
+        "timestamp": 1704539479
+    },
+    {
+        "content": "<p>You may need to set up an SSH key if you don't have it today</p>",
+        "id": 411501681,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1704541696
+    },
+    {
+        "content": "<p>So personal access tokens don't work?</p>",
+        "id": 411504892,
+        "sender_full_name": "Raghuram",
+        "timestamp": 1704544565
+    },
+    {
+        "content": "<p>OK, I've set up SSH and successfully pushed. Thanks <span class=\"user-mention silent\" data-user-id=\"307953\">Ruben Van de Velde</span>!</p>",
+        "id": 411517170,
+        "sender_full_name": "Raghuram",
+        "timestamp": 1704556620
+    },
+    {
+        "content": "<p>Hello,</p>\n<p>Can I ask for permission for write access? I want to first try on a small lemma over <code>PNat</code>, and I'm thinking of adding more results over <code>PNat</code> for now. Thank you very much.<br>\nGitHub username: mortarsanjaya</p>",
+        "id": 416216472,
+        "sender_full_name": "Gian Cordana Sanjaya",
+        "timestamp": 1705521160
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"246632\">@Gian Cordana Sanjaya</span>, invitation sent!</p>",
+        "id": 416480178,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1705543624
+    },
+    {
+        "content": "<p>Hi. Please can I have GitHub permissions? I initially want to add some constructors for horns in low dimension cases from faces, and more generically help in formalising algebraic topology and infinity-category theory. GitHub user name is: jstoobysmith. Many thanks</p>",
+        "id": 416575090,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1705585802
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"653351\">@Joseph Tooby-Smith</span> Voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 416575460,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1705585933
+    },
+    {
+        "content": "<p>Hi! Can I have GitHub permissions? I proved <code>Fin.Tuple.Repeat.repeat_comp_rev</code> and want to make a PR. My username is <code>technosentience</code> <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 416686404,
+        "sender_full_name": "Diana Kalinichenko",
+        "timestamp": 1705629016
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"655150\">@Diana Kalinichenko</span>, I've sent the invite: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 416690383,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1705630758
+    },
+    {
+        "content": "<p>Hi, I'm planning to familiarise myself with the mathlib4 repository by tackling some of <a href=\"https://github.com/leanprover-community/mathlib4/issues/7987\">#7987</a>, could I have write access? My github username is <code>s1m7u</code>.</p>",
+        "id": 418474178,
+        "sender_full_name": "Chris Ahn",
+        "timestamp": 1706419534
+    },
+    {
+        "content": "<p>invite sent!</p>",
+        "id": 418615104,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1706527211
+    },
+    {
+        "content": "<p>Hi, can I have permission to contribute to mathlib4? I'm working on Gaussian coefficients and want to make a branch</p>",
+        "id": 419472551,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1706885497
+    },
+    {
+        "content": "<p>What's your github user name?</p>",
+        "id": 419474234,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1706885994
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"307953\">Ruben Van de Velde</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/419474234\">said</a>:</p>\n<blockquote>\n<p>What's your github user name?</p>\n</blockquote>\n<p>agusakov</p>",
+        "id": 419476749,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1706886745
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"303889\">@Alena Gusakov</span> voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 419477490,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1706886967
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"112680\">@Johan Commelin</span> Thank you!!</p>",
+        "id": 419477895,
+        "sender_full_name": "Alena Gusakov",
+        "timestamp": 1706887109
+    },
+    {
+        "content": "<p>Hi, can get the permissions? I want to contribute some set theory theorems about cardinals. My username is <code>YnirPaz</code></p>",
+        "id": 420535930,
+        "sender_full_name": "Nir Paz",
+        "timestamp": 1707423968
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"565854\">@Nir Paz</span> , please see <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 420554970,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1707432450
+    },
+    {
+        "content": "<p>Hi can I get permission to add to Mathlib. I would like to formalize the definitions of weird, abundant, semiperfect, and deficient numbers and contribute to number theory. My github username is Colin166</p>",
+        "id": 420918315,
+        "sender_full_name": "Colin Jones ⚛️",
+        "timestamp": 1707682208
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"628490\">@Colin Jones ⚛️</span> voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 420968004,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1707723936
+    },
+    {
+        "content": "<p>Thank you!</p>",
+        "id": 421056395,
+        "sender_full_name": "Colin Jones ⚛️",
+        "timestamp": 1707750628
+    },
+    {
+        "content": "<p>Hello, may I please get the permissions to write to non-master branches of the mathlib? I would like to work on some of the good first issues for starters, and later contribute to the model theory or the category theory libs. My GitHub username is <code>LibertasSpZ</code>. Thank you very much!</p>",
+        "id": 421770803,
+        "sender_full_name": "Shaopeng",
+        "timestamp": 1708046633
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"692118\">@Shaopeng</span> voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 421803511,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1708068171
+    },
+    {
+        "content": "<p>Thanks a lot, <span class=\"user-mention\" data-user-id=\"112680\">@Johan Commelin</span> .</p>",
+        "id": 421806234,
+        "sender_full_name": "Shaopeng",
+        "timestamp": 1708069630
+    },
+    {
+        "content": "<p>can i get permissions for writing to non-master branches? i'd like to push some of my work on defining metric spaces with a generic codomain</p>",
+        "id": 421939190,
+        "sender_full_name": "Edward van de Meent",
+        "timestamp": 1708117931
+    },
+    {
+        "content": "<p>my github username is <code>blizzard_inc</code></p>",
+        "id": 421939304,
+        "sender_full_name": "Edward van de Meent",
+        "timestamp": 1708117983
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"684366\">@Edward van de Meent</span> Voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 421997466,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1708162716
+    },
+    {
+        "content": "<p>Hi! Could I have write access to non-master branches, please. Github: <code>oliver-butterley</code>. I would prepare a sInter version of an iInter theorem that is useful. As per <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Obtain.20sInter.20version.20of.20an.20iInter.20theorem\">discussion</a>.</p>",
+        "id": 423018895,
+        "sender_full_name": "Oliver Butterley",
+        "timestamp": 1708695948
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 423020627,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1708696548
+    },
+    {
+        "content": "<p>Hi there,<br>\nI'm a student from germany and I am working on a project to formalize the Banach Tarski Paradox in Lean. During this project, we created some auxiliary theorems (Matrix.adjugate_fin_three). In my opinion, these would fit greatly in to the mathlib. So i want to ask for acces to the mathlib repo to make a pull request. (Github: <a href=\"https://github.com/Bergschaf/\">https://github.com/Bergschaf/</a>)</p>",
+        "id": 423550187,
+        "sender_full_name": "Christian K",
+        "timestamp": 1709020513
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"652766\">@Christian K</span> voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 423550712,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1709020773
+    },
+    {
+        "content": "<p>Hi! Can I get write access to non-master branches? I would like to add symmetric functions to the library. My Github username is <code>SashaIr</code>. Thanks!</p>",
+        "id": 423556716,
+        "sender_full_name": "Alessandro Iraci",
+        "timestamp": 1709023459
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 423556992,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1709023596
+    },
+    {
+        "content": "<p>Hi, I've been working on a few theorems for <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=AddChar#doc\">docs#AddChar</a>, could I please get write access to non-master branches? My Github username is <code>Command-Master</code>. Thanks!</p>",
+        "id": 424073182,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1709228342
+    },
+    {
+        "content": "<p>It would make sense to merge <a href=\"https://github.com/leanprover-community/mathlib4/pull/11049\">#11049</a> before further changes are made to additive characters.</p>",
+        "id": 424085317,
+        "sender_full_name": "Michael Stoll",
+        "timestamp": 1709232408
+    },
+    {
+        "content": "<p>Hi! Could I please get write access to non-master branches? I would like to contribute to (free) Lie algebras. My GitHub username is <code>frederic-marbach</code>. Thanks!</p>",
+        "id": 424279841,
+        "sender_full_name": "Frédéric Marbach",
+        "timestamp": 1709309945
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"674861\">@Frédéric Marbach</span> voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>\n<p>Are you aware of the ongoing Lie theory project?</p>",
+        "id": 424281211,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1709310342
+    },
+    {
+        "content": "<p><a href=\"https://github.com/orgs/leanprover-community/projects/17?query=is%3Aopen+sort%3Aupdated-desc\">https://github.com/orgs/leanprover-community/projects/17?query=is%3Aopen+sort%3Aupdated-desc</a></p>",
+        "id": 424281302,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1709310363
+    },
+    {
+        "content": "<p>Thank you! No, I was not aware of this project. At first sight, it looks rather independent from what I am planning to do. I will of course discuss everything here before doing anything serious. I am interested in: the Poincaré–Birkhoff–Witt theorem, Hall sets/bases of the free Lie algebra, the Guillemin–Sternberg realization theorem for transitive Lie algebras and its explicit Blattner–Draisma realization formula within the Lie algebra of formal vector fields.</p>",
+        "id": 424284771,
+        "sender_full_name": "Frédéric Marbach",
+        "timestamp": 1709311235
+    },
+    {
+        "content": "<p>Hello! Could I please get write access to non-master branches? My GitHub username is <code>pangelinos</code>. I've managed to prove one small thing (compact open subsets of spectral spaces are spectral). My code is about 100 lines, so I would like to contribute it and hopefully get feedback on it as well.</p>",
+        "id": 424285354,
+        "sender_full_name": "Panagiotis Angelinos",
+        "timestamp": 1709311400
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"693314\">@Panagiotis Angelinos</span> Sent! <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 424285895,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1709311536
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"479359\">Michael Stoll</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/424085317\">said</a>:</p>\n<blockquote>\n<p>It would make sense to merge <a href=\"https://github.com/leanprover-community/mathlib4/pull/11049\">#11049</a> before further changes are made to additive characters.</p>\n</blockquote>\n<p>I worked with its version, so there shouldn't be conflicts, but yeah.</p>",
+        "id": 424297466,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1709315181
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/11049\">#11049</a> has been merged by now.</p>",
+        "id": 424314212,
+        "sender_full_name": "Michael Stoll",
+        "timestamp": 1709321910
+    },
+    {
+        "content": "<p>Dear friends, might I be granted write permission for the mathlib4 repo? (I'm working with)Thanks, in advance! </p>\n<p>GitHub user name is JonBannon.</p>",
+        "id": 424656781,
+        "sender_full_name": "Jon Bannon",
+        "timestamp": 1709559755
+    },
+    {
+        "content": "<p>What's your Github username?</p>",
+        "id": 424656884,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1709559794
+    },
+    {
+        "content": "<p>Nevermind, found it.</p>",
+        "id": 424657073,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1709559845
+    },
+    {
+        "content": "<p>Please see <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 424657365,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1709559946
+    },
+    {
+        "content": "<p>Jon is planning a small refactor of <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Matrix.IsHermitian.eigenvectorMatrix#doc\">docs#Matrix.IsHermitian.eigenvectorMatrix</a></p>",
+        "id": 424657498,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1709559975
+    },
+    {
+        "content": "<p>Hey, could I have write access to mathlib4? I would like to make a small PR containing lemmas about commutative squares. My github username is <code>callesonne</code></p>",
+        "id": 424936852,
+        "sender_full_name": "Calle Sönne",
+        "timestamp": 1709664985
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"132603\">@Calle Sönne</span>, invitation sent.</p>",
+        "id": 424970083,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1709678172
+    },
+    {
+        "content": "<p>Hello! I would like to add some results to mathlib4 about reduced words in Coxeter groups, including Matsumoto's theorem. My github username is trivial1711.</p>",
+        "id": 425732489,
+        "sender_full_name": "Mitchell Lee",
+        "timestamp": 1710033079
+    },
+    {
+        "content": "<p>Hello, can I get permission to add to Mathlib? I would like to work on some properties of bitvectors. My GitHub username is Tom-Soucies. Thank you!</p>",
+        "id": 425853992,
+        "sender_full_name": "Tom Soucies",
+        "timestamp": 1710144459
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"680578\">@Tom Soucies</span> My impression is that all material on bitvectors is being moved out of mathlib and into std. So it probably makes more sense to work on std.</p>\n<p>cc <span class=\"user-mention\" data-user-id=\"110087\">@Scott Morrison</span></p>",
+        "id": 425880925,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1710153840
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"680578\">@Tom Soucies</span>, in fact, please make PRs about BitVec direct to the Lean 4 repo. Happy to discuss plans your plans for BitVec.</p>",
+        "id": 426063746,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1710226318
+    },
+    {
+        "content": "<p>Hi, please could I get write access to mathlib4? I'm interested in contributing results in extremal graph theory. <br>\nMy Github username is jt496. Thanks!</p>",
+        "id": 426575795,
+        "sender_full_name": "John Talbot",
+        "timestamp": 1710432354
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"506168\">@John Talbot</span> Invite sent</p>",
+        "id": 426579988,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1710433579
+    },
+    {
+        "content": "<p>Thanks!</p>",
+        "id": 426580667,
+        "sender_full_name": "John Talbot",
+        "timestamp": 1710433783
+    },
+    {
+        "content": "<p>Hey! Just letting you know I started cleaning up your Turan formalisation for inclusion in mathlib</p>",
+        "id": 426626110,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1710449324
+    },
+    {
+        "content": "<p>Hello, I requested access a while ago. I hate to ask again, but I suspect that people might just have missed it. My github username is trivial1711.</p>\n<p><span class=\"user-mention silent\" data-user-id=\"695266\">Mitchell Lee</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/425732489\">said</a>:</p>\n<blockquote>\n<p>Hello! I would like to add some results to mathlib4 about reduced words in Coxeter groups, including Matsumoto's theorem. My github username is trivial1711.</p>\n</blockquote>",
+        "id": 426817455,
+        "sender_full_name": "Mitchell Lee",
+        "timestamp": 1710534696
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"695266\">@Mitchell Lee</span> Sorry to keep you waiting; invite sent.</p>",
+        "id": 426818166,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1710535073
+    },
+    {
+        "content": "<p>Hello, is it possible if I could have write access to mathlib4? I'm working on formalising some categorical logic following Lambek and Scott's book, thanks :) My github username is Isaac-Ling</p>",
+        "id": 426847159,
+        "sender_full_name": "Eyesomorphic",
+        "timestamp": 1710551678
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"664217\">@Eyesomorphic</span> Inviste sent, see <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 426867875,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1710572360
+    },
+    {
+        "content": "<p>Hello, I am interested in contributing to mathlib4. I was thinking to start with expanding the theory on data structures, and later work on graph theory topics. <br>\nCan I get write permissions to non-master branches ? My github name is <code>michelsol</code>.<br>\nThanks in advance,</p>",
+        "id": 426886164,
+        "sender_full_name": "Julien Michel",
+        "timestamp": 1710590923
+    },
+    {
+        "content": "<p>Data structures are mostly moving to the Std library. Could you please elaborate a bit what you have in mind?</p>",
+        "id": 426886279,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1710591009
+    },
+    {
+        "content": "<p>I was thinking to expand the basic theory on binary trees, BST's, tree based heaps, and other basic structures in their abstract form. I wasn't thinking of writing fast implementations. But I'm not sure how broad the scope of std is either.</p>",
+        "id": 426886541,
+        "sender_full_name": "Julien Michel",
+        "timestamp": 1710591289
+    },
+    {
+        "content": "<p>Data structures are probably best developed in separate libraries. Particularly useful ones with thorough APIs (e.g. RBMap) can move to Std.</p>",
+        "id": 426887624,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1710592321
+    },
+    {
+        "content": "<p>A message was moved from this topic to <a class=\"stream-topic\" data-stream-id=\"287929\" href=\"/#narrow/stream/287929-mathlib4/topic/Should.20data.20structures.20theory.20sit.20in.20mathlib.3F\">#mathlib4 &gt; Should data structures theory sit in mathlib?</a> by <span class=\"user-mention silent\" data-user-id=\"697190\">Julien Michel</span>.</p>",
+        "id": 426916937,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1710618367
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"697190\">@Julien Michel</span> Invite sent! <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a><br>\nI think the question of whether what you'd like to contribute about data structures is in scope for mathlib4 is something that can potentially be settled in the context of a PR or draft PR and shouldn't hold up an invitation to the repo. In any case, contributions on graph theory are certainly welcome.</p>",
+        "id": 426921984,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1710623285
+    },
+    {
+        "content": "<p>Hi, can I get permissions to open a branch to clean up some <code>Finset</code> and <code>Set</code> naming discrepancies? I checked with <span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span> that they in fact aren't intentional. Github username is <code>ForderUniver</code>.</p>",
+        "id": 428100784,
+        "sender_full_name": "Christoph Spiegel",
+        "timestamp": 1711018396
+    },
+    {
+        "content": "<p>Github says:</p>\n<blockquote>\n<p>Could not find a GitHub account matching ForderUniver</p>\n</blockquote>",
+        "id": 428101099,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1711018494
+    },
+    {
+        "content": "<p>They meant <code>FordUniver</code>.</p>",
+        "id": 428101554,
+        "sender_full_name": "Rida Hamadani",
+        "timestamp": 1711018658
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/428101099\">said</a>:</p>\n<blockquote>\n<p>Github says:</p>\n<blockquote>\n<p>Could not find a GitHub account matching ForderUniver</p>\n</blockquote>\n</blockquote>\n<p><span aria-label=\"melting face\" class=\"emoji emoji-1fae0\" role=\"img\" title=\"melting face\">:melting_face:</span> it's <code>FordUniver</code>, let's hope my PR will be more thorough than this.</p>",
+        "id": 428101600,
+        "sender_full_name": "Christoph Spiegel",
+        "timestamp": 1711018679
+    },
+    {
+        "content": "<p>Voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 428101700,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1711018711
+    },
+    {
+        "content": "<p>Hi, can I get permission to open a branch to add some lemmas about the <code>Array</code> and <code>ByteArray</code> data structure.  The code is currently in <a href=\"https://gist.github.com/JiechengZhao/d5dcafd2e34c38703c2e2d7bdcc4c4bd\">my gist</a> . My git user name is JiechengZhao.</p>",
+        "id": 428255235,
+        "sender_full_name": "ZHAO Jiecheng",
+        "timestamp": 1711078546
+    },
+    {
+        "content": "<p>Could you say more about these lemmas? Generally I'd prefer lemmas about <code>Array</code> and <code>ByteArray</code> go as high as possible (i.e. Lean or Std).</p>",
+        "id": 428255365,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1711078662
+    },
+    {
+        "content": "<p>8 messages were moved from this topic to <a class=\"stream-topic\" data-stream-id=\"113488\" href=\"/#narrow/stream/113488-general/topic/.28Byte.29Array.20lemmas\">#general &gt; (Byte)Array lemmas</a> by <span class=\"user-mention silent\" data-user-id=\"112680\">Johan Commelin</span>.</p>",
+        "id": 428270220,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1711090532
+    },
+    {
+        "content": "<p>Hi, could I get permission to open a branch in mathlib? I want to change a docstring and work on characterizations of etale morphisms.</p>",
+        "id": 429809130,
+        "sender_full_name": "Judith Ludwig",
+        "timestamp": 1711529198
+    },
+    {
+        "content": "<p>What is your github username?</p>",
+        "id": 429809168,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1711529221
+    },
+    {
+        "content": "<p>sorry, it's judithludwig</p>",
+        "id": 429809267,
+        "sender_full_name": "Judith Ludwig",
+        "timestamp": 1711529258
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 429809312,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1711529282
+    },
+    {
+        "content": "<p>I would like to mark a lemma as simp.<br>\nCan you please give me permission? my username is <code>edgarcosta</code></p>",
+        "id": 430165594,
+        "sender_full_name": "Edgar Costa",
+        "timestamp": 1711661696
+    },
+    {
+        "content": "<p>Invite sent!</p>",
+        "id": 430165820,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1711661794
+    },
+    {
+        "content": "<p>tks</p>",
+        "id": 430166242,
+        "sender_full_name": "Edgar Costa",
+        "timestamp": 1711662042
+    },
+    {
+        "content": "<p>I want to add <code>@to_additive</code> to <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finset.card_mul_mul_le_card_div_mul_card_div#doc\">docs#Finset.card_mul_mul_le_card_div_mul_card_div</a>, <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finset.card_div_mul_le_card_mul_mul_card_div#doc\">docs#Finset.card_div_mul_le_card_mul_mul_card_div</a>, etc (and fix their docstrings). Could I please have permission? My username is <code>Command-Master</code>.</p>",
+        "id": 430212040,
+        "sender_full_name": "Daniel Weber",
+        "timestamp": 1711695514
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"690858\">@Daniel Weber</span> Invite sent! Those lemmas indeed should have <code>to_additive</code>.</p>",
+        "id": 430220675,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1711700873
+    },
+    {
+        "content": "<p>Hi, we will probably start the PRs from the Ostrowski's project in LFTCM2024. I think I had permission long time ago (but for Lean 3), could I have permission again? Thanks! My Git-hub user is <code>amosturchet</code></p>",
+        "id": 430377152,
+        "sender_full_name": "Amos Turchet",
+        "timestamp": 1711793551
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 430380348,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1711796558
+    },
+    {
+        "content": "<p>Do we need additional permission to merge a PR into mathlib, or should I tell bors to merge or something else: <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission\">https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/github.20permission</a></p>\n<p>I have a PR that is ready to merge but i'm not \"authorized\"</p>",
+        "id": 430394639,
+        "sender_full_name": "Enrico Borba",
+        "timestamp": 1711809090
+    },
+    {
+        "content": "<p>If it's labelled <code>ready-to-merge</code>, it will soon be merged</p>",
+        "id": 430396572,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1711810722
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"256383\">@Enrico Borba</span> Which PR number is this?</p>",
+        "id": 430400971,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1711814557
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/10189\">https://github.com/leanprover-community/mathlib4/pull/10189</a></p>",
+        "id": 430405605,
+        "sender_full_name": "Enrico Borba",
+        "timestamp": 1711818846
+    },
+    {
+        "content": "<p>Hi! My GitHub username is <code>dignissimus</code> and I'm looking to contribute some lemmas for Hopf Algebras and help contribute to the tactic library</p>",
+        "id": 430407809,
+        "sender_full_name": "Sam Ezeh",
+        "timestamp": 1711820913
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"256383\">Enrico Borba</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/430405605\">said</a>:</p>\n<blockquote>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/10189\">https://github.com/leanprover-community/mathlib4/pull/10189</a></p>\n</blockquote>\n<p>That PR hasn't been approved. You need to remove <code>awaiting-author</code> and add back <code>awaiting-review</code> so that other know they should review it. Then eventually a reviewer (eg me) or maintainer (eg Johan) will approve the PR and it will then be merged.</p>",
+        "id": 430409546,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1711822515
+    },
+    {
+        "content": "<p>Also on Zulip you can write <code>#10189</code> and it will display <a href=\"https://github.com/leanprover-community/mathlib4/pull/10189\">#10189</a></p>",
+        "id": 430409560,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1711822542
+    },
+    {
+        "content": "<p><span class=\"user-group-mention\" data-user-group-id=\"2494\">@maintainers</span> don't miss Sam Ezeh's request above, they're doing interesting stuff :-)</p>",
+        "id": 430409614,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1711822580
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"601198\">@Sam Ezeh</span> Voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 430410731,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1711823810
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"387244\">Yaël Dillies</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/430409546\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"256383\">Enrico Borba</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/430405605\">said</a>:</p>\n<blockquote>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/10189\">https://github.com/leanprover-community/mathlib4/pull/10189</a></p>\n</blockquote>\n<p>That PR hasn't been approved. You need to remove <code>awaiting-author</code> and add back <code>awaiting-review</code> so that other know they should review it. Then eventually a reviewer (eg me) or maintainer (eg Johan) will approve the PR and it will then be merged.</p>\n</blockquote>\n<p>Sorry I was on mobile and didn't know the PR number, I just copied it from the github mobile app.</p>\n<p>Also I took the approval from <span class=\"user-mention\" data-user-id=\"307953\">@Ruben Van de Velde</span> as an approval of the PR. I'll add the label. Thanks!</p>",
+        "id": 430426487,
+        "sender_full_name": "Enrico Borba",
+        "timestamp": 1711839755
+    },
+    {
+        "content": "<p>Sorry for the constant messaging about this PR by the way. My experience with working on other open source projects and companies using github is a bit different from the PR flow here on mathlib. Really cool to see how it works on such a large repository with so many contributors.</p>",
+        "id": 430426595,
+        "sender_full_name": "Enrico Borba",
+        "timestamp": 1711839882
+    },
+    {
+        "content": "<p>Hi, could I have write access? I want to start making PRs for bits and pieces of the braid word problem (starting with presented monoids). My username is  hannahfechtner</p>",
+        "id": 430693014,
+        "sender_full_name": "Hannah Fechtner",
+        "timestamp": 1712022154
+    },
+    {
+        "content": "<p>You have an invitation!</p>",
+        "id": 430693285,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1712022273
+    },
+    {
+        "content": "<p><a href=\"/user_uploads/3121/ItTpu30LY1VPG2k_J0B8wGDp/Screenshot-2024-04-01-at-9.51.19PM.png\">Screenshot-2024-04-01-at-9.51.19PM.png</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/ItTpu30LY1VPG2k_J0B8wGDp/Screenshot-2024-04-01-at-9.51.19PM.png\" title=\"Screenshot-2024-04-01-at-9.51.19PM.png\"><img src=\"/user_uploads/3121/ItTpu30LY1VPG2k_J0B8wGDp/Screenshot-2024-04-01-at-9.51.19PM.png\"></a></div>",
+        "id": 430693469,
+        "sender_full_name": "Hannah Fechtner",
+        "timestamp": 1712022414
+    },
+    {
+        "content": "<p>Where do you see that?</p>",
+        "id": 430693523,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1712022463
+    },
+    {
+        "content": "<p>lol, it's working now!</p>",
+        "id": 430694008,
+        "sender_full_name": "Hannah Fechtner",
+        "timestamp": 1712022787
+    },
+    {
+        "content": "<p>i switched my primary email to my cmu email, and then refreshed, and it worked. couldn't tell you why!</p>",
+        "id": 430694064,
+        "sender_full_name": "Hannah Fechtner",
+        "timestamp": 1712022835
+    },
+    {
+        "content": "<p>Happy PRing!</p>",
+        "id": 430694154,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1712022881
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"573474\">@Tomáš Jakl</span>, regarding <a href=\"https://github.com/leanprover-community/mathlib4/pull/11761#issuecomment-2031358499\">https://github.com/leanprover-community/mathlib4/pull/11761#issuecomment-2031358499</a>, you should ask for permission to modify mathlib branches here</p>",
+        "id": 430746702,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1712049311
+    },
+    {
+        "content": "<p>In fact, let me ask it for you: <span class=\"user-group-mention\" data-user-group-id=\"2494\">@maintainers</span>, could <code>jaklt</code> get access?</p>",
+        "id": 430746781,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1712049337
+    },
+    {
+        "content": "<p>thanks!</p>",
+        "id": 430748163,
+        "sender_full_name": "Tomáš Jakl",
+        "timestamp": 1712049832
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 430748339,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1712049897
+    },
+    {
+        "content": "<p>Got it and accepted, thanks!</p>",
+        "id": 430754364,
+        "sender_full_name": "Tomáš Jakl",
+        "timestamp": 1712052053
+    },
+    {
+        "content": "<p>Hi, could I please get write access? My github username is <code>smmercuri</code>.  I'm looking to start PRing some recent work formalising the proof that the adele ring of a number field is locally compact -- <a href=\"https://github.com/smmercuri/adele-ring_locally-compact\">https://github.com/smmercuri/adele-ring_locally-compact</a> . For now, I'd just like to add the one result <code>Homeomorph.locallyCompactSpace</code> that homeomorphisms preserve local compactness, but will PR more in the future.</p>",
+        "id": 431240187,
+        "sender_full_name": "Salvatore Mercuri",
+        "timestamp": 1712215137
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"650358\">@Salvatore Mercuri</span> invite sent</p>",
+        "id": 431240945,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1712215320
+    },
+    {
+        "content": "<p><del>I presume you've been in contact with <span class=\"user-mention\" data-user-id=\"406490\">@María Inés de Frutos Fernández</span> about this work?</del> Indeed I see you have.</p>",
+        "id": 431241059,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1712215344
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"240862\">Oliver Nash</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/431240945\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"650358\">Salvatore Mercuri</span> invite sent</p>\n</blockquote>\n<p>received, thank you!</p>",
+        "id": 431245228,
+        "sender_full_name": "Salvatore Mercuri",
+        "timestamp": 1712216478
+    },
+    {
+        "content": "<p>Could I please have permission to push branches to mathlib4? Username is <code>Smaug123</code>; I had a few mathlib3 PRs merged back in the day. I have a couple of documentation changes I'd like to make.</p>",
+        "id": 431407998,
+        "sender_full_name": "Patrick Stevens",
+        "timestamp": 1712267303
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"117987\">@Patrick Stevens</span> invite sent!</p>",
+        "id": 431409809,
+        "sender_full_name": "Oliver Nash",
+        "timestamp": 1712268080
+    },
+    {
+        "content": "<p>Hi, I would like to makes some PRs to the Mathlib. Could I please get write access to non-master branches? My Github username is <code>Jun2M</code>. I have a theorem about polytopes and more tiny lemmas that I proved playing with Lean.</p>",
+        "id": 431760249,
+        "sender_full_name": "Hyeokjun Kwon",
+        "timestamp": 1712488967
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 431761433,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1712490002
+    },
+    {
+        "content": "<p>I'd like PR permission for mathlib; I've got an extension of <code>TFAE</code> to <code>Type</code>-level objects under an equivalence, a matching command <code>tfae_def</code> to express the idiom \"the following definitions of a particular identifier are equivalent\", and then all colimits for <code>AlgebraCat</code> to contribute. (In seperate PRs, of course.) My github is <a href=\"https://github.com/robertmaxton42\">https://github.com/robertmaxton42</a></p>",
+        "id": 431855501,
+        "sender_full_name": "Robert Maxton",
+        "timestamp": 1712550990
+    },
+    {
+        "content": "<p>Invitation sent, looking forward to seeing it!</p>",
+        "id": 431855615,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1712551126
+    },
+    {
+        "content": "<p>Hi all, could I get write access to non-master branches? Username is <code>blfang</code>. Would like to get my feet wet with some undergrad probability topics, and eventually move on to results in statistics, concentration inequalities, and related areas.</p>",
+        "id": 432361719,
+        "sender_full_name": "blfang",
+        "timestamp": 1712706952
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"708362\">blfang</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/432361719\">said</a>:</p>\n<blockquote>\n<p>Hi all, could I get write access to non-master branches? Username is <code>blfang</code>. Would like to get my feet wet with some undergrad probability topics, and eventually move on to results in statistics, concentration inequalities, and related areas.</p>\n</blockquote>\n<p>Invite sent! <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 432450355,
+        "sender_full_name": "Anne Baanen",
+        "timestamp": 1712738808
+    },
+    {
+        "content": "<p>Hello, can I have permission to push to mathlib4? My <a href=\"https://github.com/todbeibrot\">github username</a> is <code>todbeibrot</code>.  I am currently working on interfacing Lean with Oscar.  I already made a pull request for a <a href=\"https://github.com/leanprover-community/mathlib4/pull/9069\">simple bug fix</a> and would like to mark it as <code>awaiting review</code></p>",
+        "id": 432568832,
+        "sender_full_name": "Cedric Holle",
+        "timestamp": 1712776149
+    },
+    {
+        "content": "<p>The PR looks fine but seeing as its from a fork rather than a branch I'm not sure CI will ever run on it, and correspondingly bors may be unhappy merging it. I'd recommend reopening the PR from a branch on the main mathlib repo itself when you get permission for simplicity</p>",
+        "id": 432569787,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1712776554
+    },
+    {
+        "content": "<p>Hello! I would like to work on some missing lemmas in Combinatorics/SimpleGraph. In the meantime, I have completed some basic list lemmas and have found a tiny bug in the docs. If possible, I would appreciate PR permissions. My github username is <code>greg-const</code>.</p>",
+        "id": 433595365,
+        "sender_full_name": "Gregory Constantine",
+        "timestamp": 1713297539
+    },
+    {
+        "content": "<p>Invitation sent! <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 433618666,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713307252
+    },
+    {
+        "content": "<p>Hi. This is Huanchen from National University of Singapore. We have a group working the combinatorics of Coxeter groups. I am writing to ask for permission for branches on Mathlib. Github username: mathnus</p>",
+        "id": 434319103,
+        "sender_full_name": "Huanchen Bao",
+        "timestamp": 1713517455
+    },
+    {
+        "content": "<p>The maintainers are reluctant to give write access to mathlib to a group of people who are all using one GitHub account, and as has been pointed out before this use of GitHub is against the GitHub terms and conditions. The correct way to set up a multiuser situation like this is to have each user create an individual account and then create an organisation containing all those users.</p>",
+        "id": 434321830,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713518436
+    },
+    {
+        "content": "<p>We actually used the Github to create an organization on formalization (for some practical purpose).  All members are in the organization already. In any case, let us use my Github : HuanchenNUS</p>",
+        "id": 434327819,
+        "sender_full_name": "Huanchen Bao",
+        "timestamp": 1713520531
+    },
+    {
+        "content": "<p>from what I can tell <a href=\"https://github.com/mathnus\">https://github.com/mathnus</a> is not an organization account</p>",
+        "id": 434328159,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1713520659
+    },
+    {
+        "content": "<p>it looks like the organization is <a href=\"https://github.com/NUS-Math-Formalization\">https://github.com/NUS-Math-Formalization</a></p>",
+        "id": 434328264,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1713520689
+    },
+    {
+        "content": "<p>Do you mean to give access to the organization <a href=\"https://github.com/NUS-Math-Formalization\">https://github.com/NUS-Math-Formalization</a>? The github mathnus is just for admin purpose. No one is contributing using this.</p>",
+        "id": 434330526,
+        "sender_full_name": "Huanchen Bao",
+        "timestamp": 1713521486
+    },
+    {
+        "content": "<p>I don't think it's possible to give access to an organisation?</p>",
+        "id": 434330890,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1713521569
+    },
+    {
+        "content": "<p>Then maybe we can just use mine : HuanchenNUS ?</p>",
+        "id": 434331053,
+        "sender_full_name": "Huanchen Bao",
+        "timestamp": 1713521642
+    },
+    {
+        "content": "<p>I am concerned by the use of \"we\" in that sentence. Each person in your group should create and use an individual account</p>",
+        "id": 434331750,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1713521903
+    },
+    {
+        "content": "<p>By \"we\" I mean us here in the Zulip.</p>",
+        "id": 434333623,
+        "sender_full_name": "Huanchen Bao",
+        "timestamp": 1713522613
+    },
+    {
+        "content": "<p>Everyone is using individual github acount in our organization.</p>",
+        "id": 434333821,
+        "sender_full_name": "Huanchen Bao",
+        "timestamp": 1713522697
+    },
+    {
+        "content": "<p>Hi, could I please get write access to mathlib4 to start PR'ing some of the work on<br>\n<a href=\"https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/\">Prime Number Theorem+</a>? My GitHub name is <code>VladaSedlacek</code> (I'm currently a postdoc at Rutgers, with experience in cryptography and some number theory). Thanks!</p>",
+        "id": 434458367,
+        "sender_full_name": "Vláďa Sedláček",
+        "timestamp": 1713576831
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"452637\">Cedric Holle</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/432568832\">said</a>:</p>\n<blockquote>\n<p>Hello, can I have permission to push to mathlib4? My <a href=\"https://github.com/todbeibrot\">github username</a> is <code>todbeibrot</code>.  I am currently working on interfacing Lean with Oscar.  I already made a pull request for a <a href=\"https://github.com/leanprover-community/mathlib4/pull/9069\">simple bug fix</a> and would like to mark it as <code>awaiting review</code></p>\n</blockquote>\n<p>My request for a permission is still open. I would love to contribute.</p>",
+        "id": 434461984,
+        "sender_full_name": "Cedric Holle",
+        "timestamp": 1713580534
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"452637\">@Cedric Holle</span> Sorry that your request fell through the cracks! I've sent you an invite:<br>\n<a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 434467891,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1713586556
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"613795\">@Vláďa Sedláček</span> I've sent you an invite: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 434467943,
+        "sender_full_name": "Bryan Gin-ge Chen",
+        "timestamp": 1713586579
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"701607\">Huanchen Bao</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/434333821\">said</a>:</p>\n<blockquote>\n<p>Everyone is using individual github acount in our organization.</p>\n</blockquote>\n<p><span class=\"user-mention\" data-user-id=\"701607\">@Huanchen Bao</span>, are there others who will be making PRs? (If so, what are the user names?) I'm still a bit unclear on what the plan is here.</p>",
+        "id": 434647259,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713759589
+    },
+    {
+        "content": "<p>I will be the only making the PR request, on behalf of the team.  And I am the only one using this github account. Does this clarify the situation?</p>",
+        "id": 434696652,
+        "sender_full_name": "Huanchen Bao",
+        "timestamp": 1713777117
+    },
+    {
+        "content": "<p>Good morning! I'd like to contribute  to Mathlib over the coming period as I am working on a parallel project (proving quantum algorithms) using Lean and Mathlib. </p>\n<p>I will be discussing my progress on that project here and if there is anything useful that benefits everybody, such as <a href=\"#narrow/stream/113489-new-members/topic/Representing.20Rational.20as.20Float.20.28for.20Complex.20representation.29\">Imaginary Number Representation</a>, I intend to polish my code according to Lean and Mathlib standards and PR it. </p>\n<p>My GitHub username is Javernus.</p>",
+        "id": 435335076,
+        "sender_full_name": "Jake Jongejans",
+        "timestamp": 1714032596
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"691918\">@Jake Jongejans</span>  I've sent you an invite: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 435336343,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1714033040
+    },
+    {
+        "content": "<p>Hello,<br>\nI'm just preparing a first addition to <code>PNat</code> (raw version already visible <a href=\"https://github.com/rwst/lean-code/blob/main/tmp001.lean\">here</a>), so I would ask you for permission to do direct PRs, after I sorted and documented the theorems into the resp. mathlib files. These are the result of trying to find a <code>prod_Icc_*</code> proof using <code>PNat</code> as index (which I think is a natural choice). Username: rwst.</p>",
+        "id": 435603170,
+        "sender_full_name": "Ralf Stephan",
+        "timestamp": 1714143534
+    },
+    {
+        "content": "<p>invite sent!</p>",
+        "id": 435628023,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1714151553
+    },
+    {
+        "content": "<p>Hey!<br>\nI want to add a List lemma:<br>\n<a href=\"#narrow/stream/287929-mathlib4/topic/List.20lemma.20for.20mathlib/near/435553663\">https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/List.20lemma.20for.20mathlib/near/435553663</a><br>\nMy username is: Happyves</p>",
+        "id": 435731941,
+        "sender_full_name": "Yves Jäckle",
+        "timestamp": 1714207440
+    },
+    {
+        "content": "<p>Nevermind, Michael Rothgang and Bolton Bailey are handling it</p>",
+        "id": 435735610,
+        "sender_full_name": "Yves Jäckle",
+        "timestamp": 1714210089
+    },
+    {
+        "content": "<p>It's not because someone gave you code on Zulip that they are going to PR it!</p>",
+        "id": 435735631,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1714210124
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"665760\">@Yves Jäckle</span> invite sent! Feel free to make the PR, don't just assume someone else will do it, even if it's all their code (it's fine to PR someone else's code).</p>",
+        "id": 435757843,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1714224944
+    },
+    {
+        "content": "<p>I'd like to open a PR adding the <code>IsHomeomorph</code> predicate that I asked about a few days ago, but just realised I don't yet have the necessary permissions - could someone give them to me maybe? My username is <code>peabrainiac</code>.</p>",
+        "id": 435794246,
+        "sender_full_name": "Ben Eltschig",
+        "timestamp": 1714257011
+    },
+    {
+        "content": "<p>I'd like to request the permission. My username is <code>NirvanaC93</code></p>",
+        "id": 435991949,
+        "sender_full_name": "Nirvana Coppola",
+        "timestamp": 1714381674
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"646363\">@Ben Eltschig</span> <span class=\"user-mention\" data-user-id=\"390622\">@Nirvana Coppola</span> , voila: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 435995872,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1714382930
+    },
+    {
+        "content": "<p>I would like to ask for permission, too. I'm <code>TpmKranz</code> on Github.</p>",
+        "id": 436320942,
+        "sender_full_name": "Tom Kranz",
+        "timestamp": 1714497794
+    },
+    {
+        "content": "<p>invite sent!</p>",
+        "id": 436321157,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1714497868
+    },
+    {
+        "content": "<p>Hi there, I'd like to request permission. My username is <code>keeganperry7</code>.</p>",
+        "id": 436574843,
+        "sender_full_name": "Keegan Perry",
+        "timestamp": 1714598450
+    },
+    {
+        "content": "<p>What kind of things are you interested in adding?</p>",
+        "id": 436576739,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1714599313
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/436576739\">said</a>:</p>\n<blockquote>\n<p>What kind of things are you interested in adding?</p>\n</blockquote>\n<p>I'm interested in adding the proofs for some of the closure properties of epsilon NFAs, which will help with formalizing the equivalence of regular expressions and finite automata.</p>",
+        "id": 436578123,
+        "sender_full_name": "Keegan Perry",
+        "timestamp": 1714600048
+    },
+    {
+        "content": "<p>It would be good to get some automata theory in Mathlib. I sent you an invite.</p>",
+        "id": 436586000,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1714604363
+    },
+    {
+        "content": "<p>Hi, I'd like to request permission. My github username is <code>kcaze</code> and I'm interested in contributing to Mathlib.RingTheory.PowerSeries.</p>",
+        "id": 436767455,
+        "sender_full_name": "Herman Chau",
+        "timestamp": 1714679985
+    },
+    {
+        "content": "<p>invite sent</p>",
+        "id": 436777125,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1714684096
+    },
+    {
+        "content": "<p>Hi, I would like to obtain write-access to non-master branches of the Mathlib4 repository. My github username is <strong>jtristan</strong>. I'm planning on contributing simple but useful theorems that I wish were available when doing program verification. That would include topics such as extended non-negative reals, infinite sums, analysis.</p>",
+        "id": 438017015,
+        "sender_full_name": "John Tristan",
+        "timestamp": 1715361054
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"221511\">@John Tristan</span> invitation sent!</p>",
+        "id": 438020877,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1715362512
+    },
+    {
+        "content": "<p>I'd like to try to submit my first pull request, so am hoping for write access. My github is emilyriehl </p>\n<p>Update: thanks!</p>",
+        "id": 438786188,
+        "sender_full_name": "Emily Riehl",
+        "timestamp": 1715774569
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 438786290,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1715774609
+    },
+    {
+        "content": "<p>Hello, I'd like to request access. I'm interested in contributing to Linear Orders!<br>\nMy usernamne is <code>ericluap</code></p>",
+        "id": 439164866,
+        "sender_full_name": "Eric Paul",
+        "timestamp": 1715929981
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"512030\">@Eric</span> invitation sent!</p>",
+        "id": 439190983,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1715940022
+    },
+    {
+        "content": "<p>Hi! I'd like to request push access to hopefully make and close some PRs in graph theory. My GitHub username is <code>LodeVermeulen</code>.</p>",
+        "id": 439618470,
+        "sender_full_name": "Lode Vermeulen",
+        "timestamp": 1716225809
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"690587\">@Lode Vermeulen</span> Invitation sent!</p>",
+        "id": 439619532,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1716226188
+    },
+    {
+        "content": "<p>I would like to request access, so I can potentially modify <a href=\"https://github.com/leanprover-community/mathlib4/tree/lean-pr-testing-4242\">the mathlib branch</a> for <a href=\"https://github.com/leanprover/lean4/pull/4242\">Lean PR #4242</a>. My github name is <code>markusschmaus</code>.</p>",
+        "id": 440516878,
+        "sender_full_name": "Markus Schmaus",
+        "timestamp": 1716559595
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"654733\">@Markus Schmaus</span> done: <a href=\"https://github.com/leanprover-community/mathlib4/invitations\">https://github.com/leanprover-community/mathlib4/invitations</a></p>",
+        "id": 440517240,
+        "sender_full_name": "Markus Himmel",
+        "timestamp": 1716559685
+    },
+    {
+        "content": "<p>Hello! I'm Alvan, a Math/CS student at Harvard interested in contributing to Probability by proving some measure theory theorems and hopefully the CLT. If I could get push access, that'd be great, and I'd love advice as well!</p>",
+        "id": 441133871,
+        "sender_full_name": "Alvan Arulandu",
+        "timestamp": 1716940752
+    },
+    {
+        "content": "<p>Did you write any code yet or are you just beginning?</p>",
+        "id": 441186545,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1716969610
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/441186545\">said</a>:</p>\n<blockquote>\n<p>Did you write any code yet or are you just beginning?</p>\n</blockquote>\n<p>Besides a few arbitrary undergrad math theorems for practice, I haven't written much code. My current plan is to work through Axler's Measure, Integration, and Real Analysis book while verifying the necessary results to finally get CLT, using Jeremy Avigad's proof in Isabelle/HOL for reference.</p>",
+        "id": 441248879,
+        "sender_full_name": "Alvan Arulandu",
+        "timestamp": 1716991731
+    },
+    {
+        "content": "<p>Then I think you're a fair way from needing push access :-) One thing about working through a book: (1) don't redo any definitions, we have them already, possibly in far more generality than you'll need and (2) it might not be the best idea to just prove all the theorems in the order they're proved in the book, as they're stated in the book, if you're ultimately interested in contributing to mathlib. Before embarking on any nontrivial proof you might want to discuss what statement/version is appropriate for mathlib.</p>",
+        "id": 441264455,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1716996385
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/441264455\">said</a>:</p>\n<blockquote>\n<p>Then I think you're a fair way from needing push access :-) One thing about working through a book: (1) don't redo any definitions, we have them already, possibly in far more generality than you'll need and (2) it might not be the best idea to just prove all the theorems in the order they're proved in the book, as they're stated in the book, if you're ultimately interested in contributing to mathlib. Before embarking on any nontrivial proof you might want to discuss what statement/version is appropriate for mathlib.</p>\n</blockquote>\n<p>That makes sense. Thank you so much!</p>",
+        "id": 441292660,
+        "sender_full_name": "Alvan Arulandu",
+        "timestamp": 1717006963
+    },
+    {
+        "content": "<p>Hi, could I get push access please? I'd like to clean up use of <code>List.nthLe</code> in <code>GroupTheory.Perm.List</code>. My github username is <code>t4ccer</code></p>",
+        "id": 441879985,
+        "sender_full_name": "t4ccer",
+        "timestamp": 1717233604
+    },
+    {
+        "content": "<p>Do you have an existing branch somewhere?</p>",
+        "id": 441896120,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1717243243
+    },
+    {
+        "content": "<p>Yes, I have it on <a href=\"https://github.com/leanprover-community/mathlib4/compare/master...t4ccer:mathlib4:t4/perm-list-clean-up-nthle\">my fork</a></p>",
+        "id": 441896796,
+        "sender_full_name": "t4ccer",
+        "timestamp": 1717243595
+    },
+    {
+        "content": "<p>Invitation sent!</p>",
+        "id": 441897200,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1717243835
+    },
+    {
+        "content": "<p><del>I think you may be able to get better statements for the new lemmas.</del></p>",
+        "id": 441897222,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1717243851
+    },
+    {
+        "content": "<p>Hello, I've written two simple lemmas/simps for negating matrices that are partitioned by row and by column in the <code>Mathlib.Data.Matrix.ColumnRowPartitioned.lean</code> file, as suggested by <span class=\"user-mention\" data-user-id=\"417654\">@Martin Dvořák</span> . Could I be granted access to push those changes please? My GitHub username is <code>chancenahuway</code> — thank you for considering my request!</p>",
+        "id": 442579751,
+        "sender_full_name": "Chance Nahuway",
+        "timestamp": 1717520553
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"721959\">@Chance Nahuway</span> invite sent!</p>",
+        "id": 442584525,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1717522002
+    },
+    {
+        "content": "<p>Hey, last semester we worked on a theorem from <a href=\"https://en.wikipedia.org/wiki/Flow_network\">Network Flows</a> (see <a href=\"#narrow/stream/252551-graph-theory/topic/Flow.20networks.20and.20flow.20equivalent.20forest/near/418292104\">my other thread</a>) and I have now continued working on it a bit to generalize the definitions first to <code>Int</code> and now to arbitrary rings / fields. I have some code for the definitions which I would PR to mathlib to see if it is useful, could anyone give me the permission to push a branch?</p>",
+        "id": 443598878,
+        "sender_full_name": "Niklas Mohrin",
+        "timestamp": 1717942637
+    },
+    {
+        "content": "<p>invite sent</p>",
+        "id": 443641944,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1717967282
+    },
+    {
+        "content": "<p>Could I get permissions to push a branch for mathlib4? My github username is <strong>hwatheod</strong>. I have ported to mathlib4 the theorems about surreal number multiplication from <a href=\"https://github.com/leanprover-community/mathlib/blob/surreal_mul_symm'/src/set_theory/surreal/basic.lean\">this old mathlib3 branch</a>. Right now it is in a separate project and I just need to move everything to the proper place in mathlib4.</p>",
+        "id": 445013282,
+        "sender_full_name": "Ted Hwa",
+        "timestamp": 1718567640
+    },
+    {
+        "content": "<p>invite sent</p>",
+        "id": 445353147,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1718716160
+    },
+    {
+        "content": "<p>Hey, may I have permissions to push a branch? I would like to add a few lemmas to the Nat.dist file which will make induction on distance easier. My github is <strong>Awe1230</strong>.</p>",
+        "id": 445889393,
+        "sender_full_name": "Aadhavan Kumaran",
+        "timestamp": 1718899802
+    },
+    {
+        "content": "<p>Dear all, I would like to request permissions to push a branch for mathlib4 on GitHub. My intention is to improve the documentation a little, and add API, definitions and basic theorem concerning Harmonic functions and the Laplacian.</p>\n<p>My GitHub user name is <strong>kebekus</strong>.</p>",
+        "id": 446668532,
+        "sender_full_name": "Stefan Kebekus",
+        "timestamp": 1719248572
+    },
+    {
+        "content": "<p>You have an invitation!</p>",
+        "id": 446669474,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1719248801
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110031\">Patrick Massot</span> <a href=\"#narrow/stream/287929-mathlib4/topic/github.20permission/near/446669474\">schrieb</a>:</p>\n<blockquote>\n<p>You have an invitation!</p>\n</blockquote>\n<p>Thank you so much.</p>",
+        "id": 446680335,
+        "sender_full_name": "Stefan Kebekus",
+        "timestamp": 1719251788
+    },
+    {
+        "content": "<p>Hi, could I get a GitHub permission for mathlib4? We (me and <span class=\"user-mention\" data-user-id=\"242240\">@Jineon Baek</span> ) would work on our formalization of Mason-Stother's theorem over polynomials (this repo <a href=\"https://github.com/seewoo5/lean-poly-abc\">https://github.com/seewoo5/lean-poly-abc</a> and also there's a thread that I don't know how to mention...) My GitHub username is <strong>seewoo5</strong>.</p>",
+        "id": 446778510,
+        "sender_full_name": "Seewoo Lee",
+        "timestamp": 1719292134
+    },
+    {
+        "content": "<p><a href=\"#narrow/stream/287929-mathlib4/topic/Mason-Stothers.20theorem.20and.20Polynomial.20FLT\">Thread</a></p>",
+        "id": 446791323,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1719297707
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"588998\">@Seewoo Lee</span>, invitation sent!</p>",
+        "id": 446791859,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719297921
+    },
+    {
+        "content": "<p>Thank you!</p>",
+        "id": 446794612,
+        "sender_full_name": "Seewoo Lee",
+        "timestamp": 1719298999
+    },
+    {
+        "content": "<p>I will also need a permission for the same reason as <span class=\"user-mention\" data-user-id=\"588998\">@Seewoo Lee</span>. Thank you in advance!</p>",
+        "id": 446863995,
+        "sender_full_name": "Jineon Baek",
+        "timestamp": 1719317627
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"242240\">@Jineon Baek</span>, invitation sent!</p>",
+        "id": 446864507,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719317755
+    },
+    {
+        "content": "<p>Hi, could I get permission to open a branch in math lib? I'd like to change a docstring and contribute.  My Github name is jaclynlang.  Thank you!</p>",
+        "id": 447452447,
+        "sender_full_name": "Jackie Lang",
+        "timestamp": 1719487442
+    },
+    {
+        "content": "<p>Hi <span class=\"user-mention\" data-user-id=\"513555\">@Jackie Lang</span>, invitation sent!</p>",
+        "id": 447453170,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719487729
+    },
+    {
+        "content": "<p>Hi, could I get permission for pushing branches on mathlib4? My intention is to work on simulatenous diagonalization of tuples of symmetric operators. My GitHub username is Samyak-DT</p>",
+        "id": 447506673,
+        "sender_full_name": "Samyak Tuladhar",
+        "timestamp": 1719501715
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"698978\">@Samyak Tuladhar</span>, invitation sent!</p>",
+        "id": 447638081,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719544300
+    },
+    {
+        "content": "<p>Dear mathlib4 <span class=\"user-group-mention\" data-user-group-id=\"2494\">@maintainers</span>,<br>\nI would like to request write access to non-master branches. My Github username is AnthonyBordg .</p>",
+        "id": 447685847,
+        "sender_full_name": "Anthony Bordg",
+        "timestamp": 1719560365
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"125073\">@Anthony Bordg</span>, invitation sent.</p>",
+        "id": 447686849,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719560727
+    },
+    {
+        "content": "<p>Thank you, <span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 447790161,
+        "sender_full_name": "Anthony Bordg",
+        "timestamp": 1719585604
+    },
+    {
+        "content": "<p>Hi! Could I get push access please? (I previously had it for Mathlib3  <span aria-label=\"grimacing\" class=\"emoji emoji-1f62c\" role=\"img\" title=\"grimacing\">:grimacing:</span> ). I’d like to PR some lemmas about polynomial irreducibility over finite fields. Username: <code>alainchmt</code></p>",
+        "id": 448114860,
+        "sender_full_name": "Alain Chavarri Villarello",
+        "timestamp": 1719753772
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"534091\">@Alain Chavarri Villarello</span> invitation sent!</p>",
+        "id": 448116664,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1719755199
     }
 ]

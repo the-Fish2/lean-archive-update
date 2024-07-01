@@ -1,0 +1,128 @@
+[
+    {
+        "content": "<p>Who wrote this bot?</p>\n<p>Does it report changes to unmodified files downstream of modified files?</p>",
+        "id": 447405022,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719472991
+    },
+    {
+        "content": "<p>Obviously if it reported every downstream file with reduced or increased imports separately, this would be disastrously to big.</p>\n<p>But if it says <em>nothing</em> about the downstream files, then it is much less useful than it should be.</p>",
+        "id": 447405219,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719473066
+    },
+    {
+        "content": "<p>The actually useful number is something like \"change in total transitive imports\". (i.e. count of pairs <code>X, Y</code>, where <code>X</code> is transitively imported by <code>Y</code>)</p>",
+        "id": 447405546,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719473187
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"321459\">@Damiano Testa</span> , I think</p>",
+        "id": 447407485,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1719473933
+    },
+    {
+        "content": "<p>That part of the <code>PR summary</code> was written by <span class=\"user-mention\" data-user-id=\"112680\">@Johan Commelin</span>, though I suspect with large chatGPT input.</p>",
+        "id": 447407814,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719474003
+    },
+    {
+        "content": "<p>(I had tried reading the python code, but got lost pretty quickly.)</p>",
+        "id": 447408701,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719474242
+    },
+    {
+        "content": "<p>But every change in downstream files must be caused by a change in a modified file, no?<br>\nMaybe modified files in the listing should come with a \"weight\" that is a function of how many downstream files depend on them?</p>",
+        "id": 447420767,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1719478104
+    },
+    {
+        "content": "<p>I'm not sure if that would capture the correct insight either - say I add an import A to a file B, then that affects all files downstream of B. But if all of those files <em>already</em> depend on A, the impact is only that I've linearized the dependency graph a bit, rather than adding overall weight</p>",
+        "id": 447433920,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1719481699
+    },
+    {
+        "content": "<p>e.g. on <a href=\"https://github.com/leanprover-community/mathlib4/pull/14220\">#14220</a> I would love to have some statistics showing how far down the savings propagate, before the removed imports come in again from other sources.</p>",
+        "id": 447686517,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719560627
+    },
+    {
+        "content": "<p>I do not have a clear understanding of what is a good statistic/statistics that the <code>import</code> section of the PR summary should report.  I am pretty sure that we can write code for something that we would like to have, though!  <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 447717766,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719567926
+    },
+    {
+        "content": "<p>The number that I've proposed is the change in the count of pairs X, Y, such that X transitively imports Y.</p>",
+        "id": 447720128,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719568364
+    },
+    {
+        "content": "<p>Alternatively, a histogram showing the change in the number of transitive imports per file would be perfect.</p>\n<p>(but rendering a histogram sounds like too much work)</p>",
+        "id": 447720236,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719568389
+    },
+    {
+        "content": "<p>The histogram may indeed be difficult to render (or at least is something that can be done with other tools), but the change per file of transitive imports should definitely be doable, the sum of these numbers also, and maybe we can think about how to limit the size of the printing of the per-file import change.</p>",
+        "id": 447721045,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719568558
+    },
+    {
+        "content": "<p>I'm not sure if I can get to this quickly, but I agree that I rarely use the \"import\" section of the <code>PR summary</code>.  Since this seems to be a common state, I can try to improve that</p>",
+        "id": 447721557,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719568655
+    },
+    {
+        "content": "<p>I do use the \"import\" section. But that shouldn't stop you from improving it (-;</p>",
+        "id": 447741854,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1719574451
+    },
+    {
+        "content": "<p>And I agree that Ruben and Kim point out good reasons why the current stats are insufficient.</p>",
+        "id": 447741924,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1719574479
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/287929-mathlib4/topic/import.20changes.20bot.20on.20PRs/near/447720128\">said</a>:</p>\n<blockquote>\n<p>The number that I've proposed is the change in the count of pairs X, Y, such that X transitively imports Y.</p>\n</blockquote>\n<p>Note that this number likely increases whenever we add files, but also possibly when we split up files and reduce imports. The average number of transitive imports per file is maybe better, though probably also has issues.</p>",
+        "id": 447781939,
+        "sender_full_name": "Floris van Doorn",
+        "timestamp": 1719583850
+    },
+    {
+        "content": "<p>The histogram really would be great!</p>",
+        "id": 447893584,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719618720
+    },
+    {
+        "content": "<p>For the PR mentioned above, <a href=\"https://github.com/leanprover-community/mathlib4/pull/14220\">#14220</a>, I think that what is below is the difference in number of transitive imports by file:</p>\n<hr>\n<table>\n<thead>\n<tr>\n<th>File</th>\n<th>Import difference</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mathlib.NumberTheory.ClassNumber.AdmissibleAbsoluteValue</td>\n<td>-13</td>\n</tr>\n<tr>\n<td>Mathlib.Data.Real.Sign</td>\n<td>-11</td>\n</tr>\n<tr>\n<td>Mathlib.Algebra.Order.CauSeq.Completion</td>\n<td>-14</td>\n</tr>\n<tr>\n<td>Mathlib.Tactic.Rify</td>\n<td>-13</td>\n</tr>\n<tr>\n<td>Mathlib.Data.Real.Basic</td>\n<td>-14</td>\n</tr>\n<tr>\n<td>Mathlib.Algebra.Order.CauSeq.Basic</td>\n<td>-25</td>\n</tr>\n</tbody>\n</table>\n<hr>\n<p>Would this be useful to add to the import summary?</p>",
+        "id": 447947183,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719649181
+    },
+    {
+        "content": "<p>LGTM! I worry that some PRs will produce very long lists here, however.</p>",
+        "id": 448080111,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719730815
+    },
+    {
+        "content": "<p>Yes, I wonder whether we can have several layers of unfold: first, the maximal imports that have changed, as it is now, and then all the other within a second unfoldable tab.</p>",
+        "id": 448080234,
+        "sender_full_name": "Damiano Testa",
+        "timestamp": 1719730925
+    }
+]

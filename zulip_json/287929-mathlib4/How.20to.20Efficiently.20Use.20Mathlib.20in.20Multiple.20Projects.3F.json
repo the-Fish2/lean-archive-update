@@ -1,0 +1,32 @@
+[
+    {
+        "content": "<p>Hi, I have multiple locally cloned GitHub repositories hosting distinct Lean projects having Mathlib as a dependency. </p>\n<p>How can I efficiently use the same compiled version of Mathlib for all projects without re-building it and decompressing it in the .lake folder occupying about 5GB for each one?</p>",
+        "id": 429411490,
+        "sender_full_name": "Pietro Monticone",
+        "timestamp": 1711374632
+    },
+    {
+        "content": "<p>Maybe you can tag <span class=\"user-mention\" data-user-id=\"315577\">@Mac Malone</span> (if I'm not mistaken), since this is arguably a lake feature</p>",
+        "id": 429419661,
+        "sender_full_name": "Luigi Massacci",
+        "timestamp": 1711376524
+    },
+    {
+        "content": "<p>Unfortunately this is barely supported. You can use relative paths when specifying dependencies (but this is not really a shareable solution if your project is in a repo others use), but people seem to have regular problems when doing so.</p>",
+        "id": 429428948,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1711378597
+    },
+    {
+        "content": "<p>Note that relative paths will only work if your projects are on <em>exactly</em> the same version of mathlib</p>",
+        "id": 429445988,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1711381781
+    },
+    {
+        "content": "<p>On the subject of relative paths, <a href=\"https://github.com/leanprover-community/mathlib4/pull/8767\">#8767</a> was an attempt to add better support for them with <code>lake exe cache pack</code> and <code>lake exe cache unpack</code>, but it ran into some issues I haven't tried to diagnose</p>",
+        "id": 429446628,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1711381909
+    }
+]

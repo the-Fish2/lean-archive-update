@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>Hello all,</p>\n<p>I'm Dennis, and I'm a graduate student studying algebraic topology at the Ohio State University.</p>\n<p>I'm currently (with the help of Prof. <span class=\"user-mention\" data-user-id=\"466727\">@Jim Fowler</span> ) trying to formalize in Lean a proof that classifies the (connected, Hausdorff, second-countable) topological 1-manifolds with boundary (Ioo, Icc, Ico, or circle). My work so far is <a href=\"https://github.com/sweeneyde/1mfld\">here</a>, but in particular there are <a href=\"https://github.com/sweeneyde/1mfld/blob/dde15dc9de9788ab2b5898880504c95ff0983efb/one_mfld/RealIntervals.lean#L431-L473\">some facts about connected sets of reals</a> that might be useful to have in mathlib.</p>\n<p>The <a href=\"https://leanprover-community.github.io/contribute/index.html\">how to</a> mentioned that I should request write access to add a branch on the main mathlib repo, so I'd like to do that: my github username is <code>sweeneyde</code>.</p>\n<p>Thanks!</p>",
+        "id": 424734061,
+        "sender_full_name": "Dennis Sweeney",
+        "timestamp": 1709581142
+    },
+    {
+        "content": "<p><span class=\"user-group-mention\" data-user-group-id=\"2494\">@maintainers</span></p>",
+        "id": 424734416,
+        "sender_full_name": "Bolton Bailey",
+        "timestamp": 1709581274
+    },
+    {
+        "content": "<p>I would be excited to see your project hit mathlib! (That result is foundational to some differential topology results, and imho definitely belongs in mathlib.)</p>",
+        "id": 424753884,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1709589065
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"697646\">@Dennis Sweeney</span> Invitation sent!</p>",
+        "id": 424754375,
+        "sender_full_name": "Anatole Dedecker",
+        "timestamp": 1709589246
+    },
+    {
+        "content": "<p>Consider it a warm-up for classification of closed surfaces :-)</p>",
+        "id": 424756066,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1709589966
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110038\">Kevin Buzzard</span> <a href=\"#narrow/stream/113489-new-members/topic/Dennis.20Sweeney/near/424756066\">said</a>:</p>\n<blockquote>\n<p>Consider it a warm-up for classification of closed surfaces :-)</p>\n</blockquote>\n<p>That's also on my big list of things I'd like to see - and I would be happy to contribute to at least <em>stating</em> it.</p>",
+        "id": 424757573,
+        "sender_full_name": "Michael Rothgang",
+        "timestamp": 1709590644
+    },
+    {
+        "content": "<p>There was a recent discussion <a href=\"#narrow/stream/116395-maths/topic/.28combinatorial.29.20surface.20classification.20theorem/near/424372868\">here</a>.</p>",
+        "id": 424757952,
+        "sender_full_name": "Kevin Buzzard",
+        "timestamp": 1709590807
+    }
+]

@@ -1,0 +1,8 @@
+[
+    {
+        "content": "<p>Regular part of working on lean PRs is to try out fixes on the <code>pr-testing</code> branches, but it seems not all lean developers have permission to push to such branches. Should we just ask for such permission when this arises (it does for me now)?<br>\nOr explore alternatives (such as keeping these lean-pr-testing branches in a forked repo with different permissions)?</p>",
+        "id": 438648231,
+        "sender_full_name": "Joachim Breitner",
+        "timestamp": 1715717696
+    }
+]

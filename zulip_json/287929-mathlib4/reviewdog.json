@@ -226,5 +226,233 @@
         "id": 397680352,
         "sender_full_name": "Bolton Bailey",
         "timestamp": 1697798072
+    },
+    {
+        "content": "<p>Could someone please work out how to disable reviewdog on PRs touching more than 300 files? Currently it just fails all such PRs with an error like:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code>         <span class=\"n\">reviewdog</span><span class=\"o\">:</span> <span class=\"n\">fail</span> <span class=\"n\">to</span> <span class=\"n\">get</span> <span class=\"n\">diff</span><span class=\"o\">:</span> <span class=\"n\">GET</span> <span class=\"n\">https</span><span class=\"o\">:</span><span class=\"bp\">//</span><span class=\"n\">api.github.com</span><span class=\"bp\">/</span><span class=\"n\">repos</span><span class=\"bp\">/</span><span class=\"n\">leanprover</span><span class=\"bp\">-</span><span class=\"n\">community</span><span class=\"bp\">/</span><span class=\"n\">mathlib4</span><span class=\"bp\">/</span><span class=\"n\">pulls</span><span class=\"bp\">/</span><span class=\"mi\">11997</span><span class=\"o\">:</span> <span class=\"mi\">406</span>\n         <span class=\"n\">Sorry</span><span class=\"o\">,</span> <span class=\"n\">the</span> <span class=\"n\">diff</span> <span class=\"n\">exceeded</span> <span class=\"n\">the</span> <span class=\"n\">maximum</span> <span class=\"n\">number</span> <span class=\"n\">of</span> <span class=\"n\">files</span> <span class=\"o\">(</span><span class=\"mi\">300</span><span class=\"o\">)</span><span class=\"bp\">.</span>\n</code></pre></div>",
+        "id": 431855773,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1712551310
+    },
+    {
+        "content": "<p>I'm happy to make a PR disabling reviewdog in the meantime. :-)</p>",
+        "id": 431855830,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1712551328
+    },
+    {
+        "content": "<p>cross posting from <a href=\"#narrow/stream/428973-nightly-testing/topic/.2311997.2C.20adaptations.20for.20nightly-2024-04-07/near/431907375\">https://leanprover.zulipchat.com/#narrow/stream/428973-nightly-testing/topic/.2311997.2C.20adaptations.20for.20nightly-2024-04-07/near/431907375</a> as likely many people are not subscribed over there (I wasn't)</p>\n<p>The reviewdog set up was made with this sort of situation in mind to some extent, and I don't think it's necessary to disable reviewdog. The process is as follows: due to <a href=\"https://github.com/leanprover-community/mathlib4/blob/b8145adda2a744f3a646ee93f5daa05a4855da73/bors.toml\">https://github.com/leanprover-community/mathlib4/blob/b8145adda2a744f3a646ee93f5daa05a4855da73/bors.toml</a> bors should still merge even if review dog step fails, as long as the build steps work. Reviewdog will not run on draft PRs, so PRs where reviewdog failing is annoying (and we want a nice green tick) can be developed in draft mode, and then made non-draft and merged when ready to merge. Let me know if there is something I'm missing here (maybe the queue will ignore such PRs?).</p>",
+        "id": 431908515,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1712568002
+    },
+    {
+        "content": "<p>Does it actually block bors at this point, or just the overall <span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> ?</p>",
+        "id": 431947553,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1712576545
+    },
+    {
+        "content": "<p>I'm not sure what you are asking. If someone \"bors merge\"s a PR for which the reviewdog step fails then the merge should go through. Its just that the bottom of the PR will still have 1 \"failed check\" (also worth noting that reviewdog runs on PRs not commits so iirc these checks won't even be run on master)</p>",
+        "id": 431956722,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1712578862
+    },
+    {
+        "content": "<p>Right, that's what I meant. So failing reviewdog is more annoying than a blocker</p>",
+        "id": 431964277,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1712581062
+    },
+    {
+        "content": "<p>Can we add a check that test if there are more than 300 files changed, and disables reviewdog in those cases. It's already hard enough to get a PR on the <a href=\"https://bit.ly/3cKk3ld\">#queue</a>, and it seems the workarounds above would prevent that?</p>",
+        "id": 432107805,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1712631868
+    },
+    {
+        "content": "<p>Sure we can do that, I'm sure its not hard and chatgpt can likely write the invocation instantly for us. I will say that not being on <a href=\"https://bit.ly/3cKk3ld\">#queue</a> is probably not the reason 300 files changed PRs are not getting reviewed though, any such thing is likely accompanied by discussion here anyway.</p>",
+        "id": 432203956,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1712660957
+    },
+    {
+        "content": "<p>Note that blocking the overall <span aria-label=\"check\" class=\"emoji emoji-2705\" role=\"img\" title=\"check\">:check:</span> messes with nightly-testing CI reporting.</p>",
+        "id": 433447461,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713247476
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"127136\">@Alex J. Best</span>, do you have time to disable reviewdog when more than 300 files have changed? I've disabled it entirely on nightly-testing for a while, but this is now getting in the way of getting adaptation PRs ready.</p>",
+        "id": 433447576,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713247535
+    },
+    {
+        "content": "<p>I took a look but I couldn't find a dead simple way to do this (i.e. an existing action), like probably it will take 30minutes to get something that works but I unfortunately dont have that time right now. There are already actions to print the list of changed files so it should just be a case of combining those with some bash scripting to make the job skip if that list is long</p>",
+        "id": 433498398,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1713266305
+    },
+    {
+        "content": "<p>Okay, no problems, thanks for looking. I guess in the meantime I've got my adaptation PR down below 300 files, so all is well. :-)</p>",
+        "id": 433640645,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713323629
+    },
+    {
+        "content": "<p>Reviewdog made a total mess of a new contributor PR in <a href=\"https://github.com/leanprover-community/mathlib4/pull/11988\">https://github.com/leanprover-community/mathlib4/pull/11988</a></p>",
+        "id": 433892923,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1713398209
+    },
+    {
+        "content": "<p>It looks like its whitespace suggestions somehow got caught in a race condition, and so it suggested a bunch of nonsensical changes that reverted to a previous revision</p>",
+        "id": 433892978,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1713398244
+    },
+    {
+        "content": "<p>My general opinion is that <code>lint_style.sh --fix</code> is great, but reviewdog is on average noise and at worst super confusing. I think we could get just as much value by posting a comment telling the user to run <code>lint_style.sh --fix</code>, but maybe that command doesn't work on everyone's lean install...</p>",
+        "id": 433893207,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1713398402
+    },
+    {
+        "content": "<p>Regarding reviewdog: it is meant to make a suggestion for when Mathlib.lean needs an update? I thought that was the case, but at <a href=\"https://github.com/leanprover-community/mathlib4/pull/12058\">#12058</a> it did not. </p>\n<p>It would be good to know if this was never the case, or otherwise if something broke here.</p>",
+        "id": 433893842,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713398762
+    },
+    {
+        "content": "<p>(This PR was raised as a question in office hours, asking how to deal with the CI error, so clearly automatic assistance would have been useful!)</p>",
+        "id": 433893902,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713398786
+    },
+    {
+        "content": "<p>Reviewdog can only make suggestions on lines that the user changed, or those nearby, so unfortunately it can't suggest mathlib.lean updates most of the time. I don't know of any way around this and any suggestion based action will have the same problem.<br>\nIt's been suggested elsewhere that having a bot that pushes the mathlib.lean update to the branch for you would be a better interaction mode in this case, and I'm inclined to agree. But bots that push to branches need to be a lot more bulletproof than those that just make suggestions</p>",
+        "id": 433895202,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1713399784
+    },
+    {
+        "content": "<p>Idk about on average noise, I see it making many suggestions that users do apply. The main issues are with the mathlib.lean thing which has been around for long enough and nobody has been able to fix so maybe it's time to disable that part. Ofc it's behaviour is controlled by the linters themselves so if we have linters that are causing noise that's an independent problem.<br>\nIn the case of 11988 I guess one of those unusual merge commits confused it which is unfortunate, maybe there is a bug there that needs investigating and reporting upstream?</p>",
+        "id": 433895504,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1713400023
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> it looks like your issue is already reported upstream <a href=\"https://github.com/reviewdog/reviewdog/issues/1696#issue-2206596164\">https://github.com/reviewdog/reviewdog/issues/1696#issue-2206596164</a></p>",
+        "id": 433895737,
+        "sender_full_name": "Alex J. Best",
+        "timestamp": 1713400199
+    },
+    {
+        "content": "<p>My impression is also that reviewdog is actually quite useful, and in many cases the suggestions are applied. So I would be sad to see it go completely.</p>",
+        "id": 433945915,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1713421452
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/287929-mathlib4/topic/reviewdog/near/433893902\">said</a>:</p>\n<blockquote>\n<p>(This PR was raised as a question in office hours, asking how to deal with the CI error, so clearly automatic assistance would have been useful!)</p>\n</blockquote>\n<p>Since actions cannot suggest this change, I suggest at least adding the <code>script/mk_all.sh</code> command somewhere in the \"how to contribute to mathlib\" article.</p>",
+        "id": 433982891,
+        "sender_full_name": "Rida Hamadani",
+        "timestamp": 1713426146
+    },
+    {
+        "content": "<p>In case that sounds like a good idea, <a href=\"https://github.com/leanprover-community/leanprover-community.github.io/pull/464\">here</a> is a small PR that does it.</p>",
+        "id": 433986520,
+        "sender_full_name": "Rida Hamadani",
+        "timestamp": 1713427243
+    },
+    {
+        "content": "<p>We should definitely have the CI error message say that!</p>",
+        "id": 433995546,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713429415
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"580947\">Rida Hamadani</span> <a href=\"#narrow/stream/287929-mathlib4/topic/reviewdog/near/433986520\">said</a>:</p>\n<blockquote>\n<p>In case that sounds like a good idea, <a href=\"https://github.com/leanprover-community/leanprover-community.github.io/pull/464\">here</a> is a small PR that does it.</p>\n</blockquote>\n<p>Thanks <span class=\"user-mention\" data-user-id=\"580947\">@Rida Hamadani</span>, made a small suggestion, but yes, this is a good idea!</p>",
+        "id": 433995975,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713429496
+    },
+    {
+        "content": "<p>Merged!</p>",
+        "id": 433998328,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713430132
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"321459\">@Damiano Testa</span>, we'll have to update the message once <a href=\"https://github.com/leanprover-community/mathlib4/pull/11853\">#11853</a> lands</p>",
+        "id": 434010962,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1713434417
+    },
+    {
+        "content": "<p>I'm also hitting the \"the diff exceeded the maximum number of files (300)\" thing in <a href=\"https://github.com/leanprover-community/mathlib4/pull/12274\">#12274</a></p>",
+        "id": 434389568,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1713541667
+    },
+    {
+        "content": "<p>Uhh.</p>",
+        "id": 434390278,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1713541913
+    },
+    {
+        "content": "<p>If you're going to do something like this, at the very least you should make sure that the big commits are completely autogenerated</p>",
+        "id": 434390469,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1713541976
+    },
+    {
+        "content": "<p>I think we've been waiting to do this until we have a better ability to do global replacement.</p>",
+        "id": 434391253,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1713542229
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"307953\">Ruben Van de Velde</span> <a href=\"#narrow/stream/287929-mathlib4/topic/reviewdog/near/434390469\">said</a>:</p>\n<blockquote>\n<p>If you're going to do something like this, at the very least you should make sure that the big commits are completely autogenerated</p>\n</blockquote>\n<p>I split them up in a few commits, each starts with a regular expression replacement followed by a manual replacement where the replacement went wrong. I suppose I can make each one of those into two commits a big completely autogenerated one and a small one with manual fixes. That should make it easy to review.</p>",
+        "id": 434394417,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1713543173
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"197836\">Jireh Loreaux</span> <a href=\"#narrow/stream/287929-mathlib4/topic/reviewdog/near/434391253\">said</a>:</p>\n<blockquote>\n<p>I think we've been waiting to do this until we have a better ability to do global replacement.</p>\n</blockquote>\n<p>Ok, what the rationale behind this?</p>",
+        "id": 434394692,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1713543251
+    },
+    {
+        "content": "<p>The existing <code>refine'</code> isn't doing much harm as is. And also, such a replacement would be a good test bed for a new global replacement tool.</p>",
+        "id": 434396921,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1713543989
+    },
+    {
+        "content": "<p>And person-hours saved also.</p>",
+        "id": 434396974,
+        "sender_full_name": "Jireh Loreaux",
+        "timestamp": 1713544011
+    },
+    {
+        "content": "<p>I have closed the pull request on the <code>refine'</code>, if you think it is better to postpone it. <br>\nNonetheless, while I was add it I looked into how to fix the \"the diff exceeded the maximum number of files (300)\" problem and <a href=\"https://github.com/leanprover-community/mathlib4/pull/12280\">#12280</a> contains a way to \"fix\" it, by disabling the reviewdog for pull request that touch more than 300 files. Of course an even better fix might be to find a way to run the reviewdog nonetheless, but I think this is something that would need to be fixed upstream at the reviewdog repo. <del>Perhaps it is worth reporting this as a bug/feature-request there?</del></p>",
+        "id": 434479089,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1713598415
+    },
+    {
+        "content": "<p>Alex noted above that there's already some discussion upstream at <a href=\"https://github.com/reviewdog/reviewdog/issues/1696#issue-2206596164\">https://github.com/reviewdog/reviewdog/issues/1696#issue-2206596164</a>.</p>",
+        "id": 434479359,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1713598489
+    },
+    {
+        "content": "<p>Cool, I will add a comment with a link to this discussion in the temporary fix</p>",
+        "id": 434479397,
+        "sender_full_name": "Moritz Firsching",
+        "timestamp": 1713598548
     }
 ]

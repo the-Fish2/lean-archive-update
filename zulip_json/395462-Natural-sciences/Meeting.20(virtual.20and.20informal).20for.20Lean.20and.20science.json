@@ -1,0 +1,20 @@
+[
+    {
+        "content": "<p>I would like to gauge interest in having an informal virtual meeting on the interface of Lean and science (broadly defined).</p>\n<p>The main goal of the meeting would be to get to know others working in this area, and the sorts of things being worked on in this domain. The secondary goal would be to share ideas and feedback etc.</p>\n<p>If more than four people say they are interested, I will set up a poll for a potential date and time.</p>",
+        "id": 447735916,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1719572865
+    },
+    {
+        "content": "<p>Interested! I will send 4+ students from my group. </p>\n<p>But - starting this summer we’ll also be leading a course to introduce newcomers to Lean, “Lean for Scientists and Engineers.” No official announcement yet, but that’ll be something coming up.</p>",
+        "id": 447904669,
+        "sender_full_name": "Tyler Josephson ⚛️",
+        "timestamp": 1719626021
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"424214\">@Tyler Josephson ⚛️</span>, it would be great if you could make a PR to <a href=\"https://leanprover-community.github.io/teaching/courses.html\">https://leanprover-community.github.io/teaching/courses.html</a> with details about the course when it is ready!</p>",
+        "id": 447915379,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1719632337
+    }
+]

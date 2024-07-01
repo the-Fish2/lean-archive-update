@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>When writing Haskell scripts, I usually leave optimisations off while I'm testing, and then compile with -O2 when I want to run a big computation. Is there an equivalent in Lean 4? ie, a way to control the compile-time / optimisation balance.</p>\n<p>(Context: I'm writing a program which uses LazyList for efficiency, and I'm curious if the compiler can do the clever fusion optimisations that Haskell does)</p>",
+        "id": 446431357,
+        "sender_full_name": "Bhavik Mehta",
+        "timestamp": 1719156715
+    },
+    {
+        "content": "<p>The compiler currently always does everything it can and there is no easily useable way to turn optimizations off. There is a way to tune down the optimizations that the C compiler performs with some lakefile stuff but the Lean compiler that produces the C is always full blast ahead.</p>\n<p>It does not have specific optimizations for fusion, that said you can of course write programs in the style of rust's iterator API and might get similar effects due to lots of specialization/inlining/c compiler optimization.</p>",
+        "id": 446431835,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1719156903
+    },
+    {
+        "content": "<p>Will we be blazing fast once we have the LLVM backend?</p>",
+        "id": 446462174,
+        "sender_full_name": "Max Nowak 🐉",
+        "timestamp": 1719169874
+    },
+    {
+        "content": "<p>The LLVM backend already exists and is fully operational for...a couple of months at least. And no it does not currently make anything faster, it just generates IR that's on a level with the LLVM that the C ends up generating really. Though there are a couple of tricks that we can pull to maybe get more out of it</p>",
+        "id": 446464999,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1719171434
+    }
+]

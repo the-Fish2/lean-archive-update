@@ -1,0 +1,44 @@
+[
+    {
+        "content": "<p>I am bumping mathlib in <a href=\"https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/pull/178\">https://github.com/AlexKontorovich/PrimeNumberTheoremAnd/pull/178</a>, to use that mathlib knows that Fourier transform is a bijection on Schwartz space. The bump went really well thanks to deprecations (apart from the <code>nat_cast</code> renaming, on which we forgot to add deprecations). And Lean became more powerful at several places (less bugs in typeclass inference, <code>gcongr</code> more powerful), so most fixing was just removing things because the goal was already closed!</p>",
+        "id": 441208798,
+        "sender_full_name": "Sébastien Gouëzel",
+        "timestamp": 1716977736
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110050\">Sébastien Gouëzel</span> <a href=\"#narrow/stream/423402-PrimeNumberTheorem.2B/topic/mathlib.20bump/near/441208798\">said</a>:</p>\n<blockquote>\n<p>apart from the <code>nat_cast</code> renaming, on which we forgot to add deprecations</p>\n</blockquote>\n<p>Was this mine?</p>",
+        "id": 441208950,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1716977785
+    },
+    {
+        "content": "<p>Probably, yes. I'll look if I can generate the deprecations automatically.</p>",
+        "id": 441210556,
+        "sender_full_name": "Sébastien Gouëzel",
+        "timestamp": 1716978458
+    },
+    {
+        "content": "<p>Deprecations in <a href=\"https://github.com/leanprover-community/mathlib4/pull/13368\">#13368</a> (around 275 deprecations...).</p>",
+        "id": 441423930,
+        "sender_full_name": "Sébastien Gouëzel",
+        "timestamp": 1717063372
+    },
+    {
+        "content": "<p>Oh I see. Deprecations were not really \"forgotten\". Since there were so many of them and the name change was so mechanical, it was decided to not bother.</p>",
+        "id": 441426150,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1717064241
+    },
+    {
+        "content": "<p>Maybe you should have specified specific commits for Mathlib and the other dependencies  rather than just the master branch.  When I run make I get an error:<br>\nerror: ././.lake/packages/mathlib/lakefile.lean:86:2: error: unknown attribute [test_driver] <br>\nwhich I think is because Mathlib has now moved to Lean 4.9 but we're still on 4.8.</p>",
+        "id": 443586287,
+        "sender_full_name": "Alastair",
+        "timestamp": 1717932597
+    },
+    {
+        "content": "<p>This is what the JSON file is for</p>",
+        "id": 443587112,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1717933316
+    }
+]

@@ -700,5 +700,23 @@
         "id": 402757574,
         "sender_full_name": "Kyle Miller",
         "timestamp": 1700247204
+    },
+    {
+        "content": "<p><a href=\"https://github.com/LessnessRandomness/Learning/blob/master/FirstProject.lean\">https://github.com/LessnessRandomness/Learning/blob/master/FirstProject.lean</a> - rewrote it so that it works with latest Lean version etc. Will return to it more this week, I believe.</p>\n<p>Just to be sure - the Berge's lemma still isn't proven in Lean, right?</p>",
+        "id": 443822062,
+        "sender_full_name": "Lessness",
+        "timestamp": 1718040069
+    },
+    {
+        "content": "<p>I don't think so</p>",
+        "id": 443822754,
+        "sender_full_name": "Shreyas Srinivas",
+        "timestamp": 1718040326
+    },
+    {
+        "content": "<p>No, we still don't have it</p>",
+        "id": 443823031,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1718040415
     }
 ]

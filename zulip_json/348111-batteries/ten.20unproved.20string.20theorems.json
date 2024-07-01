@@ -1,0 +1,302 @@
+[
+    {
+        "content": "<p>I plan to prove the eleven remaining theorems on the <code>TODO</code> list in <a href=\"https://github.com/leanprover/std4/blob/722dc5e9ef5490ee3f14d80fb12cd781a3fac3f1/Std/Data/String/Lemmas.lean#L759C4-L759C8\"><code>Std.Data.String.Lemmas</code></a>. If I'm lucky, I'll be supported this summer or next year by <a href=\"https://www.nipa.kr/eng/index\">NIPA</a>'s <a href=\"https://www.oss.kr/\">OSS Support Center (Open UP)</a> to teach Korean students and programmers how to prove these string theorems.</p>\n<p>I've just proved the first theorem: <code>String.splitOn_of_valid</code>. See <a href=\"https://github.com/leanprover/std4/pull/743\">std#743</a>. It took me around 170 hours (December 2023–April 2024) to prove it. There was a <a href=\"https://github.com/leanprover/lean4/issues/3829\">bug</a> in the definition of <code>String.splitOnAux</code>. This bug was one reason why it took so long. Thankfully, <span class=\"user-mention\" data-user-id=\"110049\">@Mario Carneiro</span> fixed it. See <a href=\"https://github.com/leanprover/lean4/pull/3832\">lean#3832</a>.</p>\n<p>Now we have ten theorems to go, but I think I'll work on other projects for a while. <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span></p>",
+        "id": 433485865,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1713261842
+    },
+    {
+        "content": "<p>Since Lean 4.7.0 still has the bug in <code>String.splitOnAux</code>, we'll have to wait for Lean 4.8.0-rc1 to come.</p>",
+        "id": 433488262,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1713262662
+    },
+    {
+        "content": "<p>you can either change the base branch to nightly-testing or add a copy of splitOnAux and prove properties about that instead</p>",
+        "id": 433488454,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1713262722
+    },
+    {
+        "content": "<p>Right. I copied the function for now.</p>",
+        "id": 433488705,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1713262825
+    },
+    {
+        "content": "<p>By the way, I proved that <a href=\"https://github.com/leanprover/std4/pull/743/files#diff-4236f31530e7cfa1ed2974fdb2f8c4d8fbac8cce221f2661b74913ffd6a86bffR2415-R2430\"><code>List.IsPrefix</code></a> is equivalent to <code>List.isPrefixOf</code>, and <a href=\"https://github.com/leanprover/std4/pull/743/files#diff-4236f31530e7cfa1ed2974fdb2f8c4d8fbac8cce221f2661b74913ffd6a86bffR2432-R2448\"><code>List.IsSuffix</code></a> is equivalent to <code>List.isSuffixOf</code>. It'll be nice if Lean can automatically generate lemmas for <code>isPrefixOf</code> and <code>isSuffixOf</code> whenever I prove those for <code>IsPrefix</code> and <code>IsSuffix</code>. Do you think this is a good idea? If so, how do we do that?</p>",
+        "id": 433490590,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1713263465
+    },
+    {
+        "content": "<p>the idea is to have all the lemmas about <code>IsPrefix</code>, and have a simp lemma saying <code>isPrefixOf l1 l2 &lt;-&gt; IsPrefix l1 l2</code>, and then you never have to worry about <code>isPrefixOf</code> again</p>",
+        "id": 433490838,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1713263555
+    },
+    {
+        "content": "<p>I'll try it a few hours later. Thanks! (Edit: done!)</p>",
+        "id": 433490974,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1713263613
+    },
+    {
+        "content": "<p>Here are my four pull requests awaiting reviews:</p>\n<ul>\n<li>refactor: move theorems about lists from mathlib (<a href=\"https://github.com/leanprover/std4/pull/756\">std#756</a>)</li>\n<li><del>feat: add lemmas about <code>Nat.add</code> and <code>List</code> (<a href=\"https://github.com/leanprover/std4/pull/757\">std#757</a>)</del> I closed it.</li>\n<li>refactor: move <code>Function.id_def</code> from mathlib (<a href=\"https://github.com/leanprover/std4/pull/755\">std#755</a>)</li>\n<li>feat: add <code>String.splitOn_of_valid</code> (<a href=\"https://github.com/leanprover/std4/pull/743\">std#743</a>)</li>\n</ul>",
+        "id": 434384097,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1713539897
+    },
+    {
+        "content": "<p>When I proved that the theorem <code>String.splitOnAux_of_valid</code> terminates, I had to hide more than ten illegible hypotheses from each goal: <a href=\"https://github.com/leanprover-community/batteries/pull/743/files#diff-38e93b9f694cdc66d675df840d70c3c0d47cc4b5a1813c4aa7d4d7744efff544R453-R477\">https://github.com/leanprover-community/batteries/pull/743/files#diff-38e93b9f694cdc66d675df840d70c3c0d47cc4b5a1813c4aa7d4d7744efff544R453-R477</a>.</p>\n<p>I wonder why these unwanted hypotheses show up. Here's the hypothesis <code>_₀</code> of the first goal:</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">_₀</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"bp\">∀</span>\n<span class=\"w\">  </span><span class=\"o\">(</span><span class=\"n\">y</span><span class=\"w\"> </span><span class=\"o\">:</span>\n<span class=\"w\">    </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span>\n<span class=\"w\">      </span><span class=\"o\">(</span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">String</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"bp\">≠</span><span class=\"w\"> </span><span class=\"o\">[]),</span>\n<span class=\"w\">  </span><span class=\"o\">(</span><span class=\"n\">invImage</span>\n<span class=\"w\">          </span><span class=\"o\">(</span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">            </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">sep₁</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">              </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"n\">m</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                  </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">m</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">m</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                    </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"w\"> </span><span class=\"n\">acc</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                      </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">acc</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">acc</span><span class=\"w\"> </span><span class=\"n\">h</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">sep₁</span><span class=\"w\"> </span><span class=\"bp\">+</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"o\">,</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"o\">))</span>\n<span class=\"w\">          </span><span class=\"n\">Prod.instWellFoundedRelation</span><span class=\"o\">)</span><span class=\"bp\">.</span><span class=\"mi\">1</span>\n<span class=\"w\">      </span><span class=\"n\">y</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">sep₁</span><span class=\"o\">,</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"bp\">✝</span><span class=\"o\">⟩</span><span class=\"w\"> </span><span class=\"bp\">→</span>\n<span class=\"w\">    </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">data</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span><span class=\"bp\">.</span><span class=\"n\">splitOnAux</span><span class=\"w\"> </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">data</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span>\n<span class=\"w\">        </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">byteIdx</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span><span class=\"w\"> </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">byteIdx</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"o\">}</span><span class=\"w\"> </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">byteIdx</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span>\n<span class=\"w\">        </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">=</span>\n<span class=\"w\">      </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"bp\">.</span><span class=\"n\">reverse</span><span class=\"w\"> </span><span class=\"bp\">++</span>\n<span class=\"w\">        </span><span class=\"n\">List.map</span><span class=\"w\"> </span><span class=\"n\">mk</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">List.modifyHead</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"bp\">.</span><span class=\"n\">splitOnListAux</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">⋯</span><span class=\"o\">))</span>\n</code></pre></div>",
+        "id": 436806837,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1714703287
+    },
+    {
+        "content": "<p>Currently, I have two pull requests in Batteries awaiting reviews and one in Mathlib that bumps Batteries:</p>\n<ul>\n<li>refactor: move theorems about lists from mathlib (<a href=\"https://github.com/leanprover-community/batteries/pull/756\">batteries#756</a>, <a href=\"https://github.com/leanprover-community/mathlib4/pull/12540\">#12540</a>)</li>\n<li>feat: add <code>String.splitOn_of_valid</code> (<a href=\"https://github.com/leanprover-community/batteries/pull/743\">batteries#743</a>)</li>\n</ul>",
+        "id": 437276177,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1715006257
+    },
+    {
+        "content": "<p>I made another PR, <a href=\"https://github.com/leanprover-community/batteries/pull/790\">batteries#790</a>, from a commit in <a href=\"https://github.com/leanprover-community/batteries/pull/756\">batteries#756</a>.</p>\n<ul>\n<li><del>refactor: remove <code>@[simp]</code> from <code>List.modifyHead</code></del> (Merged)</li>\n</ul>",
+        "id": 437856484,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1715275277
+    },
+    {
+        "content": "<p>From <a href=\"https://github.com/leanprover-community/batteries/pull/782/files/8895e1928f93ae0feace47a7d9e006d2e2e66ce8#diff-38e93b9f694cdc66d675df840d70c3c0d47cc4b5a1813c4aa7d4d7744efff544L782-L783\">https://github.com/leanprover-community/batteries/pull/782/files/8895e1928f93ae0feace47a7d9e006d2e2e66ce8#diff-38e93b9f694cdc66d675df840d70c3c0d47cc4b5a1813c4aa7d4d7744efff544L782-L783</a>:</p>\n<div class=\"codehilite\" data-code-language=\"Diff\"><pre><span></span><code><span class=\"gd\">- -- TODO: substrEq</span>\n<span class=\"gd\">- -- TODO: isPrefixOf</span>\n</code></pre></div>\n<p>Please don't remove the <code>TODO</code> lines in <a href=\"https://github.com/leanprover-community/batteries/blob/60d622c124cebcecc000853cdae93f4251f4beb5/Batteries/Data/String/Lemmas.lean\"><code>Batteries.Data.String.Lemmas</code></a>! These are the ten unproved theorems specifying string operations, which I'll prove in the future.</p>",
+        "id": 440333914,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1716474016
+    },
+    {
+        "content": "<p>I added a review to <a href=\"https://github.com/leanprover-community/batteries/pull/782\">batteries#782</a> but it's labeled \"Pending.\" So, I guess it's currently visible only to me.</p>",
+        "id": 440334581,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1716474213
+    },
+    {
+        "content": "<p>I see a review starting \"I'm pretty sure <code>String.IsPrefix</code> and <code>String.isPrefixOf</code> are equivalent...\"</p>",
+        "id": 440335488,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1716474469
+    },
+    {
+        "content": "<p>That's another comment I made.</p>",
+        "id": 440335618,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1716474496
+    },
+    {
+        "content": "<p>Go to the diff (the url of <a href=\"https://github.com/leanprover-community/batteries/pull/782\">batteries#782</a> + <code>/files</code>) and submit your review</p>",
+        "id": 440335824,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1716474564
+    },
+    {
+        "content": "<p>Oh, I didn't know I had to <em>submit</em> it. Thanks! I think this was my first time reviewing someone else's pull request.</p>",
+        "id": 440336507,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1716474734
+    },
+    {
+        "content": "<p>Sorry about that! I implemented all of these suggestions, and verified your hunch about <code>String.isPrefixOf</code> and <code>Mathlib</code>'s <code>String.IsPrefix</code> in <a href=\"https://github.com/leanprover-community/batteries/pull/809\">batteries#809</a>, and closed <a href=\"https://github.com/leanprover-community/batteries/pull/782\">batteries#782</a>.</p>",
+        "id": 440395910,
+        "sender_full_name": "tjf801",
+        "timestamp": 1716497144
+    },
+    {
+        "content": "<p>Thanks! I'll add some code to your PR or open a new PR. It'll take some time.</p>",
+        "id": 440444657,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1716531112
+    },
+    {
+        "content": "<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span><span class=\"w\"> </span><span class=\"n\">Batteries.Data.String.Lemmas</span>\n\n<span class=\"kn\">namespace</span><span class=\"w\"> </span><span class=\"n\">String</span>\n\n<span class=\"kd\">theorem</span><span class=\"w\"> </span><span class=\"n\">substrEq_iff_extract_eq_extract</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">substrEq</span><span class=\"w\"> </span><span class=\"n\">s₁</span><span class=\"w\"> </span><span class=\"n\">off₁</span><span class=\"w\"> </span><span class=\"n\">s₂</span><span class=\"w\"> </span><span class=\"n\">off₂</span><span class=\"w\"> </span><span class=\"n\">sz</span><span class=\"w\"> </span><span class=\"bp\">↔</span>\n<span class=\"w\">    </span><span class=\"n\">s₁.extract</span><span class=\"w\"> </span><span class=\"n\">off₁</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">off₁</span><span class=\"w\"> </span><span class=\"bp\">+</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">sz</span><span class=\"o\">⟩)</span><span class=\"w\"> </span><span class=\"bp\">=</span><span class=\"w\"> </span><span class=\"n\">s₂.extract</span><span class=\"w\"> </span><span class=\"n\">off₂</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">off₂</span><span class=\"w\"> </span><span class=\"bp\">+</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">sz</span><span class=\"o\">⟩)</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"kd\">by</span>\n<span class=\"w\">  </span><span class=\"gr\">sorry</span>\n\n<span class=\"kd\">theorem</span><span class=\"w\"> </span><span class=\"n\">substrEq_of_valid</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">h</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">l₁</span><span class=\"w\"> </span><span class=\"bp\">=</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">l₂</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"o\">:</span>\n<span class=\"w\">    </span><span class=\"n\">substrEq</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">pre₁</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">l₁</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">suf₁</span><span class=\"o\">⟩</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">pre₁</span><span class=\"o\">⟩</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">pre₂</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">l₂</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">suf₂</span><span class=\"o\">⟩</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">pre₂</span><span class=\"o\">⟩</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">l₁</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">↔</span>\n<span class=\"w\">      </span><span class=\"n\">l₁</span><span class=\"w\"> </span><span class=\"bp\">=</span><span class=\"w\"> </span><span class=\"n\">l₂</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"kd\">by</span>\n<span class=\"w\">  </span><span class=\"n\">rw</span><span class=\"w\"> </span><span class=\"o\">[</span><span class=\"n\">substrEq_iff_extract_eq_extract</span><span class=\"o\">]</span>\n<span class=\"w\">  </span><span class=\"n\">simp</span><span class=\"w\"> </span><span class=\"n\">only</span><span class=\"w\"> </span><span class=\"o\">[</span><span class=\"n\">Pos.add_eq</span><span class=\"o\">]</span>\n<span class=\"w\">  </span><span class=\"n\">conv</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span><span class=\"w\"> </span><span class=\"n\">lhs</span><span class=\"bp\">;</span><span class=\"w\"> </span><span class=\"n\">rhs</span><span class=\"bp\">;</span><span class=\"w\"> </span><span class=\"n\">arg</span><span class=\"w\"> </span><span class=\"mi\">3</span><span class=\"bp\">;</span><span class=\"w\"> </span><span class=\"n\">rw</span><span class=\"w\"> </span><span class=\"o\">[</span><span class=\"n\">h</span><span class=\"o\">]</span>\n<span class=\"w\">  </span><span class=\"n\">repeat</span><span class=\"w\"> </span><span class=\"n\">rw</span><span class=\"w\"> </span><span class=\"o\">[</span><span class=\"n\">extract_of_valid</span><span class=\"o\">]</span>\n<span class=\"w\">  </span><span class=\"n\">exact</span><span class=\"w\"> </span><span class=\"n\">ext_iff</span>\n\n<span class=\"kd\">end</span><span class=\"w\"> </span><span class=\"n\">String</span>\n</code></pre></div>\n<p><span class=\"user-mention\" data-user-id=\"110049\">@Mario Carneiro</span>, do you think my statement of <code>String.substrEq_of_valid</code> is correct?</p>",
+        "id": 441378414,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1717044709
+    },
+    {
+        "content": "<div class=\"codehilite\" data-code-language=\"Lean4\"><pre><span></span><code><span class=\"kn\">theorem</span><span class=\"w\"> </span><span class=\"n\">substrEq_of_valid</span><span class=\"w\"> </span><span class=\"o\">:</span>\n<span class=\"w\">    </span><span class=\"n\">substrEq</span><span class=\"w\"> </span><span class=\"bp\">⟨</span><span class=\"n\">pre₁</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">suf₁</span><span class=\"bp\">⟩</span><span class=\"w\"> </span><span class=\"bp\">⟨</span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">pre₁</span><span class=\"bp\">⟩</span><span class=\"w\"> </span><span class=\"bp\">⟨</span><span class=\"n\">pre₂</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">suf₂</span><span class=\"bp\">⟩</span><span class=\"w\"> </span><span class=\"bp\">⟨</span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">pre₂</span><span class=\"bp\">⟩</span><span class=\"w\"> </span><span class=\"n\">n</span><span class=\"w\"> </span><span class=\"bp\">↔</span>\n<span class=\"w\">      </span><span class=\"bp\">∃</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"o\">,</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"bp\">&lt;+</span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">suf₁</span><span class=\"w\"> </span><span class=\"bp\">∧</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"bp\">&lt;+</span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">suf₂</span><span class=\"w\"> </span><span class=\"bp\">∧</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"bp\">=</span><span class=\"w\"> </span><span class=\"n\">n</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"gr\">sorry</span>\n</code></pre></div>",
+        "id": 441379774,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1717045262
+    },
+    {
+        "content": "<p>Thanks for your suggestion!</p>",
+        "id": 441380451,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1717045593
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417769\">Bulhwi Cha</span> <a href=\"#narrow/stream/348111-batteries/topic/ten.20unproved.20string.20theorems/near/436806837\">said</a>:</p>\n<blockquote>\n<p>When I proved that the theorem <code>String.splitOnAux_of_valid</code> terminates, I had to hide more than ten illegible hypotheses from each goal: <a href=\"https://github.com/leanprover-community/batteries/pull/743/files#diff-38e93b9f694cdc66d675df840d70c3c0d47cc4b5a1813c4aa7d4d7744efff544R453-R477\">https://github.com/leanprover-community/batteries/pull/743/files#diff-38e93b9f694cdc66d675df840d70c3c0d47cc4b5a1813c4aa7d4d7744efff544R453-R477</a>.</p>\n<p>I wonder why these unwanted hypotheses show up. Here's the hypothesis <code>_₀</code> of the first goal:</p>\n<div class=\"spoiler-block\"><div class=\"spoiler-header\">\n<p>Hypothesis</p>\n</div><div class=\"spoiler-content\" aria-hidden=\"true\">\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">_₀</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"bp\">∀</span>\n<span class=\"w\">  </span><span class=\"o\">(</span><span class=\"n\">y</span><span class=\"w\"> </span><span class=\"o\">:</span>\n<span class=\"w\">    </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span>\n<span class=\"w\">      </span><span class=\"o\">(</span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">Char</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">_</span><span class=\"w\"> </span><span class=\"o\">:</span><span class=\"w\"> </span><span class=\"n\">List</span><span class=\"w\"> </span><span class=\"n\">String</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"bp\">×'</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"bp\">≠</span><span class=\"w\"> </span><span class=\"o\">[]),</span>\n<span class=\"w\">  </span><span class=\"o\">(</span><span class=\"n\">invImage</span>\n<span class=\"w\">          </span><span class=\"o\">(</span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">            </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">sep₁</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">              </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">l</span><span class=\"w\"> </span><span class=\"n\">m</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                  </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">m</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">m</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                    </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"w\"> </span><span class=\"n\">acc</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span>\n<span class=\"w\">                      </span><span class=\"n\">PSigma.casesOn</span><span class=\"w\"> </span><span class=\"n\">acc</span><span class=\"w\"> </span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">acc</span><span class=\"w\"> </span><span class=\"n\">h</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">sep₁</span><span class=\"w\"> </span><span class=\"bp\">+</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">r</span><span class=\"o\">,</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"o\">))</span>\n<span class=\"w\">          </span><span class=\"n\">Prod.instWellFoundedRelation</span><span class=\"o\">)</span><span class=\"bp\">.</span><span class=\"mi\">1</span>\n<span class=\"w\">      </span><span class=\"n\">y</span><span class=\"w\"> </span><span class=\"o\">⟨</span><span class=\"n\">sep₁</span><span class=\"o\">,</span><span class=\"w\"> </span><span class=\"n\">sep₂</span><span class=\"bp\">✝</span><span class=\"o\">⟩</span><span class=\"w\"> </span><span class=\"bp\">→</span>\n<span class=\"w\">    </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">data</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span><span class=\"bp\">.</span><span class=\"n\">splitOnAux</span><span class=\"w\"> </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">data</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span>\n<span class=\"w\">        </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">byteIdx</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span><span class=\"w\"> </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">byteIdx</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"o\">}</span><span class=\"w\"> </span><span class=\"o\">{</span><span class=\"w\"> </span><span class=\"n\">byteIdx</span><span class=\"w\"> </span><span class=\"o\">:=</span><span class=\"w\"> </span><span class=\"n\">utf8Len</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"o\">}</span>\n<span class=\"w\">        </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">=</span>\n<span class=\"w\">      </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"bp\">.</span><span class=\"n\">reverse</span><span class=\"w\"> </span><span class=\"bp\">++</span>\n<span class=\"w\">        </span><span class=\"n\">List.map</span><span class=\"w\"> </span><span class=\"n\">mk</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">List.modifyHead</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"k\">fun</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"w\"> </span><span class=\"bp\">=&gt;</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">++</span><span class=\"w\"> </span><span class=\"n\">x</span><span class=\"o\">)</span><span class=\"w\"> </span><span class=\"o\">(</span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"bp\">.</span><span class=\"n\">splitOnListAux</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"n\">y</span><span class=\"bp\">.</span><span class=\"mi\">2</span><span class=\"bp\">.</span><span class=\"mi\">1</span><span class=\"w\"> </span><span class=\"bp\">⋯</span><span class=\"o\">))</span>\n</code></pre></div>\n</div></div>\n</blockquote>\n<p>I'm moving the Lean toolchain in <a href=\"https://github.com/leanprover/std4/pull/743\">std#743</a> from <code>v4.8.0-rc2</code> to <code>v4.9.0-rc1</code>. Sadly, I still get these unintelligible hypotheses: <a href=\"https://paste.sr.ht/~chabulhwi/17bd2b05d8d6ea181db82bc5b39b6f93cb40fe3b\">https://paste.sr.ht/~chabulhwi/17bd2b05d8d6ea181db82bc5b39b6f93cb40fe3b</a>.</p>",
+        "id": 443458632,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1717846162
+    },
+    {
+        "content": "<p>How do we know what lemmas are worth being included in the Lean standard library? Are lemmas for proving these ten specification theorems about string operations worth it?</p>",
+        "id": 444977856,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718545737
+    },
+    {
+        "content": "<p>We put them in mathlib or batteries and at some point we get errors upgrading the nightly version because core took them</p>",
+        "id": 444978784,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1718546622
+    },
+    {
+        "content": "<p>Um, is this an answer to my question?</p>",
+        "id": 444978958,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718546767
+    },
+    {
+        "content": "<p>Depends on what you mean by \"Lean standard library\" - do you mean batteries or core?</p>",
+        "id": 444979442,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1718547227
+    },
+    {
+        "content": "<p>I meant the new standard library, part of the Lean core library.</p>",
+        "id": 444979507,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718547269
+    },
+    {
+        "content": "<p>Then yes, it was meant to be an answer</p>",
+        "id": 444979527,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1718547298
+    },
+    {
+        "content": "<p>Sorry, I don't understand. These ten unproved theorems were added to the old Std by <span class=\"user-mention silent\" data-user-id=\"110049\">Mario Carneiro</span>.</p>\n<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/348111-batteries/topic/upstreaming.20of.20List.2FArray.20material/near/434882965\">said</a>:</p>\n<blockquote>\n<p>My basic target is \"specification lemmas, simp lemmas for ext/operation combinations, lemmas describing pairwise interactions of basic operations\".</p>\n</blockquote>\n<p>Kim said that they'd like to upstream specification theorems about lists and arrays. So, the specification theorems about strings might also get moved to the new Std. But I'm less sure about whether the lemmas for proving these specification theorems are worth being included in Std as well. Some of them feel too hacky.</p>",
+        "id": 444980687,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718548321
+    },
+    {
+        "content": "<p>I think you should just focus on putting them in batteries, and if they are needed they will be upstreamed to the new std</p>",
+        "id": 444980773,
+        "sender_full_name": "Mario Carneiro",
+        "timestamp": 1718548398
+    },
+    {
+        "content": "<p>There will be more news coming about this later, and when a design document is available we will post it, but it is possible there will be a radical overhaul of the <code>String</code> library (indeed, even the definition of <code>String</code>), so I would hesitate to encourage significant work on <code>String</code> at the moment as it may become obsolete (even to the point of not being able to meaningfully migrate results).</p>\n<p>If you are interested in contributing to the development of basic data types, useful directions where help would be appreciated are:</p>\n<ul>\n<li><code>BitVec</code> (where Tobias Grosser's group have been contributing results, and Henrik Boving is using these results to verify his bitblasting tactic that is coming soon for everyone). Here there are many missing results about interactions of the basic operations still.</li>\n<li><code>List</code>. I'm doing a big reorganisation at the moment. One thing that I won't get to in the short term is basic lemmas about <code>intersperse</code>, <code>intercalate</code>, <code>eraseDups</code>, <code>eraseReps</code>, <code>span</code>, <code>groupBy</code>, <code>removeAll</code>, which currently are only used in meta code and have essentially no verification. Also, I'll have the first reorganisation PR up soon (edit: now <a href=\"https://github.com/leanprover/lean4/pull/4469\">lean#4469</a>), and it will include some documentation on the range of lemmas we want about list operations, and I can imagine that going through Mathlib's List development and identifying a list of results there that fill gaps in what is described by that documentation would be helpful.</li>\n<li>Cleaning up basic data type code in Mathlib:<ul>\n<li>e.g. moving <code>Array.permute!</code> into a subfolder of the tactic code that uses it, to make clear this is not for outside use and that there is no associated verification</li>\n<li>upstreaming <code>Mathlib.Data.Array.ExtractLemmas</code> to Lean (I will take care of this eventually, but could happily merge a PR)</li>\n<li>move <code>LinearOrder Bool</code> and <code>Bool.injective_iff</code> into other files, after which <code>Mathlib.Data.Bool.Basic</code> doesn't need to be imported anywhere in Mathlib</li>\n<li>finish getting <code>LazyList</code>, <code>ByteSlice</code> out of Mathlib. These were PR'd to Batteries <a href=\"https://github.com/leanprover-community/batteries/pull/835\">batteries#835</a> and <a href=\"https://github.com/leanprover-community/batteries/pull/836\">batteries#836</a>, but there were problems identified in review. If there are real downstream users, find out what they would like done. Otherwise, can we just deprecate in Mathlib and be done?</li>\n<li>similarly, <code>DList</code> should depart from Mathlib</li>\n<li>similarly, most of the <code>MLList</code> material should depart from Mathlib. Unfortunately some of it is used in <code>rw_search</code>, so a decision would have to be made about that part.</li>\n<li><code>Mathlib.Data.BinaryHeap</code> is not used in Mathlib and perhaps should move?</li>\n</ul>\n</li>\n</ul>",
+        "id": 445030062,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718578833
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"110087\">Kim Morrison</span> <a href=\"#narrow/stream/348111-batteries/topic/ten.20unproved.20string.20theorems/near/445030062\">said</a>:</p>\n<blockquote>\n<p>There will be more news coming about this later, and when a design document is available we will post it, but it is possible there will be a radical overhaul of the <code>String</code> library (indeed, even the definition of <code>String</code>), so I would hesitate to encourage significant work on <code>String</code> at the moment as it may become obsolete (even to the point of not being able to meaningfully migrate results).</p>\n</blockquote>\n<p>I'm glad that there may be a substantial overhaul of definitions and theorems about strings in the future. But it also means that I don't have to prove the ten specification theorems and review <a href=\"https://github.com/leanprover-community/Batteries/pull/809\">Batteries#809</a>.</p>",
+        "id": 445044344,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718592547
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"705050\">@tjf801</span> I'd like to hear what you think about this possible overhaul.</p>",
+        "id": 445044604,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718592784
+    },
+    {
+        "content": "<p>I think it's time for me to move on to other work: learning mathematics with Mathlib, translating <a href=\"https://wwwf.imperial.ac.uk/~buzzard/xena/natural_number_game/\">#nng</a> and <a href=\"https://leanprover.github.io/theorem_proving_in_lean4/\">#tpil</a> into Korean, and editing an interview video that discusses formalization of mathematics in Lean.</p>",
+        "id": 445046359,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718594264
+    },
+    {
+        "content": "<p>I've had a need for binary heap recently. I will move it to Batteries. WIP <a href=\"https://github.com/leanprover-community/batteries/pull/849\">batteries#849</a></p>",
+        "id": 445046888,
+        "sender_full_name": "François G. Dorais",
+        "timestamp": 1718594690
+    },
+    {
+        "content": "<p>Looks good to me.</p>",
+        "id": 445054156,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718600244
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"110087\">@Kim Morrison</span> Can I ask what's the motivation behind the planned overhaul of the library work on strings?</p>",
+        "id": 445084877,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718614499
+    },
+    {
+        "content": "<p>I'm also curious about when the Lean core team began considering it.</p>",
+        "id": 445084950,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718614518
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417769\">Bulhwi Cha</span> <a href=\"#narrow/stream/348111-batteries/topic/ten.20unproved.20string.20theorems/near/445084950\">said</a>:</p>\n<blockquote>\n<p>I'm also curious about when the Lean core team began considering it.</p>\n</blockquote>\n<p>The refactoring of <code>String</code> is on the way only very recently, the person that's working on it began approximately 2 weeks ago as you can see from the PR tracker of lean4</p>",
+        "id": 445091116,
+        "sender_full_name": "Henrik Böving",
+        "timestamp": 1718616704
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover/lean4/pull/4461\">lean4#4461</a>?</p>",
+        "id": 445092858,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1718617315
+    },
+    {
+        "content": "<p>Is this likely to cause <span class=\"user-mention\" data-user-id=\"110049\">@Mario Carneiro</span>'s <a href=\"https://github.com/leanprover/lean4/pull/3963\">lean4#3963</a> to bitrot, or is this motivation to get that PR in quickly?</p>",
+        "id": 445093102,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1718617399
+    },
+    {
+        "content": "<p>I think there's no reason we can proceed with that in the meantime.</p>",
+        "id": 445102470,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1718620639
+    },
+    {
+        "content": "<p>(deleted)</p>",
+        "id": 445149967,
+        "sender_full_name": "tjf801",
+        "timestamp": 1718635345
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417769\">Bulhwi Cha</span> <a href=\"#narrow/stream/348111-batteries/topic/ten.20unproved.20string.20theorems/near/445044604\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"705050\">tjf801</span> I'd like to hear what you think about this possible overhaul.</p>\n</blockquote>\n<p>Honestly? I don't really know how <code>String</code> could really end up being <em>that</em> much different, and for a lot of the lemmas in <a href=\"https://github.com/leanprover-community/Batteries/pull/809\">Batteries#809</a>, I think they'd still be true for any reasonable definition of <code>String</code>. And to be honest, I really only was even proving these lemmas because I kept needing them to verify pieces of code I wrote. So if people (who are probably much smarter and more experienced than me!) can remove some of the crust around <code>Strings</code> and make them more usable for verification stuffs, I'm all for it! But I think that in the meantime, having lemmas to make the current solutions usable is also not necessarily a bad thing.</p>",
+        "id": 445150024,
+        "sender_full_name": "tjf801",
+        "timestamp": 1718635364
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"705050\">tjf801</span> <a href=\"#narrow/stream/348111-batteries/topic/ten.20unproved.20string.20theorems/near/445150024\">said</a>:</p>\n<blockquote>\n<p>Honestly? I don't really know how <code>String</code> could really end up being <em>that</em> much different, and for a lot of the lemmas in <a href=\"https://github.com/leanprover-community/Batteries/pull/809\">Batteries#809</a>, I think they'd still be true for any reasonable definition of <code>String</code>.</p>\n</blockquote>\n<p>I agree with what you said, but the proofs of these lemmas will likely change. When I ported <code>Mathlib.Data.String.Basic</code> from Lean 3 to Lean 4 last year, I had to rewrite the proof of the theorem <a href=\"https://github.com/leanprover-community/mathlib4/blob/77e1ea0a339a4663eced9cacc3a46eb45f967b51/Mathlib/Data/String/Basic.lean#L77-L103\"><code>String.lt_iff_toList_lt</code></a> from scratch. This was due to the new implementation of the type <a href=\"https://leanprover-community.github.io/mathlib4_docs/Init/Data/String/Basic.html#String.Iterator\"><code>String.Iterator</code></a>.</p>\n<p><span class=\"user-mention silent\" data-user-id=\"310045\">Eric Wieser</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Porting.20Data.2EString.2EBasic/near/343156389\">said</a>:</p>\n<blockquote>\n<p>Why did you choose to rewrite it from scratch?</p>\n</blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"417769\">Bulhwi Cha</span> <a href=\"#narrow/stream/287929-mathlib4/topic/Porting.20Data.2EString.2EBasic/near/343234335\">said</a>:</p>\n<blockquote>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/blob/9d69d92e11a00bfb6420affaffc776793f80a983/Mathlib/Data/String/Basic.lean#L196-L227\">The previous proof</a> didn't work, and its comment said, \"TODO This proof probably has to be completely redone.\"</p>\n</blockquote>",
+        "id": 445172615,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718641193
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417769\">Bulhwi Cha</span> <a href=\"#narrow/stream/348111-batteries/topic/ten.20unproved.20string.20theorems/near/445172615\">said</a>:</p>\n<blockquote>\n<p>I agree with what you said, but the proofs of these lemmas will likely change. When I ported <code>Mathlib.Data.String.Basic</code> from Lean 3 to Lean 4 last year, I had to rewrite the proof of the theorem <a href=\"https://github.com/leanprover-community/mathlib4/blob/77e1ea0a339a4663eced9cacc3a46eb45f967b51/Mathlib/Data/String/Basic.lean#L77-L103\"><code>String.lt_iff_toList_lt</code></a> from scratch. This was due to the new implementation of the type <a href=\"https://leanprover-community.github.io/mathlib4_docs/Init/Data/String/Basic.html#String.Iterator\"><code>String.Iterator</code></a>.</p>\n</blockquote>\n<p>Yeah that's fair. But I feel like with proofs (and programming in general) once you've done something once, doing it again from scratch is <em>much</em> faster. At least in my experience</p>",
+        "id": 445179517,
+        "sender_full_name": "tjf801",
+        "timestamp": 1718643203
+    },
+    {
+        "content": "<p>I've spent too much time proving <code>String.splitOn_of_valid</code>, which hasn't been reviewed for two months. I want to wait until the overhaul is finished.</p>",
+        "id": 445185717,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718645052
+    },
+    {
+        "content": "<p>By the way, <code>String.lt_iff_toList_lt</code> took me more than 30 hours to prove, and <code>String.splitOn_of_valid</code> took about 170 hours.</p>",
+        "id": 445188307,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718645947
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"417769\">Bulhwi Cha</span> <a href=\"#narrow/stream/348111-batteries/topic/ten.20unproved.20string.20theorems/near/445084877\">said</a>:</p>\n<blockquote>\n<p>@Kim Morrison Can I ask what's the motivation behind the planned overhaul of the library work on strings?</p>\n</blockquote>\n<p>I guess I have to wait for the design document.</p>",
+        "id": 445258323,
+        "sender_full_name": "Bulhwi Cha",
+        "timestamp": 1718677409
+    }
+]

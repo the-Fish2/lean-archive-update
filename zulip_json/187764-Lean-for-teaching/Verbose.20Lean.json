@@ -196,5 +196,53 @@
         "id": 404860651,
         "sender_full_name": "Patrick Massot",
         "timestamp": 1701262927
+    },
+    {
+        "content": "<p>Some news from Verbose Lean: I ported the help tactic from the French Lean 3 version, and created a widget prototype. Unfortunately those are two areas where separating syntax from actual code is a lot harder. After playing with a couple of ideas, I decided to go with massive code duplication for now. The code is still at <a href=\"https://github.com/PatrickMassot/verbose-lean4\">https://github.com/PatrickMassot/verbose-lean4</a>, although I may overwrite the Lean 3 repo at some point. Remember the context: this is a teaching library for people who want to teach pen and paper proof writing using Lean. It is not meant to replace ordinary usage of Lean. Using natural language as an input is slightly harder than normal Lean syntax. The widget is meant for people who have not enough teaching hours to teach syntax. Demo:<br>\n<a href=\"/user_uploads/3121/ZlBHodmTZlP6fARlz4BSr4Fh/verbose_widget_test_en.gif\">verbose_widget_test_en.gif</a></p>\n<div class=\"message_inline_image\"><a href=\"/user_uploads/3121/ZlBHodmTZlP6fARlz4BSr4Fh/verbose_widget_test_en.gif\" title=\"verbose_widget_test_en.gif\"><img src=\"/user_uploads/3121/ZlBHodmTZlP6fARlz4BSr4Fh/verbose_widget_test_en.gif\"></a></div>",
+        "id": 409487155,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1703204645
+    },
+    {
+        "content": "<p>Very nice!</p>",
+        "id": 409487726,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1703204854
+    },
+    {
+        "content": "<p>It will be great to have non-verbose versions of this! :-) More hints in the infoview, and more point and click construction of tactics!</p>",
+        "id": 409487922,
+        "sender_full_name": "Kim Morrison",
+        "timestamp": 1703204917
+    },
+    {
+        "content": "<p>All the infrastructure is already there!</p>",
+        "id": 409489896,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1703205621
+    },
+    {
+        "content": "<p>There is not even a single line of javascript code in Verbose Lean. It is all built using <span class=\"user-mention\" data-user-id=\"128280\">@Wojciech Nawrocki</span>'s widget writing in Lean technology.</p>",
+        "id": 409490113,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1703205723
+    },
+    {
+        "content": "<p>I have been thinking about this option as well: after writing a Catalan translation of most of Patrick's code (I'm struggling to keep his pace!) I wanted to do a \"Native\" version, which incorporates some of the niceties (I would love to be able to do <code>intro x ≥ y</code> when the goal is <code>∀ x y, x ≥ y → P x y</code>) and the help and point-and-click, but does not require so much typing and is closer to the actual Lean tactics. Maybe instead of Native it could be called TrainingWheels ?</p>",
+        "id": 409545806,
+        "sender_full_name": "Marc Masdeu",
+        "timestamp": 1703235218
+    },
+    {
+        "content": "<p>About point and click, we know <span class=\"user-mention\" data-user-id=\"479299\">@Jovan Gerbscheid</span> is doing something in this direction so we would at least need some coordination if we do something for Mathlib.</p>",
+        "id": 409593493,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1703256364
+    },
+    {
+        "content": "<p>Your example of <code>intro x ≥ y</code> is actually not supported by Verbose Lean. It only does the case where the right-hand side is already there (and not necessarily a single variable, it could be <code>Fix n ≥ max N N'</code>). I could add support for <code>intro x ≥ y</code> introducing two variables, but I never needed it in more than a couple of exercise on increasing/decreasing functions.</p>",
+        "id": 409593844,
+        "sender_full_name": "Patrick Massot",
+        "timestamp": 1703256515
     }
 ]

@@ -1,0 +1,26 @@
+[
+    {
+        "content": "<p>Is there a way to replace the combination of <code>Nat.zero</code> and <code>Nat.succ</code> appearing in infoview with \"0, 1, 2, 3, ...\" ?</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"kn\">import</span> <span class=\"n\">Mathlib.Tactic</span>\n\n<span class=\"c\">/-</span>\n<span class=\"cm\">![1, 2, 3] : Fin (Nat.succ (Nat.succ (Nat.succ 0))) → ℕ</span>\n<span class=\"cm\">-/</span>\n<span class=\"k\">#check</span> <span class=\"bp\">!</span><span class=\"o\">[</span><span class=\"mi\">1</span><span class=\"o\">,</span> <span class=\"mi\">2</span><span class=\"o\">,</span> <span class=\"mi\">3</span><span class=\"o\">]</span>\n</code></pre></div>",
+        "id": 434592902,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1713709842
+    },
+    {
+        "content": "<p>Related question: <a href=\"#narrow/stream/287929-mathlib4/topic/.E2.9C.94.20More.20convenient.20notation.20for.20.23check.20a.20FinVec/near/434055374\">https://leanprover.zulipchat.com/#narrow/stream/287929-mathlib4/topic/.E2.9C.94.20More.20convenient.20notation.20for.20.23check.20a.20FinVec/near/434055374</a></p>\n<p>The answer is that there's no pretty printer option for this. It's possible for you to write your own delaborator to pretty print these expressions in the way you want though.</p>",
+        "id": 434609135,
+        "sender_full_name": "Kyle Miller",
+        "timestamp": 1713723981
+    },
+    {
+        "content": "<p>Thank you!</p>",
+        "id": 434698872,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1713777758
+    },
+    {
+        "content": "<p>I will learn Lean more to understand this fantastic language…</p>",
+        "id": 434699183,
+        "sender_full_name": "Asei Inoue",
+        "timestamp": 1713777855
+    }
+]

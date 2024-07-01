@@ -130,5 +130,65 @@
         "id": 408045235,
         "sender_full_name": "Jack McKoen",
         "timestamp": 1702587532
+    },
+    {
+        "content": "<p>I created a <a href=\"https://github.com/leanprover-community/mathlib4/tree/AbstractSimplicialComplex\">branch</a> of mathlib where I started putting my abstract simplicial complex stuff.</p>",
+        "id": 413235721,
+        "sender_full_name": "Sophie Morel",
+        "timestamp": 1705437850
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span>, if there is a way to give you editing rights on that branch I'll do it, but I can't figure out how to do it right now.</p>",
+        "id": 415974915,
+        "sender_full_name": "Sophie Morel",
+        "timestamp": 1705480049
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"318709\">@Sophie Morel</span> Everyone with write access to non-master branches of mathlib4 has write access to <em>all</em> non-master branches of mathlib4</p>\n<p>...</p>\n<p>...</p>\n<p>Yes, that means that anybody can totally mess up other peoples work if they're sufficiently malicious.</p>",
+        "id": 415975179,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1705480160
+    },
+    {
+        "content": "<p>Oh cool, then I don't have to do anything. I'm not too worried, because I also keep my own copies of my work.</p>",
+        "id": 415976454,
+        "sender_full_name": "Sophie Morel",
+        "timestamp": 1705480682
+    },
+    {
+        "content": "<p>I've started prefixing my branch names with <code>AT</code> so it's less likely that there's a clash with someone else's branch.</p>",
+        "id": 416018451,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1705495406
+    },
+    {
+        "content": "<p>Ah, that's a good idea, I didn't think of the risk of accidentally messing up someone else's branch because you chose the same name.</p>",
+        "id": 416067817,
+        "sender_full_name": "Sophie Morel",
+        "timestamp": 1705508373
+    },
+    {
+        "content": "<p>(Also, this way I get to call all my branches \"SM + something\"... <span aria-label=\"grinning face with smiling eyes\" class=\"emoji emoji-1f601\" role=\"img\" title=\"grinning face with smiling eyes\">:grinning_face_with_smiling_eyes:</span> )</p>",
+        "id": 416074845,
+        "sender_full_name": "Sophie Morel",
+        "timestamp": 1705509875
+    },
+    {
+        "content": "<p>You'd only be able to mess up things if you use <code>git push -f</code> without paying attention, fwiw</p>",
+        "id": 416074887,
+        "sender_full_name": "Ruben Van de Velde",
+        "timestamp": 1705509892
+    },
+    {
+        "content": "<p>FYI term starts tomorrow for me so I'll have very little time to look into this!</p>",
+        "id": 416079284,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1705511053
+    },
+    {
+        "content": "<p>No pressure, I'm just working on putting all this in PR-able shape, and I suppose I'll PR it eventually. Moved the branch so its name starts with \"SM\", now it's <a href=\"https://github.com/leanprover-community/mathlib4/tree/SM.AbstractSimplicialComplex\">there</a>.</p>",
+        "id": 417322299,
+        "sender_full_name": "Sophie Morel",
+        "timestamp": 1705960418
     }
 ]

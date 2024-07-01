@@ -22,5 +22,17 @@
         "id": 402193431,
         "sender_full_name": "Jannis Limperg",
         "timestamp": 1700042949
+    },
+    {
+        "content": "<p>You can use a mutual block of two definitions to consume the mutually inductive type. Then you won’t use the induction tactic, but simply obtain the IH by invoking the other definition recursively. It actually works quite nice.</p>",
+        "id": 424023451,
+        "sender_full_name": "Max Nowak 🐉",
+        "timestamp": 1709214837
+    },
+    {
+        "content": "<p>I think back when I made this thread, your suggestion didn't work for <code>Prop</code>-valued(!) inductive types because mutual rec went via wfrec, which went via <code>SizeOf</code> and <code>Prop</code>-valued types can't have a useful <code>SizeOf</code> instance. Maybe that has changed in the meantime.</p>",
+        "id": 424032167,
+        "sender_full_name": "Jannis Limperg",
+        "timestamp": 1709217306
     }
 ]

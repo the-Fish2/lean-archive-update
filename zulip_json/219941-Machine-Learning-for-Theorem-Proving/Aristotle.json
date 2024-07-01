@@ -1,0 +1,98 @@
+[
+    {
+        "content": "<p><a href=\"https://x.com/tachim/status/1800181481161244941\">https://x.com/tachim/status/1800181481161244941</a> - 83% on minif2f after they tack on a CAS</p>",
+        "id": 443915179,
+        "sender_full_name": "Sid",
+        "timestamp": 1718081939
+    },
+    {
+        "content": "<p><a href=\"#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Aristotle/near/443915179\">A message</a> was moved here from <a class=\"stream-topic\" data-stream-id=\"219941\" href=\"/#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/DeepSeek-Prover\">#Machine Learning for Theorem Proving &gt; DeepSeek-Prover</a> by <span class=\"user-mention silent\" data-user-id=\"115715\">Jason Rute</span>.</p>",
+        "id": 443984174,
+        "sender_full_name": "Notification Bot",
+        "timestamp": 1718107475
+    },
+    {
+        "content": "<p>Here is the announcement, which right now seems to be the closest thing to a paper: <a href=\"https://harmonic.fun/news.html\">https://harmonic.fun/news.html</a>  If this works, that is pretty cool, but also here are some points that need to be clarified (and frankly look suspicious):</p>\n<ul>\n<li>There is no paper (and that website, which doesn't even have a permalink) is sparse on details.</li>\n<li>\n<p>They split the validation and test up weirdly:</p>\n<blockquote>\n<p>To obtain a training set, we re-split the 488 MiniF2F problems (originally evenly divided into validation and test sets) randomly into 392 training, 48 validation, and 48 test problems, where the latter two splits are unbiased random subsets of the corresponding original validation and test sets.</p>\n</blockquote>\n</li>\n<li>\n<p>Also, they train directly on the miniF2F problems more than I'm used to others doing.  (I guess I have to go back and check out the papers again and see which results directly train on the validation problems.  I'm mostly only aware of people using the validation problems for fine-tuning and reinforcement learning, but not where one writes hand-writes proofs for them all and training on those, which is what I think they are doing with their training set.)</p>\n</li>\n<li>\n<p>They also heavily modified miniF2F (not sure if this is their new test set or the new training set):</p>\n<blockquote>\n<p>We found that many statements' formalizations in MiniF2F were much easier than the original problem, e.g. only containing the easier direction of a biconditional statement. We worked with mathematicians and olympiad competitors to ensure our version of MiniF2F represents each problem fully.</p>\n</blockquote>\n</li>\n<li>\n<p>They don't really say much about the CAS or how they use it.  They get 63% without the CAS.</p>\n</li>\n<li>There are very few details overall.</li>\n</ul>",
+        "id": 443986664,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718108281
+    },
+    {
+        "content": "<p>cc <span class=\"user-mention\" data-user-id=\"117969\">@Tudor achim</span></p>",
+        "id": 443986787,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718108313
+    },
+    {
+        "content": "<p>I think to fully evaluate this work, we need the following:</p>\n<ul>\n<li>A paper describing the details.</li>\n<li>A release of the new version of MiniF2F that they created.  It may be that their 48 test problems are just easier overall.  (We are getting into the range of small sample sizes here.)  Or if they are not willing to do that, at the very least, the list of test problems.</li>\n<li>How many attempts do they use to solve the problems?  For example, as we saw in the Deepseek-Prover paper, there is something like a logarithmic increase in theorems solved as you increase compute (usually by increasing the number of attempts, but if it is a tree search then the amount of time spent searching is a good measure too).</li>\n</ul>",
+        "id": 443988170,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718108842
+    },
+    {
+        "content": "<p>The change to MiniF2F (if carried out correctly) is something that we've all been wishing for, right? So that's good news, if this new version of MiniF2F will be shared publicly.</p>",
+        "id": 443989402,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1718109294
+    },
+    {
+        "content": "<p>I'm really worried that MiniF2F is outliving its usefulness:</p>\n<ul>\n<li><a href=\"https://en.wikipedia.org/wiki/Goodhart%27s_law\">Goodhart's law</a> is taking over.  Many works are specifically modifying their training data to target MiniF2F, but it is unclear if these approaches would generalize to other use cases of automated theorem proving, like finishing real Lean proofs or even fresh competition problems (like all this year's math competitions).</li>\n<li>MiniF2F has been out there for years and I think it has somewhat leaked, and even if it hasn't, the original problems on which it is based, have probably leaked, as well as very similar formalized libraries like <a href=\"https://dwrensha.github.io/compfiles/\">https://dwrensha.github.io/compfiles/</a>. (I should really just train a model on compfiles and test on miniF2F and see how that does. <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span>).</li>\n<li>MiniF2F has many versions, some with errors making the problems too easy or too hard.  Some which fix these errors.  Some are auto-translated from Lean 3 to Lean 4 and are missing problems.  And this paper looks like it is making major changes to the problems.   It's difficult to know if it should be a stable benchmark, warts and all, or an improving organic thing.  I like the idea of a stable benchmark, but I think I'm in the minority here.  (Although to be fair, there is also an issue of inconsistencies between ITP translations which has nothing to do with stability.  Some problems might be correct in one ITP language and incorrect in another.)</li>\n</ul>",
+        "id": 443991066,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718109852
+    },
+    {
+        "content": "<p>But to be clear, as much as I have suspicions about Aristotle, I think incorporating a CAS seems like a great idea, and I could believe that it works well.  (For example, I get the impression that the leading scores on the AIMO Progress Prize competition all use sympy.)  Of course, in ITP speak, I'm not sure what they mean when they say their system is \"one where additional external computer algebra systems are permitted to solve simple subproblems in a trusted way\".  What does <em>trusted</em> mean here?  (But as long as there are no soundness bugs, it probably doesn't matter too much.  Even if it is not fully translating from the CAS into Lean right now, that just seems like an engineering problem.)</p>",
+        "id": 443995875,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718111385
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"115715\">Jason Rute</span> <a href=\"#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Aristotle/near/443986664\">said</a>:</p>\n<blockquote>\n<ul>\n<li>They also heavily modified miniF2F (not sure if this is their new test set or the new training set):<blockquote>\n<p>We found that many statements' formalizations in MiniF2F were much easier than the original problem, e.g. only containing the easier direction of a biconditional statement. We worked with mathematicians and olympiad competitors to ensure our version of MiniF2F represents each problem fully.</p>\n</blockquote>\n</li>\n</ul>\n</blockquote>\n<p>This is unclear about how they handle \"determine\" problems. Does their fixed MiniF2F require the AI prover to find the answer for itself in such cases, with a human then checking for an acceptable answer, if that was how the original problem was phrased for humans, or are the problems still the easy-mode variant in such cases (where the answer is provided in the formal statement to be proved)?</p>",
+        "id": 444100630,
+        "sender_full_name": "Joseph Myers",
+        "timestamp": 1718139958
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"115715\">Jason Rute</span> <a href=\"#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Aristotle/near/443991066\">said</a>:</p>\n<blockquote>\n<ul>\n<li>MiniF2F has been out there for years and I think it has somewhat leaked, and even if it hasn't, the original problems on which it is based, have probably leaked, as well as very similar formalized libraries like <a href=\"https://dwrensha.github.io/compfiles/\">https://dwrensha.github.io/compfiles/</a>. (I should really just train a model on compfiles and test on miniF2F and see how that does. <span aria-label=\"smile\" class=\"emoji emoji-1f642\" role=\"img\" title=\"smile\">:smile:</span>).</li>\n</ul>\n</blockquote>\n<p>If you're training entirely on synthetic data (like AlphaGeometry) then the leakage doesn't matter. If you're training on public online data at large, or building on an LLM that was so trained, or indeed if you're building on more selective mathematical data extracted from e.g. AoPS, then leakage is a risk that can most effectively be addressed by testing on new problems (from the many olympiads that use new problems every year, for example, as long as you make sure all non-synthetic data for training was obtained before the competition in question was held) rather than expecting a fixed benchmark to work.</p>",
+        "id": 444101596,
+        "sender_full_name": "Joseph Myers",
+        "timestamp": 1718140376
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"266253\">@Joseph Myers</span> As for handling \"determine\" problems, I would just assume they leave it the same as MiniF2F, i.e. the easy mode.  Of course, if we start solving easy-mode problems too easily, we can switch to hard mode (or better yet, real-world problems!), but the difficulty with hard mode is that it is a very different sort of task requiring different tools and evaluation frameworks.  For an ATP benchmark, the easy mode is fine.  (Of course, one shouldn't say they solved an IMO problem if it is in easy mode, but that is a different matter brought on by overzealous researchers or overzealous PR departments.)</p>",
+        "id": 444113535,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718146086
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"266253\">@Joseph Myers</span> To be clear, every paper in AI for ITP that uses Transformers (with the exception of the Transformer baseline in our recent Graph2Tac paper) uses pre-trained models that are capable of leakage.  (The AlphaGeometry training-from-scratch paradigm is mostly unheard of.)</p>",
+        "id": 444113829,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718146220
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"266253\">Joseph Myers</span> <a href=\"#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Aristotle/near/444101596\">said</a>:</p>\n<blockquote>\n<p>If you're training on public online data at large, or building on an LLM that was so trained, or indeed if you're building on more selective mathematical data extracted from e.g. AoPS, then leakage is a risk that can most effectively be addressed by testing on new problems (from the many olympiads that use new problems every year, for example, as long as you make sure all non-synthetic data for training was obtained before the competition in question was held) rather than expecting a fixed benchmark to work.</p>\n</blockquote>\n<p>I would very much be in favor of testing on new problems.  If we could organize a committee that was interested in translating the various yearly competitions into Lean, Isabelle, and Coq and convincing researchers to evaluate their models (including older models) on those benchmarks, this would be amazing.  I do think it is likely going to be a lot of thankless work, which is why we haven't seen it so far.  But it would go a long way to alleviating these concerns.  (Note, this same problem exists in AI for generating computer code which is a much bigger field with a lot more resources and corporate backing behind it.)</p>",
+        "id": 444114375,
+        "sender_full_name": "Jason Rute",
+        "timestamp": 1718146496
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"115715\">Jason Rute</span> <a href=\"#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Aristotle/near/444114375\">said</a>:</p>\n<blockquote>\n<p><span class=\"user-mention silent\" data-user-id=\"266253\">Joseph Myers</span> <a href=\"#narrow/stream/219941-Machine-Learning-for-Theorem-Proving/topic/Aristotle/near/444101596\">said</a>:</p>\n<blockquote>\n<p>If you're training on public online data at large, or building on an LLM that was so trained, or indeed if you're building on more selective mathematical data extracted from e.g. AoPS, then leakage is a risk that can most effectively be addressed by testing on new problems (from the many olympiads that use new problems every year, for example, as long as you make sure all non-synthetic data for training was obtained before the competition in question was held) rather than expecting a fixed benchmark to work.</p>\n</blockquote>\n<p>I would very much be in favor of testing on new problems.  If we could organize a committee that was interested in translating the various yearly competitions into Lean, Isabelle, and Coq and convincing researchers to evaluate their models (including older models) on those benchmarks, this would be amazing.  I do think it is likely going to be a lot of thankless work, which is why we haven't seen it so far.  But it would go a long way to alleviating these concerns.  (Note, this same problem exists in AI for generating computer code which is a much bigger field with a lot more resources and corporate backing behind it.)</p>\n</blockquote>\n<p>We have been working on a new benchmark towards this end, which hopefully can alleviate some of these concerns at least until proofs to the theorems in the benchmark start popping up online. The nice thing is as long as you don’t include any proofs in the repository and you pick the right problems, the formal proofs have <em>never been written</em> before, so direct contamination is not possible (informal data can cause indirect contamination, though, if you don’t use new problems). We’re aiming to put out an initial release within several weeks. Curious what methods/models people think would be useful to benchmark? Perhaps we can include some more in our evaluations.</p>",
+        "id": 444274409,
+        "sender_full_name": "George Tsoukalas",
+        "timestamp": 1718208516
+    },
+    {
+        "content": "<blockquote>\n<p>The nice thing is as long as you don’t include any proofs in the repository and you pick the right problems, the formal proofs have <em>never been written</em> before, so direct contamination is not possible</p>\n</blockquote>\n<p>A danger in this approach is that problems for which a formal proof has never been written are far more likely to be incorrectly stated in Lean</p>",
+        "id": 444278393,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1718209347
+    },
+    {
+        "content": "<p>I agree. We do approximate verification by having another person parse the formalization independently to get around some of these cases. We also found thus far that running some symbolic baselines can (infrequently) find some formal statements which are trivial to prove due to a missing assumption. In general, there's a tension between really ensuring the statements are correct by writing a proof mimicking the informal one and not compromising the benchmark. Formalizing tons of statements of hard problems is already pretty laborious, writing the proofs much more so, and without committing the proofs for public use it can seem like misused effort.</p>",
+        "id": 444445430,
+        "sender_full_name": "George Tsoukalas",
+        "timestamp": 1718278927
+    }
+]

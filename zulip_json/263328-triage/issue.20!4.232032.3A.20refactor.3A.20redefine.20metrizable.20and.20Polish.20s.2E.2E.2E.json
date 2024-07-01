@@ -1,0 +1,14 @@
+[
+    {
+        "content": "<p>Today I chose issue 2032 for discussion!</p>\n<p><strong><a href=\"https://github.com/leanprover-community/mathlib4/issues/2032\">refactor: redefine metrizable and Polish spaces</a></strong><br>\nCreated by <span class=\"user-mention\" data-user-id=\"214703\">@Yury G. Kudryashov</span> (@urkud) on 2023-02-03<br>\nLabels: </p>\n<p>Is this issue still relevant? Any recent updates? Anyone making progress?</p>",
+        "id": 417089721,
+        "sender_full_name": "Random Issue Bot",
+        "timestamp": 1705845917
+    },
+    {
+        "content": "<p>It's still on my TODO list but it's waiting for some reorganization of <code>import</code>s (e.g., moving definitions outside of more advanced files).</p>",
+        "id": 417116487,
+        "sender_full_name": "Yury G. Kudryashov",
+        "timestamp": 1705867411
+    }
+]

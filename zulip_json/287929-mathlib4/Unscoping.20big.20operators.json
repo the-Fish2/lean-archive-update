@@ -1,0 +1,32 @@
+[
+    {
+        "content": "<p>Is it time that we unscope the notation for <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finset.sum#doc\">docs#Finset.sum</a>, <a href=\"https://leanprover-community.github.io/mathlib4_docs/find/?pattern=Finset.prod#doc\">docs#Finset.prod</a> ? It keeps being a point of confusion for beginners (although it effectively teaches them about <code>open scoped</code>) and in four years of existence nobody has come up with a conflicting notation.</p>",
+        "id": 439274952,
+        "sender_full_name": "Yaël Dillies",
+        "timestamp": 1715971308
+    },
+    {
+        "content": "<p>I prefer seeing <code>Finset.sum</code> in the Infoview.</p>",
+        "id": 440502084,
+        "sender_full_name": "Martin Dvořák",
+        "timestamp": 1716554727
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"387244\">@Yaël Dillies</span>  <a href=\"https://github.com/leanprover-community/mathlib4/pull/13181\">#13181</a></p>",
+        "id": 440567187,
+        "sender_full_name": "Pol'tta / Miyahara Kō",
+        "timestamp": 1716579478
+    },
+    {
+        "content": "<p>Oh no! There is a conflicting notations for <a href=\"https://leanprover-community.github.io/mathlib4_docs/Mathlib/CategoryTheory/Limits/Shapes/Products.html#CategoryTheory.Limits.piObj\">CategoryTheory.Limits.piObj</a>!</p>",
+        "id": 440572858,
+        "sender_full_name": "Pol'tta / Miyahara Kō",
+        "timestamp": 1716582368
+    },
+    {
+        "content": "<p>It's inevitable but we change the notation of <code>piObj</code> from <code>∏ f</code> to <code>∏ᶜ f</code>.</p>",
+        "id": 440574167,
+        "sender_full_name": "Pol'tta / Miyahara Kō",
+        "timestamp": 1716583044
+    }
+]

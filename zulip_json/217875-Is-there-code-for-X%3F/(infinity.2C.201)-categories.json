@@ -34,5 +34,401 @@
         "id": 408964670,
         "sender_full_name": "Adam Topaz",
         "timestamp": 1703002045
+    },
+    {
+        "content": "<p>I think the best plan is to formalize lifting properties (the <a href=\"https://ncatlab.org/nlab/show/Joyal-Tierney+calculus\">Joyal–Tierney calculus</a>) and maybe weak factorization systems in general categories since they will be repeatedly used in quasicat theory. Are those in mathlib yet?</p>",
+        "id": 409190692,
+        "sender_full_name": "Trebor Huang",
+        "timestamp": 1703080525
+    },
+    {
+        "content": "<p>Several people have been working on WFS. I lost track of what the current status is...</p>",
+        "id": 409193070,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703081306
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"404479\">@Trebor Huang</span>: the basic definitions of lifting properties are in mathlib (<code>CategoryTheory.LiftingProperties</code>).</p>",
+        "id": 409237134,
+        "sender_full_name": "Joël Riou",
+        "timestamp": 1703095509
+    },
+    {
+        "content": "<p>Ah, when I typed in \"lifting\" in the docs searchbar the suggestions are dominated by <code>liftRing</code> so I thought there was none</p>",
+        "id": 409309361,
+        "sender_full_name": "Trebor Huang",
+        "timestamp": 1703134000
+    },
+    {
+        "content": "<p>Is this some search priority issue to be fixed?</p>",
+        "id": 409309379,
+        "sender_full_name": "Trebor Huang",
+        "timestamp": 1703134016
+    },
+    {
+        "content": "<p>The branch <code>quasicat</code> now contains a sorry-free proof that the nerve of a category is a quasicategory.</p>",
+        "id": 410550355,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703947538
+    },
+    {
+        "content": "<p>It was a pretty nasty fight with DTT.</p>",
+        "id": 410550410,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703947572
+    },
+    {
+        "content": "<p>What about DTT made it tough? Maybe we should rethink the simplicial API?</p>",
+        "id": 410551781,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1703948968
+    },
+    {
+        "content": "<p>An <code>n</code>-simplex of the nerve is a functor from <code>Fin (n+1)</code> to <code>C</code>. Now you can map <code>i -&gt; (i+1)</code> through such a functor to get a morphism in <code>C</code>. That same morphism will also be a <code>1</code>-simplex. But not in a defeq way.</p>",
+        "id": 410552555,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703949653
+    },
+    {
+        "content": "<p>Aha. But if we use some inductive analogue of <code>Fin</code> (I don’t know if <code>Fin’</code> will quite work) then we should get good defeq behavior</p>",
+        "id": 410552853,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1703949866
+    },
+    {
+        "content": "<p>Using functors from Fin to talk about sequences of composable morphisms is a nice trick, but if it’s tedious to use, then perhaps we should come up with a bespoke inductive definition after all</p>",
+        "id": 410553025,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1703950007
+    },
+    {
+        "content": "<p>Maybe. I think <span class=\"user-mention\" data-user-id=\"459699\">@Joël Riou</span> already wrote a very good API for <code>ComposableArrows</code></p>",
+        "id": 410553373,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703950307
+    },
+    {
+        "content": "<p>I think I rather want to explore playing out the whole proof in the arrow category of <code>C</code>. I think it would save on a whole lot of <code>eqToHom</code>s.</p>",
+        "id": 410553435,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703950346
+    },
+    {
+        "content": "<p>Anyway: <a href=\"https://github.com/leanprover-community/mathlib4/pull/9357\">#9357</a> is the first PR, containing the bare definitions of Kan complex and quasicategory.</p>",
+        "id": 410553452,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703950376
+    },
+    {
+        "content": "<p>Left a few comments</p>",
+        "id": 410554216,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1703951077
+    },
+    {
+        "content": "<p>Let me ping <span class=\"user-mention\" data-user-id=\"488744\">@Jack McKoen</span> again since he also had a def of a Kan complex on his branch</p>",
+        "id": 410554359,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1703951190
+    },
+    {
+        "content": "<p>We should also write a delaborator for</p>\n<div class=\"codehilite\" data-code-language=\"Lean\"><pre><span></span><code><span class=\"n\">scoped</span><span class=\"o\">[</span><span class=\"n\">Simplicial</span><span class=\"o\">]</span> <span class=\"kd\">notation</span> <span class=\"s2\">\"Λ[\"</span> <span class=\"n\">n</span> <span class=\"s2\">\", \"</span> <span class=\"n\">i</span> <span class=\"s2\">\"]\"</span> <span class=\"bp\">=&gt;</span> <span class=\"n\">SSet.horn</span> <span class=\"o\">(</span><span class=\"n\">n</span> <span class=\"o\">:</span> <span class=\"n\">ℕ</span><span class=\"o\">)</span> <span class=\"n\">i</span>\n</code></pre></div>",
+        "id": 410554558,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703951388
+    },
+    {
+        "content": "<p>If we change <code>notation</code> to <code>notation3</code> does it make things better? I seem to recall <span class=\"user-mention\" data-user-id=\"306601\">@Kyle Miller</span> saying something along those lines.</p>",
+        "id": 410554640,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1703951461
+    },
+    {
+        "content": "<p>Thanks! That worked: <a href=\"https://github.com/leanprover-community/mathlib4/pull/9358\">#9358</a></p>",
+        "id": 410555489,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703952223
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/9360\">#9360</a> provides an alternative hornfilling condition</p>",
+        "id": 410567512,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703964687
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/9362\">#9362</a> adds some trivial prerequisites on cardinalities of explicit finsets.</p>",
+        "id": 410571324,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703968445
+    },
+    {
+        "content": "<p>I left a minicomment and delegated it.</p>",
+        "id": 410572273,
+        "sender_full_name": "Riccardo Brasca",
+        "timestamp": 1703969462
+    },
+    {
+        "content": "<p>Thanks</p>",
+        "id": 410573311,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703970490
+    },
+    {
+        "content": "<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/9363\">#9363</a> is the next one in line. But it depends on the finset-cardinalities PR.</p>",
+        "id": 410573326,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1703970519
+    },
+    {
+        "content": "<ul>\n<li><del> <a href=\"https://github.com/leanprover-community/mathlib4/pull/9357\">#9357</a> basic definitions </del></li>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/9360\">#9360</a> alternative horn filling condition</li>\n<li><del> <a href=\"https://github.com/leanprover-community/mathlib4/pull/9362\">#9362</a> bounds on cardinalities of explicit finsets </del></li>\n<li><a href=\"https://github.com/leanprover-community/mathlib4/pull/9363\">#9363</a> constructors for subsimplices of horns</li>\n</ul>",
+        "id": 410700870,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1704095076
+    },
+    {
+        "content": "<p>deleted message</p>",
+        "id": 411996780,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1704827647
+    },
+    {
+        "content": "<p>(Sorry ignore the above, I missed a comment above)</p>",
+        "id": 411997359,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1704827893
+    },
+    {
+        "content": "<p>Maybe it would be nice to have a <code>github  project</code> for quasicategories, to track progress in this direction and list the important steps that would need to be taken to develop their theory. Do people think this is an appropriate of these projects? If so I am happy to put some work into to developing one - although I think maintainers  have to create them on Mathlib4.</p>",
+        "id": 421515290,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707938358
+    },
+    {
+        "content": "<p>I think this is a good idea. But we should select a good “target” to help coordinate work. The infinity categorical yoneda lemma is a possible target</p>",
+        "id": 421516062,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707938628
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span> Agreed, and I think the infinity-cat Yoneda lemma seems a good target. Another possible one is the definition of a infinity-topos.  But Yoneda is probably better.</p>",
+        "id": 421518030,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707939248
+    },
+    {
+        "content": "<p>I made an empty project here: <a href=\"https://github.com/orgs/leanprover-community/projects/18\">https://github.com/orgs/leanprover-community/projects/18</a></p>",
+        "id": 421518182,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707939308
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span> Thanks :)</p>",
+        "id": 421518430,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707939397
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span> Could I possibly have write access for the project? Doesn't seem to let me edit it by default.</p>",
+        "id": 421519348,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707939762
+    },
+    {
+        "content": "<p>hmmm... I don't remember how to do that. Can another maintainer help out?</p>",
+        "id": 421519516,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707939833
+    },
+    {
+        "content": "<p>Oh ok I see how to do it now. What's your github username <span class=\"user-mention\" data-user-id=\"653351\">@Joseph Tooby-Smith</span> ?</p>",
+        "id": 421519669,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707939876
+    },
+    {
+        "content": "<p>jstoobysmith</p>",
+        "id": 421519711,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707939896
+    },
+    {
+        "content": "<p>you should have an invite in your inbox</p>",
+        "id": 421519790,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707939928
+    },
+    {
+        "content": "<p>Yep that worked! Thanks <span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span></p>",
+        "id": 421520085,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707940035
+    },
+    {
+        "content": "<p>It's a nontrivial result that the functors between ∞-categories form an ∞-category (and, I guess, necessary for the statement of the Yoneda lemma). Maybe that can be added to the list in the github project</p>",
+        "id": 421532159,
+        "sender_full_name": "Dagur Asgeirsson",
+        "timestamp": 1707944529
+    },
+    {
+        "content": "<p>There’s also the question of managing universes… for example, maybe we want the category of anima to have zero cells in level 1, and all higher cells in level 0?</p>",
+        "id": 421532737,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707944759
+    },
+    {
+        "content": "<p>The current simplicial sets framework doesn’t make this easy</p>",
+        "id": 421532802,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707944772
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"519559\">@Dagur Asgeirsson</span> I added this....on which note:</p>\n<p>Do you (and <span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span> ) think the format of the list is ok/have any suggestions?<br>\n I added Kerodon tags to make it easier to find references to things. Although I'm not sure about the stability of these tags.</p>",
+        "id": 421534715,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707945596
+    },
+    {
+        "content": "<p>Re functors: IIRC there’s an adjunction between quasicats and ssets and it’s useful for constructing the qcat structure on functors, right? I guess this adjunction could be part of the list as well.</p>",
+        "id": 421534852,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707945653
+    },
+    {
+        "content": "<p>Kerodon tags are a great idea!</p>",
+        "id": 421534906,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707945676
+    },
+    {
+        "content": "<p>Can the Kerodon tags be linkified?</p>",
+        "id": 421535219,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1707945820
+    },
+    {
+        "content": "<p>It doesn't appear so in any nice way from the UI :(</p>",
+        "id": 421536233,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1707946239
+    },
+    {
+        "content": "<p>The format of the list is fine I think, I guess it will evolve over time. This GitHub projects UI seems kind of limited though</p>",
+        "id": 421536311,
+        "sender_full_name": "Dagur Asgeirsson",
+        "timestamp": 1707946274
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"306577\">@Matthew Ballard</span> You can link to them in the comments of the entry. E.g. if you click the title of the first entry <code>Define: homotopy of morphisms in an infinity-cat</code>, I've put a link there.</p>",
+        "id": 421536349,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707946293
+    },
+    {
+        "content": "<p>Thanks! </p>\n<p>It would make your life easier if you could make a template and access the fields as variables though</p>",
+        "id": 421536770,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1707946468
+    },
+    {
+        "content": "<p>How can I \"claim\" one of these goals?</p>",
+        "id": 421541330,
+        "sender_full_name": "Jack McKoen",
+        "timestamp": 1707948400
+    },
+    {
+        "content": "<p>Assign yourself?</p>",
+        "id": 421541425,
+        "sender_full_name": "Matthew Ballard",
+        "timestamp": 1707948459
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"488744\">@Jack McKoen</span> you might need write access... if so, let me know.</p>",
+        "id": 421541465,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707948480
+    },
+    {
+        "content": "<p>I think I need write access (unless I just can't find the option on mobile)</p>",
+        "id": 421541844,
+        "sender_full_name": "Jack McKoen",
+        "timestamp": 1707948645
+    },
+    {
+        "content": "<p>you should have access now.</p>",
+        "id": 421541923,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1707948690
+    },
+    {
+        "content": "<p>Thanks, works now</p>",
+        "id": 421542079,
+        "sender_full_name": "Jack McKoen",
+        "timestamp": 1707948764
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"488744\">@Jack McKoen</span>  <span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span>  I'd like to mention that these efforts will help a lot with my work with Jiazhen Xia available here:</p>\n<p><a href=\"https://github.com/linlib/TheWhiteheadTheoremandTwoVariations/blob/main/TheWhiteheadTheoremandTwoVariations.pdf\">https://github.com/linlib/TheWhiteheadTheoremandTwoVariations/blob/main/TheWhiteheadTheoremandTwoVariations.pdf</a></p>\n<p>Is it ok if I lobby for a few things?</p>\n<p>I think it is a good idea to use a certain four categories:</p>\n<ol>\n<li><code>∞-Cat : Category quasicategory</code></li>\n<li><code>∞-Grpd : Category Kan_complex</code></li>\n<li><code>D(∞-Cat) : Category quasicategory</code></li>\n<li><code>D(∞-Grpd) : Category Kan_complex</code></li>\n</ol>\n<p>The second two can be created from the first two using the work in Jack's presentation at Lean together.  The repository I linked to contains a definition of the first two in the file of <code>TheWhiteheadTheoremandTwoVariations.lean</code>.</p>\n<p>I wonder if down the road, having these categories and the definitions of functors and natural transformations that they allow for would save a lot of effort. I'm thinking about how the components of each of the functors on the first pages of the files <a href=\"https://github.com/linlib/TheWhiteheadTheoremandTwoVariations/blob/main/TheWhiteheadTheoremandTwoVariations.pdf\">here</a> and <a href=\"https://github.com/linlib/ThePuppeSequenceandTwoVariations/blob/main/ThePuppeSequenceandTwoVariations.pdf\">here</a> could be more cumbersome without forming these categories.</p>\n<p>P.S. Jiazhen and I are excited to be submitting our definition of CW-complexes and proof of the Whitehead theorem within a few weeks. We are also working on two variations of the Puppe sequence. Together, these six theorems give an alternative definition of ∞-Cat.</p>",
+        "id": 421596129,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1707982300
+    },
+    {
+        "content": "<p><a href=\"https://github.com/linlib/ThePuppeSequenceandTwoVariations/blob/main/ThePuppeSequenceandTwoVariations.pdf\">https://github.com/linlib/ThePuppeSequenceandTwoVariations/blob/main/ThePuppeSequenceandTwoVariations.pdf</a></p>",
+        "id": 421596423,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1707982466
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span>  Jiazhen and I would also be greatly excited to join this project. Would it be ok if we get write privileges and tackle a few of these goals?</p>",
+        "id": 421597258,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1707982955
+    },
+    {
+        "content": "<p>Can Jiazhen and I take 11 and 12? We were already going to show those in the Whitehead theorem repo. Maybe  you could give write privileges to <code>linlib</code> and  <code>jzxia</code>.</p>",
+        "id": 421598741,
+        "sender_full_name": "E. Dean Young",
+        "timestamp": 1707983796
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"488744\">@Jack McKoen</span>  I have already done some work in the defining homotopies direction.  See: </p>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/10006\">https://github.com/leanprover-community/mathlib4/pull/10006</a></p>\n<p>I'm fairly new to lean so it's a bit of a mess though. In particular, the above uses:</p>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/9935\">https://github.com/leanprover-community/mathlib4/pull/9935</a></p>\n<p>which is now waiting on another pull-request (plus some tidying on my part).</p>",
+        "id": 421637777,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707998365
+    },
+    {
+        "content": "<p>Unrelated to the above: All the goals in this project now have links to the appropriate Kerodon page in their comments (click the title of the goal to see the comments).</p>",
+        "id": 421639732,
+        "sender_full_name": "Joseph Tooby-Smith",
+        "timestamp": 1707999082
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"559197\">@Dean Young</span> I'm happy to give you write access to the project, but I would need your (and Jiazhen's) github user name(s).</p>",
+        "id": 421642879,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1708000168
+    },
+    {
+        "content": "<p>Oh, I just noticed your second message with the user names. I'll add those now.</p>",
+        "id": 421643329,
+        "sender_full_name": "Adam Topaz",
+        "timestamp": 1708000301
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"243562\">@Adam Topaz</span> Thank you! We have access now, and we are excited to work on 11 and 12 (space of morphisms).</p>",
+        "id": 421645817,
+        "sender_full_name": "Jiazhen Xia",
+        "timestamp": 1708001133
+    },
+    {
+        "content": "<p>Let me just mention here that there is a proof in the file <code>Wombat.lean</code> of the <code>quasicat</code> branch that the nerve of a category is a quasicategory. I currently don't have the time to PR this to mathlib (maybe sometime in the future?). But anybody interested should feel free to PR (parts of it). I don't claim any copyright etc yaddayadda</p>",
+        "id": 421647271,
+        "sender_full_name": "Johan Commelin",
+        "timestamp": 1708001647
+    },
+    {
+        "content": "<p><span class=\"user-mention\" data-user-id=\"653351\">@Joseph Tooby-Smith</span> Given what you already have done I think it makes sense for you to take care of 1 and 2. I'll work on something else :)</p>",
+        "id": 421694633,
+        "sender_full_name": "Jack McKoen",
+        "timestamp": 1708014840
     }
 ]

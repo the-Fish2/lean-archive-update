@@ -784,5 +784,11 @@
         "id": 408693018,
         "sender_full_name": "Terence Tao",
         "timestamp": 1702937331
+    },
+    {
+        "content": "<p><span class=\"user-mention silent\" data-user-id=\"268315\">Anatole Dedecker</span> <a href=\"#narrow/stream/217875-Is-there-code-for-X.3F/topic/Working.20with.20big-O.20notation.20like.20an.20analyst/near/398529190\">said</a>:</p>\n<blockquote>\n<p>Forget my comment. But we need to fix that at some point (e.g assuming only <code>BoundedSMul</code> for asymptotics)</p>\n</blockquote>\n<p><a href=\"https://github.com/leanprover-community/mathlib4/pull/9811\">#9811</a> fixes some smul lemmas in this way</p>",
+        "id": 416086001,
+        "sender_full_name": "Eric Wieser",
+        "timestamp": 1705513399
     }
 ]
